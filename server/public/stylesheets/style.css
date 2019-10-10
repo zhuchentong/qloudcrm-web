@@ -1,0 +1,67 @@
+.user-profile {
+  margin-top: 10px;
+  flex: 1;
+}
+.al-user-profile {
+  float: right;
+  transition: all 0.15s ease-in-out;
+  padding: 0;
+  width: 45px;
+  height: 45px;
+  border: 0;
+  opacity: 1 !important;
+  position: relative;
+}
+.qloud-liuser {
+  height: 66px;
+  list-style: none;
+}
+.qloud-al-user-profile.qloud-userlogo {
+  float: right;
+  width: 45px;
+  height: 45px;
+  display: block;
+}
+.qloud-userlogo img {
+  border-radius: 50% !important;
+  border: 1px solid #dbe0e4;
+}
+.qloud-al-user-profile img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+ul.profile-dropdown:after {
+  bottom: 100%;
+  right: 0;
+  border: solid transparent;
+  content: ' ';
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #fff;
+  border-width: 10px;
+  margin-right: 28px;
+}
+.dropdown-item:active,
+.dropdown-item:active a,
+.dropdown-item:active i {
+  color: #fff !important;
+  background: #777777 !important;
+}
+.dropdown-item a:active {
+  color: #fff;
+}
+
+/*滚动条样式*/
+::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 0px !important; /*高宽分别对应横竖滚动条的尺寸*/
+  height: 4px;
+}
+
+.qloud-top-img {
+  height: 45px;
+}

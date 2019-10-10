@@ -1,0 +1,16 @@
+<ql-form #form [formGroup]="formGroup" [inline]="true">
+  <div class="row top-span form-input between-span">
+    <span>
+      <ng-content></ng-content>
+      <ng-container *ngIf="isCollapse; else collapse"></ng-container>
+    </span>
+    <span class="form-input-button">
+      <ql-button *ngIf="showSubmit" size="small" type="primary" (click)="onSubmit()">{{ submitText }}</ql-button>
+      <ql-button *ngIf="showReset" size="small" (click)="onReset()">重置</ql-button>
+      <ng-container *ngIf="false; else button"></ng-container>
+    </span>
+  </div>
+</ql-form>
+<div class="form-action">
+  <ng-container *ngIf="false; else action"></ng-container>
+</div>

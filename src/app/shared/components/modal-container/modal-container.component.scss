@@ -1,0 +1,63 @@
+:host {
+  .app-modal-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba($color: #000000, $alpha: 0.1);
+    z-index: 10000;
+  }
+
+  .app-modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10001;
+    overflow: auto;
+  }
+
+  .app-modal-header {
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+
+    .close-btn {
+      cursor: pointer;
+    }
+  }
+
+  .app-modal-body {
+    padding: 20px;
+    border-radius: 10px;
+    margin: 5px;
+    background: #fff;
+    box-shadow: 0px 0px 5px grey;
+    &.position-top {
+      position: absolute;
+      top: 50px;
+    }
+    &.position-bottom {
+      position: absolute;
+      bottom: 10px;
+    }
+
+    &.modal-size-mini {
+      min-width: 120px;
+    }
+    &.modal-size-small {
+      min-width: 320px;
+    }
+    &.modal-size-normal {
+      width: 50%;
+    }
+    &.modal-size-large {
+      width: 75%;
+    }
+    &.modal-size-huge {
+      min-width: 1024px;
+    }
+  }
+}

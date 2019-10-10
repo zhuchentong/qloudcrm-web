@@ -1,0 +1,14 @@
+.modal-confirm {
+  .modal-icon {
+    color: red;
+  }
+  .modal-message {
+    padding: 0 10px;
+  }
+
+  .modal-action {
+    & > .ql-button {
+      margin: 0 5px;
+    }
+  }
+}

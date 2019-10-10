@@ -1,0 +1,36 @@
+$element-height: 30px;
+
+:host ::ng-deep {
+  .ql-button {
+    height: $element-height;
+  }
+
+  ql-input {
+    .ql-form-item__content {
+      line-height: $element-height;
+    }
+    .ql-input__inner {
+      height: $element-height;
+    }
+  }
+
+  .form-input {
+    .ql-button {
+      margin: 5px 10px 5px 0;
+      min-width: 80px;
+    }
+
+    .form-input-button {
+      padding-bottom: 15px;
+    }
+  }
+
+  .form-action {
+    .ql-button {
+      margin-top: 5px;
+      margin-bottom: 15px;
+      min-width: 100px;
+      padding: 0;
+    }
+  }
+}

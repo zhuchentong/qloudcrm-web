@@ -1,0 +1,29 @@
+.label-item {
+  overflow: hidden;
+  word-break: break-all;
+}
+.label-item__label {
+  padding: 10px 5px;
+  color: rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 20px;
+
+  &::after {
+    content: ':';
+    padding: 0 2px;
+  }
+}
+
+.label-item__content {
+  padding: 10px 5px;
+  line-height: 20px;
+  flex: 1;
+  &.default {
+    &::before {
+      content: '-';
+    }
+  }
+}

@@ -1,0 +1,36 @@
+doctype html
+html(lang="en")
+  head
+    title 404 错误页面不存在
+    link(rel='stylesheet', href='/stylesheets/google.css')
+    link(rel='stylesheet', href='/stylesheets/error.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.css')
+    link(rel='icon', href='/images/favicon.ico',type='image/x-icon')   
+    meta(name='description',content='Latest updates and statistic charts')
+    meta(charset="utf-8")
+    meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no")
+  body
+    .error-page
+        .error-page-container
+            .error-page-main
+                h3 
+                    strong 404
+                    ='很抱歉，您要访问的页面不存在！'
+                .error-page-actions
+                    div
+                        h4 可能原因：
+                        ol
+                            li 网络信号差不稳定
+                            li 找不到请求的页面
+                            li 输入的网址不正确
+                    div
+                        h4 可以尝试：
+                        ol
+                            li.backhome
+                                i.fa.fa-home
+                                a(href="/") 返回首页
+                            li.backhome &nbsp;
+                            li.backhome &nbsp;
+        block content
+  

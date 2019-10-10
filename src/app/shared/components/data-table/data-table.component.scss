@@ -1,0 +1,8 @@
+:host ::ng-deep {
+  .ql-pagination {
+    margin: 20px 0 10px 0;
+    .ql-pagination__pages {
+      text-align: right !important;
+    }
+  }
+}

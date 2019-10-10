@@ -1,0 +1,14 @@
+<div class="modal-prompt">
+  <div class="row middle-span ql-padding-bottom">
+    <div class="modal-message">{{ message }}</div>
+  </div>
+  <div class="modal-input row middle-span ql-padding">
+    <ql-input [placeholder]="placeholder" [(model)]="value"></ql-input>
+  </div>
+  <div class="row middle-span end-span">
+    <div class="modal-action">
+      <ql-button type="text" (click)="onSubmbit()">确定</ql-button>
+      <ql-button type="text" (click)="onCancel()">取消</ql-button>
+    </div>
+  </div>
+</div>

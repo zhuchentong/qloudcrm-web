@@ -1,0 +1,30 @@
+<div class="page-header">
+  <ng-container *ngIf="!breadcrumb; else breadcrumb"> </ng-container>
+  <div class="page-header__detail">
+    <div class="row no-wrap between-span">
+      <h1 *ngIf="_titleVal || _titleTpl" class="page-header__title">
+        <ng-container *ngIf="_titleVal; else _titleTpl">{{ _titleVal }}</ng-container>
+      </h1>
+      <div class="page-header__action row middle-span">
+        <div class="page-header__group" *ngIf="action">
+          <ql-button-group *ngIf="actionGroup; else noGroupAction" [ngClass]="{ 'page-header__group': actionGroup }">
+            <ng-template [ngTemplateOutlet]="action"></ng-template>
+          </ql-button-group>
+          <ng-template #noGroupAction>
+            <ng-template [ngTemplateOutlet]="action"></ng-template>
+          </ng-template>
+        </div>
+        <ql-button class="page-header__back" *ngIf="back" (click)="location.back()">返回</ql-button>
+      </div>
+    </div>
+    <div class="row no-wrap between-span">
+      <div class="page-header__desc" #conTpl>
+        <ng-content></ng-content>
+        <ng-template [ngTemplateOutlet]="content"></ng-template>
+      </div>
+      <div *ngIf="extra" class="page-header__extra">
+        <ng-template [ngTemplateOutlet]="extra"></ng-template>
+      </div>
+    </div>
+  </div>
+</div>

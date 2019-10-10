@@ -1,0 +1,98 @@
+doctype html
+html(lang="en")
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/google.css')
+    link(rel='stylesheet', href='/stylesheets/iframe.css')
+    link(rel='stylesheet', href='/stylesheets/bootstrap.css')
+    link(rel='stylesheet', href='/stylesheets/font-awesome.css')
+    link(rel='stylesheet', href='/stylesheets/swiper.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/layout/index.css')
+    link(rel='icon', href='/images/favicon.ico',type='image/x-icon')
+    script.
+        var client = (!{JSON.stringify(clientConfig)});
+        if (client.menu.icon == 'fa-chevron-circle-right') {
+            window.sessionStorage.setItem("menuStatus", "true");
+        } else {
+            window.sessionStorage.setItem("menuStatus", "false");
+        }
+    meta(name='description',content='Latest updates and statistic charts')
+    meta(charset="utf-8")
+    meta(name="viewport",content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no")
+  body
+    //-头部信息
+    div.qloud-page-top.qloud-clearfix
+      a(href="/",class="qloud-al-logo qloud-clearfix")
+        img(src=logoUrl class="qloud-top-img")
+      div.user-profile.qloud-clearfix
+        div.al-user-profile
+          li(id='liuser',class='qloud-liuser')
+            a.dropdown-toggle.qloud-userlogo
+              img(src=userLogo,id="portrait-image" ,style="width: 40px; height: 40px;")
+            ul.dropdown-menu.top-dropdown-menu.profile-dropdown(id="showuserlist")
+              li.dropdown-item
+                i.fa.fa-power-off
+                a(class='qloud-signout',onclick="logout()") 退出
+    -if(tabls.length>0){
+    div.page-top-tab(style={"padding-left":clientConfig.menu.left})
+        .swiper-container
+          div(class='swiper-wrapper',id='tabcontnent')
+            - for (var i = 0; i < tabls.length; i++) {
+                .swiper-slide.swiper-no-swiping
+                  a(href="?code="+tabls[i].code)=tabls[i].name
+            - }
+          button(class='swiperButton swiper-button-next')
+            i.fa.fa-chevron-right
+          button(class='swiperButton swiper-button-prev')
+            i.fa.fa-chevron-left
+    -}
+    //-siderbar
+    aside(class="qloud-al-sidebar" style={width:clientConfig.menu.left})
+      ul(class="qloud-al-sidebar-list",id="al-sidebar-list")
+        - for (var i = 0; i < pluginls.length; i++) {
+              li(class=pluginls[i].class)
+                  a(id=pluginls[i].url,class="qloud-al-sidebar-list-link",onclick="changeMenu('"+pluginls[i].url+"')",href="javascript:void(0)",title=pluginls[i].name)
+                    -if(pluginls[i].icon||pluginls[i].abbr)
+                      span.menuItem-icon
+                        -if(pluginls[i].icon)
+                          i(class=pluginls[i].icon)
+                        -else
+                          i(class='MenuItem-abbr')=pluginls[i].abbr
+                    -else
+                      span.menuItem-icon
+                        img(src=pluginls[i].img class='logsiz')
+                    span(class='menuItem-text' translate)=pluginls[i].name
+        - }
+        //- for (var key in pluginlsobj) {
+        //      li(class=pluginlsobj[key].class)
+        //          a(class="qloud-al-sidebar-list-link",onclick="changeMenu('"+pluginlsobj[key].url+"')",href="javascript:void(0)",title=pluginlsobj[key].name)
+        //            -if(pluginlsobj[key].icon||pluginlsobj[key].abbr)
+        //              span.menuItem-icon
+        //                -if(pluginlsobj[key].icon)
+        //                  i(class=pluginlsobj[key].icon)
+        //                -else
+        //                  i(class='MenuItem-abbr')=pluginlsobj[key].abbr
+        //            -else
+        //              span.menuItem-icon
+        //                img(src=pluginlsobj[key].img class='logsiz')
+        //            span(class='menuItem-text' translate)=pluginlsobj[key].name
+        //- }
+      div.qloud-sidebar-options
+        button(class="qloud-mini-toggle-btn" onclick="menuToggle('0')")
+          i(class='fa' class=clientConfig.menu.icon id="menuCollapsed")
+    -if(tabls.length>0)
+      div.qloud-al-main(style={"margin-left":clientConfig.menu.left})
+        div.qloud-al-content
+          iframe(id='myframe',src=url,style="width:100%;min-height:650px" ,frameborder="0")
+          i(class='fa fa-angle-up qloud-ba-back-top qloud-ba-back-top',title='回到顶部' ,onclick='scrollToTop()',id="showBackToTop")
+            block content
+    -else
+      div.qloud-al-main.qloud-main-top(style={"margin-left":clientConfig.menu.left,"width":"87%"})
+        div.qloud-al-content(style="padding: 8px 0px 8px 32px;")
+          iframe(id='myframe',src=url,style="width:100%;min-height:650px" ,frameborder="0")
+          i(class='fa fa-angle-up qloud-ba-back-top qloud-ba-back-top',title='回到顶部' ,onclick='scrollToTop()',id="showBackToTop")
+            block content
+    script(src='/javascripts/swiper.js')
+    script(src='/javascripts/socket.io.js')
+    script(src='/javascripts/base.js')

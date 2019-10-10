@@ -1,0 +1,3 @@
+<ql-menu [model]="currentPath" (modelChange)="onMenuChange($event)" class="ql-menu-demo" mode="horizontal">
+  <ql-menu-item [index]="item.url" *ngFor="let item of currentMenu">{{ item.name }}</ql-menu-item>
+</ql-menu>

@@ -1,0 +1,21 @@
+{
+    "appenders": {
+      "dateFile": {
+        "type": "dateFile",
+        "category" : "log_dataFile",
+        "filename": "/app/log/qlouddesk-log",
+        "maxLogSize" : 10,
+        "backups" : 3,
+        "encoding" : "utf-8",
+        "numBackups": 5,
+        "pattern": "-yyyy-MM-dd-hh.log",
+        "alwaysIncludePattern": true
+      },
+      "out": {
+        "type": "stdout"
+      }
+    },
+    "categories": {
+      "default": { "appenders": ["dateFile", "out"], "level": "info" }
+    }
+  }

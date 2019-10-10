@@ -1,0 +1,6 @@
+<div class="label-item row nowrap ql-padding-bottom">
+  <div class="label-item__label" [ngStyle]="labelStyle">{{ label }}</div>
+  <div class="label-item__content" [ngClass]="contentClass" [ngStyle]="contentStyle" #content>
+    <ng-content></ng-content>
+  </div>
+</div>

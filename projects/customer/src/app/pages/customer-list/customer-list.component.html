@@ -1,0 +1,33 @@
+<page-header title="我的客户" [breadcrumb]="breadcrumb">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb separator="/">
+      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>我的客户</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+</page-header>
+
+<ql-card>
+  <data-form [showReset]="false" [submitText]="'刷新'" [formGroup]="formGroup" (submit)="onRefresh()">
+    <ql-form-item label="客户名称">
+      <ql-input formControlName="name"></ql-input>
+    </ql-form-item>
+    <!-- <ng-template #action>
+      <ql-button type="primary" (click)="onAddAlgo()">新建</ql-button>
+    </ng-template> -->
+  </data-form>
+
+  <data-table [model]="customerList">
+    <ql-table-column model-key="name" label="客户列表"> </ql-table-column>
+
+    <ql-table-column label="操作">
+      <!-- <ng-template #slot let-scope="scope">
+        <ql-button class="ql-padding-x" type="text" (click)="onDeleteAlgo(scope.rowData)">删除</ql-button>
+      </ng-template> -->
+      <ng-template #slot let-scope="scope">
+        <ql-button type="text">数据维护</ql-button>
+        <ql-button type="text">删除</ql-button>
+      </ng-template>
+    </ql-table-column>
+  </data-table>
+</ql-card>

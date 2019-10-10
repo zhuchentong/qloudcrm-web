@@ -1,0 +1,15 @@
+{
+  "default": "true",
+  "pluginName": "仪表盘",
+  "pluginIcon": "",
+  "pluginAbbr": "UI",
+  "pluginImg": "/assets/images/svg/profile.svg",
+  "pluginPath": "dashboard",
+  "pluginOrder": 1,
+  "pluginTab": [
+    {
+      "name": "仪表盘",
+      "url": "#/dashboard"
+    }
+  ]
+}

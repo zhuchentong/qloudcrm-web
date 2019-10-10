@@ -1,0 +1,18 @@
+.modal-prompt {
+  min-width: 320px;
+  .modal-message {
+    padding: 0 10px;
+  }
+
+  .modal-input {
+    & > ql-input {
+      width: 100%;
+    }
+  }
+
+  .modal-action {
+    & > .ql-button {
+      margin: 0 5px;
+    }
+  }
+}

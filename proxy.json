@@ -1,0 +1,10 @@
+{
+  "/api": {
+    "target": "http://qloudcrmserver.pditdap.service.sd",
+    "secure": "false",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}

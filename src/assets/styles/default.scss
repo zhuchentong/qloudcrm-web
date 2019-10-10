@@ -1,0 +1,23 @@
+p {
+  margin: 0;
+}
+
+.ql-table th,
+.ql-table td {
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+}
+
+a {
+  color: #4fb5dd !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.ql-table__body-wrapper {
+  overflow-x: auto !important;
+}
+
+.ql-table__header-wrapper.ql-table__header-scroll {
+  overflow-x: hidden !important;
+}

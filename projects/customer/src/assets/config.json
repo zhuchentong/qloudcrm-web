@@ -1,0 +1,15 @@
+{
+  "default": "true",
+  "pluginName": "客户管理",
+  "pluginIcon": "",
+  "pluginAbbr": "UI",
+  "pluginImg": "/assets/images/svg/profile.svg",
+  "pluginPath": "customer",
+  "pluginOrder": 1,
+  "pluginTab": [
+    {
+      "name": "我的客户",
+      "url": "#/customer/customer-list"
+    }
+  ]
+}

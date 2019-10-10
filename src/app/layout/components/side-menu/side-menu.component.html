@@ -1,0 +1,3 @@
+<ql-menu [model]="currentPath" (modelChange)="onMenuChange($event)" class="ql-menu-demo" mode="vertical">
+  <ql-menu-item [index]="item.pluginPath" *ngFor="let item of menus">{{ item.pluginName }}</ql-menu-item>
+</ql-menu>

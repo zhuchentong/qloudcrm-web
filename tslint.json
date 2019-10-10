@@ -1,0 +1,70 @@
+{
+  "rulesDirectory": ["codelyzer"],
+  "extends": ["tslint:recommended", "tslint-config-standard", "tslint-config-prettier"],
+  "defaultSeverity": "error",
+  "linterOptions": {
+    "exclude": ["node_modules/**", "**/*.d.ts", "**/*.json"]
+  },
+  "rules": {
+    "object-literal-sort-keys": [
+      false,
+      {
+        "shorthand-first": true
+      }
+    ],
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "any",
+        "named-imports-order": "any"
+      }
+    ],
+    "semicolon": [false, "always"],
+    "no-floating-promises": false,
+    "max-classes-per-file": false,
+    "array-type": false,
+    "arrow-parens": false,
+    "deprecation": {
+      "severity": "warn"
+    },
+    "import-blacklist": [true, "rxjs/Rx"],
+    "interface-name": false,
+    "max-line-length": false,
+    "member-access": false,
+    "member-ordering": [
+      true,
+      {
+        "order": ["static-field", "instance-field", "static-method", "instance-method"]
+      }
+    ],
+    "no-string-literal": false,
+    "no-consecutive-blank-lines": false,
+    "no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
+    "no-empty": false,
+    "no-inferrable-types": false,
+    "no-non-null-assertion": true,
+    "no-redundant-jsdoc": true,
+    "no-switch-case-fall-through": true,
+    "no-use-before-declare": true,
+    "no-var-requires": false,
+    "object-literal-key-quotes": [true, "as-needed"],
+    "quotemark": [true, "single"],
+    "trailing-comma": false,
+    "no-output-on-prefix": true,
+    "use-input-property-decorator": true,
+    "use-output-property-decorator": true,
+    "use-host-property-decorator": false,
+    "no-input-rename": false,
+    "no-output-rename": false,
+    "use-life-cycle-interface": true,
+    "use-pipe-transform-interface": true,
+    "component-class-suffix": false,
+    "directive-class-suffix": false,
+    "directive-selector": false,
+    "component-selector": false,
+    "curly": false,
+    "ban-types": false,
+    "no-bitwise": false,
+    "interface-over-type-literal": false
+  }
+}
