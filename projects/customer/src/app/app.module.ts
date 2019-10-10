@@ -14,9 +14,19 @@ import { Store } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
 
 import { CustomerListComponent } from './pages/customer-list/customer-list.component'
+import { CustomerViewComponent } from './pages/customer-view/customer-view.component'
+import { CustomerGroupComponent } from './pages/customer-group/customer-group.component'
+import { CustomerTagComponent } from './pages/customer-tag/customer-tag.component'
+import { CustomerSelectComponent } from './pages/customer-select/customer-select.component'
 
 // 页面列表
-const PAGES = [CustomerListComponent]
+const PAGES = [
+  CustomerListComponent,
+  CustomerViewComponent,
+  CustomerGroupComponent,
+  CustomerTagComponent,
+  CustomerSelectComponent
+]
 // 组件列表
 const COMPONENTS = []
 
@@ -36,7 +46,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, CustomerListComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule],
   providers,

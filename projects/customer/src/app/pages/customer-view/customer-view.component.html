@@ -1,0 +1,58 @@
+<page-header title="客户视图" [breadcrumb]="breadcrumb">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb separator="/">
+      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>客户视图</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+</page-header>
+
+<ql-card>
+  <div ql-row>
+    <div ql-col span="24">
+      <ql-card header="动态监控">
+        <data-form
+          [showReset]="false"
+          [action]="action"
+          [submitText]="'刷新'"
+          [formGroup]="formGroup"
+          (submit)="onRefresh()"
+        >
+          <ql-form-item label="所属机构">
+            <ql-input formControlName="name"></ql-input>
+          </ql-form-item>
+          <ql-form-item label="客户等级">
+            <ql-input formControlName="name"></ql-input>
+          </ql-form-item>
+          <ql-form-item label="AUM等级">
+            <ql-input formControlName="name"></ql-input>
+          </ql-form-item>
+          <ql-form-item label="客户编号">
+            <ql-input formControlName="name"></ql-input>
+          </ql-form-item>
+          <ng-template #action>
+            <ql-button type="primary" (click)="onExportExcel()">导出</ql-button>
+          </ng-template>
+        </data-form>
+
+        <data-table [model]="customerList">
+          <ql-table-column model-key="code" label="客户号"> </ql-table-column>
+          <ql-table-column model-key="name" label="客户姓名"> </ql-table-column>
+          <ql-table-column model-key="sex" label="性别"> </ql-table-column>
+          <ql-table-column model-key="age" label="年龄"> </ql-table-column>
+          <ql-table-column model-key="manager" label="客户经理"> </ql-table-column>
+          <ql-table-column model-key="dayAUM" label="日均AUM"> </ql-table-column>
+          <ql-table-column model-key="nowAUM" label="当前AUM"> </ql-table-column>
+          <ql-table-column model-key="content" label="客户动态" width="200" class="ql-text-left"> </ql-table-column>
+          <ql-table-column label="操作" width="150">
+            <ng-template #slot let-scope="scope">
+              <ql-button type="text">关注</ql-button>
+              <ql-button type="text">提醒</ql-button>
+              <ql-button type="text">活动</ql-button>
+            </ng-template>
+          </ql-table-column>
+        </data-table>
+      </ql-card>
+    </div>
+  </div>
+</ql-card>

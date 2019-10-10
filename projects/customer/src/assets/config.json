@@ -10,6 +10,22 @@
     {
       "name": "我的客户",
       "url": "#/customer/customer-list"
+    },
+    {
+      "name": "客户视图",
+      "url": "#/customer/customer-view"
+    },
+    {
+      "name": "客户分配",
+      "url": "#/customer/customer-group"
+    },
+    {
+      "name": "客户标签",
+      "url": "#/customer/customer-tag"
+    },
+    {
+      "name": "客户申领",
+      "url": "#/customer/customer-select"
     }
   ]
 }
