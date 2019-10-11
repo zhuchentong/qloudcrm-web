@@ -13,14 +13,28 @@ import config from '../assets/config.json'
 import { Store } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
 
-import { CustomerListComponent } from './pages/customer-list/customer-list.component';
-import { SearchComponent } from './pages/search/search.component';
-import { CustomerDetailComponent } from './pages/customer-detail/customer-detail.component';
+
+import { CustomerListComponent } from './pages/customer-list/customer-list.component'
+import { CustomerViewComponent } from './pages/customer-view/customer-view.component'
+import { CustomerGroupComponent } from './pages/customer-group/customer-group.component'
+import { CustomerTagComponent } from './pages/customer-tag/customer-tag.component'
+import { CustomerSelectComponent } from './pages/customer-select/customer-select.component'
 import { CustomerLevelComponent } from './pages/customer-level/customer-level.component';
 import { CustomerAssetsComponent } from './pages/customer-assets/customer-assets.component'
+import { SearchComponent } from './pages/search/search.component'
+import { CustomerDetailComponent } from './pages/customer-detail/customer-detail.component'
 
 // 页面列表
-const PAGES = [CustomerListComponent, CustomerLevelComponent, CustomerAssetsComponent]
+const PAGES = [
+  CustomerListComponent,
+  CustomerViewComponent,
+  CustomerGroupComponent,
+  CustomerTagComponent,
+  CustomerLevelComponent,
+  CustomerAssetsComponent,
+  CustomerSelectComponent
+]
+
 // 组件列表
 const COMPONENTS = [SearchComponent, CustomerDetailComponent]
 
@@ -40,7 +54,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, CustomerListComponent, SearchComponent, CustomerDetailComponent, CustomerLevelComponent, CustomerAssetsComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule],
   providers,

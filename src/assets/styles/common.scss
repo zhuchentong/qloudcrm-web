@@ -50,8 +50,19 @@ $margin-value: 12px;
   margin-bottom: $margin-value;
 }
 
+// ql-align
+.ql-text-left {
+  text-align: left;
+}
+.ql-text-right {
+  text-align: right;
+}
+.ql-text-center {
+  text-align: center;
+}
+
 // width
-$width-percent: 100 75 50 25;
+$width-percent: 100 90 80 70 60 50 40 30 20 10;
 @for $i from 1 through length($width-percent) {
   .width-per-#{nth($width-percent, $i)} {
     width: percentage(nth($width-percent, $i) / 1);
