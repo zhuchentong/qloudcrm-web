@@ -1,10 +1,13 @@
-<page-header title="客户等级变动" [breadcrumb]="breadcrumb" [back]="true">
+<page-header title="客户等级变动" [breadcrumb]="breadcrumb" [action]="action" [action-group]="false" [back]="true">
   <ng-template #breadcrumb>
     <ql-breadcrumb>
       <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item to="/customer/customer-list">我的客户</ql-breadcrumb-item>
       <ql-breadcrumb-item>客户等级变动</ql-breadcrumb-item>
     </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action class="ql-text-right">
+    <ql-button type="primary" [routerLink]="['/customer/customer-level']">客户等级变动</ql-button>
+    <ql-button type="primary" [routerLink]="['/customer/customer-assets']">客户资产变动</ql-button>
   </ng-template>
 </page-header>
 
@@ -28,6 +31,7 @@
       <ql-table-column model-key="ctordinary" [render-html]="true" label="普通客户"></ql-table-column>
     </ql-table>
   </div>
+
   <data-table [model]="customerlevels" [selection]="true" [action]="action">
     <ng-template #action>
       <ql-button size="small" type="primary">拨打电话</ql-button>

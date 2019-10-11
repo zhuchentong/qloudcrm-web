@@ -1,12 +1,64 @@
-<page-header title="" [breadcrumb]="breadcrumb" [action]="action" [action-group]="false">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>客户资产</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
-  <ng-template #action>
-    <ql-button [routerLink]="['/customer/customer-level']">客户等级变动</ql-button>
-    <ql-button [routerLink]="['/customer/customer-assets']">客户资产变动</ql-button>
-  </ng-template>
+<page-header title="客户资产变动" [breadcrumb]="breadcrumb" [action]="action" [action-group]="false" [back]="true">
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>客户资产变动</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+    <ng-template #action class="ql-text-right">
+        <ql-button type="primary" [routerLink]="['/customer/customer-level']">客户等级变动</ql-button>
+        <ql-button type="primary" [routerLink]="['/customer/customer-assets']">客户资产变动</ql-button>
+    </ng-template>
 </page-header>
+
+<ql-card>
+    <div class="ql-margin-bottom">
+        <label>时间段选择</label>
+        <ql-select [clearable]="true ">
+            <ql-option *ngFor="let item of seltimes" [label]="item.label " [value]="item.value ">
+            </ql-option>
+        </ql-select>
+    </div>
+    <div class="row ql-margin-bottom">
+        <div class="fontweight" ql-col [span]="6">资产余额变动客户</div>
+        <div class="fontweight" ql-col [span]="6">存款余额变动客户</div>
+        <div class="fontweight" ql-col [span]="6">投资理财余额变动客户</div>
+        <div class="fontweight" ql-col [span]="6">贷款客户</div>
+        <div ql-col [span]="6">13</div>
+        <div ql-col [span]="6">128</div>
+        <div ql-col [span]="6">32</div>
+        <div ql-col [span]="6">9</div>
+        <div class="fontweight" ql-col [span]="6">客户资产余额（万）</div>
+        <div class="fontweight" ql-col [span]="6">存款余额（万）</div>
+        <div class="fontweight" ql-col [span]="6">投资理财余额（万）</div>
+        <div class="fontweight" ql-col [span]="6">贷款余额（万）</div>
+        <div ql-col [span]="6">80</div>
+        <div ql-col [span]="6">500</div>
+        <div ql-col [span]="6">50</div>
+        <div ql-col [span]="6">459</div>
+    </div>
+    <data-table [model]="dataassets">
+        <ql-table-column label="选择" width="60">
+            <ng-template #slot let-scope="scope">
+                <ql-checkbox [model]="val"></ql-checkbox>
+            </ng-template>
+        </ql-table-column>
+        <ql-table-column model-key="code" label="客户号"> </ql-table-column>
+        <ql-table-column model-key="name" label="姓名"> </ql-table-column>
+        <ql-table-column model-key="level" label="等级"> </ql-table-column>
+        <ql-table-column model-key="sex" label="性别"> </ql-table-column>
+        <ql-table-column model-key="age" label="年龄"> </ql-table-column>
+        <ql-table-column model-key="tel" label="电话"> </ql-table-column>
+        <ql-table-column model-key="aum" label="AUM"> </ql-table-column>
+        <ql-table-column model-key="saveye" label="存款余额"> </ql-table-column>
+        <ql-table-column model-key="savebd" label="上日存款变动" width="110"> </ql-table-column>
+        <ql-table-column model-key="cpnum" label="持有产品数" width="105"> </ql-table-column>
+        <ql-table-column model-key="interaTime" label="互动时间"> </ql-table-column>
+        <ql-table-column model-key="moneyflows" label="最近资金渠道流向" width="150"> </ql-table-column>
+    </data-table>
+    <div class="btncss">
+        <ql-button size="small" type="primary">拨打电话</ql-button>
+        <ql-button size="small" type="success">发送短信</ql-button>
+        <ql-button size="small" type="info">发现邮件</ql-button>
+    </div>
+</ql-card>

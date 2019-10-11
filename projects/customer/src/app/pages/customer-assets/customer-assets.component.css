@@ -1,0 +1,23 @@
+.row {
+    border: 1px solid gainsboro;
+}
+
+.row>div {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid gainsboro;
+}
+
+.fontweight {
+    font-weight: 700;
+}
+
+.btncss {
+    margin-top: 3%;
+    text-align: center;
+}
+
+.btncss>ql-button {
+    margin-right: 2%;
+}
