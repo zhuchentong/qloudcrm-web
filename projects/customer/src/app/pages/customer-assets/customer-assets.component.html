@@ -1,12 +1,12 @@
 <page-header title="" [breadcrumb]="breadcrumb" [action]="action" [action-group]="false">
-    <ng-template #breadcrumb>
-        <ql-breadcrumb>
-            <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-            <ql-breadcrumb-item>客户资产</ql-breadcrumb-item>
-        </ql-breadcrumb>
-    </ng-template>
-    <ng-template #action>
-        <ql-button [routerLink]="['/customer/customer-level']">客户等级变动</ql-button>
-        <ql-button [routerLink]="['/customer/customer-assets']">客户资产变动</ql-button>
-    </ng-template>
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>客户资产</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action>
+    <ql-button [routerLink]="['/customer/customer-level']">客户等级变动</ql-button>
+    <ql-button [routerLink]="['/customer/customer-assets']">客户资产变动</ql-button>
+  </ng-template>
 </page-header>
