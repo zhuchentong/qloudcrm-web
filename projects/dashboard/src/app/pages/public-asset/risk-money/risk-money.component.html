@@ -1,0 +1,8 @@
+
+  <a class="dashboard-stat bg-danger1" >
+    <span class="number1">$ {{circlechartData1}}</span>
+    <span class="name1">产品风险准备金</span>
+    <div echarts [options]="circlechartOption1[0]"  [merge]="circlechartOption1[1]" [loading]="loading" class="demo-circle-chart"></div>
+    <!--<div echarts [options]="circlechartOption1" (chartInit)="onChartInit2($event)" [loading]="loading2" class="demo-circle-chart"></div>-->
+    <!--<span class="bg-icon"><i class="fa fa-ticket"></i></span>-->
+  </a>

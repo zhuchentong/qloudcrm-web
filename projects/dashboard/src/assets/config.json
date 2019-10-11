@@ -1,6 +1,6 @@
 {
   "default": "true",
-  "pluginName": "仪表盘",
+  "pluginName": "首页",
   "pluginIcon": "",
   "pluginAbbr": "UI",
   "pluginImg": "/assets/images/svg/profile.svg",
@@ -8,8 +8,12 @@
   "pluginOrder": 1,
   "pluginTab": [
     {
-      "name": "仪表盘",
+      "name": "首页",
       "url": "#/dashboard"
+    },
+    {
+      "name": "首页设计器",
+      "url": "#/dashboard/design"
     }
   ]
 }

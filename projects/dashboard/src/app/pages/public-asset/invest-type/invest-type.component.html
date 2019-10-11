@@ -1,0 +1,10 @@
+<div class="panel border-primary no-border border-3-top" data-panel-control style="margin-top: -20px;">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <h5>&nbsp;&nbsp;&nbsp;投资资产类型收益变化</h5>
+    </div>
+  </div>
+  <div class="panel-body" style="margin-top: 60px">
+    <div echarts [options]="linechartOption[0]" [merge]="linechartOption[1]"   [ngStyle]="{height: hdata7 == 'NaNpx' ? '400px' : hdata7}"  [loading]="loading"></div>
+  </div>
+</div>
