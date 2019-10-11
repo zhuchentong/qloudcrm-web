@@ -15,7 +15,7 @@ export class DataTableComponent implements OnInit {
   @Input() public height: number
   @Input() public page: PageService
   @Input() public selection: boolean
-  @Input() public action: TemplateRef<void>;
+  @Input() public action: TemplateRef<void>
   @Output('page-change') public pageChangeEvent: EventEmitter<any> = new EventEmitter()
   @ViewChild('table', { static: true }) public table: QlTable
 
