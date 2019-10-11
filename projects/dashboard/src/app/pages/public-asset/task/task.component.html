@@ -1,0 +1,87 @@
+<section class="section pt-n">
+  <div class="container-fluid">
+        <!--<div class="panel border-primary no-border border-3-top" data-panel-control style="height:673px;width: 400px">-->
+        <div class="panel border-primary no-border border-3-top" data-panel-control id="task">
+
+        <div class="panel-heading">
+            <div class="panel-title">
+              <h5>待办事项</h5>
+            </div>
+          </div>
+          <div class="panel-body" style="margin-top: 20px">
+            <div class="widget-body">
+              <div class="widget-main no-padding">
+                <div class="task-container" >
+                  <div class="task-search">
+                      <span class="input-icon">
+                          <input type="text" class="form-control" placeholder="搜索">
+                          <i class="fa fa-search gray"></i>
+                      </span>
+                  </div>
+                  <ul class="tasks-list">
+                    <li class="task-item"  *ngFor="let item of tasks">
+                      <div class="task-check">
+                        <label>
+                          <input type="checkbox">
+                          <span class="text"></span>
+                        </label>
+                      </div>
+                      <div class="task-state">
+                        <span class="label label-yellow">
+                          {{ item.state }}
+                        </span>
+                      </div>
+                      <div class="task-time">{{ item.time }}</div>
+                      <div class="task-body">{{ item.content }}</div>
+                      <div class="task-creator"><a href="">{{ item.author }}</a></div>
+                      <div class="task-assignedto">{{ item.process }}</div>
+                    </li>
+                    <!--<li class="task-item">-->
+                      <!--<div class="task-check">-->
+                        <!--<label>-->
+                          <!--<input type="checkbox">-->
+                          <!--<span class="text"></span>-->
+                        <!--</label>-->
+                      <!--</div>-->
+                      <!--<div class="task-state">-->
+                                                        <!--<span class="label label-orange">-->
+                                                            <!--激活-->
+                                                        <!--</span>-->
+                      <!--</div>-->
+                      <!--<div class="task-time">2小时前</div>-->
+                      <!--<div class="task-body">查看邮件，处理相关事务</div>-->
+                      <!--<div class="task-creator"><a href="">李响</a></div>-->
+                      <!--<div class="task-assignedto">已分配</div>-->
+                    <!--</li>-->
+                    <!--<li class="task-item">-->
+                      <!--<div class="task-check">-->
+                        <!--<label>-->
+                          <!--<input type="checkbox">-->
+                          <!--<span class="text"></span>-->
+                        <!--</label>-->
+                      <!--</div>-->
+                      <!--<div class="task-state">-->
+                                                        <!--<span class="label label-palegreen">-->
+                                                            <!--已完成-->
+                                                        <!--</span>-->
+                      <!--</div>-->
+                      <!--<div class="task-time">昨天</div>-->
+                      <!--<div class="task-body">上午10点在大会议室开会</div>-->
+                      <!--<div class="task-creator"><a href="">李星</a></div>-->
+                      <!--<div class="task-assignedto">已分配</div>-->
+                    <!--</li>-->
+                  </ul>
+                </div>
+              </div><!--Widget Main Container-->
+            </div><!--Widget Body-->
+
+          </div>
+        </div>
+        <!-- /.panel -->
+      <!-- /.col-md-6 -->
+
+      <!-- /.col-md-6 -->
+    </div>
+    <!-- /.row -->
+  <!-- /.container-fluid -->
+</section>

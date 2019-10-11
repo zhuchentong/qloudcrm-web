@@ -1,3 +1,120 @@
-<div ql-col span="24">
-  <ql-card class="ql-margin"> </ql-card>
+<div id="fullscreen" style="position:relative;padding-top:35px;background: white;" >
+  <em class="fa fa-compress hand " style="position: absolute;right: 0px;top: 1px; font-size: 20px;margin-top: 20px;z-index: 10;padding-right: 10px" (click)="zoomItem()"   (touchstart)="zoomItem()"  title="缩小"></em>
+  <!--<em class="fa fa-arrow-circle-left hand z-index" style="position: absolute;left: 0px;top: 50%; font-size:30px; z-index:99999999;" (click)="upWard()"  (touchstart)="upWard()"  title="向上"></em>-->
+  <!--<em class="fa fa-arrow-circle-right hand z-index" style="position: absolute;right: 0px;top: 50%; font-size:30px; z-index:99999999;"  (click)="down()"  (touchstart)="down()"  title="向下"></em>-->
+  <div [ngSwitch]="fullscreenIndex">
+
+    <div   *ngSwitchCase="'app_view1'" >
+      <!--<div echarts [options]="echartsOption1"  id="fullscreenEcharts" style="height: 600px;"></div>-->
+       <app-asset-proportion></app-asset-proportion>
+    </div>
+
+    <div   *ngSwitchCase="'app_view2'" >
+      <!--<div echarts [options]="echartsOption2"  id="fullscreenEcharts" style="height: 600px;"></div>-->
+      <app-risk-money></app-risk-money>
+    </div>
+
+    <div   *ngSwitchCase="'app_view3'" >
+      <app-risk-evaluation-rate></app-risk-evaluation-rate>
+    </div>
+
+    <div   *ngSwitchCase="'app_view4'" >
+      <app-leverage-ratio></app-leverage-ratio>
+    </div>
+
+    <div   *ngSwitchCase="'app_view5'" >
+      <app-industry-concentrate></app-industry-concentrate>
+    </div>
+    <div   *ngSwitchCase="'app_view6'" >
+      <app-reserve-money ></app-reserve-money>
+    </div>
+
+    <div   *ngSwitchCase="'app_view7'" >
+      <app-invest-type></app-invest-type>
+    </div>
+
+    <div   *ngSwitchCase="'app_view8'" >
+      <app-profit-type></app-profit-type>
+    </div>
+
+    <div   *ngSwitchCase="'app_view9'" >
+      <app-task  [hdata9]='heightData91' [wdata9]='widthData91'></app-task>
+    </div>
+    <div   *ngSwitchCase="'app_view10'" >
+      <app-calendar [hdata10]='heightData101' [wdata10]='widthData101'></app-calendar>
+    </div>
+  </div>
 </div>
+
+<gridster [options]="options" id="gridster">
+  <gridster-item [item]="item" *ngFor="let item of dashboard;let i =index;" >
+    <!-- your content here -->
+    <div>
+      <div class="fs-md" >
+        <label class="item-label gridster-item-content" ></label>
+        <div style="position:absolute;top: 0px;right:0px;z-index: 10;">
+
+          <!--<div class="float-right pr-10 hand gridster-item-content" style="cursor: pointer;padding-right: 10px;padding-bottom: 13px;margin-top: 26px" (click)="zoomItem($event, item)"-->
+               <!--(touchstart)="zoomItem($event, item)" mdTooltip="Remove" title="放大" *ngIf="item.maxenable == 1">-->
+            <!--<em class="fa fa-expand" title="放大" style="font-size: 0.9rem;"></em>-->
+          <!--</div>-->
+
+
+
+          <!--<div  class="float-right pr-10 hand gridster-item-content" style="cursor: pointer;padding-right: 10px;" (click)="removeItem($event, item)"-->
+          <!--(touchstart)="removeItem($event, item)" mdTooltip="Remove">-->
+          <!--<em class="anticon anticon-close" title="删除"></em>-->
+          <!--</div>-->
+
+
+          <!--<div  class="float-right pr-10 hand" style="cursor: pointer;padding-right: 10px;" >-->
+          <!--<em class="fa fa-arrows" title="拖拽"></em>-->
+          <!--</div>-->
+        </div>
+
+        <div [ngSwitch]="item.id"  class="gridster-item-content" >
+
+          <div   *ngSwitchCase="'app_view1'">
+            <app-asset-proportion></app-asset-proportion>
+          </div>
+
+          <div   *ngSwitchCase="'app_view2'" >
+            <app-risk-money></app-risk-money>
+          </div>
+
+          <div   *ngSwitchCase="'app_view3'" >
+            <app-risk-evaluation-rate></app-risk-evaluation-rate>
+          </div>
+
+          <div   *ngSwitchCase="'app_view4'" >
+            <app-leverage-ratio ></app-leverage-ratio>
+          </div>
+
+          <div   *ngSwitchCase="'app_view5'" >
+            <app-industry-concentrate  [hdata5]='data5'></app-industry-concentrate>
+          </div>
+
+          <div   *ngSwitchCase="'app_view6'" >
+            <app-reserve-money [hdata6]='data6'></app-reserve-money>
+          </div>
+
+          <div   *ngSwitchCase="'app_view7'" >
+            <app-invest-type [hdata7]='data7'></app-invest-type>
+          </div>
+
+          <div  *ngSwitchCase="'app_view8'">
+            <app-profit-type [hdata8]='data8'></app-profit-type>
+          </div>
+
+          <div  *ngSwitchCase="'app_view9'">
+            <app-task [hdata9]='heightData9' [wdata9]='widthData9'></app-task>
+          </div>
+          <div  *ngSwitchCase="'app_view10'">
+            <app-calendar [hdata10]='heightData10' [wdata10]='widthData10'></app-calendar>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </gridster-item>
+</gridster>
