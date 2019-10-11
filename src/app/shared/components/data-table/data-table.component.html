@@ -1,6 +1,19 @@
+<div class="ql-padding row" *ngIf="action">
+  <ng-container *ngIf="false; else action"></ng-container>
+</div>
 <ql-table #table [height]="height" [stripe]="true" [border]="true" [model]="model" [scroll-x]="true" center="all">
+  <ng-container *ngIf="!selection; else selectionColumn"></ng-container>
   <ng-content></ng-content>
 </ql-table>
+
+<ng-template #selectionColumn>
+  <ql-table-column model-key="__selection__" label="选择" width="60">
+    <ng-template #slot let-scope="scope">
+      <ql-checkbox></ql-checkbox>
+    </ng-template>
+  </ql-table-column>
+</ng-template>
+
 <ql-pagination
   *ngIf="page"
   (modelChange)="onPageChange($event)"

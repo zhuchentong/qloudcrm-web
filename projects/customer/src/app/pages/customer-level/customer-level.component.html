@@ -28,28 +28,23 @@
       <ql-table-column model-key="ctordinary" [render-html]="true" label="普通客户"></ql-table-column>
     </ql-table>
   </div>
-  <ql-table [model]="customerlevels" [border]="true" [stripe]="true">
-    <ql-table-column label="选择" width="60">
-      <ng-template #slot let-scope="scope">
-        <ql-checkbox></ql-checkbox>
-      </ng-template>
-    </ql-table-column>
-    <ql-table-column model-key="code" [render-html]="true" label="客户号" width="80"></ql-table-column>
-    <ql-table-column model-key="name" [render-html]="true" label="姓名" width="70"></ql-table-column>
-    <ql-table-column model-key="nowlevel" [render-html]="true" label="目前等级"></ql-table-column>
-    <ql-table-column model-key="beforelevel" [render-html]="true" label="原等级"></ql-table-column>
-    <ql-table-column model-key="sex" [render-html]="true" label="性别" width="60"></ql-table-column>
-    <ql-table-column model-key="age" [render-html]="true" label="年龄" width="60"></ql-table-column>
-    <ql-table-column model-key="tel" [render-html]="true" label="电话"></ql-table-column>
-    <ql-table-column model-key="aum" [render-html]="true" label="AUM" width="70"></ql-table-column>
-    <ql-table-column model-key="zcye" [render-html]="true" label="资产余额" width="80"></ql-table-column>
-    <ql-table-column model-key="nljbd" [render-html]="true" label="年累计资产变动"></ql-table-column>
-    <ql-table-column model-key="cpsl" [render-html]="true" label="持产品数" width="85"></ql-table-column>
-    <ql-table-column model-key="khsj" [render-html]="true" label="开户时间" width="95"></ql-table-column>
-  </ql-table>
-  <div class="btncss">
-    <ql-button size="small" type="primary">拨打电话</ql-button>
-    <ql-button size="small" type="success">发送短信</ql-button>
-    <ql-button size="small" type="info">发现邮件</ql-button>
-  </div>
+  <data-table [model]="customerlevels" [selection]="true" [action]="action">
+    <ng-template #action>
+      <ql-button size="small" type="primary">拨打电话</ql-button>
+      <ql-button size="small" type="success">发送短信</ql-button>
+      <ql-button size="small" type="info">发现邮件</ql-button>
+    </ng-template>
+    <ql-table-column model-key="code" label="客户号"></ql-table-column>
+    <ql-table-column model-key="name" label="姓名"></ql-table-column>
+    <ql-table-column model-key="nowlevel" label="目前等级"></ql-table-column>
+    <ql-table-column model-key="beforelevel" label="原等级"></ql-table-column>
+    <ql-table-column model-key="sex" label="性别"></ql-table-column>
+    <ql-table-column model-key="age" label="年龄"></ql-table-column>
+    <ql-table-column model-key="tel" label="电话"></ql-table-column>
+    <ql-table-column model-key="aum" label="AUM"></ql-table-column>
+    <ql-table-column model-key="zcye" label="资产余额"></ql-table-column>
+    <ql-table-column model-key="nljbd" label="年累计资产变动"></ql-table-column>
+    <ql-table-column model-key="cpsl" label="持产品数"></ql-table-column>
+    <ql-table-column model-key="khsj" label="开户时间"></ql-table-column>
+  </data-table>
 </ql-card>
