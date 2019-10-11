@@ -1,0 +1,190 @@
+<div>
+
+    <!-- 客户详情弹框 -->
+    <div class="box-card" #card>
+        <ql-dialog [title]="'客户信息'" [(visible)]="flagshow" width="900px">
+            <ql-menu [model]="0" (modelChange)="handle($event)" class="ql-menu-demo" mode="horizontal" background-color="#566a89" active-text-color="#ffd04b" text-color="#fff">
+                <ql-menu-item index="1">客户信息</ql-menu-item>
+                <ql-menu-item index="2">客户资产</ql-menu-item>
+                <ql-menu-item index="3">客户联络</ql-menu-item>
+                <ql-menu-item index="4">客户持有产品</ql-menu-item>
+            </ql-menu>
+            <div *ngIf="changeFlag == '1'">
+                <div class="row wrapinfo">
+                    <div ql-col [span]="4">
+                        <img class="imgcss" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2882133088,2696092300&fm=26&gp=0.jpg" alt="">
+                    </div>
+                    <div class="rightcss" ql-col [span]="20">
+                        <h5>张三(30岁)</h5>
+                        <p>
+                            <ql-tag class="mr-3" type="primary">旅游达人</ql-tag>
+                            <ql-tag class="mr-3" type="success">理财小白</ql-tag>
+                            <ql-tag class="mr-3" type="warning">有房一族</ql-tag>
+                            <ql-tag class="mr-3" type="danger">教育培训</ql-tag>
+                        </p>
+                        <div class="rightcss" ql-col [span]="7">
+                            <span>客户经理:</span>
+                            <span>孟萍</span>
+                        </div>
+                        <div class="rightcss" ql-col [span]="7">
+                            <span>金卡客户</span></div>
+                        <div class="rightcss" ql-col [span]="10">
+                            <span>三年客单</span>
+                        </div>
+                        <div class="rightcss" ql-col [span]="7">
+                            <span>出生日期:</span>
+                            <span>1989-06-20</span>
+                        </div>
+                        <div class="rightcss" ql-col [span]="7">
+                            <span>星座:</span>
+                            <span>巨蟹座</span>
+                        </div>
+                        <div class="rightcss" ql-col [span]="10">
+                            <span>已关注</span>
+                        </div>
+                        <div class="rightcss" ql-col [span]="7">
+                            <span>电话:</span>
+                            <span>189-267-77671</span>
+                        </div>
+                        <div class="rightcss" ql-col [span]="7">
+                            <span>微信：</span>
+                            <span>ZStyi124</span>
+                        </div>
+                        <div class="rightcss" ql-col [span]="10">
+                            <span>邮箱：</span>
+                            <span>18926777671@163.com</span>
+                        </div>
+                        <div class="rightcss" ql-col [span]="15">
+                            <p>家庭住址：陕西省西安市莲湖区土门街道234号</p>
+                        </div>
+                        <div ql-col [span]="9"></div>
+                    </div>
+                </div>
+                <div class="row wrapinfotwo">
+                    <div ql-col [span]="12">
+                        <label for="">收入：2.3万(中高)</label>
+                        <ql-progress type="circle" [percentage]="55"></ql-progress>
+                    </div>
+                    <div ql-col [span]="12">
+                        <label for="">支出：1.8万(中高)</label>
+                        <ql-progress type="circle" [percentage]="65"></ql-progress>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="changeFlag == '2'">
+                <div ql-col [span]="24" echarts [options]="options1"></div>
+                <div class="customerassets">
+                    <ql-table [model]="tableDataMore" [border]="true" [stripe]="true">
+                        <ql-table-column model-key="time" label="分类"></ql-table-column>
+                        <ql-table-column>
+                            <ql-table-column model-key="financial" label="理财"></ql-table-column>
+                            <ql-table-column model-key="fund" label="基金"></ql-table-column>
+                            <ql-table-column model-key="bonds" label="国债"></ql-table-column>
+                            <ql-table-column model-key="insurance" label="保险"></ql-table-column>
+                            <ql-table-column model-key="deposit" label="人民币存款"></ql-table-column>
+                            <ql-table-column model-key="housing" label="住房类贷款"></ql-table-column>
+                            <ql-table-column model-key="loans" label="消费类贷款"></ql-table-column>
+                            <ql-table-column model-key="credit" label="信用卡"></ql-table-column>
+                            <ql-table-column model-key="debit" label="借记卡"></ql-table-column>
+                            <ql-table-column model-key="other" label="其他"></ql-table-column>
+                        </ql-table-column>
+                    </ql-table>
+                </div>
+            </div>
+            <div *ngIf="changeFlag == '3'">
+                <ql-collapse [accordion]="true">
+                    <ql-collapse-item label="来电咨询" value="1">
+                        <p style="text-align: left;"><span class="littlefont">业务:</span><span>电话咨询产品</span></p>
+                        <p style="text-align: left;"><span class="littlefont">时间:</span><span>2019-08-01 10:34:00</span></p>
+                        <p style="text-align: left;"><span class="littlefont">接待员:</span><span>刘萌</span></p>
+                        <p style="text-align: left;"><span class="littlefont">时长:</span><span>4分46秒</span></p>
+                        <p style="text-align: left;"><span class="littlefont">是否代办:</span><span>否</span></p>
+                        <p style="text-align: left;"><span class="littlefont">状态:</span><span>完结</span></p>
+                    </ql-collapse-item>
+                    <ql-collapse-item label="来柜开户" value="2">
+                        <p style="text-align: left;"><span class="littlefont">业务:</span>柜台开基金账户</p>
+                        <p style="text-align: left;"><span class="littlefont">时间:</span>2019-01-01 09:30:00</p>
+                        <p style="text-align: left;"><span class="littlefont">接待员:</span>张晓梅</p>
+                        <p style="text-align: left;"><span class="littlefont">时长:</span>10分27秒</p>
+                        <p style="text-align: left;"><span class="littlefont">是否代办:</span>否</p>
+                        <p style="text-align: left;"><span class="littlefont">状态:</span>完结</p>
+                    </ql-collapse-item>
+                    <ql-collapse-item label="柜台代办" value="3">
+                        <p style="text-align: left;"><span class="littlefont">业务:</span>信托基金转让</p>
+                        <p style="text-align: left;"><span class="littlefont">时间:</span>2018-10-01 11:30:00</p>
+                        <p style="text-align: left;"><span class="littlefont">接待员:</span>陈小凡</p>
+                        <p style="text-align: left;"><span class="littlefont">时长:</span>14分49秒</p>
+                        <p style="text-align: left;"><span class="littlefont">是否代办:</span>是</p>
+                        <p style="text-align: left;"><span class="littlefont">状态:</span>完结</p>
+                    </ql-collapse-item>
+                </ql-collapse>
+            </div>
+            <div *ngIf="changeFlag == '4'">
+                <div class="customerassets">
+                    <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()" [action]="action" style="width: 900px;">
+                        <div ql-col [span]="4">
+                            <ql-form-item label="产品类型">
+                                <ql-select [(model)]="valuetype " [clearable]="true ">
+                                    <ql-option *ngFor="let item of prductType" [label]=" item.label " [value]="item.value">
+                                    </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col [span]="4">
+                            <ql-form-item label="产品代码">
+                                <ql-input></ql-input>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col [span]="4">
+                            <ql-form-item label="产品名称">
+                                <ql-input></ql-input>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col [span]="5">
+                            <ql-form-item label="产品持有金额范围">
+                                <ql-select [(model)]="valuecate" [clearable]="true ">
+                                    <ql-option *ngFor="let item of category" [label]=" item.label " [value]="item.value">
+                                    </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col [span]="5">
+                            <ql-form-item label="产品到期日">
+                                <!-- <ql-date-picker (modelChange)="handle($event)" (clear-click)="clearClickHandle($event)">
+                                </ql-date-picker> -->
+                                <input style="outline: none;
+                                border: none;
+                                border: 1px solid gainsboro;
+                                border-radius: 5px;
+                                height: 30px;" type="date">
+                            </ql-form-item>
+                        </div>
+                    </data-form>
+                    <ql-table [model]="customertabledata" [border]="true" [stripe]="true">
+                        <ql-table-column label="选择" width="50">
+                            <ng-template #slot let-scope="scope">
+                                <ql-checkbox [model]="val"></ql-checkbox>
+                            </ng-template>
+                        </ql-table-column>
+                        <ql-table-column model-key="code" [render-html]="true" label="客户号"></ql-table-column>
+                        <ql-table-column model-key="name" [render-html]="true" label="姓名" width="70"></ql-table-column>
+                        <ql-table-column model-key="level" [render-html]="true" label="客户等级"></ql-table-column>
+                        <ql-table-column model-key="age" [render-html]="true" label="年龄" width="60"></ql-table-column>
+                        <ql-table-column model-key="sex" [render-html]="true" label="性别" width="60"></ql-table-column>
+                        <ql-table-column model-key="tel" [render-html]="true" label="手机号"></ql-table-column>
+                        <ql-table-column model-key="producttype" [render-html]="true" label="产品类型" width="85"></ql-table-column>
+                        <ql-table-column model-key="productcode" [render-html]="true" label="产品代码"></ql-table-column>
+                        <ql-table-column model-key="productown" [render-html]="true" label="持有产品额"></ql-table-column>
+                        <ql-table-column model-key="aum" [render-html]="true" label="AUM" width="80"></ql-table-column>
+                        <ql-table-column model-key="balance" [render-html]="true" label="资产余额" width="85"></ql-table-column>
+                    </ql-table>
+                    <div class="btncss">
+                        <ql-button size="small" type="primary">拨打电话</ql-button>
+                        <ql-button size="small" type="success">发送短信</ql-button>
+                        <ql-button size="small" type="info">发现邮件</ql-button>
+                    </div>
+                </div>
+            </div>
+        </ql-dialog>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+.topquery {
+    margin-bottom: 3%;
+    padding: 1%;
+    border-bottom: 1px solid gainsboro;
+}
+
+.wrapinfo {
+    padding-left: 1%;
+    padding-right: 1%;
+    border-bottom: 1px solid gainsboro;
+    margin-top: 2%;
+}
+
+.wrapinfotwo {
+    padding: 2%;
+    text-align: center;
+    border-bottom: 1px solid gainsboro;
+}
+
+.ql-dialog__body {
+    padding: 5px 20px !important;
+}
+
+.ql-dialog__body {
+    padding: 5px 20px;
+    color: #5a5e66;
+    line-height: 24px;
+    font-size: 14px;
+    color: red !important;
+}
+
+.imgcss {
+    width: 100%;
+    border-radius: 50%
+}
+
+.rightcss {
+    padding: 2%;
+    text-align: left !important;
+}
+
+.littlefont {
+    display: inline-block;
+    color: #357ee2;
+    width: 80px;
+    /* text-align: center; */
+}
+
+.btncss {
+    margin-top: 3%;
+}
+
+.btncss>ql-button {
+    margin-right: 2%;
+}

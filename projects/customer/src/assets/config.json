@@ -1,15 +1,22 @@
 {
-  "default": "true",
-  "pluginName": "客户管理",
-  "pluginIcon": "",
-  "pluginAbbr": "UI",
-  "pluginImg": "/assets/images/svg/profile.svg",
-  "pluginPath": "customer",
-  "pluginOrder": 1,
-  "pluginTab": [
-    {
-      "name": "我的客户",
-      "url": "#/customer/customer-list"
-    }
-  ]
+    "default": "true",
+    "pluginName": "客户管理",
+    "pluginIcon": "",
+    "pluginAbbr": "UI",
+    "pluginImg": "/assets/images/svg/profile.svg",
+    "pluginPath": "customer",
+    "pluginOrder": 1,
+    "pluginTab": [{
+            "name": "我的客户",
+            "url": "#/customer/customer-list"
+        },
+        {
+            "name": "客户等级",
+            "url": "#/customer/customer-level"
+        },
+        {
+            "name": "客户资产",
+            "url": "#/customer/customer-assets"
+        }
+    ]
 }

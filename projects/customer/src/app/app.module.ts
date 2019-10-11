@@ -13,12 +13,16 @@ import config from '../assets/config.json'
 import { Store } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
 
-import { CustomerListComponent } from './pages/customer-list/customer-list.component'
+import { CustomerListComponent } from './pages/customer-list/customer-list.component';
+import { SearchComponent } from './pages/search/search.component';
+import { CustomerDetailComponent } from './pages/customer-detail/customer-detail.component';
+import { CustomerLevelComponent } from './pages/customer-level/customer-level.component';
+import { CustomerAssetsComponent } from './pages/customer-assets/customer-assets.component'
 
 // 页面列表
-const PAGES = [CustomerListComponent]
+const PAGES = [CustomerListComponent, CustomerLevelComponent, CustomerAssetsComponent]
 // 组件列表
-const COMPONENTS = []
+const COMPONENTS = [SearchComponent, CustomerDetailComponent]
 
 const dashboardStartUp = (store: Store) => async () => {
   // 注册菜单
@@ -36,7 +40,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, CustomerListComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, CustomerListComponent, SearchComponent, CustomerDetailComponent, CustomerLevelComponent, CustomerAssetsComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule],
   providers,
