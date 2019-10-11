@@ -1,0 +1,57 @@
+[{
+        "code": "HU784T",
+        "name": "陈美丽",
+        "level": "金卡客户",
+        "sex": "女",
+        "age": "34",
+        "tel": "187637444653",
+        "aum": "0.5万",
+        "saveye": "34万",
+        "savebd": "3%",
+        "cpnum": "3",
+        "interaTime": "2018-08-23",
+        "moneyflows": "贷款"
+    },
+    {
+        "code": "GU78R6",
+        "name": "王尤肖",
+        "level": "白金客户",
+        "sex": "男",
+        "age": "29",
+        "tel": "17637844563",
+        "aum": "0.8万",
+        "saveye": "54万",
+        "savebd": "4%",
+        "cpnum": "2",
+        "interaTime": "2013-12-14",
+        "moneyflows": "投资股票"
+    },
+    {
+        "code": "YUL984",
+        "name": "贾宝前",
+        "level": "普通客户",
+        "sex": "男",
+        "age": "39",
+        "tel": "15656736452",
+        "aum": "0.2万",
+        "saveye": "38万",
+        "savebd": "1%",
+        "cpnum": "1",
+        "interaTime": "2015-12-14",
+        "moneyflows": "基金"
+    },
+    {
+        "code": "RFE872",
+        "name": "白洁",
+        "level": "潜在客户",
+        "sex": "女",
+        "age": "28",
+        "tel": "17536478983",
+        "aum": "0.3万",
+        "saveye": "14万",
+        "savebd": "1%",
+        "cpnum": "1",
+        "interaTime": "2013-05-30",
+        "moneyflows": "债劵"
+    }
+]
