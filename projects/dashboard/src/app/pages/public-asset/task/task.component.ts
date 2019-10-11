@@ -10,7 +10,7 @@ export class TaskComponent implements OnInit {
     @Input()  hdata9: any; // 接收父组件传递的高度值
     @Input()  wdata9: any;
 
-    tasks: Array = [];
+    tasks: Array<Object> = [];
 
     constructor() { }
 

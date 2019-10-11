@@ -10,9 +10,9 @@ export class IndustryConcentrateComponent implements OnInit {
     @Input()  hdata5: any; // 接收父组件charts的高度值
     index ='1';
     tabIndex = '1';
-    oneNews: Array = [];
-    twoNews: Array = [];
-    threeNews: Array = [];
+    oneNews: Array<Object> = [];
+    twoNews: Array<Object> = [];
+    threeNews: Array<Object> = [];
 
     loading = false;
     constructor( private notify: QlNotificationService) {
