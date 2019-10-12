@@ -8,6 +8,8 @@ import customerLevelList from '../../assets/json/customer-level.json'
 import customerAssetsList from '../../assets/json/customer-assets.json'
 import customerTagList from '../../assets/json/customer-tag.json'
 import customerViewData from '../../assets/json/customer-view.json'
+import costomerDetaildkList from '../../assets/json/customer-detaildk.json'
+
 @Injectable()
 export class ApiService {
   constructor(private net: NetService) {}
@@ -45,5 +47,8 @@ export class ApiService {
 
   public getCustomerViewData() {
     return of(customerViewData)
+  }
+  public getcostomerDetaildkList() {
+    return of(costomerDetaildkList)
   }
 }
