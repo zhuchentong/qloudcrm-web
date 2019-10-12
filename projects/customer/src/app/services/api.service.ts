@@ -7,6 +7,7 @@ import customerGroupList from '../../assets/json/customer-group.json'
 import customerLevelList from '../../assets/json/customer-level.json'
 import customerAssetsList from '../../assets/json/customer-assets.json'
 import customerTagList from '../../assets/json/customer-tag.json'
+import customerViewData from '../../assets/json/customer-view.json'
 @Injectable()
 export class ApiService {
   constructor(private net: NetService) {}
@@ -40,5 +41,9 @@ export class ApiService {
 
   public getTagDetail(id) {
     return of(customerTagList.find(x => x.id === id))
+  }
+
+  public getCustomerViewData() {
+    return of(customerViewData)
   }
 }
