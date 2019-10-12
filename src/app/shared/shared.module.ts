@@ -19,7 +19,8 @@ import { LabelContainerComponent } from './components/label-container/label-cont
 import { LabelItemComponent } from './components/label-item/label-item.component'
 import { DictPipe } from './pipes/dict.pipe'
 import { NavigateDirective } from './directives/navigate.directive'
-import {FormBuilderComponent, FormioComponent, FormioModule} from "angular-formio";
+import { FormBuilderComponent, FormioComponent, FormioModule } from 'angular-formio'
+import { DividerComponent } from './components/divider/divider.component'
 
 const COMPONENTS = [
   ModalContainerComponent,
@@ -29,7 +30,8 @@ const COMPONENTS = [
   ModalConfirmComponent,
   ModalPromptComponent,
   LabelContainerComponent,
-  LabelItemComponent
+  LabelItemComponent,
+  DividerComponent
 ]
 const DIRECTIVES = [NavigateDirective]
 const PIPES = [DictPipe]
@@ -45,7 +47,7 @@ const PIPES = [DictPipe]
     FormioModule
   ],
   entryComponents: [...COMPONENTS],
-  declarations: [...COMPONENTS, ...DIRECTIVES, ...PIPES, NavigateDirective],
+  declarations: [...COMPONENTS, ...DIRECTIVES, ...PIPES],
   exports: [
     CommonModule,
     FormsModule,
