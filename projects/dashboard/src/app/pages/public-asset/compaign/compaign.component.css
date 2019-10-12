@@ -1,3 +1,40 @@
+panel-body.dashboard-stat {
+  display: block;
+  padding: 30px 15px;
+  text-align: right;
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 110px;
+}
+.dashboard-stat .number1 {
+  font-size: 30px;
+  display: block;
+}
+.dashboard-stat .name1 {
+  position: relative;
+  top: 13px;
+}
+.bg-primary1 {
+  background-color: #3498db;
+  border-color: #3498db;
+  color: #fff !important;
+}
+.bg-danger1 {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+  color: #fff !important;
+}
+.bg-warning1 {
+  background-color: #f39c12;
+  border-color: #f39c12;
+  color: #fff !important;
+}
+.bg-success1 {
+  background-color: #27ae60;
+  border-color: #27ae60;
+  color: #fff !important;
+}
 
 a {
   outline: none !important;
@@ -100,7 +137,7 @@ ul, ol {
 }
 .task-container .tasks-list .task-item {
   position: relative;
-  //height: 150px;
+  height: 150px;
   border-bottom: 1px solid #e5e5e5;
 }
 .task-container .tasks-list .task-item:hover {
@@ -229,7 +266,7 @@ before, :after {
 
 .task-container .tasks-list .task-item .task-body {
   position: absolute;
-  top: 50px;
+  top: 60px;
   left: 45px;
   padding-right: 25px;
   height: 40px;
@@ -239,7 +276,7 @@ before, :after {
 }
 .task-container .tasks-list .task-item .task-creator {
   position: absolute;
-  top: 80px;
+  top: 115px;
   left: 45px;
 }
 .task-container .tasks-list .task-item .task-creator a {
@@ -253,10 +290,18 @@ a {
 
 .task-container .tasks-list .task-item .task-assignedto {
   position: absolute;
-  top: 80px;
+  top: 115px;
   right: 20px;
   font-size: 13px;
   color: #999;
 }
 
 
+.ql-input-group__prepend{
+  margin-top: 4px;
+  height: 30px;
+  line-height: 25px;
+  font-size: 1.4rem;
+  width: 120px;
+
+}

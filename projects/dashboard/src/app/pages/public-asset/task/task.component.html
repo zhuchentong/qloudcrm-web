@@ -21,13 +21,10 @@
                   <ul class="tasks-list">
                     <li class="task-item"  *ngFor="let item of tasks">
                       <div class="task-check">
-                        <label>
-                          <input type="checkbox">
-                          <span class="text"></span>
-                        </label>
+                        <span class="badge badge-pill badge-dark">{{ item.id }}</span>
                       </div>
                       <div class="task-state">
-                        <span class="label label-yellow">
+                        <span class="label label-yellow" [class.label-yellow]="item.level === 2" [class.label-orange]="item.level === 1" [class.label-palegreen]="item.level === 3">
                           {{ item.state }}
                         </span>
                       </div>

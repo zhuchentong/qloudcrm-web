@@ -10,6 +10,17 @@ export class RiskEvaluationRateComponent implements OnInit {
     loading = false;
     circlechartData2: any;
     circlechartOption2: Array<any> = [{
+      title: {
+        x: '27%',
+        y: '37%',
+        textStyle: {
+          fontWeight: 400,
+          fontSize: 14,
+          color: '#FFFFFF'
+        },
+        // text: '90%'
+        text: ''
+      },
         grid: {
             top: 5,
             bottom: 5,
@@ -63,36 +74,12 @@ export class RiskEvaluationRateComponent implements OnInit {
             }
           ],
           "result": {
-            "11": {
-              "factorCode": "11",
-              "amount": 0.0,
-              "count": 100,
-              "unamount": 0.0,
-              "uncount": 65,
-              "dataDate": "2019-01-28"
-            },
             "12": {
               "factorCode": "12",
               "amount": 0.0,
-              "count": 56,
+              "count": 7000,
               "unamount": 0.0,
-              "uncount": 136,
-              "dataDate": "2019-01-28"
-            },
-            "02": {
-              "factorCode": "02",
-              "amount": 934000.0,
-              "count": 10,
-              "unamount": 630000.0,
-              "uncount": 10,
-              "dataDate": "2019-01-02"
-            },
-            "13": {
-              "factorCode": "13",
-              "amount": 120000.0,
-              "count": 0,
-              "unamount": 180000.0,
-              "uncount": 0,
+              "uncount": 14310,
               "dataDate": "2019-01-28"
             }
           },
@@ -105,18 +92,21 @@ export class RiskEvaluationRateComponent implements OnInit {
         this.loading = true;
         // 客户风险评估率
         this.circlechartOption2[1] = {
+          title: {
+            text: ((res.result['12']['count'] / res.result['12']['uncount']) * 100).toFixed(1) + '%'
+          },
             series: [{
                 data: [
                     {
                         value: res.result['12']['count'],
                     },
                     {
-                        value: res.result['12']['uncount'] + res.result['12']['count'],
+                        value: res.result['12']['uncount'],
                     }
                 ]
             }]
         };
-        this.circlechartData2 = ((res.result['12']['count'] / (res.result['12']['uncount'] + res.result['12']['count'])) * 100).toFixed(2);
+        this.circlechartData2 = res.result['12']['count'];
         this.loading = false;
     }
 

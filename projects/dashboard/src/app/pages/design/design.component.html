@@ -58,7 +58,22 @@
     <div   *ngSwitchCase="'app_view8'" >
       <app-profit-type></app-profit-type>
     </div>
+    <div   *ngSwitchCase="'app_view11'" >
+      <app-compaign></app-compaign>
+    </div>
 
+    <div   *ngSwitchCase="'app_view12'" >
+      <app-campaign-activity></app-campaign-activity>
+    </div>
+    <div   *ngSwitchCase="'app_view13'" >
+      <app-campaign-customer></app-campaign-customer>
+    </div>
+    <div   *ngSwitchCase="'app_view14'" >
+      <app-customer-count></app-customer-count>
+    </div>
+    <div   *ngSwitchCase="'app_view15'" >
+      <app-customer-aum></app-customer-aum>
+    </div>
     <!--<div   *ngSwitchCase="'app_view9'" >-->
       <!--<app-task></app-task>-->
     <!--</div>-->
@@ -135,6 +150,23 @@
           </div>
           <div   *ngSwitchCase="'app_view10'" >
           <app-calendar [hdata10]='heightData10' [wdata10]='widthData10'></app-calendar>
+          </div>
+
+          <div   *ngSwitchCase="'app_view11'" >
+            <app-compaign [hdata6]='data6'></app-compaign>
+          </div>
+
+          <div   *ngSwitchCase="'app_view12'" >
+            <app-campaign-activity></app-campaign-activity>
+          </div>
+          <div   *ngSwitchCase="'app_view13'" >
+            <app-campaign-customer></app-campaign-customer>
+          </div>
+          <div   *ngSwitchCase="'app_view14'" >
+            <app-customer-count></app-customer-count>
+          </div>
+          <div   *ngSwitchCase="'app_view15'" >
+            <app-customer-aum></app-customer-aum>
           </div>
 
         </div>

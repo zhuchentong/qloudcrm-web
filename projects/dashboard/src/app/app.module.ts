@@ -30,6 +30,11 @@ import {PublicAssetComponent} from "./pages/public-asset/public-asset.component"
 import {LeverageRatioComponent} from "./pages/public-asset/leverage-ratio/leverage-ratio.component";
 import {IndustryConcentrateComponent} from "./pages/public-asset/industry-concentrate/industry-concentrate.component";
 import {ReserveMoneyComponent} from "./pages/public-asset/reserve-money/reserve-money.component";
+import {CompaignComponent} from "./pages/public-asset/compaign/compaign.component";
+import {CampaignActivityComponent} from "./pages/public-asset/campaign-activity/campaign-activity.component";
+import {CampaignCustomerComponent} from "./pages/public-asset/campaign-customer/campaign-customer.component";
+import {CustomerCountComponent} from "./pages/public-asset/customer-count/customer-count.component";
+import {CustomerAumComponent} from "./pages/public-asset/customer-aum/customer-aum.component";
 
 // 页面列表
 const PAGES = [DashboardComponent, DesignComponent]
@@ -44,7 +49,12 @@ const COMPONENTS = [AssetProportionComponent,
   ProfitTypeComponent,
   CalendarComponent,
   PublicAssetComponent,
-  TaskComponent]
+  TaskComponent,
+  CompaignComponent,
+  CampaignActivityComponent,
+  CampaignCustomerComponent,
+  CustomerCountComponent,
+  CustomerAumComponent]
 
 const dashboardStartUp = (store: Store) => async () => {
   // 注册菜单

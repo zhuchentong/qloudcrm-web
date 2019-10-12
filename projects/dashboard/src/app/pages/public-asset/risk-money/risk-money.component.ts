@@ -11,7 +11,7 @@ export class RiskMoneyComponent implements OnInit {
 
     circlechartOption1: Array<any> = [{
         title: {
-            x: '29%',
+            x: '27%',
             y: '37%',
             textStyle: {
                 fontWeight: 400,
@@ -76,37 +76,13 @@ export class RiskMoneyComponent implements OnInit {
             }
           ],
           "result": {
-            "11": {
-              "factorCode": "11",
-              "amount": 0.0,
-              "count": 100,
-              "unamount": 0.0,
-              "uncount": 65,
-              "dataDate": "2019-01-28"
-            },
-            "12": {
-              "factorCode": "12",
-              "amount": 0.0,
-              "count": 56,
-              "unamount": 0.0,
-              "uncount": 136,
-              "dataDate": "2019-01-28"
-            },
             "02": {
               "factorCode": "02",
-              "amount": 934000.0,
+              "amount": 190,
               "count": 10,
-              "unamount": 630000.0,
+              "unamount": 70,
               "uncount": 10,
               "dataDate": "2019-01-02"
-            },
-            "13": {
-              "factorCode": "13",
-              "amount": 120000.0,
-              "count": 0,
-              "unamount": 180000.0,
-              "uncount": 0,
-              "dataDate": "2019-01-28"
             }
           },
           "retStatus": "S"
@@ -119,7 +95,7 @@ export class RiskMoneyComponent implements OnInit {
         // 产品风险准备金
         this.circlechartOption1[1] = {
             title: {
-                text: ((res.result['02']['unamount'] / (res.result['02']['amount'] + res.result['02']['unamount'])) * 100).toFixed(1) + '%'
+                text: ((res.result['02']['unamount'] / res.result['02']['amount']) * 100).toFixed(1) + '%'
             },
             series: [{
                 data: [
@@ -127,12 +103,12 @@ export class RiskMoneyComponent implements OnInit {
                         value: res.result['02']['unamount'],
                     },
                     {
-                        value: res.result['02']['unamount'] + res.result['02']['amount'],
+                        value: res.result['02']['amount'],
                     }
                 ]
             }]
         };
-        this.circlechartData1 = res.result['02']['unamount'];
+        this.circlechartData1 = res.result['02']['amount'] - res.result['02']['unamount'];
         this.loading = false;
 
     }

@@ -9,16 +9,17 @@ export class AssetProportionComponent implements OnInit {
 
     circlechartOption: Array<any> = [
         {
-        // title: {
-        //   x: '29%',
-        //   y: '37%',
-        //   textStyle: {
-        //     fontWeight: 400,
-        //     fontSize: 14,
-        //     color: '#FFFFFF'
-        //   },
-        //   text: '65%'
-        // },
+          title: {
+            x: '27%',
+            y: '37%',
+            textStyle: {
+              fontWeight: 400,
+              fontSize: 14,
+              color: '#FFFFFF'
+            },
+            // text: '90%'
+            text: ''
+          },
         grid: {
             top: 5,
             bottom: 5,
@@ -79,31 +80,7 @@ export class AssetProportionComponent implements OnInit {
               "amount": 0.0,
               "count": 100,
               "unamount": 0.0,
-              "uncount": 65,
-              "dataDate": "2019-01-28"
-            },
-            "12": {
-              "factorCode": "12",
-              "amount": 0.0,
-              "count": 56,
-              "unamount": 0.0,
-              "uncount": 136,
-              "dataDate": "2019-01-28"
-            },
-            "02": {
-              "factorCode": "02",
-              "amount": 934000.0,
-              "count": 10,
-              "unamount": 630000.0,
               "uncount": 10,
-              "dataDate": "2019-01-02"
-            },
-            "13": {
-              "factorCode": "13",
-              "amount": 120000.0,
-              "count": 0,
-              "unamount": 180000.0,
-              "uncount": 0,
               "dataDate": "2019-01-28"
             }
           },
@@ -125,18 +102,21 @@ export class AssetProportionComponent implements OnInit {
         const areachartData = [];
         // 非标资管占比
         this.circlechartOption[1] = {
+          title: {
+            text: ((res.result['11']['uncount'] / res.result['11']['count']) * 100).toFixed(1) + '%'
+          },
             series: [{
                 data: [
                     {
                         value: res.result['11']['uncount'],
                     },
                     {
-                        value: res.result['11']['uncount'] + res.result['11']['count'],
+                        value: res.result['11']['count'],
                     }
                 ]
             }]
         };
-        this.circlechartData = res.result['11']['uncount'] / (res.result['11']['uncount'] + res.result['11']['count']) * 100;
+        this.circlechartData = res.result['11']['uncount'];
         this.loading = false;
     }
 

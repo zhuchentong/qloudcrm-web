@@ -26,7 +26,7 @@ export class DesignComponent implements OnInit {
     ComponentList = [
       {
         "value": "app_view1",
-        "label": "非标资管占比",
+        "label": "本月新增客户",
         "code": "layoutCompType"
       },
       {
@@ -36,27 +36,27 @@ export class DesignComponent implements OnInit {
       },
       {
         "value": "app_view2",
-        "label": "产品风险准备金",
+        "label": "绩效完成情况",
         "code": "layoutCompType"
       },
       {
         "value": "app_view3",
-        "label": "客户风险评估率",
+        "label": "经营指标完成情况",
         "code": "layoutCompType"
       },
       {
         "value": "app_view4",
-        "label": "理财产品杠杆比率",
+        "label": "营销活动完成情况",
         "code": "layoutCompType"
       },
       {
         "value": "app_view5",
-        "label": "理财资金流向行业",
+        "label": "资讯",
         "code": "layoutCompType"
       },
       {
         "value": "app_view6",
-        "label": "全面风险管理资本计提",
+        "label": "客户概览",
         "code": "layoutCompType"
       },
       {
@@ -72,6 +72,32 @@ export class DesignComponent implements OnInit {
       {
         "value": "app_view9",
         "label": "待办事项",
+        "code": "layoutCompType"
+      },
+      {
+        "value": "app_view11",
+        "label": "营销概览",
+        "code": "layoutCompType"
+      }
+      ,
+      {
+        "value": "app_view12",
+        "label": "正在执行营销活动数",
+        "code": "layoutCompType"
+      },
+      {
+        "value": "app_view13",
+        "label": "营销活动覆盖客户数",
+        "code": "layoutCompType"
+      },
+      {
+        "value": "app_view14",
+        "label": "总客户数",
+        "code": "layoutCompType"
+      },
+      {
+        "value": "app_view15",
+        "label": "客户户均AUM",
         "code": "layoutCompType"
       }
     ];
@@ -142,7 +168,7 @@ export class DesignComponent implements OnInit {
     }
     /*编辑*/
     edit(param) {
-
+      console.log(JSON.stringify(param));
       sessionStorage.setItem('layout', JSON.stringify(param));
       this.attrDialog3 = false;
       this.notify['success']('保存首页布局信息成功');
@@ -339,7 +365,7 @@ export class DesignComponent implements OnInit {
         for (let i = 0; i <  this.ComponentList.length; i++) {
             const obj =  this.ComponentList[i];
             const num = obj.value;
-            console.log(JSON.stringify(obj));
+            // console.log(JSON.stringify(obj));
             let flag = false;
             for (let j = 0; j < this.dashboard.length; j++) {
                 const aj = this.dashboard[j];
