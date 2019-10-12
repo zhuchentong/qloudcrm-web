@@ -13,7 +13,7 @@
 
 <ql-card>
   <div style="margin-bottom: 1.5%;">
-    <label>时间段选择</label>
+    <label class="ql-margin-x">时间段选择</label>
     <ql-select [clearable]="true">
       <ql-option *ngFor="let item of seltimes" [label]="item.label" [value]="item.value"> </ql-option>
     </ql-select>
@@ -31,6 +31,13 @@
       <ql-table-column model-key="ctordinary" [render-html]="true" label="普通客户"></ql-table-column>
     </ql-table>
   </div>
+  <label-container column="3" [border]="true" labelWidth="200">
+    <label-item label="总客户数">12</label-item>
+    <label-item label="升级客户">12</label-item>
+    <label-item label="降级客户">12</label-item>
+    <label-item label="财富管理客户">12</label-item>
+    <label-item label="私人银行客户">12</label-item>
+  </label-container>
 
   <data-table [model]="customerlevels" [selection]="true" [action]="action">
     <ng-template #action>

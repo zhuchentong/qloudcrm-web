@@ -8,12 +8,13 @@ import { LabelContainerComponent } from '../label-container/label-container.comp
 })
 export class LabelItemComponent implements OnInit {
   @ViewChild('content', { static: true }) private content: ElementRef
-  @Input()
-  label = ''
+  @Input() label = ''
   @Input() column = 1
   @Input() offset = 0
 
-  constructor(@Host() @Optional() private parent: LabelContainerComponent) {
+  private index
+
+  constructor(@Host() @Optional() private parent: LabelContainerComponent, private el: ElementRef) {
     if (parent == null) {
       throw new Error(`[label-item] must include 'label-container' component`)
     }
@@ -40,7 +41,15 @@ export class LabelItemComponent implements OnInit {
   get labelStyle() {
     return {
       minWidth: `${this.parent.labelWidth}px`,
-      textAlign: this.parent.labelPosition
+      textAlign: this.parent.labelPosition,
+      background: '#f5f5f5'
+    }
+  }
+
+  get itemStyle() {
+    return {
+      'border-right': this.parent.border ? `solid ${this.parent.borderWidth} ${this.parent.borderColor}` : 'none',
+      'border-bottom': this.parent.border ? `solid ${this.parent.borderWidth} ${this.parent.borderColor}` : 'none'
     }
   }
 }
