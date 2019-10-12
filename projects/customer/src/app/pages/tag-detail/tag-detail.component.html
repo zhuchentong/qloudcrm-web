@@ -1,0 +1,14 @@
+<page-header title="标签详情" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb separator="/">
+      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>客户标签</ql-breadcrumb-item>
+      <ql-breadcrumb-item>标签详情</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action> </ng-template>
+</page-header>
+
+<page-container>
+  {{ tag.name }}
+</page-container>

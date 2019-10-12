@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "name": "标签1",
+    "code": "001",
+    "type": "catalog",
+    "frequency": "",
+    "customerCount": "30",
+    "description": "测试",
+    "createTime": "2019-10-10 11:22",
+    "state": "上架",
+    "parent": ""
+  },
+  {
+    "id": "2",
+    "name": "类型1",
+    "code": "002",
+    "type": "catalog",
+    "frequency": "",
+    "customerCount": "30",
+    "description": "测试",
+    "createTime": "2019-10-10 11:22",
+    "state": "上架",
+    "parent": "1"
+  },
+  {
+    "id": "7",
+    "name": "类型2",
+    "code": "001",
+    "type": "catalog",
+    "frequency": "",
+    "customerCount": "30",
+    "description": "测试",
+    "createTime": "2019-10-10 11:22",
+    "state": "上架",
+    "parent": "1"
+  },
+  {
+    "id": "4",
+    "name": "标签1",
+    "code": "001",
+    "type": "tag",
+    "frequency": "",
+    "customerCount": "30",
+    "description": "测试",
+    "createTime": "2019-10-10 11:22",
+    "state": "上架",
+    "parent": "2"
+  }
+]

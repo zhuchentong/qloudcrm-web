@@ -22,6 +22,12 @@ import { CustomerLevelComponent } from './pages/customer-level/customer-level.co
 import { CustomerAssetsComponent } from './pages/customer-assets/customer-assets.component'
 import { SearchComponent } from './components/search/search.component'
 import { CustomerDetailComponent } from './pages/customer-detail/customer-detail.component'
+import { TagDetailComponent } from './pages/tag-detail/tag-detail.component'
+import { ApiService } from './services/api.service'
+import { TagCreateComponent } from './pages/tag-create/tag-create.component'
+import { TagCreateCustomerComponent } from './components/tag-create-customer/tag-create-customer.component'
+import { TagCreateProductComponent } from './components/tag-create-product/tag-create-product.component'
+import { TagCreateGroupComponent } from './components/tag-create-group/tag-create-group.component'
 
 // 页面列表
 const PAGES = [
@@ -31,21 +37,30 @@ const PAGES = [
   CustomerTagComponent,
   CustomerLevelComponent,
   CustomerAssetsComponent,
-  CustomerSelectComponent
+  CustomerSelectComponent,
+  TagDetailComponent,
+  TagCreateComponent
 ]
 
 // 组件列表
-const COMPONENTS = [SearchComponent, CustomerDetailComponent]
+const COMPONENTS = [
+  SearchComponent,
+  CustomerDetailComponent,
+  TagCreateCustomerComponent,
+  TagCreateProductComponent,
+  TagCreateGroupComponent
+]
 
-const dashboardStartUp = (store: Store) => async () => {
+const startUpFactory = (store: Store) => async () => {
   // 注册菜单
   store.dispatch(new UpdateMenuAction(config))
 }
 
 const providers = [
+  ApiService,
   {
     provide: APP_INITIALIZER,
-    useFactory: dashboardStartUp,
+    useFactory: startUpFactory,
     deps: [Store],
     multi: true
   }

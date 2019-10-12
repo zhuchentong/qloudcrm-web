@@ -21,6 +21,7 @@ import { DictPipe } from './pipes/dict.pipe'
 import { NavigateDirective } from './directives/navigate.directive'
 import { FormBuilderComponent, FormioComponent, FormioModule } from 'angular-formio'
 import { DividerComponent } from './components/divider/divider.component'
+import { PageContainerComponent } from './components/page-container/page-container.component'
 
 const COMPONENTS = [
   ModalContainerComponent,
@@ -31,7 +32,8 @@ const COMPONENTS = [
   ModalPromptComponent,
   LabelContainerComponent,
   LabelItemComponent,
-  DividerComponent
+  DividerComponent,
+  PageContainerComponent
 ]
 const DIRECTIVES = [NavigateDirective]
 const PIPES = [DictPipe]

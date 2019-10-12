@@ -236,7 +236,12 @@
             "tsConfig": "projects/customer/tsconfig.app.json",
             "aot": false,
             "assets": ["projects/customer/src/favicon.ico", "projects/customer/src/assets"],
-            "styles": ["projects/customer/src/styles.css"],
+            "styles": [
+              "src/styles.scss",
+              "projects/customer/src/styles.scss",
+              "node_modules/qloud-angular/package/index.css",
+              "node_modules/normalize.css/normalize.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -291,7 +296,7 @@
             "tsConfig": "projects/customer/tsconfig.spec.json",
             "karmaConfig": "projects/customer/karma.conf.js",
             "assets": ["projects/customer/src/favicon.ico", "projects/customer/src/assets"],
-            "styles": ["projects/customer/src/styles.css"],
+            "styles": ["projects/customer/src/styles.scss"],
             "scripts": []
           }
         },
