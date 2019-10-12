@@ -13,15 +13,14 @@ import config from '../assets/config.json'
 import { Store } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
 
-
 import { CustomerListComponent } from './pages/customer-list/customer-list.component'
 import { CustomerViewComponent } from './pages/customer-view/customer-view.component'
 import { CustomerGroupComponent } from './pages/customer-group/customer-group.component'
 import { CustomerTagComponent } from './pages/customer-tag/customer-tag.component'
 import { CustomerSelectComponent } from './pages/customer-select/customer-select.component'
-import { CustomerLevelComponent } from './pages/customer-level/customer-level.component';
+import { CustomerLevelComponent } from './pages/customer-level/customer-level.component'
 import { CustomerAssetsComponent } from './pages/customer-assets/customer-assets.component'
-import { SearchComponent } from './pages/search/search.component'
+import { SearchComponent } from './components/search/search.component'
 import { CustomerDetailComponent } from './pages/customer-detail/customer-detail.component'
 
 // 页面列表

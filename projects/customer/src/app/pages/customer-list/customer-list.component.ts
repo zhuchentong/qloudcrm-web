@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { FormGroup, FormBuilder } from '@angular/forms'
-import { SearchComponent } from '../search/search.component'
+import { SearchComponent } from '../../components/search/search.component'
 import { CustomerDetailComponent } from '../customer-detail/customer-detail.component'
 import { ModalService } from '@app/shared/utils'
 import { NetService, PageService } from '@app/core/http'
@@ -40,15 +40,13 @@ export class CustomerListComponent implements OnInit {
       })
   }
 
-  public openDetail(){
+  public openDetail() {
     this.modal
-    .open({
-      title: '客户详情',
-      component: CustomerDetailComponent,
-      data: {
-      }
-    })
-    .subscribe(() => {
-    })
+      .open({
+        title: '客户详情',
+        component: CustomerDetailComponent,
+        data: {}
+      })
+      .subscribe(() => {})
   }
 }
