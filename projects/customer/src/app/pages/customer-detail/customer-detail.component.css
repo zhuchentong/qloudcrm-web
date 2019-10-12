@@ -5,15 +5,6 @@
 }
 
 .wrapinfo {
-    padding-left: 1%;
-    padding-right: 1%;
-    border-bottom: 1px solid gainsboro;
-    margin-top: 2%;
-}
-
-.wrapinfotwo {
-    padding: 2%;
-    text-align: center;
     border-bottom: 1px solid gainsboro;
 }
 
@@ -52,4 +43,16 @@
 
 .btncss>ql-button {
     margin-right: 2%;
+}
+
+.detailcontent {
+    border: 1px solid gainsboro;
+}
+
+.lccpcss {
+    line-height: 30px !important;
+}
+
+.customerassets {
+    border: 1px solid gainsboro;
 }

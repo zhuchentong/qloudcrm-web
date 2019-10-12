@@ -12,26 +12,10 @@ import { DictService } from '@app/shared/utils/dict.service'
   providers: [ModalRef]
 })
 export class SearchComponent implements OnInit {
-  public valuexl:any = ''
-  public valuehy:any = ''
-  public valuexb:any = ''
-  public valueage:any = ''
-  public valueccfx:any = ''
-  public valuejjfx:any = ''
-  public valuedj:any = ''
-  public valuegx:any = ''
-  public valuezc:any = ''
-  public valuetag:any = ''
-  public valueph:any = ''
-  public valuejz:any = ''
-  public valuerick:any = ''
-  public valuexw:any = ''
-  public valuexy:any = ''
-  public valueyx:any = ''
   public sexitems = [{ value: '男', label: '男' }, { value: '女', label: '女' }]
-  public ageitems = [ {value: '18-30',label: '18-30岁' }, { value: '30-45', label: '30-45岁' }, { value: '45-60', label: '45-60岁' }, { value: '大于60岁', label: '大于60岁' }] 
+  public ageitems = [ {value: '18-30',label: '18-30岁' }, { value: '30-45', label: '30-45岁' }, { value: '45-60', label: '45-60岁' }, { value: '大于60岁', label: '大于60岁' }]
   public marryitems = [ {value: '已婚',label: '已婚' },{value: '未婚',label: '未婚' }]
-  public schoolitems = [ {value: '本科以下',label: '本科以下' },{value: '本科',label: '本科' },{value: '硕士',label: '硕士' }] 
+  public schoolitems = [ {value: '本科以下',label: '本科以下' },{value: '本科',label: '本科' },{value: '硕士',label: '硕士' }]
   public lcrick = [{value: '低级',label: '低级'},{value: '中级',label: '中级'},{value: '高级',label: '高级'}]
   public jijinrick = [{value: '低级',label: '低级'},{value: '中级',label: '中级'},{value: '高级',label: '高级'}]
   public starcomment = [{value:'三星',label: '三星'},{value:'四星',label: '四星'},{value:'五星',label: '五星'}]
