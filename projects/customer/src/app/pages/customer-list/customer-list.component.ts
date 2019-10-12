@@ -39,14 +39,4 @@ export class CustomerListComponent implements OnInit {
         // this.updateDetail()
       })
   }
-
-  public openDetail() {
-    this.modal
-      .open({
-        title: '客户详情',
-        component: CustomerDetailComponent,
-        data: {}
-      })
-      .subscribe(() => {})
-  }
 }

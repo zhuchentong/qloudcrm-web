@@ -1,4 +1,4 @@
-<page-header title="客户资产变动" [breadcrumb]="breadcrumb" [action]="action" [action-group]="false" [back]="true">
+<page-header title="客户资产变动" [breadcrumb]="breadcrumb" [action-group]="false" [action]="action" [action-group]="false" [back]="true">
     <ng-template #breadcrumb>
         <ql-breadcrumb>
             <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
@@ -14,9 +14,8 @@
 <ql-card>
     <div class="ql-margin-bottom">
         <label>时间段选择</label>
-        <ql-select [clearable]="true ">
-            <ql-option *ngFor="let item of seltimes" [label]="item.label " [value]="item.value ">
-            </ql-option>
+        <ql-select [clearable]="true">
+            <ql-option *ngFor="let item of seltimes" [label]="item.label" [value]="item.value"> </ql-option>
         </ql-select>
     </div>
     <div class="row ql-margin-bottom">
@@ -37,7 +36,12 @@
         <div ql-col [span]="6">50</div>
         <div ql-col [span]="6">459</div>
     </div>
-    <data-table [model]="dataassets">
+    <data-table [model]="dataassets" [action]="tableAction">
+        <ng-template #tableAction>
+            <ql-button size="small" type="primary">拨打电话</ql-button>
+            <ql-button size="small" type="success">发送短信</ql-button>
+            <ql-button size="small" type="info">发现邮件</ql-button>
+        </ng-template>
         <ql-table-column label="选择" width="60">
             <ng-template #slot let-scope="scope">
                 <ql-checkbox [model]="val"></ql-checkbox>
@@ -56,9 +60,4 @@
         <ql-table-column model-key="interaTime" label="互动时间"> </ql-table-column>
         <ql-table-column model-key="moneyflows" label="最近资金渠道流向" width="150"> </ql-table-column>
     </data-table>
-    <div class="btncss">
-        <ql-button size="small" type="primary">拨打电话</ql-button>
-        <ql-button size="small" type="success">发送短信</ql-button>
-        <ql-button size="small" type="info">发现邮件</ql-button>
-    </div>
 </ql-card>

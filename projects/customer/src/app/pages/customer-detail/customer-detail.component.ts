@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core'
 import { FormBuilder, Validators, FormGroup } from '@angular/forms'
-import { ModalRef } from '@app/shared/utils'
 import { QlMessageService } from 'qloud-angular'
 import { plainToClass } from 'class-transformer'
 import { DictService } from '@app/shared/utils/dict.service'
+import { ApiService } from '../../services/api.service'
 
 @Component({
   selector: 'app-customer-detail',
   templateUrl: './customer-detail.component.html',
   styleUrls: ['./customer-detail.component.css'],
-  providers: [ModalRef]
+  providers: [ApiService]
 })
 export class CustomerDetailComponent implements OnInit {
   public valuecate:any = ''
@@ -26,37 +26,10 @@ export class CustomerDetailComponent implements OnInit {
     { value: '大于100万', label: '大于100万' }
   ]
   public formGroup: FormGroup = this.fb.group({})
-
-  public flagshow: any = true
-  changeFlag: any = '1'
+  public searchflag:any = ''
+  public changeFlag: any = '1'
   // 数据
   public customertabledata = [
-    {
-      code: 'TY672233',
-      name: '张三',
-      level: '白金卡',
-      age: '30',
-      sex: '男',
-      tel: '18710766789',
-      producttype: '基金',
-      productcode: 'HJU67680U',
-      productown: '100000',
-      aum: '1000000',
-      balance: '300000'
-    },
-    {
-      code: 'RF352233',
-      name: '王玉环',
-      level: '白金卡',
-      age: '44',
-      sex: '女',
-      tel: '13610766789',
-      producttype: '债劵',
-      productcode: '15U67680U',
-      productown: '400000',
-      aum: '300000',
-      balance: '80000'
-    },
     {
       code: 'UKO672233',
       name: '陈先',
@@ -69,19 +42,6 @@ export class CustomerDetailComponent implements OnInit {
       productown: '100000',
       aum: '2000000',
       balance: '500000'
-    },
-    {
-      code: '26TW33',
-      name: '陈国庆',
-      level: '白金卡',
-      age: '33',
-      sex: '男',
-      tel: '18090878789',
-      producttype: '基金',
-      productcode: 'GHY7680U',
-      productown: '30000',
-      aum: '5000000',
-      balance: '330000'
     }
   ]
 
@@ -136,7 +96,6 @@ export class CustomerDetailComponent implements OnInit {
         width: '40%',
         funnelAlign: 'right',
         max: 1548,
-
         itemStyle: {
           normal: {
             label: {
@@ -157,7 +116,6 @@ export class CustomerDetailComponent implements OnInit {
         width: '35%',
         funnelAlign: 'left',
         max: 1048,
-
         data: [
           { value: 335, name: '流动性负债' },
           { value: 135, name: '零售贷款' },
@@ -168,12 +126,24 @@ export class CustomerDetailComponent implements OnInit {
       }
     ]
   }
+
+  // 推荐产品
+  public tjcpdata = []
+
   // 切换
   handle(event) {
     this.changeFlag = event
   }
 
-  constructor(private modalRef: ModalRef, private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,private apiService: ApiService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.apiService.getcostomerDetaildkList().subscribe(data=>{
+      this.tjcpdata = data
+    })
+  }
+
+  public onRefresh(){
+    this.searchflag = true
+  }
 }
