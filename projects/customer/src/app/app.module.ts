@@ -28,6 +28,7 @@ import { TagCreateComponent } from './pages/tag-create/tag-create.component'
 import { TagCreateCustomerComponent } from './components/tag-create-customer/tag-create-customer.component'
 import { TagCreateProductComponent } from './components/tag-create-product/tag-create-product.component'
 import { TagCreateGroupComponent } from './components/tag-create-group/tag-create-group.component'
+import { SelectCreateComponent } from './components/select-create/select-create.component'
 
 // 页面列表
 const PAGES = [
@@ -48,7 +49,8 @@ const COMPONENTS = [
   CustomerDetailComponent,
   TagCreateCustomerComponent,
   TagCreateProductComponent,
-  TagCreateGroupComponent
+  TagCreateGroupComponent,
+  SelectCreateComponent
 ]
 
 const startUpFactory = (store: Store) => async () => {

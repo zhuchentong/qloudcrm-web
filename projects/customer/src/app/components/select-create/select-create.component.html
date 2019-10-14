@@ -1,0 +1,26 @@
+<ql-form [inline]="true" ql-row label-width="100px">
+  <ql-form-item ql-col span="12" label="客户姓名">
+    <ql-input></ql-input>
+  </ql-form-item>
+  <ql-form-item ql-col span="12" label="证件类型">
+    <ql-select>
+      <ql-option label="身份证" value="1"></ql-option>
+      <ql-option label="身护照" value="2"></ql-option>
+    </ql-select>
+  </ql-form-item>
+  <ql-form-item ql-col span="12" label="证件号码">
+    <ql-input></ql-input>
+  </ql-form-item>
+  <ql-form-item ql-col span="12" label="卡号">
+    <ql-input></ql-input>
+  </ql-form-item>
+  <ql-form-item ql-col span="12" label="存款账号">
+    <ql-input></ql-input>
+  </ql-form-item>
+  <ql-form-item ql-col span="12" label="贷款账号">
+    <ql-input></ql-input>
+  </ql-form-item>
+  <div ql-col="24" class="text-center">
+    <ql-button style="width:120px" type="primary" (click)="onSubmit()">申领</ql-button>
+  </div>
+</ql-form>
