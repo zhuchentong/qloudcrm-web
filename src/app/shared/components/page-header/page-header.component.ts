@@ -32,8 +32,7 @@ export class PageHeaderComponent implements OnInit {
   @Input() public content: TemplateRef<void>
   @Input() public extra: TemplateRef<void>
   @Input() public back = false
-  @Input('action-group')
-  public actionGroup = true
+  @Input('action-group') public actionGroup = false
 
   constructor(public location: Location) {}
 

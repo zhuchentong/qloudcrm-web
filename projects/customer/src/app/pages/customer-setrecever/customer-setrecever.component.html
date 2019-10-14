@@ -1,136 +1,139 @@
-<page-header title="接收人设置" [breadcrumb]="breadcrumb" [action]="action" [action-group]="false">
-    <ng-template #breadcrumb>
-        <ql-breadcrumb separator="/">
-            <ql-breadcrumb-item>客户分配</ql-breadcrumb-item>
-            <ql-breadcrumb-item>接收人设置</ql-breadcrumb-item>
-        </ql-breadcrumb>
-    </ng-template>
-    <ng-template #action>
-        <ql-button type="primary" [routerLink]="['/customer/my-assign']">我要分配</ql-button>
-        <ql-button type="primary" [routerLink]="['/customer/customer-group']">客户分组</ql-button>
-        <ql-button type="primary" [routerLink]="['/customer/customer-assign']">我的分配</ql-button>
-    </ng-template>
+<page-header title="接收人设置" [breadcrumb]="breadcrumb" [back]="true">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb separator="/">
+      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>客户分配</ql-breadcrumb-item>
+      <ql-breadcrumb-item>接收人设置</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
 </page-header>
 
 <page-container>
-    <ql-card>
+  <ql-card [header]="header">
+    <ng-template #header>
+      <div class="row between-span middle-span">
         <h4>设置主管户接收人</h4>
-        <div class="ql-text-right ql-padding">
-            <ql-button type="primary" size="small" (click)="addReceiver()">新增</ql-button>
-            <ql-button type="info" size="small" (click)="addReceiver()">编辑</ql-button>
-            <ql-button type="danger" size="small">删除</ql-button>
+        <div>
+          <ql-button type="primary" size="small" (click)="addReceiver()">新增</ql-button>
+          <ql-button type="info" size="small" (click)="addReceiver()">编辑</ql-button>
+          <ql-button type="danger" size="small">删除</ql-button>
         </div>
-        <data-table [model]="setList" [selection]="true">
-            <ql-table-column model-key="zghjg" label="主管户接收机构"> </ql-table-column>
-            <ql-table-column model-key="khdj" label="客户等级"> </ql-table-column>
-            <ql-table-column model-key="ghjsr" label="主管户接收人"> </ql-table-column>
-        </data-table>
-    </ql-card>
-
-    <!-- 新增 -->
-    <ng-template #setReceiver>
-        <ql-form [inline]="true" ql-row [formGroup]="">
-            <ql-form-item ql-col span="6" label="接收机构">
-                <ql-select>
-                    <ql-option label="建设支行" value="建设支行"></ql-option>
-                    <ql-option label="农业银行" value="农业银行"></ql-option>
-                </ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="6" label="客户等级">
-                <ql-select>
-                    <ql-option label="白金客户" value="1"></ql-option>
-                    <ql-option label="银卡客户" value="2"></ql-option>
-                </ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="6" label="管户接收人">
-                <ql-select>
-                    <ql-option label="孙俪" value="1"></ql-option>
-                    <ql-option label="赵芳" value="2"></ql-option>
-                </ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="6" label="管户角色">
-                <ql-select>
-                    <ql-option label="主管户人" value="1"></ql-option>
-                    <ql-option label="辅管户人" value="2"></ql-option>
-                </ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="18"></ql-form-item>
-            <ql-form-item ql-col span="6">
-                <ql-button type="primary" size="small">设置</ql-button>
-                <ql-button type="primary" size="small">重置</ql-button>
-            </ql-form-item>
-        </ql-form>
+      </div>
     </ng-template>
 
-    <ql-card>
+    <data-table [model]="setList" [selection]="true">
+      <ql-table-column model-key="zghjg" label="主管户接收机构"> </ql-table-column>
+      <ql-table-column model-key="khdj" label="客户等级"> </ql-table-column>
+      <ql-table-column model-key="ghjsr" label="主管户接收人"> </ql-table-column>
+    </data-table>
+  </ql-card>
+
+  <!-- 新增 -->
+  <ng-template #setReceiver>
+    <ql-form [inline]="true" ql-row [formGroup]="">
+      <ql-form-item ql-col span="6" label="接收机构">
+        <ql-select>
+          <ql-option label="建设支行" value="建设支行"></ql-option>
+          <ql-option label="农业银行" value="农业银行"></ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="6" label="客户等级">
+        <ql-select>
+          <ql-option label="白金客户" value="1"></ql-option>
+          <ql-option label="银卡客户" value="2"></ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="6" label="管户接收人">
+        <ql-select>
+          <ql-option label="孙俪" value="1"></ql-option>
+          <ql-option label="赵芳" value="2"></ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="6" label="管户角色">
+        <ql-select>
+          <ql-option label="主管户人" value="1"></ql-option>
+          <ql-option label="辅管户人" value="2"></ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="18"></ql-form-item>
+      <ql-form-item ql-col span="6">
+        <ql-button type="primary" size="small">设置</ql-button>
+        <ql-button type="primary" size="small">重置</ql-button>
+      </ql-form-item>
+    </ql-form>
+  </ng-template>
+
+  <ql-card [header]="header">
+    <ng-template #header>
+      <div class="row between-span middle-span">
         <h4>设置辅管户接收人</h4>
-        <div class="ql-text-right ql-padding">
-            <ql-button type="primary" size="small" (click)="addReceiverfu()">新增</ql-button>
-            <ql-button type="info" size="small" (click)="addReceiverfu()">编辑</ql-button>
-            <ql-button type="danger" size="small">删除</ql-button>
+        <div>
+          <ql-button type="primary" size="small" (click)="addReceiverfu()">新增</ql-button>
+          <ql-button type="info" size="small" (click)="addReceiverfu()">编辑</ql-button>
+          <ql-button type="danger" size="small">删除</ql-button>
         </div>
-        <data-table [model]="setfghList" [selection]="true">
-            <ql-table-column model-key="fghjg" label="辅管户接收机构"> </ql-table-column>
-            <ql-table-column model-key="zghjg" label="主管户接收机构"> </ql-table-column>
-            <ql-table-column model-key="khdj" label="客户等级"> </ql-table-column>
-            <ql-table-column model-key="fhjsr" label="辅管户接收人"> </ql-table-column>
-        </data-table>
-    </ql-card>
-
-    <!-- 新增辅管户 -->
-    <ng-template #setReceiverfu>
-        <ql-form [inline]="true" ql-row [formGroup]="">
-            <ql-form-item ql-col span="5" label="辅管户接收机构">
-                <ql-select>
-                    <ql-option label="南京分行财富中心" value="1"></ql-option>
-                </ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="5" label="主管户机构">
-                <ql-select>
-                    <ql-option label="南京银行" value="1"></ql-option>
-                </ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="5" label="客户等级">
-                <ql-select>
-                    <ql-option label="白金客户" value="1"></ql-option>
-                </ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="5" label="接收人">
-                <ql-select>
-                    <ql-option label="李丽" value="1"></ql-option>
-                </ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="4" label="管户角色">
-                <ql-select>
-                    <ql-option label="辅管户人" value="1"></ql-option>
-                </ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="24" label="AUM区间筛选"></ql-form-item>
-            <ql-form-item ql-col span="6">
-                <ql-select>
-                    <ql-option label="小于等于" value="1"></ql-option>
-                    <ql-option label="大于等于" value="1"></ql-option>
-                </ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="6">
-                <ql-input></ql-input>
-            </ql-form-item>
-            <ql-form-item ql-col span="6">
-                <ql-select>
-                    <ql-option label="小于等于" value="1"></ql-option>
-                    <ql-option label="大于等于" value="1"></ql-option>
-                </ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="6">
-                <ql-input></ql-input>
-            </ql-form-item>
-            <ql-form-item ql-col span="18"></ql-form-item>
-            <ql-form-item ql-col span="6">
-                <ql-button type="primary" size="small">设置</ql-button>
-                <ql-button type="primary" size="small">重置</ql-button>
-            </ql-form-item>
-        </ql-form>
+      </div>
     </ng-template>
+    <data-table [model]="setfghList" [selection]="true">
+      <ql-table-column model-key="fghjg" label="辅管户接收机构"> </ql-table-column>
+      <ql-table-column model-key="zghjg" label="主管户接收机构"> </ql-table-column>
+      <ql-table-column model-key="khdj" label="客户等级"> </ql-table-column>
+      <ql-table-column model-key="fhjsr" label="辅管户接收人"> </ql-table-column>
+    </data-table>
+  </ql-card>
 
-
+  <!-- 新增辅管户 -->
+  <ng-template #setReceiverfu>
+    <ql-form [inline]="true" ql-row [formGroup]="">
+      <ql-form-item ql-col span="5" label="辅管户接收机构">
+        <ql-select>
+          <ql-option label="南京分行财富中心" value="1"></ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="5" label="主管户机构">
+        <ql-select>
+          <ql-option label="南京银行" value="1"></ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="5" label="客户等级">
+        <ql-select>
+          <ql-option label="白金客户" value="1"></ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="5" label="接收人">
+        <ql-select>
+          <ql-option label="李丽" value="1"></ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="4" label="管户角色">
+        <ql-select>
+          <ql-option label="辅管户人" value="1"></ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="24" label="AUM区间筛选"></ql-form-item>
+      <ql-form-item ql-col span="6">
+        <ql-select>
+          <ql-option label="小于等于" value="1"></ql-option>
+          <ql-option label="大于等于" value="1"></ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="6">
+        <ql-input></ql-input>
+      </ql-form-item>
+      <ql-form-item ql-col span="6">
+        <ql-select>
+          <ql-option label="小于等于" value="1"></ql-option>
+          <ql-option label="大于等于" value="1"></ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="6">
+        <ql-input></ql-input>
+      </ql-form-item>
+      <ql-form-item ql-col span="18"></ql-form-item>
+      <ql-form-item ql-col span="6">
+        <ql-button type="primary" size="small">设置</ql-button>
+        <ql-button type="primary" size="small">重置</ql-button>
+      </ql-form-item>
+    </ql-form>
+  </ng-template>
 </page-container>

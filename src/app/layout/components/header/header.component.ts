@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
   onOpenFormBuilder() {
     this.modal.open({
       header: false,
-      size: 'large',
+      size: 'huge',
       component: FormBuilderComponent
     })
   }
