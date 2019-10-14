@@ -168,7 +168,7 @@ export class DesignComponent implements OnInit {
     }
     /*编辑*/
     edit(param) {
-      console.log(JSON.stringify(param));
+      // console.log(JSON.stringify(param));
       sessionStorage.setItem('layout', JSON.stringify(param));
       this.attrDialog3 = false;
       this.notify['success']('保存首页布局信息成功');

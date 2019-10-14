@@ -337,22 +337,11 @@ export class ReserveMoneyComponent implements OnInit {
   loadEchart(res: any) {
     this.loading = true;
     const piechartData: any = [];
-    // 资金流向行业
-    // 如果行业数量大于5
-    if (res.length > 5) {
-      for (let i = 0; i < 5; i++) {
-        piechartData.push({
-          value: res[i]['count'],
-          name: res[i]['targetName']
-        });
-      }
-    } else {
-      for (let v = 0; v < res.length; v++) {
-        piechartData.push({
-          value: res[v]['count'],
-          name: res[v]['targetName']
-        });
-      }
+    for (let i = 0; i < res.length; i++) {
+      piechartData.push({
+        value: res[i]['count'],
+        name: res[i]['targetName']
+      });
     }
     this.labelOption[1] = {
       series: [{
