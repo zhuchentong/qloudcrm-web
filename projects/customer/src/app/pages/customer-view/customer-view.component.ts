@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { FormGroup, FormBuilder } from '@angular/forms'
 import { ApiService } from '../../services/api.service'
+import { EchartService } from '@app/shared/utils/echart.service'
 
 @Component({
   selector: 'app-customer-view',
@@ -14,7 +15,7 @@ export class CustomerViewComponent implements OnInit {
   public tradeAssetOptions
   public tradeEventOptions
 
-  constructor(private fb: FormBuilder, private apiService: ApiService) {}
+  constructor(private fb: FormBuilder, private apiService: ApiService, private echartService: EchartService) {}
 
   ngOnInit() {
     this.formGroup = this.fb.group({
@@ -46,55 +47,12 @@ export class CustomerViewComponent implements OnInit {
   }
 
   public getTradeEventOption(data) {
-    this.tradeEventOptions = this.getEchartPieOption(data)
+    this.tradeEventOptions = this.echartService.getOption({ type: 'pie', data })
   }
 
   public getTradeAssetOption(data) {
-    this.tradeAssetOptions = this.getEchartPieOption(data)
+    this.tradeAssetOptions = this.echartService.getOption({ type: 'pie', data })
   }
 
   public onExportExcel() {}
-
-  private getEchartPieOption(data, option = {}) {
-    return Object.assign(
-      {
-        tooltip: {
-          trigger: 'item',
-          formatter: '{b}: {c} ({d}%)'
-        },
-        legend: {
-          orient: 'vertical',
-          x: 'left',
-          data: data.map(x => x.name)
-        },
-        series: [
-          {
-            type: 'pie',
-            radius: ['50%', '70%'],
-            avoidLabelOverlap: false,
-            label: {
-              normal: {
-                show: false,
-                position: 'center'
-              },
-              emphasis: {
-                show: true,
-                textStyle: {
-                  fontSize: '30',
-                  fontWeight: 'bold'
-                }
-              }
-            },
-            labelLine: {
-              normal: {
-                show: false
-              }
-            },
-            data
-          }
-        ]
-      },
-      option
-    )
-  }
 }

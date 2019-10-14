@@ -73,13 +73,14 @@ export class ModalContainerComponent implements OnInit {
    * @param result
    */
   public closeDialog(result?: any): void {
-    this.modalContent.clear()
     this.show = false
-    setTimeout(() => {
-      this.close = true
-      this.subjectClose.next(result)
-      this.subjectClose.complete()
-    }, 200)
+    this.close = true
+
+    // 清空子组件
+    this.modalContent.clear()
+    // 关闭窗体
+    this.subjectClose.next(result)
+    this.subjectClose.complete()
   }
 
   onClosedModal(): Observable<any> {

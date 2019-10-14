@@ -22,6 +22,7 @@ import { NavigateDirective } from './directives/navigate.directive'
 import { FormBuilderComponent, FormioComponent, FormioModule, FormioAppConfig } from 'angular-formio'
 import { DividerComponent } from './components/divider/divider.component'
 import { PageContainerComponent } from './components/page-container/page-container.component'
+import { EchartService } from './utils/echart.service'
 
 const COMPONENTS = [
   ModalContainerComponent,
@@ -48,7 +49,7 @@ const PIPES = [DictPipe]
     QlModule.forRoot(),
     FormioModule
   ],
-  providers: [{ provide: FormioAppConfig, useValue: {} }],
+  providers: [EchartService, { provide: FormioAppConfig, useValue: {} }],
   entryComponents: [...COMPONENTS],
   declarations: [...COMPONENTS, ...DIRECTIVES, ...PIPES],
   exports: [
