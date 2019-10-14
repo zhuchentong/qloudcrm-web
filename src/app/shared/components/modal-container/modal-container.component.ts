@@ -7,7 +7,8 @@ import {
   ComponentFactoryResolver,
   ChangeDetectorRef,
   Injector,
-  Input
+  Input,
+  TemplateRef
 } from '@angular/core'
 import { Subject, Observable } from 'rxjs'
 
@@ -26,7 +27,7 @@ export class ModalContainerComponent implements OnInit {
   private subjectOpen: any = new Subject<any>()
   private subjectClose: any = new Subject<any>()
   private refDynamicContent: ComponentRef<any>
-
+  public content: TemplateRef<any>
   close: boolean = false
   show: boolean = true
 
@@ -43,13 +44,19 @@ export class ModalContainerComponent implements OnInit {
   ngOnInit(): void {}
 
   addContent(compRef: any, config: any = null): void {
-    const factory = this.r.resolveComponentFactory(compRef)
-    this.refDynamicContent = this.modalContent.createComponent(factory)
-    if (config) {
-      Object.entries(config).forEach(([key, value]) => {
-        this.refDynamicContent.instance[key] = value
-      })
+    if (compRef instanceof TemplateRef) {
+      this.content = compRef
+    } else {
+      const factory = this.r.resolveComponentFactory(compRef)
+      this.refDynamicContent = this.modalContent.createComponent(factory)
+
+      if (config) {
+        Object.entries(config).forEach(([key, value]) => {
+          this.refDynamicContent.instance[key] = value
+        })
+      }
     }
+
     this.openDialog()
   }
 

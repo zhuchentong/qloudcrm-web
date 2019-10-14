@@ -1,31 +1,40 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core'
 import { FormBuilder, Validators, FormGroup } from '@angular/forms'
 import { ApiService } from '../../services/api.service'
 import { Router } from '@angular/router'
 import { QlMessageService } from 'qloud-angular'
 import { plainToClass } from 'class-transformer'
 import { DictService } from '@app/shared/utils/dict.service'
-import { group_Form } from './group_form'
+import groupEditForm from '../../../assets/formio/customer-group-edit.json'
+import { ModalService } from '@app/shared/utils'
 @Component({
   selector: 'app-customer-group',
   templateUrl: './customer-group.component.html',
   styleUrls: ['./customer-group.component.css'],
-  providers: [ApiService]
+  providers: [ApiService, ModalService]
 })
 export class CustomerGroupComponent implements OnInit {
+  @ViewChild('groupItemEdit', { static: true })
+  private groupItemEditTemp: TemplateRef<any>
+
   public formGroup: FormGroup
   public groupList: any[] = []
   public edidflag: any = ''
 
   // 弹框
-  public group_Form: any = ''
+  public groupForm = groupEditForm
   public groupFormData = {
     data: {}
   }
-  constructor(private fb: FormBuilder, private router: Router, private apiService: ApiService) {}
+  constructor(
+    private fb: FormBuilder,
+    private router: Router,
+    private apiService: ApiService,
+    private modal: ModalService,
+    private message: QlMessageService
+  ) {}
 
   ngOnInit() {
-    this.group_Form = group_Form
     this.formGroup = this.fb.group({
       name: [''],
       state: ['']
@@ -40,18 +49,15 @@ export class CustomerGroupComponent implements OnInit {
     })
   }
 
-  public editGroup() {
-    this.edidflag = true
-    this.groupFormData = {
-      data: {
-        code: 'REU7823',
-        name: '高消费组',
-        desc: '月均AUM大于20000，消费大于15000',
-        num: '167',
-        creator: '张东',
-        state: '开启',
-        time: '2019-08-13 12:00 PM'
-      }
-    }
+  public editGroup(data) {
+    this.groupFormData.data = data
+    this.modal
+      .open({
+        title: '编辑分组',
+        component: this.groupItemEditTemp
+      })
+      .subscribe(() => {
+        this.message.success('修改成功')
+      })
   }
 }
