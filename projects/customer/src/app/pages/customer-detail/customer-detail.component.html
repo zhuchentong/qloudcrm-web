@@ -1,365 +1,319 @@
-<page-header title="客户详情" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
-    <ng-template #breadcrumb>
-        <ql-breadcrumb>
-            <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-            <ql-breadcrumb-item>客户详情</ql-breadcrumb-item>
-        </ql-breadcrumb>
-    </ng-template>
+<page-header title="客户详情" [breadcrumb]="breadcrumb" [back]="true">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>客户详情</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
 </page-header>
 
 <div>
-    <ql-card>
-        <ql-button-group>
-            <ql-button type="primary" size="small" (click)="handle('1')">客户信息</ql-button>
-            <ql-button type="primary" size="small" (click)="handle('2')">客户资产</ql-button>
-            <ql-button type="primary" size="small" (click)="handle('3')">客户联络</ql-button>
-            <ql-button type="primary" size="small" (click)="handle('4')">客户持有产品</ql-button>
-            <ql-button type="primary" size="small" (click)="handle('5')">推荐产品</ql-button>
-        </ql-button-group>
-        <div class="detailcontent ql-padding">
-            <div *ngIf="changeFlag == '1'">
-                <div class="row wrapinfo">
-                    <div ql-col [span]="4">
-                        <img class="imgcss" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2882133088,2696092300&fm=26&gp=0.jpg" alt="">
-                    </div>
-                    <div class="rightcss" ql-col [span]="20">
-                        <h5>陈先(男士,38岁)</h5>
-                        <h4>身份证号:612501199506065980</h4>
-                        <p>
-                            <ql-tag class="mr-3" type="primary">旅游达人</ql-tag>
-                            <ql-tag class="mr-3" type="success">理财小白</ql-tag>
-                            <ql-tag class="mr-3" type="warning">有房一族</ql-tag>
-                            <ql-tag class="mr-3" type="danger">教育培训</ql-tag>
-                            <ql-tag class="mr-3" type="primary">潜力价值客户</ql-tag>
-                            <ql-tag class="mr-3" type="success">H5活动参与</ql-tag>
-                        </p>
-                        <div class="rightcss" ql-col [span]="7">
-                            <span>客户经理:</span>
-                            <span>孟萍</span>
-                        </div>
-                        <div class="rightcss" ql-col [span]="7">
-                            <span>金卡客户</span></div>
-                        <div class="rightcss" ql-col [span]="10">
-                            <span>金领旅游组</span>
-                        </div>
-                        <div class="rightcss" ql-col [span]="7">
-                            <span>综合积分:</span>
-                            <span>320分</span>
-                        </div>
-                        <div class="rightcss" ql-col [span]="7">
-                            <span>AUM:</span>
-                            <span>3万</span>
-                        </div>
-                        <div class="rightcss" ql-col [span]="10">
-                            <span>归属机构:</span>
-                            <span>中国建设银行</span>
-                        </div>
-                        <div class="rightcss" ql-col [span]="7">
-                            <span>出生日期:</span>
-                            <span>1989-06-20</span>
-                        </div>
-                        <div class="rightcss" ql-col [span]="7">
-                            <span>星座:</span>
-                            <span>巨蟹座</span>
-                        </div>
-                        <div class="rightcss" ql-col [span]="10">
-                            <span>已关注</span>
-                        </div>
-                        <div class="rightcss" ql-col [span]="7">
-                            <span>电话:</span>
-                            <span>189-267-77671</span>
-                        </div>
-                        <div class="rightcss" ql-col [span]="7">
-                            <span>微信：</span>
-                            <span>ZStyi124</span>
-                        </div>
-                        <div class="rightcss" ql-col [span]="10">
-                            <span>邮箱：</span>
-                            <span>18926777671@163.com</span>
-                        </div>
-                        <div class="rightcss" ql-col [span]="15">
-                            <p>家庭住址：陕西省西安市莲湖区土门街道234号</p>
-                        </div>
-                        <div ql-col [span]="9"></div>
-                    </div>
-                </div>
-                <div class="wrapinfo ql-padding">
-                    <h5>家庭基本信息</h5>
-                    <label-container column="4" [border]="true" labelWidth="120">
-                        <label-item label="家庭人口">4</label-item>
-                        <label-item label="供养人数">2</label-item>
-                        <label-item label="子女人数 ">2</label-item>
-                        <label-item label="是否有未成年子女">是</label-item>
-                        <label-item label="家庭总资产">300万</label-item>
-                        <label-item label="家庭总负债">90万</label-item>
-                        <label-item label="家庭对外担保总额">390万</label-item>
-                        <label-item label="家庭年总收入">40万</label-item>
-                        <label-item label="有无房产">有</label-item>
-                        <label-item label="有无私家车">有</label-item>
-                        <label-item label="主要经济来源">工资</label-item>
-                        <label-item label="主要支出方向">生活消费</label-item>
-                        <label-item label="家庭情况说明">无</label-item>
-                    </label-container>
-                </div>
-                <div class="wrapinfo ql-padding">
-                    <h5>参加得营销活动</h5>
-                    <label-container column="3">
-                        <label-item label="活动名称">天天一份利</label-item>
-                        <label-item label="活动时间">2018-09-23 12:00</label-item>
-                        <label-item label="活动结果">成功</label-item>
-                        <label-item label="活动名称">健康夺宝</label-item>
-                        <label-item label="活动时间">2016-11-19 9:00</label-item>
-                        <label-item label="活动结果">未响应</label-item>
-                    </label-container>
-                </div>
-                <div class="wrapinfo ql-padding">
-                    <h5>即将到期产品</h5>
-                    <label-container column="2" [border]="true">
-                        <label-item label="产品名称">大额存单</label-item>
-                        <label-item label="起止时间">2015-09-23至2019-10-31</label-item>
-                        <label-item label="产品名称">封闭基金</label-item>
-                        <label-item label="起止时间">2016-12-12至2019-11-15</label-item>
-                        <label-item label="产品名称">建行财富宝</label-item>
-                        <label-item label="起止时间">2018-01-30至2019-10-20</label-item>
-                    </label-container>
-                </div>
-                <div class="wrapinfo ql-padding">
-                    <h5>客户签约信息</h5>
-                    <p>手机银行、短信银行、微信银行、网上银行</p>
-                </div>
-                <div class="row wrapinfo ql-padding">
-                    <div ql-col [span]="12">
-                        <label for="">月收入：2.3万(中高)</label>
-                        <ql-progress type="circle" [percentage]="55"></ql-progress>
-                    </div>
-                    <div ql-col [span]="12">
-                        <label for="">月支出：1.8万(中高)</label>
-                        <ql-progress type="circle" [percentage]="65"></ql-progress>
-                    </div>
-                </div>
+  <ql-card>
+    <ql-button-group>
+      <ql-button type="primary" size="small" (click)="handle('1')">客户信息</ql-button>
+      <ql-button type="primary" size="small" (click)="handle('2')">客户资产</ql-button>
+      <ql-button type="primary" size="small" (click)="handle('3')">客户联络</ql-button>
+      <ql-button type="primary" size="small" (click)="handle('4')">客户持有产品</ql-button>
+      <ql-button type="primary" size="small" (click)="handle('5')">推荐产品</ql-button>
+    </ql-button-group>
+    <div class="detailcontent ql-padding">
+      <div *ngIf="changeFlag == '1'">
+        <div class="row wrapinfo">
+          <div ql-col [span]="4">
+            <img
+              class="imgcss"
+              src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2882133088,2696092300&fm=26&gp=0.jpg"
+              alt=""
+            />
+          </div>
+          <div class="rightcss" ql-col [span]="20">
+            <h5>陈先(男士,38岁)</h5>
+            <h4>身份证号:612501199506065980</h4>
+            <p>
+              <ql-tag class="mr-3" type="primary">旅游达人</ql-tag>
+              <ql-tag class="mr-3" type="success">理财小白</ql-tag>
+              <ql-tag class="mr-3" type="warning">有房一族</ql-tag>
+              <ql-tag class="mr-3" type="danger">教育培训</ql-tag>
+              <ql-tag class="mr-3" type="primary">潜力价值客户</ql-tag>
+              <ql-tag class="mr-3" type="success">H5活动参与</ql-tag>
+            </p>
+            <div class="rightcss" ql-col [span]="7">
+              <span>客户经理:</span>
+              <span>孟萍</span>
             </div>
-            <div *ngIf="changeFlag == '2'">
-                <div ql-col [span]="24" echarts [options]="options1"></div>
-                <div class="customerassets">
-                    <ql-table [model]="tableDataMore" [border]="true" [stripe]="true">
-                        <ql-table-column model-key="financial" label="理财"></ql-table-column>
-                        <ql-table-column model-key="fund" label="基金"></ql-table-column>
-                        <ql-table-column model-key="bonds" label="国债"></ql-table-column>
-                        <ql-table-column model-key="insurance" label="保险"></ql-table-column>
-                        <ql-table-column model-key="deposit" label="人民币存款"></ql-table-column>
-                        <ql-table-column model-key="housing" label="住房类贷款"></ql-table-column>
-                        <ql-table-column model-key="loans" label="消费类贷款"></ql-table-column>
-                        <ql-table-column model-key="credit" label="信用卡"></ql-table-column>
-                        <ql-table-column model-key="debit" label="借记卡"></ql-table-column>
-                        <ql-table-column model-key="other" label="其他"></ql-table-column>
-                    </ql-table>
-                </div>
-                <div class="wrapinfo ql-padding">
-                    <h5>消费统计</h5>
-                    <label-container column="4" [border]="true">
-                        <label-item label="月消费金额">3万</label-item>
-                        <label-item label="比上月">-1%</label-item>
-                        <label-item label="年消费金额">45万</label-item>
-                        <label-item label="比去年">+3%</label-item>
-                    </label-container>
-                </div>
-                <div class="wrapinfo ql-padding">
-                    <h5>当月大额交易</h5>
-                    <label-container column="2" [border]="true">
-                        <label-item label="交易时间">2019-10-01 12:35</label-item>
-                        <label-item label="交易账号">建设银行(620090293920028987)</label-item>
-                        <label-item label="消费类型">支出</label-item>
-                        <label-item label="比去年">1.87万</label-item>
-                        <label-item label="交易时间">2019-10-08 12:35</label-item>
-                        <label-item label="交易账号">建设银行(620090293920028987)</label-item>
-                        <label-item label="消费类型">收入</label-item>
-                        <label-item label="比去年">1万</label-item>
-                    </label-container>
-                </div>
+            <div class="rightcss" ql-col [span]="7">
+              <span>金卡客户</span>
             </div>
-            <div *ngIf="changeFlag == '3'" style="height: 400px;overflow-y: auto;">
-                <label-container column="3" [border]="true">
-                    <label-item label="业务">提取基金</label-item>
-                    <label-item label="办理渠道">手机app</label-item>
-                    <label-item label="办理时间">2019-10-08</label-item>
-                    <label-item label="业务">大额存单</label-item>
-                    <label-item label="办理渠道">银行柜台</label-item>
-                    <label-item label="办理时间">2019-10-01</label-item>
-                    <label-item label="业务">转账</label-item>
-                    <label-item label="办理渠道">网上银行</label-item>
-                    <label-item label="办理时间">2019-9-22</label-item>
-                    <label-item label="业务">股票抛出</label-item>
-                    <label-item label="办理渠道">手机app</label-item>
-                    <label-item label="办理时间">2019-09-18</label-item>
-                    <label-item label="业务">办理理财产品</label-item>
-                    <label-item label="办理渠道">网上银行</label-item>
-                    <label-item label="办理时间">2019-09-14</label-item>
-                    <label-item label="业务">商业贷款</label-item>
-                    <label-item label="办理渠道">网上银行</label-item>
-                    <label-item label="办理时间">2019-09-10</label-item>
-                    <label-item label="业务">提取基金</label-item>
-                    <label-item label="办理渠道">手机app</label-item>
-                    <label-item label="办理时间">2019-10-08</label-item>
-                    <label-item label="业务">大额存单</label-item>
-                    <label-item label="办理渠道">银行柜台</label-item>
-                    <label-item label="办理时间">2019-10-01</label-item>
-                    <label-item label="业务">转账</label-item>
-                    <label-item label="办理渠道">网上银行</label-item>
-                    <label-item label="办理时间">2019-9-22</label-item>
-                    <label-item label="业务">股票抛出</label-item>
-                    <label-item label="办理渠道">手机app</label-item>
-                    <label-item label="办理时间">2019-09-18</label-item>
-                    <label-item label="业务">提取基金</label-item>
-                    <label-item label="办理渠道">手机app</label-item>
-                    <label-item label="办理时间">2019-10-08</label-item>
-                    <label-item label="业务">大额存单</label-item>
-                    <label-item label="办理渠道">银行柜台</label-item>
-                    <label-item label="办理时间">2019-10-01</label-item>
-                    <label-item label="业务">转账</label-item>
-                    <label-item label="办理渠道">网上银行</label-item>
-                    <label-item label="办理时间">2019-9-22</label-item>
-                </label-container>
+            <div class="rightcss" ql-col [span]="10">
+              <span>金领旅游组</span>
             </div>
-            <div *ngIf="changeFlag == '4'">
-                <ql-collapse [accordion]="true">
-                    <ql-collapse-item label="活期存款" value="1">
-                        <label-container column="4" [border]="true">
-                            <label-item label="账号">5790908</label-item>
-                            <label-item label="账户状态">正常</label-item>
-                            <label-item label="币种">人民币</label-item>
-                            <label-item label="余额">12万</label-item>
-                            <label-item label="关联卡号">630068902903487</label-item>
-                            <label-item label="实时余额">12万</label-item>
-                            <label-item label="存款日期">2018-12-10</label-item>
-                            <label-item label="交易明细"><a>点击查看</a></label-item>
-                        </label-container>
-                    </ql-collapse-item>
-                    <ql-collapse-item label="定期存款" value="2">
-                        <label-container column="3" [border]="true">
-                            <label-item label="账号">78273221</label-item>
-                            <label-item label="账户状态">正常</label-item>
-                            <label-item label="存款类型">定期存款</label-item>
-                            <label-item label="币种">人民币</label-item>
-                            <label-item label="本金">10万</label-item>
-                            <label-item label="期限">3年</label-item>
-                            <label-item label="起息日">2018-10-30</label-item>
-                            <label-item label="到期日">2021-10-29</label-item>
-                            <label-item label="利率">3.6%</label-item>
-                        </label-container>
-                    </ql-collapse-item>
-                    <ql-collapse-item label="基金" value="3">
-                        <label-container column="3" [border]="true">
-                            <label-item label="账号">34897097</label-item>
-                            <label-item label="基金名臣">健康基金C类</label-item>
-                            <label-item label="基金管理公司">中国建设银行</label-item>
-                            <label-item label="基金类型">稳健型</label-item>
-                            <label-item label="购买时净值">5.67</label-item>
-                            <label-item label="净值">5.34</label-item>
-                            <label-item label="盈亏">2%</label-item>
-                            <label-item label="份额">10000</label-item>
-                            <label-item label="市值">50000</label-item>
-                        </label-container>
-                    </ql-collapse-item>
-                    <ql-collapse-item label="保险" value="4">
-                        <label-container column="4" [border]="true">
-                            <label-item label="保险账号">3578652</label-item>
-                            <label-item label="保险名称">健康e生保</label-item>
-                            <label-item label="保险公司名称">平安保险</label-item>
-                            <label-item label="险种类型">重大疾病险</label-item>
-                            <label-item label="投保日期">2019-12-23</label-item>
-                            <label-item label="保单到日期">2020-01-22</label-item>
-                            <label-item label="缴费方式">网银</label-item>
-                            <label-item label="缴费期限">五个工作日</label-item>
-                        </label-container>
-                    </ql-collapse-item>
-                </ql-collapse>
-                <div class="customerassets ql-margin-top ql-padding">
-                    <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()" [action]="action" style="width: 900px;">
-                        <div ql-col [span]="4">
-                            <ql-form-item label="产品类型">
-                                <ql-select [(model)]="valuetype " [clearable]="true ">
-                                    <ql-option *ngFor="let item of prductType" [label]=" item.label " [value]="item.value">
-                                    </ql-option>
-                                </ql-select>
-                            </ql-form-item>
-                        </div>
-                        <div ql-col [span]="4">
-                            <ql-form-item label="产品代码">
-                                <ql-input></ql-input>
-                            </ql-form-item>
-                        </div>
-                        <div ql-col [span]="4">
-                            <ql-form-item label="产品名称">
-                                <ql-input></ql-input>
-                            </ql-form-item>
-                        </div>
-                        <div ql-col [span]="5">
-                            <ql-form-item label="产品持有金额范围">
-                                <ql-select [(model)]="valuecate" [clearable]="true ">
-                                    <ql-option *ngFor="let item of category" [label]=" item.label " [value]="item.value">
-                                    </ql-option>
-                                </ql-select>
-                            </ql-form-item>
-                        </div>
-                        <div ql-col [span]="5">
-                            <ql-form-item label="产品到期日">
-                                <!-- <ql-date-picker (modelChange)="handle($event)" (clear-click)="clearClickHandle($event)">
-                                        </ql-date-picker> -->
-                                <input style="outline: none;
-                                        border: none;
-                                        border: 1px solid gainsboro;
-                                        border-radius: 5px;
-                                        height: 30px;" type="date">
-                            </ql-form-item>
-                        </div>
-                    </data-form>
-                    <ql-table [model]="customertabledata" [border]="true" [stripe]="true" *ngIf="searchflag===true">
-                        <ql-table-column label="选择" width="70">
-                            <ng-template #slot let-scope="scope">
-                                <ql-checkbox [model]="val"></ql-checkbox>
-                            </ng-template>
-                        </ql-table-column>
-                        <ql-table-column model-key="code" [render-html]="true" label="客户号"></ql-table-column>
-                        <ql-table-column model-key="name" [render-html]="true" label="姓名" width="70"></ql-table-column>
-                        <ql-table-column model-key="level" [render-html]="true" label="客户等级"></ql-table-column>
-                        <ql-table-column model-key="age" [render-html]="true" label="年龄" width="60"></ql-table-column>
-                        <ql-table-column model-key="sex" [render-html]="true" label="性别" width="60"></ql-table-column>
-                        <ql-table-column model-key="tel" [render-html]="true" label="手机号"></ql-table-column>
-                        <ql-table-column model-key="producttype" [render-html]="true" label="产品类型" width="85"></ql-table-column>
-                        <ql-table-column model-key="productcode" [render-html]="true" label="产品代码"></ql-table-column>
-                        <ql-table-column model-key="productown" [render-html]="true" label="持有产品额"></ql-table-column>
-                        <ql-table-column model-key="aum" [render-html]="true" label="AUM" width="80"></ql-table-column>
-                        <ql-table-column model-key="balance" [render-html]="true" label="资产余额" width="85"></ql-table-column>
-                    </ql-table>
-                    <div class="btncss" *ngIf="searchflag===true">
-                        <ql-button size="small" type="primary">拨打电话</ql-button>
-                        <ql-button size="small" type="success">发送短信</ql-button>
-                        <ql-button size="small" type="info">发现邮件</ql-button>
-                    </div>
-                </div>
+            <div class="rightcss" ql-col [span]="7">
+              <span>综合积分:</span>
+              <span>320分</span>
             </div>
-            <div *ngIf="changeFlag == '5'">
-                <div class="row ql-padding ql-margin-top" *ngFor="let item of tjcpdata" style="border: 1px solid gainsboro;">
-                    <div ql-col span="5">
-                        <h5>{{item.name}}</h5>
-                    </div>
-                    <div ql-col span="7">
-                        <p class="lccpcss">产品代码：<span style="color:blue">{{item.code}}</span></p>
-                        <p class="lccpcss">风险等级：<span style="color: red;">{{item.level}}</span></p>
-                        <p class="lccpcss">预期收益率：{{item.profit}}</p>
-                        <p class="lccpcss">销售渠道：{{item.kandel}}</p>
-                    </div>
-                    <div ql-col span="7">
-                        <p class="lccpcss">发售起始日期：{{item.star}}</p>
-                        <p class="lccpcss">发售截至日期：{{item.end}}</p>
-                        <p class="lccpcss">产品周期：{{item.cycle}}</p>
-                        <p class="lccpcss" style="color: blue;">{{item.decsrible}}</p>
-                    </div>
-                    <div ql-col span="5">
-                        <ql-button type="primary" size="small">购买</ql-button>
-                    </div>
-                </div>
+            <div class="rightcss" ql-col [span]="7">
+              <span>AUM:</span>
+              <span>3万</span>
             </div>
+            <div class="rightcss" ql-col [span]="10">
+              <span>归属机构:</span>
+              <span>中国建设银行</span>
+            </div>
+            <div class="rightcss" ql-col [span]="7">
+              <span>出生日期:</span>
+              <span>1989-06-20</span>
+            </div>
+            <div class="rightcss" ql-col [span]="7">
+              <span>星座:</span>
+              <span>巨蟹座</span>
+            </div>
+            <div class="rightcss" ql-col [span]="10">
+              <span>已关注</span>
+            </div>
+            <div class="rightcss" ql-col [span]="7">
+              <span>电话:</span>
+              <span>189-267-77671</span>
+            </div>
+            <div class="rightcss" ql-col [span]="7">
+              <span>微信：</span>
+              <span>ZStyi124</span>
+            </div>
+            <div class="rightcss" ql-col [span]="10">
+              <span>邮箱：</span>
+              <span>18926777671@163.com</span>
+            </div>
+            <div class="rightcss" ql-col [span]="15">
+              <p>家庭住址：陕西省西安市莲湖区土门街道234号</p>
+            </div>
+            <div ql-col [span]="9"></div>
+          </div>
         </div>
-    </ql-card>
+        <div class="wrapinfo ql-padding">
+          <h5>家庭基本信息</h5>
+          <label-container column="4" [border]="true" labelWidth="120">
+            <label-item label="家庭人口">4</label-item>
+            <label-item label="供养人数">2</label-item>
+            <label-item label="子女人数 ">2</label-item>
+            <label-item label="是否有未成年子女">是</label-item>
+            <label-item label="家庭总资产">300万</label-item>
+            <label-item label="家庭总负债">90万</label-item>
+            <label-item label="家庭对外担保总额">390万</label-item>
+            <label-item label="家庭年总收入">40万</label-item>
+            <label-item label="有无房产">有</label-item>
+            <label-item label="有无私家车">有</label-item>
+            <label-item label="主要经济来源">工资</label-item>
+            <label-item label="主要支出方向">生活消费</label-item>
+            <label-item label="家庭情况说明">无</label-item>
+          </label-container>
+        </div>
+        <div class="wrapinfo ql-padding">
+          <h5>参加得营销活动</h5>
+          <label-container column="3" [border]="true">
+            <label-item label="活动名称">天天一份利</label-item>
+            <label-item label="活动时间">2018-09-23 12:00</label-item>
+            <label-item label="活动结果">成功</label-item>
+            <label-item label="活动名称">健康夺宝</label-item>
+            <label-item label="活动时间">2016-11-19 9:00</label-item>
+            <label-item label="活动结果">未响应</label-item>
+          </label-container>
+        </div>
+        <div class="wrapinfo ql-padding">
+          <h5>即将到期产品</h5>
+          <label-container column="2" [border]="true">
+            <label-item label="产品名称">大额存单</label-item>
+            <label-item label="起止时间">2015-09-23至2019-10-31</label-item>
+            <label-item label="产品名称">封闭基金</label-item>
+            <label-item label="起止时间">2016-12-12至2019-11-15</label-item>
+            <label-item label="产品名称">建行财富宝</label-item>
+            <label-item label="起止时间">2018-01-30至2019-10-20</label-item>
+          </label-container>
+        </div>
+        <div class="wrapinfo ql-padding">
+          <h5>客户签约信息</h5>
+          <p>手机银行、短信银行、微信银行、网上银行</p>
+        </div>
+        <div class="row wrapinfo ql-padding">
+          <div ql-col [span]="12">
+            <label for="">月收入：2.3万(中高)</label>
+            <ql-progress type="circle" [percentage]="55"></ql-progress>
+          </div>
+          <div ql-col [span]="12">
+            <label for="">月支出：1.8万(中高)</label>
+            <ql-progress type="circle" [percentage]="65"></ql-progress>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="changeFlag == '2'">
+        <div ql-col [span]="24" echarts [options]="options1"></div>
+        <div class="customerassets">
+          <ql-table [model]="tableDataMore" [border]="true" [stripe]="true">
+            <ql-table-column model-key="financial" label="理财"></ql-table-column>
+            <ql-table-column model-key="fund" label="基金"></ql-table-column>
+            <ql-table-column model-key="bonds" label="国债"></ql-table-column>
+            <ql-table-column model-key="insurance" label="保险"></ql-table-column>
+            <ql-table-column model-key="deposit" label="人民币存款"></ql-table-column>
+            <ql-table-column model-key="housing" label="住房类贷款"></ql-table-column>
+            <ql-table-column model-key="loans" label="消费类贷款"></ql-table-column>
+            <ql-table-column model-key="credit" label="信用卡"></ql-table-column>
+            <ql-table-column model-key="debit" label="借记卡"></ql-table-column>
+            <ql-table-column model-key="other" label="其他"></ql-table-column>
+          </ql-table>
+        </div>
+        <div class="wrapinfo ql-padding">
+          <h5>消费统计</h5>
+          <label-container column="4" [border]="true">
+            <label-item label="月消费金额">3万</label-item>
+            <label-item label="比上月">-1%</label-item>
+            <label-item label="年消费金额">45万</label-item>
+            <label-item label="比去年">+3%</label-item>
+          </label-container>
+        </div>
+        <div class="wrapinfo ql-padding">
+          <h5>当月大额交易</h5>
+          <label-container column="2" [border]="true">
+            <label-item label="交易时间">2019-10-01 12:35</label-item>
+            <label-item label="交易账号">建设银行(620090293920028987)</label-item>
+            <label-item label="消费类型">支出</label-item>
+            <label-item label="比去年">1.87万</label-item>
+            <label-item label="交易时间">2019-10-08 12:35</label-item>
+            <label-item label="交易账号">建设银行(620090293920028987)</label-item>
+            <label-item label="消费类型">收入</label-item>
+            <label-item label="比去年">1万</label-item>
+          </label-container>
+        </div>
+      </div>
+      <div *ngIf="changeFlag == '3'" style="height: 400px;overflow-y: auto;">
+        <data-table [model]="contactData">
+          <ql-table-column model-key="bussiness" label="业务" width="105"> </ql-table-column>
+          <ql-table-column model-key="chandel" label="办理渠道"> </ql-table-column>
+          <ql-table-column model-key="time" label="办理时间" width="150"> </ql-table-column>
+        </data-table>
+      </div>
+      <div *ngIf="changeFlag == '4'">
+        <ql-collapse [accordion]="true">
+          <ql-collapse-item label="活期存款" value="1">
+            <label-container column="4" [border]="true">
+              <label-item label="账号">5790908</label-item>
+              <label-item label="账户状态">正常</label-item>
+              <label-item label="币种">人民币</label-item>
+              <label-item label="余额">12万</label-item>
+              <label-item label="关联卡号">630068902903487</label-item>
+              <label-item label="实时余额">12万</label-item>
+              <label-item label="存款日期">2018-12-10</label-item>
+              <label-item label="交易明细"><a>点击查看</a></label-item>
+            </label-container>
+          </ql-collapse-item>
+          <ql-collapse-item label="定期存款" value="2">
+            <label-container column="3" [border]="true">
+              <label-item label="账号">78273221</label-item>
+              <label-item label="账户状态">正常</label-item>
+              <label-item label="存款类型">定期存款</label-item>
+              <label-item label="币种">人民币</label-item>
+              <label-item label="本金">10万</label-item>
+              <label-item label="期限">3年</label-item>
+              <label-item label="起息日">2018-10-30</label-item>
+              <label-item label="到期日">2021-10-29</label-item>
+              <label-item label="利率">3.6%</label-item>
+            </label-container>
+          </ql-collapse-item>
+          <ql-collapse-item label="基金" value="3">
+            <label-container column="3" [border]="true">
+              <label-item label="账号">34897097</label-item>
+              <label-item label="基金名臣">健康基金C类</label-item>
+              <label-item label="基金管理公司">中国建设银行</label-item>
+              <label-item label="基金类型">稳健型</label-item>
+              <label-item label="购买时净值">5.67</label-item>
+              <label-item label="净值">5.34</label-item>
+              <label-item label="盈亏">2%</label-item>
+              <label-item label="份额">10000</label-item>
+              <label-item label="市值">50000</label-item>
+            </label-container>
+          </ql-collapse-item>
+          <ql-collapse-item label="保险" value="4">
+            <label-container column="4" [border]="true">
+              <label-item label="保险账号">3578652</label-item>
+              <label-item label="保险名称">健康e生保</label-item>
+              <label-item label="保险公司名称">平安保险</label-item>
+              <label-item label="险种类型">重大疾病险</label-item>
+              <label-item label="投保日期">2019-12-23</label-item>
+              <label-item label="保单到日期">2020-01-22</label-item>
+              <label-item label="缴费方式">网银</label-item>
+              <label-item label="缴费期限">五个工作日</label-item>
+            </label-container>
+          </ql-collapse-item>
+        </ql-collapse>
+        <div class="customerassets ql-margin-top ql-padding">
+          <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()">
+            <ql-form-item label="产品类型">
+              <ql-select [(model)]="valuetype" [clearable]="true">
+                <ql-option *ngFor="let item of prductType" [label]="item.label" [value]="item.value"> </ql-option>
+              </ql-select>
+            </ql-form-item>
+            <ql-form-item label="产品代码">
+              <ql-input></ql-input>
+            </ql-form-item>
+            <ql-form-item label="产品名称">
+              <ql-input></ql-input>
+            </ql-form-item>
+            <ql-form-item label="客户电话">
+              <ql-input></ql-input>
+            </ql-form-item>
+            <ql-form-item label="产品持有金额范围">
+              <ql-select [(model)]="valuecate" [clearable]="true">
+                <ql-option *ngFor="let item of category" [label]="item.label" [value]="item.value"> </ql-option>
+              </ql-select>
+            </ql-form-item>
+            <ql-form-item label="日期">
+              <ql-date-picker> </ql-date-picker>
+            </ql-form-item>
+          </data-form>
+
+          <data-table [model]="customertabledata" [selection]="true" *ngIf="searchflag === true">
+            <ql-table-column model-key="code" [render-html]="true" label="客户号"></ql-table-column>
+            <ql-table-column model-key="name" [render-html]="true" label="姓名" width="70"></ql-table-column>
+            <ql-table-column model-key="level" [render-html]="true" label="客户等级"></ql-table-column>
+            <ql-table-column model-key="age" [render-html]="true" label="年龄" width="60"></ql-table-column>
+            <ql-table-column model-key="sex" [render-html]="true" label="性别" width="60"></ql-table-column>
+            <ql-table-column model-key="tel" [render-html]="true" label="手机号"></ql-table-column>
+            <ql-table-column model-key="producttype" [render-html]="true" label="产品类型" width="85"></ql-table-column>
+            <ql-table-column model-key="productcode" [render-html]="true" label="产品代码"></ql-table-column>
+            <ql-table-column model-key="productown" [render-html]="true" label="持有产品额"></ql-table-column>
+            <ql-table-column model-key="aum" [render-html]="true" label="AUM" width="80"></ql-table-column>
+            <ql-table-column model-key="balance" [render-html]="true" label="资产余额" width="85"></ql-table-column>
+          </data-table>
+          <div class="btncss" *ngIf="searchflag === true">
+            <ql-button size="small" type="primary">拨打电话</ql-button>
+            <ql-button size="small" type="success">发送短信</ql-button>
+            <ql-button size="small" type="info">发现邮件</ql-button>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="changeFlag == '5'">
+        <div class="row ql-padding ql-margin-top" *ngFor="let item of tjcpdata" style="border: 1px solid gainsboro;">
+          <div ql-col span="5">
+            <h5>{{ item.name }}</h5>
+          </div>
+          <div ql-col span="7">
+            <p class="lccpcss">
+              产品代码：<span style="color:blue">{{ item.code }}</span>
+            </p>
+            <p class="lccpcss">
+              风险等级：<span style="color: red;">{{ item.level }}</span>
+            </p>
+            <p class="lccpcss">预期收益率：{{ item.profit }}</p>
+            <p class="lccpcss">销售渠道：{{ item.kandel }}</p>
+          </div>
+          <div ql-col span="7">
+            <p class="lccpcss">发售起始日期：{{ item.star }}</p>
+            <p class="lccpcss">发售截至日期：{{ item.end }}</p>
+            <p class="lccpcss">产品周期：{{ item.cycle }}</p>
+            <p class="lccpcss" style="color: blue;">{{ item.decsrible }}</p>
+          </div>
+          <div ql-col span="5">
+            <ql-button type="primary" size="small">购买</ql-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ql-card>
 </div>

@@ -7,8 +7,10 @@ import customerGroupList from '../../assets/json/customer-group.json'
 import customerLevelList from '../../assets/json/customer-level.json'
 import customerAssetsList from '../../assets/json/customer-assets.json'
 import customerTagList from '../../assets/json/customer-tag.json'
+import customerViewData from '../../assets/json/customer-view.json'
 import costomerDetaildkList from '../../assets/json/customer-detaildk.json'
-
+import customerSelectList from '../../assets/json/customer-select.json'
+import customerDetailcontact from '../../assets/json/customer-detailcontact.json'
 @Injectable()
 export class ApiService {
   constructor(private net: NetService) {}
@@ -29,7 +31,7 @@ export class ApiService {
   }
 
   public getcustomerAssetsList() {
-    return of(customerLevelList)
+    return of(customerAssetsList)
   }
 
   public getCustomerTagList(type?, parent?) {
@@ -43,8 +45,19 @@ export class ApiService {
   public getTagDetail(id) {
     return of(customerTagList.find(x => x.id === id))
   }
-  public getcostomerDetaildkList(){
-    return of(costomerDetaildkList)
+
+  public getCustomerViewData() {
+    return of(customerViewData)
   }
 
+  public getcostomerDetaildkList() {
+    return of(costomerDetaildkList)
+  }
+  public getcustomerDetailcontact(){
+    return of(customerDetailcontact)
+  }
+
+  public getCustomerSelectList() {
+    return of(customerSelectList)
+  }
 }

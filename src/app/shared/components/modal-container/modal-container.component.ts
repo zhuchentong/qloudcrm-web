@@ -7,7 +7,9 @@ import {
   ComponentFactoryResolver,
   ChangeDetectorRef,
   Injector,
-  Input
+  Input,
+  TemplateRef,
+  HostListener
 } from '@angular/core'
 import { Subject, Observable } from 'rxjs'
 
@@ -21,14 +23,23 @@ export class ModalContainerComponent implements OnInit {
   @Input() public header = true
   @Input() public position: '' | 'top' | 'bottom' = ''
   @Input() public size: 'mini' | 'small' | 'normal' | 'large' | 'huge' = 'normal'
+  @ViewChild('modalContainer', { read: ViewContainerRef, static: true })
+  private modalContainer: ViewContainerRef
   @ViewChild('container', { read: ViewContainerRef, static: true })
   private modalContent: ViewContainerRef
   private subjectOpen: any = new Subject<any>()
   private subjectClose: any = new Subject<any>()
   private refDynamicContent: ComponentRef<any>
-
+  public content: TemplateRef<any>
   close: boolean = false
   show: boolean = true
+
+  @HostListener('click', ['$event.target'])
+  onClick(target: HTMLElement) {
+    if (this.modalContainer.element.nativeElement === target) {
+      this.closeDialog()
+    }
+  }
 
   public get bodyClass() {
     return {
@@ -43,13 +54,19 @@ export class ModalContainerComponent implements OnInit {
   ngOnInit(): void {}
 
   addContent(compRef: any, config: any = null): void {
-    const factory = this.r.resolveComponentFactory(compRef)
-    this.refDynamicContent = this.modalContent.createComponent(factory)
-    if (config) {
-      Object.entries(config).forEach(([key, value]) => {
-        this.refDynamicContent.instance[key] = value
-      })
+    if (compRef instanceof TemplateRef) {
+      this.content = compRef
+    } else {
+      const factory = this.r.resolveComponentFactory(compRef)
+      this.refDynamicContent = this.modalContent.createComponent(factory)
+
+      if (config) {
+        Object.entries(config).forEach(([key, value]) => {
+          this.refDynamicContent.instance[key] = value
+        })
+      }
     }
+
     this.openDialog()
   }
 
@@ -66,13 +83,14 @@ export class ModalContainerComponent implements OnInit {
    * @param result
    */
   public closeDialog(result?: any): void {
-    this.modalContent.clear()
     this.show = false
-    setTimeout(() => {
-      this.close = true
-      this.subjectClose.next(result)
-      this.subjectClose.complete()
-    }, 200)
+    this.close = true
+
+    // 清空子组件
+    this.modalContent.clear()
+    // 关闭窗体
+    this.subjectClose.next(result)
+    this.subjectClose.complete()
   }
 
   onClosedModal(): Observable<any> {

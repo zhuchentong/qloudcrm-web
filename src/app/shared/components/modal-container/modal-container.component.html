@@ -1,6 +1,6 @@
-<div class="app-modal-mask" (click)="closeDialog()"></div>
-<div class="app-modal-container row middle-span center-span" role="document" (click)="closeDialog()">
-  <div class="app-modal-body" [ngClass]="bodyClass" (click)="$event.stopPropagation()">
+<div class="app-modal-mask"></div>
+<div #modalContainer class="app-modal-container row middle-span center-span" role="document">
+  <div class="app-modal-body" [ngClass]="bodyClass">
     <div *ngIf="header" class="app-modal-header row between-span top-span">
       <div>{{ title }}</div>
       <div class="close-btn" (click)="closeDialog()">
@@ -8,7 +8,7 @@
       </div>
     </div>
     <div style="position: relative">
-      <ng-container #container></ng-container>
+      <ng-container #container [ngTemplateOutlet]="content"></ng-container>
     </div>
   </div>
 </div>

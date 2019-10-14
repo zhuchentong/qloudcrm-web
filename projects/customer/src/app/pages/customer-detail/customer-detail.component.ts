@@ -130,6 +130,8 @@ export class CustomerDetailComponent implements OnInit {
   // 推荐产品
   public tjcpdata = []
 
+  public contactData = []
+
   // 切换
   handle(event) {
     this.changeFlag = event
@@ -140,6 +142,9 @@ export class CustomerDetailComponent implements OnInit {
   ngOnInit() {
     this.apiService.getcostomerDetaildkList().subscribe(data=>{
       this.tjcpdata = data
+    })
+    this.apiService.getcustomerDetailcontact().subscribe(data=>{
+      this.contactData = data
     })
   }
 
