@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~normalize.css';
-@import '~bootstrap/scss/bootstrap';
-@import '~formiojs/dist/formio.builder';
+@import '~bootstrap/scss/bootstrap.scss';
+@import '~formiojs/dist/formio.full.min.css';
+@import '~fullcalendar/dist/fullcalendar.min.css';
 
 @import './assets/styles/default.scss';
 @import './assets/styles/layout.scss';
