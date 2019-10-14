@@ -30,7 +30,9 @@ import { TagCreateProductComponent } from './components/tag-create-product/tag-c
 import { TagCreateGroupComponent } from './components/tag-create-group/tag-create-group.component'
 import { SelectCreateComponent } from './components/select-create/select-create.component'
 import { AddGroupComponent } from './pages/add-group/add-group.component';
-import { MyAssignComponent } from './pages/my-assign/my-assign.component'
+import { MyAssignComponent } from './pages/my-assign/my-assign.component';
+import { CustomerAssignComponent } from './pages/customer-assign/customer-assign.component';
+import { CustomerSetreceverComponent } from './pages/customer-setrecever/customer-setrecever.component'
 
 // 页面列表
 const PAGES = [
@@ -44,7 +46,9 @@ const PAGES = [
   TagDetailComponent,
   TagCreateComponent,
   AddGroupComponent,
-  MyAssignComponent
+  CustomerAssignComponent,
+  MyAssignComponent,
+  CustomerSetreceverComponent
 ]
 
 // 组件列表
@@ -75,7 +79,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, AddGroupComponent, MyAssignComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, AddGroupComponent, MyAssignComponent, CustomerAssignComponent, CustomerSetreceverComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule],
   providers,
