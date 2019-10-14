@@ -1,48 +1,64 @@
 <!-- /.col-md-12 -->
-<div class="col-md-12 mb-auto ql-card">
+<div class="panel border-primary no-border border-3-top" data-panel-control style="margin-top: -20px;">
+  <div class="panel-heading">
+    <div class="panel-title">
+      <h5>&nbsp;&nbsp;&nbsp;资讯</h5>
+    </div>
+  </div>
+  <div class="panel-body">
     <ql-menu [model]="index" (modelChange)="handle($event)" class="ql-menu-demo" mode="horizontal">
-      <ql-menu-item index="1" >总行资讯</ql-menu-item>
+      <ql-menu-item index="1">总行资讯</ql-menu-item>
       <ql-menu-item index="2" >分行资讯</ql-menu-item>
       <ql-menu-item index="3" >行外资讯</ql-menu-item>
     </ql-menu>
 
   <div class="p-15" heading="总行资讯" *ngIf="tabIndex=='1'">
     <div class="panel-body">
-      <table class="table table-striped table-hover table-bordered" style="overflow: auto;">
+      <table class="table table-striped table-hover table-bordered" style="overflow: auto;font-size: 0.4em;">
 
         <tbody>
         <tr *ngFor="let item of oneNews">
           <td><span class="badge badge-pill badge-dark">{{ item.id }}</span>  {{ item.content }}</td>
         </tr>
         </tbody>
+        <tfoot>
+        <button style="float: right;font-size: 0.4em;margin-right: 5px;margin-top: 5px;margin-bottom: 5px;" type="button"  class="btn btn-primary btn-sm">更多</button>
+        </tfoot>
       </table>
     </div>
   </div>
 
   <div class="p-15" heading="分行资讯" *ngIf="tabIndex=='2'">
     <div class="panel-body">
-      <table class="table table-striped table-hover table-bordered" style="overflow: auto;">
+      <table class="table table-striped table-hover table-bordered" style="overflow: auto;font-size: 0.4em;">
 
         <tbody>
         <tr *ngFor="let item of twoNews">
           <td><span class="badge badge-pill badge-dark">{{ item.id }}</span>  {{ item.content }}</td>
         </tr>
         </tbody>
+        <tfoot>
+          <button style="float: right;font-size: 0.4em;margin-right: 5px;margin-top: 5px;margin-bottom: 5px;" type="button"  class="btn btn-primary btn-sm">更多</button>
+        </tfoot>
       </table>
     </div>
   </div>
 
   <div class="p-15" heading="行外资讯" *ngIf="tabIndex=='3'">
     <div class="panel-body">
-      <table class="table table-striped table-hover table-bordered" style="overflow: auto;">
+      <table class="table table-striped table-hover table-bordered" style="overflow: auto;font-size: 0.4em;">
 
         <tbody>
         <tr *ngFor="let item of threeNews">
           <td><span class="badge badge-pill badge-dark">{{ item.id }}</span>  {{ item.content }}</td>
         </tr>
         </tbody>
+        <tfoot>
+        <button style="float: right;font-size: 0.4em;margin-right: 5px;margin-top: 5px;margin-bottom: 5px;" type="button"  class="btn btn-primary btn-sm">更多</button>
+        </tfoot>
       </table>
     </div>
+  </div>
   </div>
 </div>
 

@@ -94,7 +94,7 @@ export class CalendarComponent implements OnInit {
     loadCalendar() {
         const that = this; // 注意这里的this指向（that代表ts的this）
         $('#calendar').fullCalendar({
-            // locale: "zh-cn",//使用中文
+            locale: "zh-cn",//使用中文
             header: {
                 left: 'prev,next today',
                 center: 'title',

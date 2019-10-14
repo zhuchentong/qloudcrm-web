@@ -61,14 +61,14 @@ export class DesignComponent implements OnInit {
       },
       {
         "value": "app_view7",
-        "label": "投资资产类型收益变化",
+        "label": "信息中心",
         "code": "layoutCompType"
       },
-      {
-        "value": "app_view8",
-        "label": "收益类型净值变动",
-        "code": "layoutCompType"
-      },
+      // {
+      //   "value": "app_view8",
+      //   "label": "收益类型净值变动",
+      //   "code": "layoutCompType"
+      // },
       {
         "value": "app_view9",
         "label": "待办事项",

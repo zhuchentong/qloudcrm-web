@@ -518,7 +518,7 @@ export const formSave = {
                             'type': 'button',
                             'input': true,
                             'key': 'submit',
-                            'labelWidth': 10
+                            'labelWidth': 20
 
                         }
                     ]

@@ -1,6 +1,6 @@
 
   <a class="dashboard-stat bg-primary1">
-    <span class="number1">{{circlechartData| number:'1.2-2'}} 人</span>
+    <span class="number1">{{circlechartData}} 人</span>
     <span class="name1">本月新增客户</span>
     <div echarts [options]="circlechartOption[0]" [merge]="circlechartOption[1]"  [loading]="loading" class="demo-circle-chart"></div>
   </a>

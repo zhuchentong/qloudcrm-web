@@ -1,4 +1,4 @@
-<section class="section pt-n">
+<section class="section pt-n" style="margin-top: -20px;">
   <div class="container-fluid">
         <!--<div class="panel border-primary no-border border-3-top" data-panel-control style="height:673px;width: 400px">-->
         <div class="panel border-primary no-border border-3-top" data-panel-control id="task">
@@ -29,9 +29,14 @@
                         </span>
                       </div>
                       <div class="task-time">{{ item.time }}</div>
-                      <div class="task-body">{{ item.content }}</div>
+                      <div class="task-body" *ngIf="item.state=='风险提醒'">{{ item.date }}客户 <a href="">{{ item.customerName }}</a> {{ item.content }}</div>
+                      <div class="task-body" *ngIf="item.state=='营销提醒'">{{ item.content }}客户 <a href="">{{ item.customerName }}</a> </div>
+                      <div class="task-body" *ngIf="item.state!='风险提醒' && item.state!='营销提醒'">{{ item.content }}客户 <a href="">{{ item.customerName }}</a></div>
                       <div class="task-creator"><a href="">{{ item.author }}</a></div>
                       <div class="task-assignedto">{{ item.process }}</div>
+                    </li>
+                    <li class="task-item">
+                      <button style="float: right;font-size: 0.4em;margin-right: 5px;margin-top: 10px;" type="button"  class="btn btn-primary btn-sm">更多</button>
                     </li>
                     <!--<li class="task-item">-->
                       <!--<div class="task-check">-->
