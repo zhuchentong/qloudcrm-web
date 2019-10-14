@@ -10,7 +10,7 @@
   </ng-template>
 </page-header>
 
-<ql-card>
+<page-container>
   <div ql-row type="flex">
     <ql-tree (modelChange)="onCatalogChange($event)" [accordion]="true" [model]="catalogList" ql-col span="6"></ql-tree>
     <data-table ql-col span="18" [model]="tagList" [selection]="true">
@@ -28,4 +28,4 @@
       <ql-table-column model-key="state" label="标签状态"></ql-table-column>
     </data-table>
   </div>
-</ql-card>
+</page-container>
