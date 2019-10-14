@@ -19,7 +19,7 @@ import { LabelContainerComponent } from './components/label-container/label-cont
 import { LabelItemComponent } from './components/label-item/label-item.component'
 import { DictPipe } from './pipes/dict.pipe'
 import { NavigateDirective } from './directives/navigate.directive'
-import { FormBuilderComponent, FormioComponent, FormioModule } from 'angular-formio'
+import { FormBuilderComponent, FormioComponent, FormioModule, FormioAppConfig } from 'angular-formio'
 import { DividerComponent } from './components/divider/divider.component'
 import { PageContainerComponent } from './components/page-container/page-container.component'
 
@@ -48,6 +48,7 @@ const PIPES = [DictPipe]
     QlModule.forRoot(),
     FormioModule
   ],
+  providers: [{ provide: FormioAppConfig, useValue: {} }],
   entryComponents: [...COMPONENTS],
   declarations: [...COMPONENTS, ...DIRECTIVES, ...PIPES],
   exports: [
