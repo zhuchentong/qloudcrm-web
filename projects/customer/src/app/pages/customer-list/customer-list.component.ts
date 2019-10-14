@@ -29,6 +29,7 @@ export class CustomerListComponent implements OnInit {
   public search() {
     this.modal
       .open({
+        size: 'large',
         title: '高级搜索',
         component: SearchComponent,
         data: {

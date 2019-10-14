@@ -1,1 +1,41 @@
-<p>customer-select works!</p>
+<page-header title="客户申领" [breadcrumb]="breadcrumb" [action]="action">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>客户申领</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action>
+    <ql-button type="primary" (click)="onCreate()">我要申领</ql-button>
+  </ng-template>
+</page-header>
+
+<page-container>
+  <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()">
+    <ql-form-item label="申请时间">
+      <div class="row">
+        <ql-date-picker placeholder="开始申请时间" class="ql-margin-right"> </ql-date-picker>
+        <ql-date-picker placeholder="结束申请时间"> </ql-date-picker>
+      </div>
+    </ql-form-item>
+    <ql-form-item label="申领人姓名">
+      <ql-input></ql-input>
+    </ql-form-item>
+    <ql-form-item label="申领状态">
+      <ql-select>
+        <ql-option label="成功" [value]="true"></ql-option>
+        <ql-option label="未成功" [value]="false"></ql-option>
+      </ql-select>
+    </ql-form-item>
+  </data-form>
+
+  <data-table [model]="customerList">
+    <ql-table-column model-key="code" label="客户号"> </ql-table-column>
+    <ql-table-column model-key="name" label="姓名"> </ql-table-column>
+    <ql-table-column model-key="organization" label="申领人所属机构"> </ql-table-column>
+    <ql-table-column model-key="selector" label="申领人姓名"> </ql-table-column>
+    <ql-table-column model-key="reason" label="申领理由"> </ql-table-column>
+    <ql-table-column model-key="status" label="申领状态"> </ql-table-column>
+    <ql-table-column model-key="time" label="申领时间"> </ql-table-column>
+  </data-table>
+</page-container>
