@@ -11,6 +11,9 @@ import customerViewData from '../../assets/json/customer-view.json'
 import costomerDetaildkList from '../../assets/json/customer-detaildk.json'
 import customerSelectList from '../../assets/json/customer-select.json'
 import customerDetailcontact from '../../assets/json/customer-detailcontact.json'
+import customerMyassignList from '../../assets/json/customer-myassign.json'
+import cuctomerAssignList from '../../assets/json/customer-assign.json'
+
 @Injectable()
 export class ApiService {
   constructor(private net: NetService) {}
@@ -59,5 +62,13 @@ export class ApiService {
 
   public getCustomerSelectList() {
     return of(customerSelectList)
+  }
+
+  public getcustomerMyassignList(){
+    return of(customerMyassignList)
+  }
+
+  public getcuctomerAssignList(){
+    return of(cuctomerAssignList)
   }
 }
