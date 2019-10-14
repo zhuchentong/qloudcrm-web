@@ -8,7 +8,8 @@ import {
   ChangeDetectorRef,
   Injector,
   Input,
-  TemplateRef
+  TemplateRef,
+  HostListener
 } from '@angular/core'
 import { Subject, Observable } from 'rxjs'
 
@@ -22,6 +23,8 @@ export class ModalContainerComponent implements OnInit {
   @Input() public header = true
   @Input() public position: '' | 'top' | 'bottom' = ''
   @Input() public size: 'mini' | 'small' | 'normal' | 'large' | 'huge' = 'normal'
+  @ViewChild('modalContainer', { read: ViewContainerRef, static: true })
+  private modalContainer: ViewContainerRef
   @ViewChild('container', { read: ViewContainerRef, static: true })
   private modalContent: ViewContainerRef
   private subjectOpen: any = new Subject<any>()
@@ -30,6 +33,13 @@ export class ModalContainerComponent implements OnInit {
   public content: TemplateRef<any>
   close: boolean = false
   show: boolean = true
+
+  @HostListener('click', ['$event.target'])
+  onClick(target: HTMLElement) {
+    if (this.modalContainer.element.nativeElement === target) {
+      this.closeDialog()
+    }
+  }
 
   public get bodyClass() {
     return {
