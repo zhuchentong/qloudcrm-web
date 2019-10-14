@@ -23,6 +23,7 @@ import { FormBuilderComponent, FormioComponent, FormioModule, FormioAppConfig } 
 import { DividerComponent } from './components/divider/divider.component'
 import { PageContainerComponent } from './components/page-container/page-container.component'
 import { EchartService } from './utils/echart.service'
+import { ClipboardModule } from 'ngx-clipboard'
 
 const COMPONENTS = [
   ModalContainerComponent,
@@ -47,9 +48,22 @@ const PIPES = [DictPipe]
     RouterModule,
     ReactiveFormsModule,
     QlModule.forRoot(),
-    FormioModule
+    FormioModule,
+    ClipboardModule
   ],
-  providers: [EchartService, { provide: FormioAppConfig, useValue: {} }],
+  providers: [
+    EchartService,
+    ModalService,
+    ModalRef,
+    {
+      provide: FormioAppConfig,
+      useValue: {
+        appUrl: 'https://example.form.io',
+        apiUrl: 'https://api.form.io',
+        icons: 'fontawesome'
+      }
+    }
+  ],
   entryComponents: [...COMPONENTS],
   declarations: [...COMPONENTS, ...DIRECTIVES, ...PIPES],
   exports: [
@@ -61,6 +75,7 @@ const PIPES = [DictPipe]
     RouterModule,
     QlModule,
     FormioModule,
+    ClipboardModule,
     ...COMPONENTS,
     ...DIRECTIVES,
     ...PIPES

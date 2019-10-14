@@ -1,0 +1,17 @@
+<form-builder [form]="form" (change)="onChange($event)"></form-builder>
+<divider></divider>
+<ql-card [header]="header">
+  <ng-template #header>
+    <div class="row between-span">
+      <div>表单JSON</div>
+      <div>
+        <ql-button size="mini" (click)="onCollpse()">{{ collpse ? '展开' : '收起' }}</ql-button>
+        <ql-button size="mini" (click)="onCopy()">复制</ql-button>
+      </div>
+    </div>
+  </ng-template>
+  <pre
+    class="text-left"
+    [ngStyle]="{ height: collpse ? '100px' : 'unset' }"
+  ><code class="language-json">{{json}}</code></pre>
+</ql-card>

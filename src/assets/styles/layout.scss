@@ -9,23 +9,28 @@
 }
 
 .row > .row {
-  margin: 0px;
-  padding: 0px;
+  // margin: 0px;
+  // padding: 0px;
 }
 
 .row > .col {
-  margin: 0px;
-  padding: 0px;
+  // margin: 0px;
+  // padding: 0px;
 }
 
 .col > .col {
-  margin: 0px;
-  padding: 0px;
+  // margin: 0px;
+  // padding: 0px;
 }
 
 .col > .row {
-  margin: 0px;
-  padding: 0px;
+  // margin: 0px;
+  // padding: 0px;
+}
+
+.row > * {
+  /** 解决IM样式污染 **/
+  text-align: inherit;
 }
 
 .container-fluid {
@@ -465,17 +470,6 @@
 
 .yellow {
   background: yellow;
-}
-
-.row > * {
-  /** 解决IM样式污染 **/
-  text-align: inherit;
-}
-
-.row > .row {
-  padding: 0px;
-  text-align: center;
-  margin: 0px;
 }
 
 .content {
