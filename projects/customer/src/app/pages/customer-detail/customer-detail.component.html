@@ -103,7 +103,7 @@
                 </div>
                 <div class="wrapinfo ql-padding">
                     <h5>参加得营销活动</h5>
-                    <label-container column="3">
+                    <label-container column="3" [border]="true">
                         <label-item label="活动名称">天天一份利</label-item>
                         <label-item label="活动时间">2018-09-23 12:00</label-item>
                         <label-item label="活动结果">成功</label-item>
@@ -178,47 +178,11 @@
                 </div>
             </div>
             <div *ngIf="changeFlag == '3'" style="height: 400px;overflow-y: auto;">
-                <label-container column="3" [border]="true">
-                    <label-item label="业务">提取基金</label-item>
-                    <label-item label="办理渠道">手机app</label-item>
-                    <label-item label="办理时间">2019-10-08</label-item>
-                    <label-item label="业务">大额存单</label-item>
-                    <label-item label="办理渠道">银行柜台</label-item>
-                    <label-item label="办理时间">2019-10-01</label-item>
-                    <label-item label="业务">转账</label-item>
-                    <label-item label="办理渠道">网上银行</label-item>
-                    <label-item label="办理时间">2019-9-22</label-item>
-                    <label-item label="业务">股票抛出</label-item>
-                    <label-item label="办理渠道">手机app</label-item>
-                    <label-item label="办理时间">2019-09-18</label-item>
-                    <label-item label="业务">办理理财产品</label-item>
-                    <label-item label="办理渠道">网上银行</label-item>
-                    <label-item label="办理时间">2019-09-14</label-item>
-                    <label-item label="业务">商业贷款</label-item>
-                    <label-item label="办理渠道">网上银行</label-item>
-                    <label-item label="办理时间">2019-09-10</label-item>
-                    <label-item label="业务">提取基金</label-item>
-                    <label-item label="办理渠道">手机app</label-item>
-                    <label-item label="办理时间">2019-10-08</label-item>
-                    <label-item label="业务">大额存单</label-item>
-                    <label-item label="办理渠道">银行柜台</label-item>
-                    <label-item label="办理时间">2019-10-01</label-item>
-                    <label-item label="业务">转账</label-item>
-                    <label-item label="办理渠道">网上银行</label-item>
-                    <label-item label="办理时间">2019-9-22</label-item>
-                    <label-item label="业务">股票抛出</label-item>
-                    <label-item label="办理渠道">手机app</label-item>
-                    <label-item label="办理时间">2019-09-18</label-item>
-                    <label-item label="业务">提取基金</label-item>
-                    <label-item label="办理渠道">手机app</label-item>
-                    <label-item label="办理时间">2019-10-08</label-item>
-                    <label-item label="业务">大额存单</label-item>
-                    <label-item label="办理渠道">银行柜台</label-item>
-                    <label-item label="办理时间">2019-10-01</label-item>
-                    <label-item label="业务">转账</label-item>
-                    <label-item label="办理渠道">网上银行</label-item>
-                    <label-item label="办理时间">2019-9-22</label-item>
-                </label-container>
+                <data-table [model]="contactData">
+                    <ql-table-column model-key="bussiness" label="业务" width="105"> </ql-table-column>
+                    <ql-table-column model-key="chandel" label="办理渠道"> </ql-table-column>
+                    <ql-table-column model-key="time" label="办理时间" width="150"> </ql-table-column>
+                </data-table>
             </div>
             <div *ngIf="changeFlag == '4'">
                 <ql-collapse [accordion]="true">
@@ -274,45 +238,34 @@
                     </ql-collapse-item>
                 </ql-collapse>
                 <div class="customerassets ql-margin-top ql-padding">
-                    <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()" [action]="action" style="width: 900px;">
-                        <div ql-col [span]="4">
-                            <ql-form-item label="产品类型">
-                                <ql-select [(model)]="valuetype " [clearable]="true ">
-                                    <ql-option *ngFor="let item of prductType" [label]=" item.label " [value]="item.value">
-                                    </ql-option>
-                                </ql-select>
-                            </ql-form-item>
-                        </div>
-                        <div ql-col [span]="4">
-                            <ql-form-item label="产品代码">
-                                <ql-input></ql-input>
-                            </ql-form-item>
-                        </div>
-                        <div ql-col [span]="4">
-                            <ql-form-item label="产品名称">
-                                <ql-input></ql-input>
-                            </ql-form-item>
-                        </div>
-                        <div ql-col [span]="5">
-                            <ql-form-item label="产品持有金额范围">
-                                <ql-select [(model)]="valuecate" [clearable]="true ">
-                                    <ql-option *ngFor="let item of category" [label]=" item.label " [value]="item.value">
-                                    </ql-option>
-                                </ql-select>
-                            </ql-form-item>
-                        </div>
-                        <div ql-col [span]="5">
-                            <ql-form-item label="产品到期日">
-                                <!-- <ql-date-picker (modelChange)="handle($event)" (clear-click)="clearClickHandle($event)">
-                                        </ql-date-picker> -->
-                                <input style="outline: none;
-                                        border: none;
-                                        border: 1px solid gainsboro;
-                                        border-radius: 5px;
-                                        height: 30px;" type="date">
-                            </ql-form-item>
-                        </div>
+                    <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()">
+                        <ql-form-item label="产品类型">
+                            <ql-select [(model)]="valuetype " [clearable]="true ">
+                                <ql-option *ngFor="let item of prductType" [label]=" item.label " [value]="item.value">
+                                </ql-option>
+                            </ql-select>
+                        </ql-form-item>
+                        <ql-form-item label="产品代码">
+                            <ql-input></ql-input>
+                        </ql-form-item>
+                        <ql-form-item label="产品名称">
+                            <ql-input></ql-input>
+                        </ql-form-item>
+                        <ql-form-item label="客户电话">
+                            <ql-input></ql-input>
+                        </ql-form-item>
+                        <ql-form-item label="产品持有金额范围">
+                            <ql-select [(model)]="valuecate" [clearable]="true ">
+                                <ql-option *ngFor="let item of category" [label]=" item.label " [value]="item.value">
+                                </ql-option>
+                            </ql-select>
+                        </ql-form-item>
+                        <ql-form-item label="日期">
+                            <ql-date-picker>
+                            </ql-date-picker>
+                        </ql-form-item>
                     </data-form>
+
                     <ql-table [model]="customertabledata" [border]="true" [stripe]="true" *ngIf="searchflag===true">
                         <ql-table-column label="选择" width="70">
                             <ng-template #slot let-scope="scope">

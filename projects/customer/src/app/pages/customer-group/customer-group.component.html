@@ -1,39 +1,50 @@
 <page-header title="客户分配" [breadcrumb]="breadcrumb" [action]="action">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb separator="/">
-      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>客户分配</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
-  <ng-template #action>
-    <ql-button type="primary">群组统计查询</ql-button>
-  </ng-template>
+    <ng-template #breadcrumb>
+        <ql-breadcrumb separator="/">
+            <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>客户分配</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+    <ng-template #action>
+        <ql-button type="primary">群组统计查询</ql-button>
+    </ng-template>
 </page-header>
 
 <ql-card>
-  <data-form [showReset]="false" [submitText]="'刷新'" [formGroup]="formGroup" (submit)="onRefresh()">
-    <ql-form-item label="群组名称">
-      <ql-input formControlName="state"></ql-input>
-    </ql-form-item>
-    <ql-form-item label="群组状态">
-      <ql-input formControlName="state"></ql-input>
-    </ql-form-item>
-  </data-form>
+    <data-form [showReset]="false" [submitText]="'刷新'" [formGroup]="formGroup" (submit)="onRefresh()" [button]="button">
+        <ql-form-item label="群组名称">
+            <ql-input formControlName="state"></ql-input>
+        </ql-form-item>
+        <ql-form-item label="群组状态">
+            <ql-input formControlName="state"></ql-input>
+        </ql-form-item>
+        <ng-template #button>
+            <ql-button size="small" type="primary" routerLink="/customer/add-group">添加分组</ql-button>
+        </ng-template>
+    </data-form>
 
-  <data-table [model]="groupList">
-    <ql-table-column model-key="code" label="群组编号"> </ql-table-column>
-    <ql-table-column model-key="name" label="群组名称"> </ql-table-column>
-    <ql-table-column model-key="description" label="群组描述"> </ql-table-column>
-    <ql-table-column model-key="createTime" label="创建时间"> </ql-table-column>
-    <ql-table-column model-key="creator" label="创建人"> </ql-table-column>
-    <ql-table-column model-key="count" label="客户数量"> </ql-table-column>
-    <ql-table-column model-key="state" label="群组状态"> </ql-table-column>
+    <data-table [model]="groupList">
+        <ql-table-column model-key="code" label="群组编号"> </ql-table-column>
+        <ql-table-column model-key="name" label="群组名称"> </ql-table-column>
+        <ql-table-column model-key="description" label="群组描述"> </ql-table-column>
+        <ql-table-column model-key="createTime" label="创建时间"> </ql-table-column>
+        <ql-table-column model-key="creator" label="创建人"> </ql-table-column>
+        <ql-table-column model-key="count" label="客户数量"> </ql-table-column>
+        <ql-table-column model-key="state" label="群组状态"> </ql-table-column>
 
-    <ql-table-column label="操作">
-      <ng-template #slot let-scope="scope">
-        <ql-button type="text">编辑</ql-button>
-        <ql-button type="text">删除</ql-button>
-      </ng-template>
-    </ql-table-column>
-  </data-table>
+        <ql-table-column label="操作" width="280">
+            <ng-template #slot let-scope="scope">
+                <ql-button type="text" (click)="editGroup()">编辑</ql-button>
+                <ql-button type="text">群组成员查询</ql-button>
+                <ql-button type="text">删除</ql-button>
+            </ng-template>
+        </ql-table-column>
+    </data-table>
+
+    <!-- 编辑群组 -->
+    <div class="box-card" #card>
+        <ql-dialog [title]="'修改群组'" [(visible)]="edidflag">
+            <formio [form]="group_Form" [submission]="groupFormData"></formio>
+        </ql-dialog>
+    </div>
 </ql-card>

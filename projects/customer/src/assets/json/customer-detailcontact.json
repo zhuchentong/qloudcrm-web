@@ -1,0 +1,9 @@
+[
+    { "bussiness": "办理贷款", "chandel": "手机app", "time": "2019-9-12" },
+    { "bussiness": "大额存单", "chandel": "网上银行", "time": "2019-9-20" },
+    { "bussiness": "基金到期提取", "chandel": "网上银行", "time": "2019-10-01" },
+    { "bussiness": "贷款还款", "chandel": "手机app", "time": "2019-10-10" },
+    { "bussiness": "办理理财产品", "chandel": "网上银行", "time": "2019-10-07" },
+    { "bussiness": "大额存单", "chandel": "网上银行", "time": "2019-10-08" },
+    { "bussiness": "贷款还款", "chandel": "手机app", "time": "2019-10-12" }
+]

@@ -1,11 +1,9 @@
-[
-  {
+[{
     "code": "000001",
     "name": "主要客户",
-    "description": "",
+    "description": "高消费客户",
     "createTime": "2019-06-06",
     "creator": "张东",
     "count": "176",
-    "state": ""
-  }
-]
+    "state": "开启"
+}]

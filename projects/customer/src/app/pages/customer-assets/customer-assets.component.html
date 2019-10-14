@@ -18,24 +18,16 @@
             <ql-option *ngFor="let item of seltimes" [label]="item.label" [value]="item.value"> </ql-option>
         </ql-select>
     </div>
-    <div class="row ql-margin-bottom">
-        <div class="fontweight" ql-col [span]="6">资产余额变动客户</div>
-        <div class="fontweight" ql-col [span]="6">存款余额变动客户</div>
-        <div class="fontweight" ql-col [span]="6">投资理财余额变动客户</div>
-        <div class="fontweight" ql-col [span]="6">贷款客户</div>
-        <div ql-col [span]="6">13</div>
-        <div ql-col [span]="6">128</div>
-        <div ql-col [span]="6">32</div>
-        <div ql-col [span]="6">9</div>
-        <div class="fontweight" ql-col [span]="6">客户资产余额（万）</div>
-        <div class="fontweight" ql-col [span]="6">存款余额（万）</div>
-        <div class="fontweight" ql-col [span]="6">投资理财余额（万）</div>
-        <div class="fontweight" ql-col [span]="6">贷款余额（万）</div>
-        <div ql-col [span]="6">80</div>
-        <div ql-col [span]="6">500</div>
-        <div ql-col [span]="6">50</div>
-        <div ql-col [span]="6">459</div>
-    </div>
+    <label-container column="4" [border]="true" labelWidth="150">
+        <label-item label="资产余额变动客户">13</label-item>
+        <label-item label="存款余额变动客户">126</label-item>
+        <label-item label="投资理财余额变动客户">32</label-item>
+        <label-item label="贷款客户">9</label-item>
+        <label-item label="客户资产余额（万）">25</label-item>
+        <label-item label="存款余额（万）">500</label-item>
+        <label-item label="投资理财余额（万）">120</label-item>
+        <label-item label="贷款余额（万）">100</label-item>
+    </label-container>
     <data-table [model]="dataassets" [action]="tableAction">
         <ng-template #tableAction>
             <ql-button size="small" type="primary">拨打电话</ql-button>

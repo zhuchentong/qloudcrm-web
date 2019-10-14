@@ -13,6 +13,9 @@ import { CustomerSelectComponent } from './pages/customer-select/customer-select
 import { TagDetailComponent } from './pages/tag-detail/tag-detail.component'
 import { TagCreateComponent } from './pages/tag-create/tag-create.component'
 import { CustomerDetailComponent } from './pages/customer-detail/customer-detail.component'
+import { AddGroupComponent } from './pages/add-group/add-group.component'
+
+
 
 const routes: Routes = [
   { path: 'customer/customer-list', component: CustomerListComponent },
@@ -24,7 +27,8 @@ const routes: Routes = [
   { path: 'customer/customer-select', component: CustomerSelectComponent },
   { path: 'customer/tag-detail', component: TagDetailComponent },
   { path: 'customer/tag-create', component: TagCreateComponent },
-  { path: 'customer/customer-detail', component: CustomerDetailComponent }
+  { path: 'customer/customer-detail', component: CustomerDetailComponent },
+  { path: 'customer/add-group',component:AddGroupComponent}
 ]
 
 routes.push({

@@ -29,6 +29,7 @@ import { TagCreateCustomerComponent } from './components/tag-create-customer/tag
 import { TagCreateProductComponent } from './components/tag-create-product/tag-create-product.component'
 import { TagCreateGroupComponent } from './components/tag-create-group/tag-create-group.component'
 import { SelectCreateComponent } from './components/select-create/select-create.component'
+import { AddGroupComponent } from './pages/add-group/add-group.component'
 
 // 页面列表
 const PAGES = [
@@ -40,13 +41,15 @@ const PAGES = [
   CustomerAssetsComponent,
   CustomerSelectComponent,
   TagDetailComponent,
-  TagCreateComponent
+  TagCreateComponent,
+  AddGroupComponent
 ]
 
 // 组件列表
 const COMPONENTS = [
   SearchComponent,
   CustomerDetailComponent,
+  // CustomerAddgroupComponent,
   TagCreateCustomerComponent,
   TagCreateProductComponent,
   TagCreateGroupComponent,
@@ -70,7 +73,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, AddGroupComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule],
   providers,
