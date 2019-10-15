@@ -9,7 +9,7 @@ import {
   EventEmitter,
   ViewChild
 } from '@angular/core'
-import { FormGroup } from '@angular/forms'
+import { FormGroup, FormBuilder } from '@angular/forms'
 import { QlForm } from 'qloud-angular/package/form/form'
 import { QlFormProps } from 'qloud-angular/package/form/form.props'
 @Component({
@@ -20,7 +20,7 @@ import { QlFormProps } from 'qloud-angular/package/form/form.props'
   // encapsulation: ViewEncapsulation.ShadowDom
 })
 export class DataFormComponent implements OnInit {
-  @Input() public formGroup: FormGroup
+  @Input() public formGroup: FormGroup = this.fb.group({})
   @Input() public collapse: TemplateRef<void>
   @Input() public button: TemplateRef<void>
   @Input() public action: TemplateRef<void>
@@ -31,7 +31,7 @@ export class DataFormComponent implements OnInit {
   @ViewChild('form', { static: true }) public form: TemplateRef<QlForm>
   public isCollapse = true
 
-  constructor() {}
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit() {}
 

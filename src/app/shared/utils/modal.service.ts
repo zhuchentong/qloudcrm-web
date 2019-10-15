@@ -63,6 +63,10 @@ export class ModalService {
     )
   }
 
+  public close(result?) {
+    this._container.closeDialog(result)
+  }
+
   public createModal(compRef: any, data, config) {
     this._componentRef = this.appendComponentToBody(ModalContainerComponent)
     this._container = this._componentRef['_component']

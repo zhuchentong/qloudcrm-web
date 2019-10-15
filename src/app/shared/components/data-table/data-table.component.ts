@@ -17,8 +17,10 @@ export class DataTableComponent implements OnInit {
   @Input() public selection: boolean
   @Input() public action: TemplateRef<void>
   @Output('page-change') public pageChangeEvent: EventEmitter<any> = new EventEmitter()
+  @Output('selection-change') public checkChangeEvent: EventEmitter<any> = new EventEmitter()
   @ViewChild('table', { static: true }) public table: QlTable
 
+  public selectionList: any[] = []
   private skipColumnWidthUpdate = false
 
   constructor() {
@@ -68,5 +70,15 @@ export class DataTableComponent implements OnInit {
   public onPageChange(index) {
     this.page.pageIndex = index
     this.pageChangeEvent.emit(index)
+  }
+
+  public onCheckChange(value, data) {
+    if (value) {
+      this.selectionList.push(data)
+    } else {
+      this.selectionList = this.selectionList.filter(x => x !== data)
+    }
+
+    this.checkChangeEvent.emit(this.selectionList)
   }
 }
