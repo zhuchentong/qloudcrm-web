@@ -23,6 +23,7 @@ export class SearchComponent implements OnInit {
   public ctlever = [{value:'银卡客户',label:'银卡客户'},{value:'金卡客户',label:'金卡客户'},{value:'钻石客户',label:'钻石客户'}]
   public ctassets = [{value:'20万以下',label:'20万以下'},{value:'20-50万',label:'20-50万'},{value:'50-100万',label:'50-100万'},{value:'100万以上',label:'100万以上'}]
   // public channel = [{value:'线上挖掘',label:'线上挖掘'},{value:'线下挖掘',label:'线下挖掘'}]
+  public tradType = [{value:'1',label:'保本式交易'},{value:'2',label:'封闭式交易'},{value:'3',label:'开放式交易'}]
   public formGroup: FormGroup = this.fb.group({})
 
   constructor(private modalRef: ModalRef, private fb: FormBuilder) {}
