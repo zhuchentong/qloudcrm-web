@@ -1,9 +1,9 @@
-<page-header title="添加算法" [breadcrumb]="breadcrumb" [action]="action" [action-group]="false" [back]="true">
+<page-header title="创建标签" [breadcrumb]="breadcrumb" [action]="action" [action-group]="false" [back]="true">
   <ng-template #breadcrumb>
     <ql-breadcrumb separator="/">
-      <ql-breadcrumb-item>算法</ql-breadcrumb-item>
-      <ql-breadcrumb-item to="/algo/algo-list">算法列表</ql-breadcrumb-item>
-      <ql-breadcrumb-item>添加算法</ql-breadcrumb-item>
+      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>客户标签</ql-breadcrumb-item>
+      <ql-breadcrumb-item>创建标签</ql-breadcrumb-item>
     </ql-breadcrumb>
   </ng-template>
   <ng-template #action>
@@ -15,9 +15,9 @@
 
 <page-container>
   <ql-steps [active]="current" [finish-status]="'success'">
-    <ql-step title="算法文件"></ql-step>
-    <ql-step title="算法信息"></ql-step>
-    <ql-step title="算法参数"></ql-step>
+    <ql-step title="客户属性"></ql-step>
+    <ql-step title="分类属性"></ql-step>
+    <ql-step title="管理属性"></ql-step>
   </ql-steps>
   <ng-template #container></ng-template>
 </page-container>
