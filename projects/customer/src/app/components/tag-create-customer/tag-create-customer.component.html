@@ -1,1 +1,178 @@
-<div></div>
+<page-container>
+    <ql-form [inline]="true">
+        <ql-card header="基本属性">
+            <div class="row">
+                <ql-form-item ql-col span="24" label="性别：">
+                    <ql-radio class="radio" [(model)]="sex" label="男">男</ql-radio>
+                    <ql-radio class="radio" [(model)]="sex" label="女">女</ql-radio>
+                </ql-form-item>
+                <ql-form-item ql-col span="7" label="年龄：">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="1" label="">
+                    --
+                </ql-form-item>
+                <ql-form-item ql-col span="8" label="">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="8" label=""></ql-form-item>
+                <ql-form-item ql-col span="24" label="学历：">
+                    <ql-checkbox-group [min]="1" max="1">
+                        <ql-checkbox label="博士"></ql-checkbox>
+                        <ql-checkbox label="硕士"></ql-checkbox>
+                        <ql-checkbox label="本科"></ql-checkbox>
+                        <ql-checkbox label="大专"></ql-checkbox>
+                        <ql-checkbox label="中专及以下"></ql-checkbox>
+                    </ql-checkbox-group>
+                </ql-form-item>
+                <ql-form-item ql-col span="24" label="卡等级：">
+                    <ql-checkbox-group [min]="1" max="1">
+                        <ql-checkbox label="普卡"></ql-checkbox>
+                        <ql-checkbox label="金卡"></ql-checkbox>
+                        <ql-checkbox label="白金卡"></ql-checkbox>
+                        <ql-checkbox label="钻石卡"></ql-checkbox>
+                        <ql-checkbox label="私人银行客户"></ql-checkbox>
+                    </ql-checkbox-group>
+                </ql-form-item>
+                <ql-form-item ql-col span="24" label="是否代发工资：">
+                    <ql-radio class="radio" [(model)]="wage" label="是">是</ql-radio>
+                    <ql-radio class="radio" [(model)]="wage" label="否">否</ql-radio>
+                </ql-form-item>
+                <ql-form-item ql-col span="24" label="客龄：">
+                    <ql-checkbox-group [min]="1" max="1">
+                        <ql-checkbox label="3个月内"></ql-checkbox>
+                        <ql-checkbox label="3-6个月"></ql-checkbox>
+                        <ql-checkbox label="6-12个月"></ql-checkbox>
+                        <ql-checkbox label="1-3年"></ql-checkbox>
+                        <ql-checkbox label="3-5年"></ql-checkbox>
+                        <ql-checkbox label="5年及以上"></ql-checkbox>
+                    </ql-checkbox-group>
+                </ql-form-item>
+                <ql-form-item ql-col span="24" label="客户归属：">
+                    <ql-input></ql-input>
+                </ql-form-item>
+            </div>
+        </ql-card>
+        <ql-card header="资产负债">
+            <div class="row">
+                <ql-form-item ql-col span="8" label="当前资产管理：">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="1" label="">--</ql-form-item>
+                <ql-form-item ql-col span="8" label="">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="7" label="">
+                </ql-form-item>
+                <ql-form-item ql-col span="8" label="当前资产负债：">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="1" label="">--</ql-form-item>
+                <ql-form-item ql-col span="8" label="">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="7" label=""></ql-form-item>
+                <ql-form-item ql-col span="8" label="月日均资产： " label-width="110px">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="1" label="">--</ql-form-item>
+                <ql-form-item ql-col span="8" label="">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="" label=""></ql-form-item>
+                <ql-form-item ql-col span="24" label="资产变化趋势：">
+                    <ql-checkbox-group [min]="1" max="1">
+                        <ql-checkbox label="稳步上升"></ql-checkbox>
+                        <ql-checkbox label="稳定"></ql-checkbox>
+                        <ql-checkbox label="持续下降"></ql-checkbox>
+                    </ql-checkbox-group>
+                </ql-form-item>
+                <ql-form-item ql-col span="24" label="贡献度：">
+                    <ql-checkbox-group [min]="1" max="1">
+                        <ql-checkbox label="高"></ql-checkbox>
+                        <ql-checkbox label="中"></ql-checkbox>
+                        <ql-checkbox label="底"></ql-checkbox>
+                    </ql-checkbox-group>
+                </ql-form-item>
+                <ql-form-item ql-col span="24" label="资产变化趋势：">
+                    <ql-radio class="radio" [(model)]="trend" label="上升">上升</ql-radio>
+                    <ql-radio class="radio" [(model)]="trend" label="下降">下降</ql-radio>
+                </ql-form-item>
+                <ql-form-item ql-col span="24" label="资产变化率百分比：">
+                    <ql-input></ql-input>
+                </ql-form-item>
+            </div>
+        </ql-card>
+        <ql-card header="产品持有">
+            <div class="row">
+                <ql-form-item ql-col span="1">
+                    <ql-checkbox-group [min]="1" max="1">
+                        <ql-checkbox></ql-checkbox>
+                    </ql-checkbox-group>
+                </ql-form-item>
+                <ql-form-item ql-col span="8" label="理财" class="ql-text-center">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="1">--</ql-form-item>
+                <ql-form-item ql-col span="8">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="6"></ql-form-item>
+                <ql-form-item ql-col span="1">
+                    <ql-checkbox-group [min]="1" max="1">
+                        <ql-checkbox></ql-checkbox>
+                    </ql-checkbox-group>
+                </ql-form-item>
+                <ql-form-item ql-col span="8" label="活期" class="ql-text-center">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="1">--</ql-form-item>
+                <ql-form-item ql-col span="8">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="6"></ql-form-item>
+                <ql-form-item ql-col span="1">
+                    <ql-checkbox-group [min]="1" max="1">
+                        <ql-checkbox></ql-checkbox>
+                    </ql-checkbox-group>
+                </ql-form-item>
+                <ql-form-item ql-col span="8" label="定期" class="ql-text-center">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="1">--</ql-form-item>
+                <ql-form-item ql-col span="8">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="6"></ql-form-item>
+                <ql-form-item ql-col span="24">
+                    <ql-checkbox-group [min]="1" max="1">
+                        <ql-checkbox label="信用卡"></ql-checkbox>
+                        <ql-checkbox label="借记卡"></ql-checkbox>
+                    </ql-checkbox-group>
+                </ql-form-item>
+                <ql-form-item ql-col span="1">
+                    <ql-checkbox-group [min]="1" max="1">
+                        <ql-checkbox></ql-checkbox>
+                    </ql-checkbox-group>
+                </ql-form-item>
+                <ql-form-item ql-col span="8" label="贷款" class="ql-text-center">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="1">--</ql-form-item>
+                <ql-form-item ql-col span="8">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="6"></ql-form-item>
+                <ql-form-item ql-col span="24" label="其他产品：">
+                    <ql-checkbox-group [min]="1" max="1">
+                        <ql-checkbox label="开通网银"></ql-checkbox>
+                        <ql-checkbox label="手机银行"></ql-checkbox>
+                        <ql-checkbox label="短信通知"></ql-checkbox>
+                        <ql-checkbox label="微信银行"></ql-checkbox>
+                        <ql-checkbox label="电话银行"></ql-checkbox>
+                    </ql-checkbox-group>
+                </ql-form-item>
+            </div>
+        </ql-card>
+    </ql-form>
+</page-container>

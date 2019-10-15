@@ -1,1 +1,23 @@
-<p>tag-create-group works!</p>
+<page-container>
+    <ql-form [inline]="true">
+        <ql-card header="标签管理属性">
+            <div class="row">
+                <ql-form-item ql-col span="24" label="标签状态：" label-width="110px">
+                    <ql-select>
+                        <ql-option label="开启" value="开启"></ql-option>
+                    </ql-select>
+                </ql-form-item>
+                <ql-form-item ql-col span="24" label="标签更新频率：">
+                    <ql-select>
+                        <ql-option label="一月更新一次" value="一月更新一次"></ql-option>
+                    </ql-select>
+                </ql-form-item>
+                <ql-form-item ql-col span="24" label="标签共享范围：">
+                    <ql-select>
+                        <ql-option label="所有人共享" value="所有人共享"></ql-option>
+                    </ql-select>
+                </ql-form-item>
+            </div>
+        </ql-card>
+    </ql-form>
+</page-container>

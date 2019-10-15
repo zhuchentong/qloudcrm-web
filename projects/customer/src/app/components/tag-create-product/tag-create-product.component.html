@@ -1,1 +1,30 @@
-<p>tag-create-product works!</p>
+<page-container>
+    <ql-form [inline]="true">
+        <ql-card header="标签分类属性">
+            <div class="row">
+                <ql-form-item ql-col span="24" label="标签名称：" label-width="110px">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="24" label="标签所属类别：">
+                    <ql-select>
+                        <ql-option label="高收入客户" value="高收入客户"></ql-option>
+                    </ql-select>
+                </ql-form-item>
+                <ql-form-item ql-col span="24" label="标签说明：" label-width="110px">
+                    <ql-input type="textarea" [rows]="2">
+                    </ql-input>
+                </ql-form-item>
+                <ql-form-item ql-col span="24" label="应用场景：" label-width="110px">
+                    <ql-checkbox-group [min]="1" max="1">
+                        <ql-checkbox label="vip客户流失预警"></ql-checkbox>
+                        <ql-checkbox label="客户赢回"></ql-checkbox>
+                        <ql-checkbox label="价值提升"></ql-checkbox>
+                        <ql-checkbox label="产品精准营销"></ql-checkbox>
+                        <ql-checkbox label="风险客户识别"></ql-checkbox>
+                        <ql-checkbox label="反欺诈"></ql-checkbox>
+                    </ql-checkbox-group>
+                </ql-form-item>
+            </div>
+        </ql-card>
+    </ql-form>
+</page-container>
