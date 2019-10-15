@@ -4,7 +4,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 import { QlModule } from 'qloud-angular'
 import { BrowserModule } from '@angular/platform-browser'
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { PageHeaderComponent } from './components/page-header/page-header.component'
 import { DataFormComponent } from './components/data-form/data-form.component'
 import { DataTableComponent } from './components/data-table/data-table.component'
@@ -19,11 +19,13 @@ import { LabelContainerComponent } from './components/label-container/label-cont
 import { LabelItemComponent } from './components/label-item/label-item.component'
 import { DictPipe } from './pipes/dict.pipe'
 import { NavigateDirective } from './directives/navigate.directive'
-import { FormBuilderComponent, FormioComponent, FormioModule, FormioAppConfig } from 'angular-formio'
+import { FormioModule } from 'angular-formio'
 import { DividerComponent } from './components/divider/divider.component'
 import { PageContainerComponent } from './components/page-container/page-container.component'
 import { EchartService } from './utils/echart.service'
 import { ClipboardModule } from 'ngx-clipboard'
+import { TabItemComponent } from './components/tab-item/tab-item.component'
+import { TabContainerComponent } from './components/tab-container/tab-container.component'
 
 const COMPONENTS = [
   ModalContainerComponent,
@@ -35,12 +37,17 @@ const COMPONENTS = [
   LabelContainerComponent,
   LabelItemComponent,
   DividerComponent,
-  PageContainerComponent
+  PageContainerComponent,
+  TabItemComponent,
+  TabContainerComponent
 ]
 const DIRECTIVES = [NavigateDirective]
 const PIPES = [DictPipe]
+const THIRDS = []
 @NgModule({
   imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
     GecoDialogModule,
     ConfirmationPopoverModule.forRoot(),
     CommonModule,
@@ -54,7 +61,7 @@ const PIPES = [DictPipe]
   providers: [
     EchartService,
     ModalService,
-    ModalRef,
+    ModalRef
     // {
     //   provide: FormioAppConfig,
     //   useValue: {
