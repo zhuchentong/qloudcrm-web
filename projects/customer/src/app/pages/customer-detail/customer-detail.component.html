@@ -92,7 +92,7 @@
                 </div>
                 <div class="wrapinfo ql-padding">
                     <h4>家庭基本信息</h4>
-                    <label-container column="4" [border]="true" labelWidth="140">
+                    <label-container column="4" [border]="true" labelWidth="160">
                         <label-item label="家庭人口">4</label-item>
                         <label-item label="供养人数">2</label-item>
                         <label-item label="子女人数 ">2</label-item>
@@ -105,7 +105,20 @@
                         <label-item label="有无私家车">有</label-item>
                         <label-item label="主要经济来源">工资</label-item>
                         <label-item label="主要支出方向">生活消费</label-item>
-                        <label-item label="家庭情况说明">无</label-item>
+                        <label-item label="家庭情况说明">家庭旅游</label-item>
+                        <label-item label="我行家庭存款余额">60万</label-item>
+                        <label-item label="我行家庭投资理财余额">10万</label-item>
+                        <label-item label="我行家庭贷款余额">12万</label-item>
+                        <label-item label="家庭可投资资产">15万</label-item>
+                        <label-item label="可投资资产占家庭总比">15%</label-item>
+                        <label-item label="活期存款占家庭总资产比">5%</label-item>
+                        <label-item label="定期存款占家庭总资产比">8%</label-item>
+                        <label-item label="国债占家庭总资产比">0</label-item>
+                        <label-item label="理财占家庭总资产比">5%</label-item>
+                        <label-item label="基金占家庭总资产比">10%</label-item>
+                        <label-item label="保险占家庭总资产比">10%</label-item>
+                        <label-item label="信托占家庭总资产比">0</label-item>
+                        <label-item label="股票占家庭总资产比">0</label-item>
                     </label-container>
                 </div>
                 <div class="wrapinfo ql-padding">
@@ -185,6 +198,20 @@
                     </label-container>
                 </div>
                 <div class="wrapinfo ql-padding">
+                    <div class="wrapinfo ql-padding">
+                        <h5>当月交易</h5>
+                        <div class="ql-margin-top ql-margin-bottom">
+                            <ql-select [clearable]="true">
+                                <ql-option *ngFor="let item of tradTypes" [label]="item.label" [value]="item.value"> </ql-option>
+                            </ql-select>
+                        </div>
+                        <data-table [model]="tradList">
+                            <ql-table-column model-key="tradname" label="交易类型"> </ql-table-column>
+                            <ql-table-column model-key="tradtype" label="交易类型"> </ql-table-column>
+                            <ql-table-column model-key="tradtime" label="交易时间"> </ql-table-column>
+                            <ql-table-column model-key="tradaccount" label="交易账户"> </ql-table-column>
+                        </data-table>
+                    </div>
                     <h5>当月大额交易</h5>
                     <label-container column="2" [border]="true">
                         <label-item label="交易时间">2019-10-01 12:35</label-item>

@@ -17,9 +17,7 @@ import { AddGroupComponent } from './pages/add-group/add-group.component'
 import { MyAssignComponent } from './pages/my-assign/my-assign.component'
 import { CustomerAssignComponent } from './pages/customer-assign/customer-assign.component'
 import { CustomerSetreceverComponent } from './pages/customer-setrecever/customer-setrecever.component'
-
-
-
+import { CustomerSearchComponent } from './pages/customer-search/customer-search.component'
 
 const routes: Routes = [
   { path: 'customer/customer-list', component: CustomerListComponent },
@@ -32,10 +30,11 @@ const routes: Routes = [
   { path: 'customer/tag-detail', component: TagDetailComponent },
   { path: 'customer/tag-create', component: TagCreateComponent },
   { path: 'customer/customer-detail', component: CustomerDetailComponent },
-  { path: 'customer/add-group',component:AddGroupComponent},
-  { path: 'customer/my-assign',component:MyAssignComponent},
-  { path: 'customer/customer-assign',component:CustomerAssignComponent},
-  { path: 'customer/customer-setrecever',component:CustomerSetreceverComponent}
+  { path: 'customer/add-group', component: AddGroupComponent },
+  { path: 'customer/my-assign', component: MyAssignComponent },
+  { path: 'customer/customer-assign', component: CustomerAssignComponent },
+  { path: 'customer/customer-setrecever', component: CustomerSetreceverComponent },
+  { path: 'customer/customer-search', component: CustomerSearchComponent }
 ]
 
 routes.push({

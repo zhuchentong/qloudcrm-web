@@ -6,24 +6,18 @@
     </ql-breadcrumb>
   </ng-template>
   <ng-template #action>
-    <ql-button type="primary" [routerLink]="['/customer/my-assign']">我要分配</ql-button>
-    <ql-button type="primary" [routerLink]="['/customer/customer-assign']">我的分配</ql-button>
-    <ql-button type="primary" [routerLink]="['/customer/customer-setrecever']">接收人设置</ql-button>
-    <ql-button type="primary">群组统计查询</ql-button>
+    <ql-button size="small" type="primary" routerLink="/customer/add-group">创建分组</ql-button>
   </ng-template>
 </page-header>
 
 <ql-card>
-  <data-form [showReset]="false" [submitText]="'刷新'" [formGroup]="formGroup" (submit)="onRefresh()" [button]="button">
+  <data-form [showReset]="false" [submitText]="'刷新'" [formGroup]="formGroup" (submit)="onRefresh()">
     <ql-form-item label="群组名称">
       <ql-input formControlName="state"></ql-input>
     </ql-form-item>
     <ql-form-item label="群组状态">
       <ql-input formControlName="state"></ql-input>
     </ql-form-item>
-    <ng-template #button>
-      <ql-button size="small" type="primary" routerLink="/customer/add-group">添加分组</ql-button>
-    </ng-template>
   </data-form>
 
   <data-table [model]="groupList">

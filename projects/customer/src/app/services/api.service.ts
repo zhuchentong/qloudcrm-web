@@ -2,6 +2,7 @@ import { NetService } from '@core/http'
 import { Injectable } from '@angular/core'
 import { of } from 'rxjs'
 
+import customerUserList from '../../assets/json/customer.json'
 import customerEventList from '../../assets/json/customer-event.json'
 import customerGroupList from '../../assets/json/customer-group.json'
 import customerLevelList from '../../assets/json/customer-level.json'
@@ -18,6 +19,9 @@ import customerTagUser from '../../assets/json/customer-tag-user.json'
 export class ApiService {
   constructor(private net: NetService) {}
 
+  public getCustomerList() {
+    return of(customerUserList)
+  }
   /**
    * 获取客户事件列表
    */

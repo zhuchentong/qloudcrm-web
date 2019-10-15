@@ -104,6 +104,35 @@ export class CustomerDetailComponent implements OnInit {
     }
   ]
 
+  public tradTypes = [
+    { value: '1', label: '存款' },
+    { value: '2', label: '理财' },
+    { value: '3', label: '基金' },
+    { value: '4', label: '保险' },
+    { value: '5', label: '贷款' },
+    { value: '6', label: '股票' }
+  ]
+
+  public tradList = [
+    {
+      "tradname":"生活消费",
+      "tradtype":"支出",
+      "tradtime":"2019-10-11",
+      "tradaccount":"建设银行(620090293920028987)"
+    },
+    {
+      "tradname":"基金提取",
+      "tradtype":"收入",
+      "tradtime":"2019-09-30",
+      "tradaccount":"建设银行(620090293920028987)"
+    },
+    {
+      "tradname":"大额存单",
+      "tradtype":"收入",
+      "tradtime":"2019-09-23",
+      "tradaccount":"招商银行(620090293920028987)"
+    }
+  ]
   public formGroup: FormGroup = this.fb.group({})
   public changeFlag: any = '1'
   // 数据

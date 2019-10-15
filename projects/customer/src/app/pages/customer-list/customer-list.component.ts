@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core'
 import { FormGroup, FormBuilder } from '@angular/forms'
 import { SearchComponent } from '../../components/search/search.component'
 // import { CustomerDetailComponent } from '../customer-detail/customer-detail.component'
 import { ModalService } from '@app/shared/utils'
 import { NetService, PageService } from '@app/core/http'
-import customerJson from '../../../assets/json/customer.json'
+import { ApiService } from '../../services/api.service'
+import { QlMessageService } from 'qloud-angular'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-customer-list',
@@ -14,8 +16,24 @@ import customerJson from '../../../assets/json/customer.json'
 })
 export class CustomerListComponent implements OnInit {
   public formGroup: FormGroup = this.fb.group({})
-  public customerList: any = []
-  constructor(private fb: FormBuilder, private modal: ModalService, public pageService: PageService) {}
+  public customerList: any[] = []
+  public groupList: any[] = []
+  public showGroup = false
+
+  @ViewChild('addGroup', { static: true })
+  public addGroupTemplate: ViewContainerRef
+
+  @ViewChild('changeGroup', { static: true })
+  public changeGroupTemplate: ViewContainerRef
+
+  constructor(
+    private apiService: ApiService,
+    private fb: FormBuilder,
+    public modal: ModalService,
+    public pageService: PageService,
+    private message: QlMessageService,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.formGroup = this.fb.group({ name: [''] })
@@ -23,7 +41,13 @@ export class CustomerListComponent implements OnInit {
   }
 
   public onRefresh() {
-    this.customerList = customerJson
+    this.apiService.getCustomerGroupList().subscribe(data => {
+      this.groupList = data
+    })
+
+    this.apiService.getCustomerList().subscribe(data => {
+      this.customerList = data.sort(x => 0.5 - Math.random())
+    })
   }
 
   public search() {
@@ -32,12 +56,40 @@ export class CustomerListComponent implements OnInit {
         size: 'large',
         title: '高级搜索',
         component: SearchComponent,
-        data: {
-          // algo: DTO.from(AlgoDTO, algo)
-        }
+        data: {}
       })
       .subscribe(() => {
-        // this.updateDetail()
+        this.onRefresh()
+        this.message.success(`共查询到${this.customerList.length}条结果`)
+      })
+  }
+
+  public onCheckChange(selection) {
+    this.showGroup = selection.length > 0
+  }
+
+  public onCreateGroup() {
+    this.modal
+      .open({
+        title: '创建分组',
+        size: 'large',
+        component: this.addGroupTemplate
+      })
+      .subscribe(() => {
+        this.message.success('创建成功')
+        this.router.navigateByUrl('/customer/customer-group')
+      })
+  }
+
+  public onChangeGroup() {
+    this.modal
+      .open({
+        title: '移动分组',
+        size: 'large',
+        component: this.changeGroupTemplate
+      })
+      .subscribe(() => {
+        this.message.success('移动成功')
       })
   }
 }
