@@ -90,6 +90,14 @@
                         <div ql-col [span]="9"> </div>
                     </div>
                 </div>
+                <div class="row wrapinfo ql-padding">
+                    <div ql-col [span]="12">
+                        <label for="">平均月收入：2.3万(中高)</label>
+                    </div>
+                    <div ql-col [span]="12">
+                        <label for="">平均月支出：1.8万(中高)</label>
+                    </div>
+                </div>
                 <div class="wrapinfo ql-padding">
                     <h4>家庭基本信息</h4>
                     <label-container column="4" [border]="true" labelWidth="160">
@@ -161,16 +169,6 @@
                     <h4>客户签约信息</h4>
                     <p>手机银行、短信银行、微信银行、网上银行</p>
                 </div>
-                <div class="row wrapinfo ql-padding">
-                    <div ql-col [span]="12">
-                        <label for="">月收入：2.3万(中高)</label>
-                        <ql-progress type="circle" [percentage]="55"></ql-progress>
-                    </div>
-                    <div ql-col [span]="12">
-                        <label for="">月支出：1.8万(中高)</label>
-                        <ql-progress type="circle" [percentage]="65"></ql-progress>
-                    </div>
-                </div>
             </div>
             <div *ngIf="changeFlag == '2'">
                 <div ql-col [span]="24" echarts [options]="options1"></div>
@@ -199,7 +197,7 @@
                 </div>
                 <div class="wrapinfo ql-padding">
                     <div class="wrapinfo ql-padding">
-                        <h5>当月交易</h5>
+                        <h5>交易记录</h5>
                         <div class="ql-margin-top ql-margin-bottom">
                             <ql-select [clearable]="true">
                                 <ql-option *ngFor="let item of tradTypes" [label]="item.label" [value]="item.value"> </ql-option>
@@ -212,17 +210,6 @@
                             <ql-table-column model-key="tradaccount" label="交易账户"> </ql-table-column>
                         </data-table>
                     </div>
-                    <h5>当月大额交易</h5>
-                    <label-container column="2" [border]="true">
-                        <label-item label="交易时间">2019-10-01 12:35</label-item>
-                        <label-item label="交易账号">建设银行(620090293920028987)</label-item>
-                        <label-item label="消费类型">支出</label-item>
-                        <label-item label="比去年">1.87万</label-item>
-                        <label-item label="交易时间">2019-10-08 12:35</label-item>
-                        <label-item label="交易账号">建设银行(620090293920028987)</label-item>
-                        <label-item label="消费类型">收入</label-item>
-                        <label-item label="比去年">1万</label-item>
-                    </label-container>
                 </div>
             </div>
             <div *ngIf="changeFlag == '3'" style="height: 400px;overflow-y: auto;">
