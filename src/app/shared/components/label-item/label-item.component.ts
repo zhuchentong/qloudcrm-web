@@ -11,7 +11,7 @@ export class LabelItemComponent implements OnInit {
   @Input() label = ''
   @Input() column = 1
   @Input() offset = 0
-
+  @Input() unit
   private index
 
   constructor(@Host() @Optional() private parent: LabelContainerComponent, private el: ElementRef) {

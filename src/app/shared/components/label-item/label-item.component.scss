@@ -21,9 +21,15 @@
   padding: 10px 5px;
   line-height: 20px;
   flex: 1;
+  position: relative;
   &.default {
     &::before {
       content: '-';
     }
   }
+}
+
+.label-item__content__unit {
+  position: absolute;
+  left: 50px;
 }

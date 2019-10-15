@@ -13,7 +13,7 @@ import customerSelectList from '../../assets/json/customer-select.json'
 import customerDetailcontact from '../../assets/json/customer-detailcontact.json'
 import customerMyassignList from '../../assets/json/customer-myassign.json'
 import cuctomerAssignList from '../../assets/json/customer-assign.json'
-
+import customerTagUser from '../../assets/json/customer-tag-user.json'
 @Injectable()
 export class ApiService {
   constructor(private net: NetService) {}
@@ -56,7 +56,7 @@ export class ApiService {
   public getcostomerDetaildkList() {
     return of(costomerDetaildkList)
   }
-  public getcustomerDetailcontact(){
+  public getcustomerDetailcontact() {
     return of(customerDetailcontact)
   }
 
@@ -64,11 +64,15 @@ export class ApiService {
     return of(customerSelectList)
   }
 
-  public getcustomerMyassignList(){
+  public getcustomerMyassignList() {
     return of(customerMyassignList)
   }
 
-  public getcuctomerAssignList(){
+  public getcuctomerAssignList() {
     return of(cuctomerAssignList)
+  }
+
+  public getCustomerTagUserList() {
+    return of(customerTagUser)
   }
 }
