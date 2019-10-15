@@ -10,5 +10,64 @@
 </page-header>
 
 <page-container>
-  {{ tag.name }}
+  <ql-button-group>
+    <ql-button [type]="content === tagUser ? 'primary' : ''" (click)="onChangeTab(tagUser)">人员列表</ql-button>
+    <ql-button [type]="content === tagView ? 'primary' : ''" (click)="onChangeTab(tagView)">基本特征</ql-button>
+    <ql-button [type]="content === tagFeature ? 'primary' : ''" (click)="onChangeTab(tagFeature)">产品偏好</ql-button>
+    <ql-button [type]="content === tagInfo ? 'primary' : ''" (click)="onChangeTab(tagInfo)">标签信息</ql-button>
+  </ql-button-group>
+  <div class="ql-padding-y">
+    <ng-container [ngTemplateOutlet]="content"></ng-container>
+  </div>
+  <ng-template #tagUser>
+    <data-table [model]="userList">
+      <ql-table-column model-key="name" label="姓名"> </ql-table-column>
+      <ql-table-column model-key="gender" label="性别"> </ql-table-column>
+      <ql-table-column model-key="age" label="年龄"> </ql-table-column>
+      <ql-table-column model-key="time" label="客龄"> </ql-table-column>
+      <ql-table-column model-key="level" label="卡等级"> </ql-table-column>
+      <ql-table-column model-key="assets" label="管理资产"> </ql-table-column>
+    </data-table>
+  </ng-template>
+
+  <ng-template #tagView>
+    <div ql-row gutter="12">
+      <ql-card ql-col span="12">
+        <div echarts [options]="assetOption"></div>
+      </ql-card>
+      <ql-card ql-col span="12">
+        <div echarts [options]="levelOption"></div>
+      </ql-card>
+      <ql-card ql-col span="12">
+        <div echarts [options]="riskOption"></div>
+      </ql-card>
+    </div>
+  </ng-template>
+  <ng-template #tagFeature>
+    <label-container labelWidth="150" col="2">
+      <label-item label="理财产品持有率">
+        未持有
+      </label-item>
+      <label-item label="持有总金额" unit="元"></label-item>
+      <label-item label="信用卡产品持有率">
+        已持有
+      </label-item>
+      <label-item label="持有总金额" unit="元">100,000</label-item>
+      <label-item label="活期总额" unit="元">1,343,200</label-item>
+      <label-item label="活期户均" unit="元">32,520</label-item>
+      <label-item label="定期总额" unit="元">231,350</label-item>
+      <label-item label="定期户均" unit="元">82,310</label-item>
+      <label-item label="贷款总额" unit="元">235,000</label-item>
+      <label-item label="贷款户均" unit="元">35,120</label-item>
+    </label-container>
+  </ng-template>
+  <ng-template #tagInfo>
+    <label-container labelWidth="150" col="2">
+      <label-item label="标签ID">{{ tag.id }}</label-item>
+      <label-item label="标签名称">{{ tag.name }}</label-item>
+      <label-item label="一级标签">基础信息</label-item>
+      <label-item label="更新方式">自动 - 每天</label-item>
+      <label-item label="备注">无</label-item>
+    </label-container>
+  </ng-template>
 </page-container>

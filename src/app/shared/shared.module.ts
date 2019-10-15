@@ -55,14 +55,14 @@ const PIPES = [DictPipe]
     EchartService,
     ModalService,
     ModalRef,
-    {
-      provide: FormioAppConfig,
-      useValue: {
-        appUrl: 'https://example.form.io',
-        apiUrl: 'https://api.form.io',
-        icons: 'fontawesome'
-      }
-    }
+    // {
+    //   provide: FormioAppConfig,
+    //   useValue: {
+    //     // appUrl: 'https://example.form.io',
+    //     // apiUrl: 'https://api.form.io',
+    //     icons: 'fontawesome'
+    //   }
+    // }
   ],
   entryComponents: [...COMPONENTS],
   declarations: [...COMPONENTS, ...DIRECTIVES, ...PIPES],

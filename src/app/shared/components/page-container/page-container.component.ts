@@ -1,5 +1,4 @@
-import { Component, OnInit, HostBinding } from '@angular/core'
-
+import { Component, OnInit, HostBinding, TemplateRef, Input } from '@angular/core'
 @Component({
   selector: 'page-container',
   templateUrl: './page-container.component.html',

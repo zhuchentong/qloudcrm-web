@@ -56,10 +56,11 @@ export class EchartService {
           type: 'pie',
           radius: ['50%', '70%'],
           avoidLabelOverlap: false,
+          selectedMode: 'single',
           label: {
             normal: {
-              show: false,
-              position: 'center'
+              show: true,
+              position: 'outside'
             },
             emphasis: {
               show: true,
@@ -71,7 +72,9 @@ export class EchartService {
           },
           labelLine: {
             normal: {
-              show: false
+              show: true,
+              smooth: false,
+              length: 30
             }
           },
           data
