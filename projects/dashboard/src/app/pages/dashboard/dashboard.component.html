@@ -59,6 +59,9 @@
     <div   *ngSwitchCase="'app_view15'" >
       <app-customer-aum></app-customer-aum>
     </div>
+    <div   *ngSwitchCase="'app_view16'" >
+      <app-task-submit></app-task-submit>
+    </div>
 
   </div>
 </div>
@@ -144,6 +147,9 @@
           </div>
           <div   *ngSwitchCase="'app_view15'" >
             <app-customer-aum></app-customer-aum>
+          </div>
+          <div   *ngSwitchCase="'app_view16'" >
+            <app-task-submit [hdata6]='data6'></app-task-submit>
           </div>
 
         </div>

@@ -1,3 +1,7 @@
+@import "~fullcalendar/dist/fullcalendar.min.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
 p {
   margin: 0;
 }
@@ -9,7 +13,7 @@ p {
 }
 
 a {
-  color: #4fb5dd !important;
+  //color: #4fb5dd !important;
   text-decoration: none;
   cursor: pointer;
 }
