@@ -8,6 +8,7 @@ import { CoreModule } from './core/core.module'
 
 import { AppDashboardModule } from 'projects/dashboard/src/app/app.module'
 import { AppCustomerModule } from 'projects/customer/src/app/app.module'
+import { AppMarketingModule } from 'projects/marketing/src/app/app.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,8 @@ import { AppCustomerModule } from 'projects/customer/src/app/app.module'
     LayoutModule,
     AppRoutingModule,
     AppDashboardModule.forRoot(),
-    AppCustomerModule.forRoot()
+    AppCustomerModule.forRoot(),
+    AppMarketingModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

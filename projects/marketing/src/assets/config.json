@@ -1,0 +1,15 @@
+{
+  "default": "true",
+  "pluginName": "营销管理",
+  "pluginIcon": "",
+  "pluginAbbr": "UI",
+  "pluginImg": "/assets/images/svg/profile.svg",
+  "pluginPath": "marketing",
+  "pluginOrder": 1,
+  "pluginTab": [
+    {
+      "name": "目标客户",
+      "url": "#/marketing/activity-list"
+    }
+  ]
+}

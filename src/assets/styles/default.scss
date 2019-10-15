@@ -29,3 +29,8 @@ ql-form-item {
 .formio-dialog.formio-dialog-theme-default.component-settings {
   z-index: 100000;
 }
+
+.ql-menu--horizontal > .ql-menu-item.is-active,
+.ql-menu--horizontal > .ql-submenu.is-active .ql-submenu__title {
+  border-bottom-color: #357ee2 !important;
+}

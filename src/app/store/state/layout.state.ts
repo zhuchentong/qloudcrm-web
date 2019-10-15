@@ -30,6 +30,11 @@ export class LayoutState extends ExtendState {
       this.updateState(state, {
         menu: [...state.getState().menu, menu].sort((x, y) => x.pluginOrder - y.pluginOrder)
       })
+    } else {
+      const list = state.getState().menu.map(x => (x.pluginPath === menu.pluginPath ? menu : x))
+      this.updateState(state, {
+        menu: list.sort((x, y) => x.pluginOrder - y.pluginOrder)
+      })
     }
   }
 }
