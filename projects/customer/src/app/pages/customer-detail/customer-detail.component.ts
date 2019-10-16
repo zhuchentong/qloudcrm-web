@@ -13,18 +13,17 @@ import { ModalService } from '@app/shared/utils'
   providers: [ApiService, QlMessageService]
 })
 export class CustomerDetailComponent implements OnInit {
-
   @ViewChild('addInfo', { static: true })
   private addInfoTemp: TemplateRef<any>
 
-  public valuecate:any = ''
-  public valuetype:any = ''
+  public valuecate: any = ''
+  public valuetype: any = ''
   public prductType = [
     { value: '基金', label: '基金' },
     { value: '债劵', label: '债劵' },
     { value: '股票', label: '股票' }
   ]
-  public  category = [
+  public category = [
     { value: '小于10万', label: '小于10万' },
     { value: '10-50万', label: '10-50万' },
     { value: '50-100万', label: '50-100万' },
@@ -38,74 +37,74 @@ export class CustomerDetailComponent implements OnInit {
     { value: '4', label: '风险属性' },
     { value: '5', label: '行为特征' },
     { value: '6', label: '信用特征' },
-    { value: '7', label: '营销偏好' },
+    { value: '7', label: '营销偏好' }
   ]
 
   public marketList = [
     {
-      "marketName":"健康理财宝C类",
-      "time":"2019-10-09 14:50:00",
-      "result":"未响应"
+      marketName: '健康理财宝C类',
+      time: '2019-10-09 14:50:00',
+      result: '未响应'
     },
     {
-      "marketName":"天天一份利",
-      "time":"2019-09-23 09:40:00",
-      "result":"成功"
+      marketName: '天天一份利',
+      time: '2019-09-23 09:40:00',
+      result: '成功'
     },
     {
-      "marketName":"本行基金特惠",
-      "time":"2019-9-10 16:20:00",
-      "result":"失败"
+      marketName: '本行基金特惠',
+      time: '2019-9-10 16:20:00',
+      result: '失败'
     }
   ]
 
   public duetoProduct = [
     {
-      "productName":"大额存单",
-      "startdate":"2016-10-23",
-      "enddate":"2019-11-01"
+      productName: '大额存单',
+      startdate: '2016-10-23',
+      enddate: '2019-11-01'
     },
     {
-      "productName":"封闭基金",
-      "startdate":"2018-01-10",
-      "enddate":"2019-11-31"
+      productName: '封闭基金',
+      startdate: '2018-01-10',
+      enddate: '2019-11-31'
     },
     {
-      "productName":"高额理财宝",
-      "startdate":"2016-12-10",
-      "enddate":"2019-12-01"
+      productName: '高额理财宝',
+      startdate: '2016-12-10',
+      enddate: '2019-12-01'
     }
   ]
 
   public tagInfoList = [
     {
-      "tagname":"有车一族",
-      "tagtype":"手动标签",
-      "tagtime":"2016-12-12"
+      tagname: '有车一族',
+      tagtype: '手动标签',
+      tagtime: '2016-12-12'
     },
     {
-      "tagname":"有房一族",
-      "tagtype":"手动标签",
-      "tagtime":"2014-10-01"
+      tagname: '有房一族',
+      tagtype: '手动标签',
+      tagtime: '2014-10-01'
     }
   ]
 
   public shopsList = [
     {
-      "place":"高新万达",
-      "time":"2019-10-10",
+      place: '高新万达',
+      time: '2019-10-10'
     },
     {
-      "place":"曲江车展",
-      "time":"2019-09-20",
+      place: '曲江车展',
+      time: '2019-09-20'
     },
     {
-      "place":"高新博览会",
-      "time":"2019-08-17",
+      place: '高新博览会',
+      time: '2019-08-17'
     },
     {
-      "place":"高新万达",
-      "time":"2019-08-01",
+      place: '高新万达',
+      time: '2019-08-01'
     }
   ]
 
@@ -120,60 +119,60 @@ export class CustomerDetailComponent implements OnInit {
 
   public tradList = [
     {
-      "tradname":"生活消费",
-      "tradtype":"支出",
-      "tradtime":"2019-10-11",
-      "tradaccount":"建设银行(620090293920028987)"
+      tradname: '生活消费',
+      tradtype: '支出',
+      tradtime: '2019-10-11',
+      tradaccount: '建设银行(620090293920028987)'
     },
     {
-      "tradname":"基金提取",
-      "tradtype":"收入",
-      "tradtime":"2019-09-30",
-      "tradaccount":"建设银行(620090293920028987)"
+      tradname: '基金提取',
+      tradtype: '收入',
+      tradtime: '2019-09-30',
+      tradaccount: '建设银行(620090293920028987)'
     },
     {
-      "tradname":"大额存单",
-      "tradtype":"收入",
-      "tradtime":"2019-09-23",
-      "tradaccount":"招商银行(620090293920028987)"
+      tradname: '大额存单',
+      tradtype: '收入',
+      tradtime: '2019-09-23',
+      tradaccount: '招商银行(620090293920028987)'
     }
   ]
 
   public baseInfo = [
     {
-      "name":"陈先",
-      "age":"38",
-      "sex":"男",
-      "tel":"18710966754",
-      "address":"西安市高新区",
-      "fdmilynum":"4",
-      "emali":"18710966754@163.com",
-      "wx":"",
-      "qq":"",
-      "job":"律师",
-      "contact":"",
-      "like":""
+      name: '陈先',
+      age: '38',
+      sex: '男',
+      tel: '18710966754',
+      address: '西安市高新区',
+      fdmilynum: '4',
+      emali: '18710966754@163.com',
+      wx: '',
+      qq: '',
+      job: '律师',
+      contact: '',
+      like: ''
     }
   ]
 
   public tagInfo = [
     {
-      "tagname":"基金达人",
-      "tagcate":"投资类",
-      "tagtype":"手动标签",
-      "tagtime":"2019-01-12"
+      tagname: '基金达人',
+      tagcate: '投资类',
+      tagtype: '手动标签',
+      tagtime: '2019-01-12'
     },
     {
-      "tagname":"保险活跃分子",
-      "tagcate":"保险类",
-      "tagtype":"手动标签",
-      "tagtime":"2018-11-10"
+      tagname: '保险活跃分子',
+      tagcate: '保险类',
+      tagtype: '手动标签',
+      tagtime: '2018-11-10'
     },
     {
-      "tagname":"理财达人",
-      "tagcate":"投资类",
-      "tagtype":"数字标签",
-      "tagtime":"2017-07-01"
+      tagname: '理财达人',
+      tagcate: '投资类',
+      tagtype: '数字标签',
+      tagtime: '2017-07-01'
     }
   ]
   public formGroup: FormGroup = this.fb.group({})
@@ -287,25 +286,30 @@ export class CustomerDetailComponent implements OnInit {
     this.changeFlag = event
   }
 
-  constructor(private fb: FormBuilder,private apiService: ApiService,private modal: ModalService, private message: QlMessageService) {}
+  constructor(
+    private fb: FormBuilder,
+    private apiService: ApiService,
+    public modal: ModalService,
+    private message: QlMessageService
+  ) {}
 
   ngOnInit() {
-    this.apiService.getcostomerDetaildkList().subscribe(data=>{
+    this.apiService.getcostomerDetaildkList().subscribe(data => {
       this.tjcpdata = data
     })
-    this.apiService.getcustomerDetailcontact().subscribe(data=>{
+    this.apiService.getcustomerDetailcontact().subscribe(data => {
       this.contactData = data
     })
   }
 
-  public addInfoFun(){
+  public addInfoFun() {
     this.modal
-    .open({
-      title: '基本信息补充',
-      component: this.addInfoTemp
-    })
-    .subscribe(() => {
-      this.message.success('sucess')
-    })
+      .open({
+        title: '基本信息补充',
+        component: this.addInfoTemp
+      })
+      .subscribe(() => {
+        this.message.success('sucess')
+      })
   }
 }
