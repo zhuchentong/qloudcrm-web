@@ -1,0 +1,15 @@
+{
+  "default": "true",
+  "pluginName": "产品管理",
+  "pluginIcon": "",
+  "pluginAbbr": "UI",
+  "pluginImg": "/assets/images/svg/profile.svg",
+  "pluginPath": "product",
+  "pluginOrder": 1,
+  "pluginTab": [
+    {
+      "name": "产品目录",
+      "url": "#/product/product-list"
+    }
+  ]
+}
