@@ -19,7 +19,7 @@ export class ReserveMoneyComponent implements OnInit {
         tooltip: {
           trigger: 'item',
           // formatter: "{b} : {d}% <br/> {c}"
-          formatter: '{b} : {c}'
+          formatter: '{b}：{c}人'
         },
         title: {
           text: '客户分布',
@@ -73,7 +73,7 @@ export class ReserveMoneyComponent implements OnInit {
           },
           label: {
             normal: {
-              formatter: '{c|{b}}\n{d|{d}%}',
+              formatter: '{c|{b}：{c}人}\n{d|{d}%}',
               rich: {
                 b: {
                   fontSize: 12,
@@ -251,49 +251,76 @@ export class ReserveMoneyComponent implements OnInit {
 
     res = [
       {
-        "targetName": "财富管理",
-        "amount": '￥50,000.00',  // 资产余额
-        "count": 20,   // 数量
-        "aum": '￥15,000.00',  // AUM
-        "familyAUM": '￥66,000.00', // 户AUM
-        "dayChangeAmount": '￥100,000.00',  //上日资产变动
-        "yearChangeAmount": '￥800,000.00'    // 年累计资产变动
-      },
-      {
-        "targetName": "私行客户",
-        "amount": '￥90,000.00',  // 资产余额
+        "targetName": "私行(600万以上)",
+        "amount": '￥9,000,000.00',  // 资产余额
         "count": 10,   // 数量
-        "aum": '￥150,000.00',  // AUM
-        "familyAUM": '￥660,000.00', // 户AUM
+        "aum": '￥8,050,000.00',  // AUM
+        "familyAUM": '￥10,660,000.00', // 户AUM
         "dayChangeAmount": '￥760,000.00',  //上日资产变动
-        "yearChangeAmount": '￥4,800,000.00'    // 年累计资产变动
+        "yearChangeAmount": '￥40,800,000.00'    // 年累计资产变动
       },
       {
-        "targetName": "白金卡客户",
-        "amount": '￥700,000.00',  // 资产余额
+        "targetName": "钻石(300万-600万)",
+        "amount": '￥5,000,000.00',  // 资产余额
+        "count": 20,   // 数量
+        "aum": '￥4,005,000.00',  // AUM
+        "familyAUM": '￥5,006,000.00', // 户AUM
+        "dayChangeAmount": '￥1,500,000.00',  //上日资产变动
+        "yearChangeAmount": '￥8,000,000.00'    // 年累计资产变动
+      },
+      {
+        "targetName": "白金(100万-300万)",
+        "amount": '￥1,700,000.00',  // 资产余额
         "count": 80,   // 数量
-        "aum": '￥55,000.00',  // AUM
-        "familyAUM": '￥660,000.00', // 户AUM
-        "dayChangeAmount": '￥200,000.00',  //上日资产变动
+        "aum": '￥2,055,000.00',  // AUM
+        "familyAUM": '￥3,660,000.00', // 户AUM
+        "dayChangeAmount": '￥800,000.00',  //上日资产变动
         "yearChangeAmount": '￥1,800,000.00'    // 年累计资产变动
       },
       {
-        "targetName": "金卡客户",
-        "amount": '￥400,000.0',  // 资产余额
-        "count": 43,   // 数量
-        "aum": '￥35,000.00',  // AUM
-        "familyAUM": '￥96,000.00', // 户AUM
-        "dayChangeAmount": '￥250,000.00',  //上日资产变动
-        "yearChangeAmount": '￥3,200,000'    // 年累计资产变动
+        "targetName": "黄金(50万-100万)",
+        "amount": '￥750,000.0',  // 资产余额
+        "count": 102,   // 数量
+        "aum": '￥1,000,000.00',  // AUM
+        "familyAUM": '￥1,096,000.00', // 户AUM
+        "dayChangeAmount": '￥500,000.00',  //上日资产变动
+        "yearChangeAmount": '￥2,000,000.00'    // 年累计资产变动
       },
       {
-        "targetName": "普通客户",
-        "amount": '￥20,000.00',  // 资产余额
+        "targetName": "白银(20万-50万)",
+        "amount": '￥350,000.0',  // 资产余额
+        "count": 46,   // 数量
+        "aum": '￥400,000.00',  // AUM
+        "familyAUM": '￥696,000.00', // 户AUM
+        "dayChangeAmount": '￥250,000.00',  //上日资产变动
+        "yearChangeAmount": '￥2,000,000.00'    // 年累计资产变动
+      },
+      {
+        "targetName": "优质(5万-20万)",
+        "amount": '￥150,000.0',  // 资产余额
+        "count": 300,   // 数量
+        "aum": '￥100,000.00',  // AUM
+        "familyAUM": '￥196,000.00', // 户AUM
+        "dayChangeAmount": '￥50,000.00',  //上日资产变动
+        "yearChangeAmount": '￥200,000.00'    // 年累计资产变动
+      },
+      {
+        "targetName": "价值(1万-5万)",
+        "amount": '￥18,000.00',  // 资产余额
+        "count": 60,   // 数量
+        "aum": '￥12,000.00',  // AUM
+        "familyAUM": '￥36,000.00', // 户AUM
+        "dayChangeAmount": '￥4,000.00',  //上日资产变动
+        "yearChangeAmount": '￥40,000.00'    // 年累计资产变动
+      },
+      {
+        "targetName": "大众(0-1万)",
+        "amount": '￥8,000.00',  // 资产余额
         "count": 200,   // 数量
         "aum": '￥10,000.00',  // AUM
         "familyAUM": '￥36,000.00', // 户AUM
-        "dayChangeAmount": '￥9,000.00',  //上日资产变动
-        "yearChangeAmount": '￥340,000.00'    // 年累计资产变动
+        "dayChangeAmount": '￥4,000.00',  //上日资产变动
+        "yearChangeAmount": '￥40,000.00'    // 年累计资产变动
       }
     ];
 
@@ -309,22 +336,11 @@ export class ReserveMoneyComponent implements OnInit {
   loadEchartTimeout(res: any) {
     this.loading = true;
     const piechartData: any = [];
-    // 资金流向行业
-    // 如果行业数量大于5
-    if (res.length > 5) {
-      for (let i = 0; i < 5; i++) {
-        piechartData.push({
-          value: res[i]['count'],
-          name: res[i]['targetName']
-        });
-      }
-    } else {
-      for (let v = 0; v < res.length; v++) {
-        piechartData.push({
-          value: res[v]['count'],
-          name: res[v]['targetName']
-        });
-      }
+    for (let i = 0; i < res.length; i++) {
+      piechartData.push({
+        value: res[i]['count'],
+        name: res[i]['targetName']
+      });
     }
     this.barchartOption[1] = {
       series: [{
