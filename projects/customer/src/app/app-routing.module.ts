@@ -18,6 +18,8 @@ import { MyAssignComponent } from './pages/my-assign/my-assign.component'
 import { CustomerAssignComponent } from './pages/customer-assign/customer-assign.component'
 import { CustomerSetreceverComponent } from './pages/customer-setrecever/customer-setrecever.component'
 import { CustomerSearchComponent } from './pages/customer-search/customer-search.component'
+import { TagSearchComponent } from './pages/tag-search/tag-search.component'
+import { TagViewComponent } from './pages/tag-view/tag-view.component'
 
 const routes: Routes = [
   { path: 'customer/customer-list', component: CustomerListComponent },
@@ -34,7 +36,9 @@ const routes: Routes = [
   { path: 'customer/my-assign', component: MyAssignComponent },
   { path: 'customer/customer-assign', component: CustomerAssignComponent },
   { path: 'customer/customer-setrecever', component: CustomerSetreceverComponent },
-  { path: 'customer/customer-search', component: CustomerSearchComponent }
+  { path: 'customer/customer-search', component: CustomerSearchComponent },
+  { path: 'customer/tag-search', component: TagSearchComponent },
+  { path: 'customer/tag-view', component: TagViewComponent }
 ]
 
 routes.push({

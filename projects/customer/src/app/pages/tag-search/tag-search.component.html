@@ -1,0 +1,22 @@
+<page-header title="创建标签" [breadcrumb]="breadcrumb" [action]="action" [action-group]="false" [back]="true">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb separator="/">
+      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>客户标签</ql-breadcrumb-item>
+      <ql-breadcrumb-item>标签搜索</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action>
+    <ql-button type="primary" (click)="onSubmit()">提交</ql-button>
+  </ng-template>
+</page-header>
+
+<ql-card title="基本信息">
+  <app-tag-create-customer></app-tag-create-customer>
+</ql-card>
+<ql-card title="分类信息">
+  <app-tag-create-customer></app-tag-create-customer>
+</ql-card>
+<ql-card title="管理信息">
+  <app-tag-create-customer></app-tag-create-customer>
+</ql-card>

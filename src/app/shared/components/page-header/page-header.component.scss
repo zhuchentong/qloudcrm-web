@@ -27,6 +27,11 @@
       padding: 0;
       min-width: 75px;
       padding: 0 10px;
+
+      &.ql-button--primary {
+        background-color: #859ec2;
+        border-color: #859ec2;
+      }
     }
 
     .page-header__group {

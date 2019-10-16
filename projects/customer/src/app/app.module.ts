@@ -34,6 +34,8 @@ import { MyAssignComponent } from './pages/my-assign/my-assign.component'
 import { CustomerAssignComponent } from './pages/customer-assign/customer-assign.component'
 import { CustomerSetreceverComponent } from './pages/customer-setrecever/customer-setrecever.component'
 import { CustomerSearchComponent } from './pages/customer-search/customer-search.component'
+import { TagSearchComponent } from './pages/tag-search/tag-search.component'
+import { TagViewComponent } from './pages/tag-view/tag-view.component'
 
 // 页面列表
 const PAGES = [
@@ -50,7 +52,9 @@ const PAGES = [
   CustomerAssignComponent,
   MyAssignComponent,
   CustomerSetreceverComponent,
-  CustomerSearchComponent
+  CustomerSearchComponent,
+  TagSearchComponent,
+  TagViewComponent
 ]
 
 // 组件列表
