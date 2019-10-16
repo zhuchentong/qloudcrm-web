@@ -21,7 +21,7 @@ export class CustomerAssetsComponent implements OnInit {
     { value: '半年内', label: '半年内' },
     { value: '一年内', label: '一年内' }
   ]
-  constructor(private apiService: ApiService, private modal: ModalService, private message: QlMessageService) {}
+  constructor(private apiService: ApiService, public modal: ModalService, private message: QlMessageService) {}
 
   ngOnInit() {
     this.apiService.getcustomerAssetsList().subscribe(data => {
