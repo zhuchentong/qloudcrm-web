@@ -36,7 +36,7 @@ export class CustomerDetailComponent implements OnInit {
     { value: '2', label: '存款' },
     { value: '3', label: '股票' }
   ]
-  public tagTypesels = [{ value: '1', label: '手动'}]
+  public tagTypesels = [{ value: '1', label: '手动', selected:true}]
 
   public category = [
     { value: '小于10万', label: '小于10万' },

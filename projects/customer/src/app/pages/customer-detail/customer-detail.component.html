@@ -1,10 +1,10 @@
 <page-header title="客户详情" [breadcrumb]="breadcrumb" [back]="true">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>客户详情</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>客户详情</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
 </page-header>
 
 <tab-container>
@@ -387,12 +387,12 @@
                 <ql-input placeholder="请输入内容"></ql-input>
             </ql-form-item>
             <ql-form-item label="标签分类" ql-col span="12">
-                <ql-select [(model)]="valuecate" [clearable]="true">
+                <ql-select [clearable]="true">
                     <ql-option *ngFor="let item of tagCatesels" [label]="item.label" [value]="item.value"> </ql-option>
                 </ql-select>
             </ql-form-item>
             <ql-form-item label="标签类型" ql-col span="12">
-                <ql-select [(model)]="valuecate" [clearable]="true">
+                <ql-select [clearable]="true">
                     <ql-option *ngFor="let item of tagTypesels" [label]="item.label" [value]="item.value"> </ql-option>
                 </ql-select>
             </ql-form-item>
