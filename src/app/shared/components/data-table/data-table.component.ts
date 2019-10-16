@@ -15,6 +15,7 @@ export class DataTableComponent implements OnInit {
   @Input() public height: number
   @Input() public page: PageService
   @Input() public selection: boolean
+  @Input() public showIndex: boolean = true
   @Input() public action: TemplateRef<void>
   @Output('page-change') public pageChangeEvent: EventEmitter<any> = new EventEmitter()
   @Output('selection-change') public checkChangeEvent: EventEmitter<any> = new EventEmitter()
@@ -23,6 +24,10 @@ export class DataTableComponent implements OnInit {
   public selectionList: any[] = []
   private skipColumnWidthUpdate = false
 
+  public customColumnList = {
+    __index__: this.addIndexColumn,
+    __selection__: this.addSelectionColumn
+  }
   constructor() {
     // super()
   }
@@ -30,12 +35,35 @@ export class DataTableComponent implements OnInit {
   public ngOnInit() {}
 
   public updateColumns(column: TableColumn) {
-    if (this.selection && column.modelKey === '__selection__') {
-      this.addSelectionColumn(column)
+    const target = Object.entries(this.customColumnList).find(([key]) => key === column.modelKey)
+
+    if (target) {
+      this.skipColumnWidthUpdate = true
+      const [key, generaor] = target
+      generaor.bind(this)(column)
+    } else {
+      this.table.updateColumns(column)
+    }
+  }
+
+  public updateColumnsWidth(widthItem: WidthItem) {
+    if (this.skipColumnWidthUpdate) {
+      this.skipColumnWidthUpdate = false
       return
     }
 
-    this.table.updateColumns(column)
+    this.table.updateColumnsWidth(widthItem)
+  }
+
+  private addIndexColumn(column) {
+    const table = this.table as any
+    // 重置数据
+    table.columnsWithLevel = []
+    table.columns.forEach(x => (x.index += 1))
+    table.columns.splice(0, 0, Object.assign(column, { index: 0 }))
+    table.columnsWidth.splice(0, 0, { auto: false, width: 60 })
+
+    table.transformColumnsData()
   }
 
   private addSelectionColumn(column) {
@@ -49,15 +77,6 @@ export class DataTableComponent implements OnInit {
     this.table.model.forEach(x => (x.__selection__ = false))
 
     table.transformColumnsData()
-  }
-
-  public updateColumnsWidth(widthItem: WidthItem) {
-    if (this.selection && this.skipColumnWidthUpdate) {
-      this.skipColumnWidthUpdate = false
-      return
-    }
-
-    this.table.updateColumnsWidth(widthItem)
   }
 
   public transformColumnsData() {
