@@ -1,17 +1,22 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core'
 import { FormBuilder, Validators, FormGroup } from '@angular/forms'
 import { QlMessageService } from 'qloud-angular'
 import { plainToClass } from 'class-transformer'
 import { DictService } from '@app/shared/utils/dict.service'
 import { ApiService } from '../../services/api.service'
 
+import { ModalService } from '@app/shared/utils'
 @Component({
   selector: 'app-customer-detail',
   templateUrl: './customer-detail.component.html',
   styleUrls: ['./customer-detail.component.css'],
-  providers: [ApiService]
+  providers: [ApiService, QlMessageService]
 })
 export class CustomerDetailComponent implements OnInit {
+
+  @ViewChild('addInfo', { static: true })
+  private addInfoTemp: TemplateRef<any>
+
   public valuecate:any = ''
   public valuetype:any = ''
   public prductType = [
@@ -133,6 +138,44 @@ export class CustomerDetailComponent implements OnInit {
       "tradaccount":"招商银行(620090293920028987)"
     }
   ]
+
+  public baseInfo = [
+    {
+      "name":"陈先",
+      "age":"38",
+      "sex":"男",
+      "tel":"18710966754",
+      "address":"西安市高新区",
+      "fdmilynum":"4",
+      "emali":"18710966754@163.com",
+      "wx":"",
+      "qq":"",
+      "job":"律师",
+      "contact":"",
+      "like":""
+    }
+  ]
+
+  public tagInfo = [
+    {
+      "tagname":"基金达人",
+      "tagcate":"投资类",
+      "tagtype":"手动标签",
+      "tagtime":"2019-01-12"
+    },
+    {
+      "tagname":"保险活跃分子",
+      "tagcate":"保险类",
+      "tagtype":"手动标签",
+      "tagtime":"2018-11-10"
+    },
+    {
+      "tagname":"理财达人",
+      "tagcate":"投资类",
+      "tagtype":"数字标签",
+      "tagtime":"2017-07-01"
+    }
+  ]
   public formGroup: FormGroup = this.fb.group({})
   public changeFlag: any = '1'
   // 数据
@@ -244,7 +287,7 @@ export class CustomerDetailComponent implements OnInit {
     this.changeFlag = event
   }
 
-  constructor(private fb: FormBuilder,private apiService: ApiService) {}
+  constructor(private fb: FormBuilder,private apiService: ApiService,private modal: ModalService, private message: QlMessageService) {}
 
   ngOnInit() {
     this.apiService.getcostomerDetaildkList().subscribe(data=>{
@@ -252,6 +295,17 @@ export class CustomerDetailComponent implements OnInit {
     })
     this.apiService.getcustomerDetailcontact().subscribe(data=>{
       this.contactData = data
+    })
+  }
+
+  public addInfoFun(){
+    this.modal
+    .open({
+      title: '基本信息补充',
+      component: this.addInfoTemp
+    })
+    .subscribe(() => {
+      this.message.success('sucess')
     })
   }
 }
