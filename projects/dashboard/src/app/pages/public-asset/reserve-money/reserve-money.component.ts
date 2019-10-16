@@ -13,6 +13,7 @@ export class ReserveMoneyComponent implements OnInit {
     tabIndex = '1';
     oneIndex = 1;
     twoIndex = 1;
+    threeIndex = 1;
 
       barchartOption: Array<any> = [{
         backgroundColor: '#fff',
@@ -324,6 +325,106 @@ export class ReserveMoneyComponent implements OnInit {
       }
     ];
 
+
+  linechartOption: Array<any> = [{
+    color: ['#f95372', '#f4c63d', '#40daf1', '#00abff', '#8bd22f'],
+    // title: {
+    //   text: '折线图堆叠'
+    // },
+    tooltip: {
+      trigger: 'axis'
+    },
+    // legend: {
+    //   data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+    // },
+    grid: {
+      top: '50',
+      left: '3%',
+      right: '5%',
+      bottom: '10%',
+      containLabel: true
+    },
+    toolbox: {
+      show: true,
+      top: 10,
+      right: 20,
+      feature: {
+        myTool1: {
+          show: true,
+          title: '数据列表',
+          icon: 'path://M432.45,595.444c0,2.177-4.661,6.82-11.305,6.82c-6.475,0-11.306-4.567-11.306-6.82s4.852-6.812,11.306-6.812C427.841,588.632,432.452,593.191,432.45,595.444L432.45,595.444z M421.155,589.876c-3.009,0-5.448,2.495-5.448,5.572s2.439,5.572,5.448,5.572c3.01,0,5.449-2.495,5.449-5.572C426.604,592.371,424.165,589.876,421.155,589.876L421.155,589.876z M421.146,591.891c-1.916,0-3.47,1.589-3.47,3.549c0,1.959,1.554,3.548,3.47,3.548s3.469-1.589,3.469-3.548C424.614,593.479,423.062,591.891,421.146,591.891L421.146,591.891zM421.146,591.891',
+          onclick:() => {
+            this.threeHandle(2);
+
+          }
+        },
+      }
+    },
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      data: [],
+    },
+    yAxis: {
+      type: 'value'
+    },
+    series: []
+  }];
+
+  //投资类型统计数据
+ linedata = [
+    {
+      "dataDate": "2018-07-02",
+      "a1": 100,   //消费圈前5
+      "a2": 10,   //连续6个月无投资行为
+      "a3": 78,   //定期-最近7天浏览次数
+      "a4": 45,   //精英贷-最近7天浏览次数
+      "a5": 23,   //理财-最近7天浏览次数
+      "a6": 83,   //基金-最近7天浏览次数
+      "a7": 23   //信用卡-最近7天浏览次数
+    },
+    {
+      "dataDate": "2018-07-02",
+      "a1": 129,   //消费圈前5
+      "a2": 23,   //连续6个月无投资行为
+      "a3": 52,   //定期-最近7天浏览次数
+      "a4": 34,   //精英贷-最近7天浏览次数
+      "a5": 75,   //理财-最近7天浏览次数
+      "a6": 43,   //基金-最近7天浏览次数
+      "a7": 23   //信用卡-最近7天浏览次数
+    },
+    {
+      "dataDate": "2018-09-02",
+      "a1": 98,   //消费圈前5
+      "a2": 23,   //连续6个月无投资行为
+      "a3": 45,   //定期-最近7天浏览次数
+      "a4": 35,   //精英贷-最近7天浏览次数
+      "a5": 83,   //理财-最近7天浏览次数
+      "a6": 63,   //基金-最近7天浏览次数
+      "a7": 53   //信用卡-最近7天浏览次数
+    },
+    {
+      "dataDate": "2018-11-02",
+      "a1": 87,   //消费圈前5
+      "a2": 23,   //连续6个月无投资行为
+      "a3": 53,   //定期-最近7天浏览次数
+      "a4": 23,   //精英贷-最近7天浏览次数
+      "a5": 63,   //理财-最近7天浏览次数
+      "a6": 28,   //基金-最近7天浏览次数
+      "a7": 35   //信用卡-最近7天浏览次数
+    },
+    {
+      "dataDate": "2019-01-02",
+      "a1": 120,   //消费圈前5
+      "a2": 87,   //连续6个月无投资行为
+      "a3": 23,   //定期-最近7天浏览次数
+      "a4": 53,   //精英贷-最近7天浏览次数
+      "a5": 54,   //理财-最近7天浏览次数
+      "a6": 34,   //基金-最近7天浏览次数
+      "a7": 45   //信用卡-最近7天浏览次数
+    },
+    ];
+
     constructor(private notify: QlNotificationService) {
     }
 
@@ -331,7 +432,93 @@ export class ReserveMoneyComponent implements OnInit {
     query() {
       this.loadEchartTimeout(this.res);
       this.loadEchart(this.labelres);
+      this.loadlineEchart(this.linedata);
     }
+
+  loadlineEchart(res: any) {
+    this.loading = true;
+    const linechartData = [];
+    const linechartXdata: Array<any> = [];
+
+    const item = {
+      name: '消费圈前5',
+      smooth: true,
+      type: 'line',
+      data: []
+    };
+    linechartData.push(item);
+
+    const item1 = {
+      name: '连续6个月无投资行为',
+      smooth: true,
+      type: 'line',
+      data: []
+    };
+    linechartData.push(item1);
+
+    const item2 = {
+      name: '定期-最近7天浏览次数',
+      smooth: true,
+      type: 'line',
+      data: []
+    };
+    linechartData.push(item2);
+
+    const item3 = {
+      name: '精英贷-最近7天浏览次数',
+      smooth: true,
+      type: 'line',
+      data: []
+    };
+    linechartData.push(item3);
+
+    const item4 = {
+      name: '理财-最近7天浏览次数',
+      smooth: true,
+      type: 'line',
+      data: []
+    };
+    linechartData.push(item4);
+
+    const item5 = {
+      name: '基金-最近7天浏览次数',
+      smooth: true,
+      type: 'line',
+      data: []
+    };
+    linechartData.push(item5);
+
+    const item6 = {
+      name: '信用卡-最近7天浏览次数',
+      smooth: true,
+      type: 'line',
+      data: []
+    };
+    linechartData.push(item6);
+
+    for (let k = 0; k < res.length; k++) {
+      linechartXdata.push(res[k]['dataDate']);
+    }
+    const set = new Set(linechartXdata);
+    const dateList = Array.from(set);
+    for (let n = 0; n < res.length; n++) {
+      linechartData[0].data.push(res[n].a1);
+      linechartData[1].data.push(res[n].a2);
+      linechartData[2].data.push(res[n].a3);
+      linechartData[3].data.push(res[n].a4);
+      linechartData[4].data.push(res[n].a5);
+      linechartData[5].data.push(res[n].a6);
+      linechartData[6].data.push(res[n].a7);
+    }
+    this.linechartOption[1] = {
+      xAxis: {
+        data: dateList,
+      },
+      series: linechartData
+    };
+    this.loading = false;
+
+  }
 
   loadEchartTimeout(res: any) {
     this.loading = true;
@@ -381,5 +568,9 @@ export class ReserveMoneyComponent implements OnInit {
   }
   twoHandle(index: number): void {
     this.twoIndex = index;
+  }
+
+  threeHandle(index: number): void {
+    this.threeIndex = index;
   }
 }

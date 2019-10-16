@@ -242,6 +242,41 @@ export class TaskSubmitComponent implements OnInit {
       }
     ];
 
+    counters = [
+      {
+        "targetName": "提醒",
+        "count": 100,
+        "read": 95,
+        "do": 60,
+        "undo": 40,
+        "expire": 10
+      },
+      {
+        "targetName": "警示",
+        "count": 35,
+        "read": 34,
+        "do": 20,
+        "undo": 15,
+        "expire": 4
+      },
+      {
+        "targetName": "通知",
+        "count": 90,
+        "read": 86,
+        "do": 80,
+        "undo": 6,
+        "expire": 1
+      },
+      {
+        "targetName": "待办",
+        "count": 10,
+        "read": 10,
+        "do": 8,
+        "undo": 2,
+        "expire": 0
+      }
+    ];
+
     constructor(private notify: QlNotificationService) {
     }
 
