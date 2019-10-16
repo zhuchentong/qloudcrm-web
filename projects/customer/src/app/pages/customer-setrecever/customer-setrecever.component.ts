@@ -18,7 +18,6 @@ export class CustomerSetreceverComponent implements OnInit {
   private setReceiverfuTemp: TemplateRef<any>
 
 
-  // private setReceiver: TemplateRef<any>
 
   public setList = [
     {

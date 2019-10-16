@@ -25,8 +25,115 @@ export class CustomerDetailComponent implements OnInit {
     { value: '50-100万', label: '50-100万' },
     { value: '大于100万', label: '大于100万' }
   ]
+
+  public tagTypes = [
+    { value: '1', label: '基本属性' },
+    { value: '2', label: '交易偏好' },
+    { value: '3', label: '价值属性' },
+    { value: '4', label: '风险属性' },
+    { value: '5', label: '行为特征' },
+    { value: '6', label: '信用特征' },
+    { value: '7', label: '营销偏好' },
+  ]
+
+  public marketList = [
+    {
+      "marketName":"健康理财宝C类",
+      "time":"2019-10-09 14:50:00",
+      "result":"未响应"
+    },
+    {
+      "marketName":"天天一份利",
+      "time":"2019-09-23 09:40:00",
+      "result":"成功"
+    },
+    {
+      "marketName":"本行基金特惠",
+      "time":"2019-9-10 16:20:00",
+      "result":"失败"
+    }
+  ]
+
+  public duetoProduct = [
+    {
+      "productName":"大额存单",
+      "startdate":"2016-10-23",
+      "enddate":"2019-11-01"
+    },
+    {
+      "productName":"封闭基金",
+      "startdate":"2018-01-10",
+      "enddate":"2019-11-31"
+    },
+    {
+      "productName":"高额理财宝",
+      "startdate":"2016-12-10",
+      "enddate":"2019-12-01"
+    }
+  ]
+
+  public tagInfoList = [
+    {
+      "tagname":"有车一族",
+      "tagtype":"手动标签",
+      "tagtime":"2016-12-12"
+    },
+    {
+      "tagname":"有房一族",
+      "tagtype":"手动标签",
+      "tagtime":"2014-10-01"
+    }
+  ]
+
+  public shopsList = [
+    {
+      "place":"高新万达",
+      "time":"2019-10-10",
+    },
+    {
+      "place":"曲江车展",
+      "time":"2019-09-20",
+    },
+    {
+      "place":"高新博览会",
+      "time":"2019-08-17",
+    },
+    {
+      "place":"高新万达",
+      "time":"2019-08-01",
+    }
+  ]
+
+  public tradTypes = [
+    { value: '1', label: '存款' },
+    { value: '2', label: '理财' },
+    { value: '3', label: '基金' },
+    { value: '4', label: '保险' },
+    { value: '5', label: '贷款' },
+    { value: '6', label: '股票' }
+  ]
+
+  public tradList = [
+    {
+      "tradname":"生活消费",
+      "tradtype":"支出",
+      "tradtime":"2019-10-11",
+      "tradaccount":"建设银行(620090293920028987)"
+    },
+    {
+      "tradname":"基金提取",
+      "tradtype":"收入",
+      "tradtime":"2019-09-30",
+      "tradaccount":"建设银行(620090293920028987)"
+    },
+    {
+      "tradname":"大额存单",
+      "tradtype":"收入",
+      "tradtime":"2019-09-23",
+      "tradaccount":"招商银行(620090293920028987)"
+    }
+  ]
   public formGroup: FormGroup = this.fb.group({})
-  public searchflag:any = ''
   public changeFlag: any = '1'
   // 数据
   public customertabledata = [
@@ -146,9 +253,5 @@ export class CustomerDetailComponent implements OnInit {
     this.apiService.getcustomerDetailcontact().subscribe(data=>{
       this.contactData = data
     })
-  }
-
-  public onRefresh(){
-    this.searchflag = true
   }
 }

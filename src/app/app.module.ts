@@ -9,6 +9,8 @@ import { CoreModule } from './core/core.module'
 import { AppDashboardModule } from 'projects/dashboard/src/app/app.module'
 import { AppCustomerModule } from 'projects/customer/src/app/app.module'
 import { AppMarketingModule } from 'projects/marketing/src/app/app.module'
+import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 @NgModule({
   declarations: [AppComponent],

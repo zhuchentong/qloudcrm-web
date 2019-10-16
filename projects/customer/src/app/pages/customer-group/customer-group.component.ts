@@ -14,12 +14,17 @@ import { ModalService } from '@app/shared/utils'
   providers: [ApiService, ModalService]
 })
 export class CustomerGroupComponent implements OnInit {
+
+  @ViewChild('searchList', { static: true })
+  private searchListTemp: TemplateRef<any>
+
   @ViewChild('groupItemEdit', { static: true })
   private groupItemEditTemp: TemplateRef<any>
 
   public formGroup: FormGroup
   public groupList: any[] = []
   public edidflag: any = ''
+  public customerList = []
 
   // 弹框
   public groupForm = groupEditForm
@@ -39,8 +44,10 @@ export class CustomerGroupComponent implements OnInit {
       name: [''],
       state: ['']
     })
-
     this.onRefresh()
+    this.apiService.getCustomerList().subscribe(data => {
+      this.customerList = data.sort(x => 0.5 - Math.random())
+    })
   }
 
   public onRefresh() {
@@ -59,5 +66,16 @@ export class CustomerGroupComponent implements OnInit {
       .subscribe(() => {
         this.message.success('修改成功')
       })
+  }
+
+  public queryCustomer(){
+    this.modal
+    .open({
+      title: '客户列表',
+      component: this.searchListTemp
+    })
+    .subscribe(() => {
+      this.message.success('sucess')
+    })
   }
 }
