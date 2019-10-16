@@ -15,6 +15,7 @@
     <ql-button [type]="content === tagView ? 'primary' : ''" (click)="onChangeTab(tagView)">基本特征</ql-button>
     <ql-button [type]="content === tagFeature ? 'primary' : ''" (click)="onChangeTab(tagFeature)">产品偏好</ql-button>
     <ql-button [type]="content === tagInfo ? 'primary' : ''" (click)="onChangeTab(tagInfo)">标签信息</ql-button>
+    <ql-button [type]="content === tagRecord ? 'primary' : ''" (click)="onChangeTab(tagRecord)">执行记录</ql-button>
   </ql-button-group>
   <div class="ql-padding-y">
     <ng-container [ngTemplateOutlet]="content"></ng-container>
@@ -32,13 +33,16 @@
 
   <ng-template #tagView>
     <div ql-row gutter="12">
-      <ql-card ql-col span="12">
+      <ql-card header="年龄分布" ql-col span="12">
+        <div echarts [options]="ageOption"></div>
+      </ql-card>
+      <ql-card header="资产分布" ql-col span="12">
         <div echarts [options]="assetOption"></div>
       </ql-card>
-      <ql-card ql-col span="12">
+      <ql-card header="等级分布" ql-col span="12">
         <div echarts [options]="levelOption"></div>
       </ql-card>
-      <ql-card ql-col span="12">
+      <ql-card header="风险分布" ql-col span="12">
         <div echarts [options]="riskOption"></div>
       </ql-card>
     </div>
@@ -69,5 +73,14 @@
       <label-item label="更新方式">自动 - 每天</label-item>
       <label-item label="备注">无</label-item>
     </label-container>
+  </ng-template>
+  <ng-template #tagRecord>
+    <data-table [model]="recordList">
+      <ql-table-column model-key="time" label="运行时间"> </ql-table-column>
+      <ql-table-column model-key="method" label="运行方式"> </ql-table-column>
+      <ql-table-column model-key="cycle" label="运行周期"> </ql-table-column>
+      <ql-table-column model-key="status" label="运行状态"> </ql-table-column>
+      <ql-table-column model-key="count" label="运行结果"> </ql-table-column>
+    </data-table>
   </ng-template>
 </page-container>

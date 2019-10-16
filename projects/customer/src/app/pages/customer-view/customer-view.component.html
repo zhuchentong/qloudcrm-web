@@ -8,11 +8,69 @@
 </page-header>
 
 <page-container ql-row gutter="12">
+  <ql-card header="近期交易用户年龄分布" ql-col span="12">
+    <div echarts [options]="tradeAgeOptions"></div>
+  </ql-card>
+  <ql-card header="近期交易用户性别分布" ql-col span="12">
+    <div echarts [options]="tradeSexOptions"></div>
+  </ql-card>
   <ql-card header="客户交易行为分布" ql-col span="12">
     <div echarts [options]="tradeEventOptions"></div>
   </ql-card>
   <ql-card header="客户资产统计分布" ql-col span="12">
     <div echarts [options]="tradeAssetOptions"></div>
+  </ql-card>
+  <ql-card header="正在申请业务客户" ql-col span="24">
+    <data-table [model]="customerList">
+      <ql-table-column model-key="code" label="客户号"> </ql-table-column>
+      <ql-table-column model-key="name" label="客户姓名"> </ql-table-column>
+      <ql-table-column model-key="sex" label="性别"> </ql-table-column>
+      <ql-table-column model-key="age" label="年龄"> </ql-table-column>
+      <ql-table-column model-key="manager" label="客户经理"> </ql-table-column>
+      <ql-table-column model-key="dayAUM" label="日均AUM"> </ql-table-column>
+      <ql-table-column model-key="nowAUM" label="当前AUM"> </ql-table-column>
+      <ql-table-column label="操作" width="150">
+        <ng-template #slot let-scope="scope">
+          <a routerLink="/customer/customer-detail">详情</a>
+        </ng-template>
+      </ql-table-column>
+    </data-table>
+  </ql-card>
+  <ql-card header="客户标签使用程度" ql-col span="24">
+    <data-table [model]="customerTagList">
+      <ql-table-column model-key="name" label="标签名称">
+        <ng-template #slot let-scope="scope">
+          <a [routerLink]="['/customer/tag-detail', { id: scope.rowData.id }]">{{ scope.rowData.name }}</a>
+        </ng-template>
+      </ql-table-column>
+      <ql-table-column model-key="code" label="客户编码"></ql-table-column>
+      <ql-table-column model-key="type" label="标签类别"></ql-table-column>
+      <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
+      <ql-table-column model-key="count" label="客户数量"></ql-table-column>
+      <ql-table-column model-key="state" label="标签状态"></ql-table-column>
+    </data-table>
+  </ql-card>
+  <ql-card header="产品持有人数" ql-col span="24">
+    <data-table [model]="customerProductList">
+      <ql-table-column model-key="code" label="产品代码"></ql-table-column>
+      <ql-table-column model-key="level" label="风险等级"></ql-table-column>
+      <ql-table-column model-key="profit" label="预期收益率"></ql-table-column>
+      <ql-table-column model-key="kandel" label="销售渠道"></ql-table-column>
+      <ql-table-column model-key="start" label="发售起始日期"></ql-table-column>
+      <ql-table-column model-key="end" label="发售截至日期"></ql-table-column>
+      <ql-table-column model-key="cycle" label="产品周期"></ql-table-column>
+      <ql-table-column model-key="count" label="客户数量"></ql-table-column>
+    </data-table>
+  </ql-card>
+  <ql-card header="活动效果排名" ql-col span="24">
+    <data-table [model]="marketList">
+      <ql-table-column model-key="marketName" label="营销活动名称"> </ql-table-column>
+      <ql-table-column model-key="time" label="营销活动时间"> </ql-table-column>
+      <ql-table-column model-key="sendCount" label="通知人数"> </ql-table-column>
+      <ql-table-column model-key="receiveCount" label="响应人数"> </ql-table-column>
+      <ql-table-column model-key="successCount" label="参与人数"> </ql-table-column>
+      <ql-table-column model-key="result" label="营销结果"> </ql-table-column>
+    </data-table>
   </ql-card>
   <ql-card header="动态监控" ql-col span="24">
     <data-form

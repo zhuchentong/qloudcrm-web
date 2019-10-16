@@ -2,7 +2,7 @@
   <ng-container *ngIf="false; else action"></ng-container>
 </div>
 <ql-table #table [height]="height" [stripe]="true" [border]="true" [model]="model" [scroll-x]="true" center="all">
-  <ng-container *ngIf="false; else indexColumn"></ng-container>
+  <ng-container *ngIf="!showIndex; else indexColumn"></ng-container>
   <ng-container *ngIf="!selection; else selectionColumn"></ng-container>
   <ng-content></ng-content>
 </ql-table>

@@ -12,10 +12,11 @@ export class TagDetailComponent implements OnInit {
   public tag
   public content: ViewContainerRef
   public userList: any[] = []
-
+  public recordList: any[] = []
   public assetOption
   public levelOption
   public riskOption
+  public ageOption
 
   @ViewChild('tagUser', { static: true })
   private tagUser
@@ -36,6 +37,14 @@ export class TagDetailComponent implements OnInit {
 
     this.apiService.getCustomerTagUserList().subscribe(data => {
       this.userList = data
+    })
+
+    this.apiService.getCustomerTagRecordList().subscribe(data => {
+      this.recordList = data
+    })
+
+    this.apiService.getCustomerViewData().subscribe(({ tradeAge }) => {
+      this.ageOption = this.echartService.getOption({ type: 'pie', data: tradeAge })
     })
 
     this.assetOption = this.echartService.getOption({
