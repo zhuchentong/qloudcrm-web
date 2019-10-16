@@ -38,3 +38,7 @@ ql-form-item {
 .ql-menu--horizontal > .ql-submenu.is-active .ql-submenu__title {
   border-bottom-color: #357ee2 !important;
 }
+
+.ql-table.ql-table--enable-row-transition {
+  margin: auto;
+}

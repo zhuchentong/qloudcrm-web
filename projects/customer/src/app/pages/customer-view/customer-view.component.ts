@@ -14,6 +14,36 @@ export class CustomerViewComponent implements OnInit {
   public customerList
   public tradeAssetOptions
   public tradeEventOptions
+  public tradeAgeOptions
+  public tradeSexOptions
+  public customerTagList = []
+  public customerProductList = []
+  public marketList = [
+    {
+      marketName: '天天一份利',
+      time: '2019-09-23 09:40:00',
+      sendCount: '32123',
+      receiveCount: '9833',
+      successCount: '7832',
+      result: '成功'
+    },
+    {
+      marketName: '健康理财宝C类',
+      time: '2019-10-09 14:50:00',
+      sendCount: '12123',
+      receiveCount: '2833',
+      successCount: '-',
+      result: '未响应'
+    },
+    {
+      marketName: '本行基金特惠',
+      time: '2019-9-10 16:20:00',
+      sendCount: '2123',
+      receiveCount: '323',
+      successCount: '-',
+      result: '失败'
+    }
+  ]
 
   constructor(private fb: FormBuilder, private apiService: ApiService, private echartService: EchartService) {}
 
@@ -40,9 +70,19 @@ export class CustomerViewComponent implements OnInit {
   }
 
   public getCustomerViewData() {
-    this.apiService.getCustomerViewData().subscribe(({ tradeAsset, tradeEvent }) => {
+    this.apiService.getCustomerViewData().subscribe(({ tradeAsset, tradeEvent, tradeAge, tradeSex }) => {
       this.getTradeAssetOption(tradeAsset)
       this.getTradeEventOption(tradeEvent)
+      this.tradeAgeOptions = this.echartService.getOption({ type: 'pie', data: tradeAge })
+      this.tradeSexOptions = this.echartService.getOption({ type: 'pie', data: tradeSex })
+    })
+
+    this.apiService.getCustomerTagList('tag').subscribe(data => {
+      this.customerTagList = data.sort(x => 0.5 - Math.random())
+    })
+
+    this.apiService.getcostomerDetaildkList().subscribe(data => {
+      this.customerProductList = data
     })
   }
 

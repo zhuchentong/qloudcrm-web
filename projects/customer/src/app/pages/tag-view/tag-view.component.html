@@ -1,0 +1,54 @@
+<page-header title="标签视图" [breadcrumb]="breadcrumb" [back]="true">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb separator="/">
+      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>客户标签</ql-breadcrumb-item>
+      <ql-breadcrumb-item>标签视图</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+</page-header>
+
+<ql-card header="热门标签">
+  <data-table [model]="hotTagList">
+    <ql-table-column model-key="name" label="标签名称">
+      <ng-template #slot let-scope="scope">
+        <a [routerLink]="['/customer/tag-detail', { id: scope.rowData.id }]">{{ scope.rowData.name }}</a>
+      </ng-template>
+    </ql-table-column>
+    <ql-table-column model-key="code" label="客户编码"></ql-table-column>
+    <ql-table-column model-key="type" label="标签类别"></ql-table-column>
+    <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
+    <ql-table-column model-key="count" label="客户数量"></ql-table-column>
+    <ql-table-column model-key="state" label="标签状态"></ql-table-column>
+  </data-table>
+</ql-card>
+
+<ql-card header="活跃用户标签">
+  <data-table [model]="userTagList">
+    <ql-table-column model-key="name" label="标签名称">
+      <ng-template #slot let-scope="scope">
+        <a [routerLink]="['/customer/tag-detail', { id: scope.rowData.id }]">{{ scope.rowData.name }}</a>
+      </ng-template>
+    </ql-table-column>
+    <ql-table-column model-key="code" label="客户编码"></ql-table-column>
+    <ql-table-column model-key="type" label="标签类别"></ql-table-column>
+    <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
+    <ql-table-column model-key="count" label="客户数量"></ql-table-column>
+    <ql-table-column model-key="state" label="标签状态"></ql-table-column>
+  </data-table>
+</ql-card>
+
+<ql-card header="新增标签">
+  <data-table [model]="newTagList">
+    <ql-table-column model-key="name" label="标签名称">
+      <ng-template #slot let-scope="scope">
+        <a [routerLink]="['/customer/tag-detail', { id: scope.rowData.id }]">{{ scope.rowData.name }}</a>
+      </ng-template>
+    </ql-table-column>
+    <ql-table-column model-key="code" label="客户编码"></ql-table-column>
+    <ql-table-column model-key="type" label="标签类别"></ql-table-column>
+    <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
+    <ql-table-column model-key="count" label="客户数量"></ql-table-column>
+    <ql-table-column model-key="state" label="标签状态"></ql-table-column>
+  </data-table>
+</ql-card>

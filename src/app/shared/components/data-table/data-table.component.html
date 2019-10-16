@@ -2,6 +2,7 @@
   <ng-container *ngIf="false; else action"></ng-container>
 </div>
 <ql-table #table [height]="height" [stripe]="true" [border]="true" [model]="model" [scroll-x]="true" center="all">
+  <ng-container *ngIf="!showIndex; else indexColumn"></ng-container>
   <ng-container *ngIf="!selection; else selectionColumn"></ng-container>
   <ng-content></ng-content>
 </ql-table>
@@ -10,6 +11,14 @@
   <ql-table-column model-key="__selection__" label="选择" width="60">
     <ng-template #slot let-scope="scope">
       <ql-checkbox (modelChange)="onCheckChange($event, scope.rowData)"></ql-checkbox>
+    </ng-template>
+  </ql-table-column>
+</ng-template>
+
+<ng-template #indexColumn>
+  <ql-table-column model-key="__index__" label="序号" width="60">
+    <ng-template #slot let-scope="scope">
+      {{ scope.rowData.index + 1 }}
     </ng-template>
   </ql-table-column>
 </ng-template>

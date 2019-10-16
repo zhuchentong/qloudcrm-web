@@ -15,6 +15,7 @@ import customerDetailcontact from '../../assets/json/customer-detailcontact.json
 import customerMyassignList from '../../assets/json/customer-myassign.json'
 import cuctomerAssignList from '../../assets/json/customer-assign.json'
 import customerTagUser from '../../assets/json/customer-tag-user.json'
+import customerTagRecord from '../../assets/json/customer-tag-record.json'
 @Injectable()
 export class ApiService {
   constructor(private net: NetService) {}
@@ -50,7 +51,7 @@ export class ApiService {
   }
 
   public getTagDetail(id) {
-    return of(customerTagList.find(x => x.id === id))
+    return of(customerTagList.find(x => x.id.toString() === id.toString()))
   }
 
   public getCustomerViewData() {
@@ -78,5 +79,8 @@ export class ApiService {
 
   public getCustomerTagUserList() {
     return of(customerTagUser)
+  }
+  public getCustomerTagRecordList() {
+    return of(customerTagRecord)
   }
 }
