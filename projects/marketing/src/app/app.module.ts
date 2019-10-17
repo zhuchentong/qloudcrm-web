@@ -14,9 +14,21 @@ import { Store } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
 import { ApiService } from './services/api.service'
 import { ActivityListComponent } from './pages/activity-list/activity-list.component'
+import { ExploreListComponent } from './pages/explore-list/explore-list.component'
+import { ApprovalListComponent } from './pages/approval-list/approval-list.component'
+import { ActivilyMonitorComponent } from './pages/activily-monitor/activily-monitor.component'
+import { ActivilyCommentComponent } from './pages/activily-comment/activily-comment.component'
+import { RecommendListComponent } from './pages/recommend-list/recommend-list.component'
 
 // 页面列表
-const PAGES = [ActivityListComponent]
+const PAGES = [
+  ActivityListComponent,
+  ExploreListComponent,
+  ApprovalListComponent,
+  ActivilyMonitorComponent,
+  ActivilyCommentComponent,
+  RecommendListComponent
+]
 
 // 组件列表
 const COMPONENTS = []

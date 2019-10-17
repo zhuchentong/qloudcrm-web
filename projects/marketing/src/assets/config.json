@@ -8,8 +8,24 @@
   "pluginOrder": 1,
   "pluginTab": [
     {
-      "name": "目标客户",
+      "name": "目标探索",
+      "url": "#/marketing/expore-list"
+    },
+    {
+      "name": "活动管理",
       "url": "#/marketing/activity-list"
+    },
+    {
+      "name": "活动审批",
+      "url": "#/marketing/approval-list"
+    },
+    {
+      "name": "活动监控",
+      "url": "#/marketing/activity-monitor"
+    },
+    {
+      "name": "推介管理",
+      "url": "#/marketing/recommend-list"
     }
   ]
 }
