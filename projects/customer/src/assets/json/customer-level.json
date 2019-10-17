@@ -1,8 +1,8 @@
 [{
         "code": "2YTD67",
         "name": "王志业",
-        "nowlevel": "金卡客户",
-        "beforelevel": "普通客户",
+        "nowlevel": "白金客户",
+        "beforelevel": "优质客户",
         "sex": "男",
         "age": "26",
         "tel": "18746577832",
@@ -15,8 +15,8 @@
     {
         "code": "Y78D67",
         "name": "陈美丽",
-        "nowlevel": "金卡客户",
-        "beforelevel": "白金客户",
+        "nowlevel": "白金客户",
+        "beforelevel": "黄金客户",
         "sex": "女",
         "age": "35",
         "tel": "15678973212",
@@ -29,8 +29,8 @@
     {
         "code": "12ND67",
         "name": "陈平",
-        "nowlevel": "白金客户",
-        "beforelevel": "潜在客户",
+        "nowlevel": "黄金客户",
+        "beforelevel": "大众客户",
         "sex": "男",
         "age": "31",
         "tel": "18234569202",
@@ -43,8 +43,8 @@
     {
         "code": "GY78W1",
         "name": "王袁伟",
-        "nowlevel": "潜在客户",
-        "beforelevel": "金卡客户",
+        "nowlevel": "大众客户",
+        "beforelevel": "白金客户",
         "sex": "男",
         "age": "49",
         "tel": "15332985576",
