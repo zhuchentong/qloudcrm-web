@@ -3,10 +3,14 @@ import { Routes, RouterModule } from '@angular/router'
 import { environment } from '../environments/environment'
 import { ActivityListComponent } from './pages/activity-list/activity-list.component'
 import { TemplateFilterComponent } from './pages/template-filter/template-filter.component'
+import { TemplateDetailComponent } from './pages/template-detail/template-detail.component'
+
 
 const routes: Routes = [
   { path: 'marketing/activity-list', component: ActivityListComponent },
-  { path: 'marketing/template-filter', component: TemplateFilterComponent }
+  { path: 'marketing/template-filter', component: TemplateFilterComponent },
+  { path: 'marketing/template-detail', component: TemplateDetailComponent }
+
 ]
 
 routes.push({
