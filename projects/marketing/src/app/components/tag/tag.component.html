@@ -1,17 +1,3 @@
-<page-header title="客户标签" [breadcrumb]="breadcrumb" [action]="actionjump" [action-group]="false">
-    <ng-template #breadcrumb>
-        <ql-breadcrumb>
-            <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-            <ql-breadcrumb-item>客户标签</ql-breadcrumb-item>
-        </ql-breadcrumb>
-    </ng-template>
-    <ng-template #actionjump class="ql-text-right">
-        <ql-button type="primary" routerLink="/customer/tag-create">新建标签</ql-button>
-        <ql-button type="primary" routerLink="/customer/tag-search">搜索标签</ql-button>
-        <ql-button type="primary" routerLink="/customer/tag-view">标签视图</ql-button>
-    </ng-template>
-</page-header>
-
 <page-container>
     <div ql-row type="flex">
         <ql-tree (modelChange)="onCatalogChange($event)" [accordion]="true" [model]="catalogList" ql-col span="6"></ql-tree>

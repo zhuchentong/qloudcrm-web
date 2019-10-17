@@ -5,6 +5,8 @@ import { QlMessageService } from 'qloud-angular'
 import { ApiService } from '../../services/api.service'
 import { FormGroup, FormBuilder } from '@angular/forms'
 
+import { TagComponent } from '../../components/tag/tag.component'
+
 @Component({
   selector: 'app-template-filter',
   templateUrl: './template-filter.component.html',
@@ -18,6 +20,7 @@ export class TemplateFilterComponent implements OnInit {
 
   public formGroup: FormGroup = this.fb.group({})
 
+  public tagList = []
   public templateList = []
   public shareData = [
     {value:"1",label:"分行共享"},
@@ -82,12 +85,32 @@ export class TemplateFilterComponent implements OnInit {
     { value: '高级', label: '高级' }
   ]
 
+  public tagDatas = [
+    { value: '1', label: '理财达人' },
+    { value: '2', label: '旅游爱好者' },
+    { value: '3', label: '有房一族' },
+    { value: '4', label: 'H5活动参与者' },
+    { value: '5', label: '高消费客户' },
+    { value: '6', label: '潜力价值客户' },
+  ]
+
+  public starcomment = [
+    { value: '三星', label: '三星' },
+    { value: '四星', label: '四星' },
+    { value: '五星', label: '五星' }
+  ]
   constructor( private fb: FormBuilder, private apiService: ApiService, private modal: ModalService, private message: QlMessageService) { }
 
   ngOnInit() {
     this.apiService.getTemplatelistList().subscribe(data => {
       this.templateList = data
     })
+
+    this.apiService.getCustomerTagList().subscribe(list => {
+      // 生成树形结构
+      this.tagList = list.splice(1,6)
+    })
+
   }
 
   public addTemplateFun(){
@@ -98,5 +121,17 @@ export class TemplateFilterComponent implements OnInit {
         component: this.addTemplateTemp
       })
       .subscribe(() => {})
+  }
+
+  public addTagFun(){
+    this.modal
+    .open({
+      size: 'large',
+      title: '高级搜索',
+      component: TagComponent,
+      data: {}
+    })
+    .subscribe(() => {
+    })
   }
 }

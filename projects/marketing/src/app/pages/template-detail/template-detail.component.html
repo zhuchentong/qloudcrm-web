@@ -9,59 +9,48 @@
 
 <page-container>
     <ql-card header="模板信息">
-        <div ql-row>
-            <div ql-col [span]="8" class="rightcss">
-                <span>模板名称：</span>
-                <span>理财通用模板</span>
-            </div>
-            <div ql-col [span]="8" class="rightcss">
-                <span>创建时间：</span>
-                <span>2019-08-30</span>
-            </div>
-            <div ql-col [span]="8" class="rightcss">
-                <span>创建机构：</span>
-                <span>兴业银行高新六路支行</span>
-            </div>
-            <div ql-col [span]="8" class="rightcss">
-                <span> 创建人：</span>
-                <span> 王文童</span>
-            </div>
-            <div ql-col [span]="8" class="rightcss">
-                <span>共享范围：</span>
-                <span>支行共享</span>
-            </div>
-            <div ql-col [span]="8" class="rightcss">
-                <span>模板状态：</span>
-                <span>创建中</span>
-            </div>
-        </div>
+        <label-container column="3" [border]="true" labelWidth="160">
+            <label-item label="模板名称">理财通用模板</label-item>
+            <label-item label="创建时间">2019-08-30</label-item>
+            <label-item label="创建机构">兴业银行高新六路支行</label-item>
+            <label-item label="创建人">王文童</label-item>
+            <label-item label="共享范围">支行共享</label-item>
+            <label-item label="模板状态">创建中</label-item>
+        </label-container>
     </ql-card>
     <ql-card header="筛选客户基本属性">
-        <div ql-row>
-            <div ql-col [span]="8" class="rightcss">
-                <span>客户标签：</span>
-                <span>商旅客户，理财达人，潜力价值客户</span>
-            </div>
-            <div ql-col [span]="8" class="rightcss">
-                <span>客户AUM：</span>
-                <span>1.2万</span>
-            </div>
-            <div ql-col [span]="8" class="rightcss">
-                <span>创建机构：</span>
-                <span>兴业银行高新六路支行</span>
-            </div>
-            <div ql-col [span]="8" class="rightcss">
-                <span> 创建人：</span>
-                <span> 王文童</span>
-            </div>
-            <div ql-col [span]="8" class="rightcss">
-                <span>共享范围：</span>
-                <span>支行共享</span>
-            </div>
-            <div ql-col [span]="8" class="rightcss">
-                <span>模板状态：</span>
-                <span>创建中</span>
-            </div>
-        </div>
+        <label-container column="3" [border]="true" labelWidth="160">
+            <label-item label="职业">律师</label-item>
+            <label-item label="AUM">3万</label-item>
+            <label-item label="总资产">180万</label-item>
+            <label-item label="性别">男</label-item>
+            <label-item label="年龄">30岁以上</label-item>
+            <label-item label="婚姻">已婚</label-item>
+            <label-item label="所属行业">信息咨询服务</label-item>
+            <label-item label="客户等级">白金客户</label-item>
+            <label-item label="客户潜力值">高</label-item>
+            <label-item label="学历">研究生</label-item>
+            <label-item label="星级评级">4星客户</label-item>
+            <label-item label="理财风险">中高</label-item>
+            <label-item label="基金风险">低</label-item>
+            <label-item label="开户时间">2019-08-12</label-item>
+        </label-container>
+    </ql-card>
+    <ql-card header="客户标签属性">
+        <label-container column="1" [border]="true">
+            <label-item label="客户标签">商旅客户，理财达人，高消费客户，摄影爱好者</label-item>
+        </label-container>
+    </ql-card>
+    <ql-card header="客户产品属性">
+        <!-- <label-container column="2" [border]="true">
+            <label-item label="签约类型"></label-item>
+            <label-item label="参数值"></label-item>
+        </label-container> -->
+    </ql-card>
+    <ql-card header="客户签约类型">
+        <label-container column="2" [border]="true">
+            <label-item label="签约类型"></label-item>
+            <label-item label="参数值"></label-item>
+        </label-container>
     </ql-card>
 </page-container>

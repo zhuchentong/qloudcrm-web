@@ -5,32 +5,55 @@ $element-height: 30px;
     height: $element-height;
   }
 
-  ql-input {
+  .ql-form-item {
+    margin-bottom: 10px;
+
     .ql-form-item__content {
-      line-height: $element-height;
+      min-width: 220px;
     }
+  }
+
+  .ql-input {
     .ql-input__inner {
       height: $element-height;
     }
   }
 
-  .form-input {
+  .form-search-action {
     .ql-button {
       margin: 5px 10px 5px 0;
       min-width: 80px;
     }
-
-    .form-input-button {
-      padding-bottom: 15px;
-    }
   }
 
-  .form-action {
+  .form-extend-action {
     .ql-button {
       margin-top: 5px;
       margin-bottom: 15px;
       min-width: 100px;
       padding: 0;
+    }
+  }
+
+  // .form-input {
+  //   .form-input-button {
+  //     padding-bottom: 15px;
+  //   }
+  // }
+
+  .collapse-container {
+    .collapse-icon {
+      i {
+        transform: rotate(180deg);
+        transition: transform 0.2s linear;
+      }
+    }
+    &.form-collapse {
+      .collapse-icon {
+        i {
+          transform: rotate(0deg);
+        }
+      }
     }
   }
 }
