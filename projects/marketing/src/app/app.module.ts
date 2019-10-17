@@ -13,10 +13,14 @@ import config from '../assets/config.json'
 import { Store } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
 import { ApiService } from './services/api.service'
-import { ActivityListComponent } from './pages/activity-list/activity-list.component'
+import { ActivityListComponent } from './pages/activity-list/activity-list.component';
+import { ConflictListComponent } from './pages/conflict-list/conflict-list.component'
+import { QlDateModule } from 'qloud-angular/package/date-picker/module';
+import { ChannelListComponent } from './pages/channel-list/channel-list.component';
+import { ConflictDetialComponent } from './pages/conflict-detial/conflict-detial.component'
 
 // 页面列表
-const PAGES = [ActivityListComponent]
+const PAGES = [ActivityListComponent,ConflictListComponent]
 
 // 组件列表
 const COMPONENTS = []
@@ -38,9 +42,9 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ChannelListComponent, ConflictDetialComponent],
   entryComponents: [...COMPONENTS],
-  imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule],
+  imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, QlDateModule],
   providers,
   bootstrap: [AppComponent],
   exports: []
