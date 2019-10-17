@@ -48,9 +48,26 @@ export class SearchComponent implements OnInit {
     { value: '50-100万', label: '50-100万' },
     { value: '100万以上', label: '100万以上' }
   ]
+  public customerLevel = [
+    { value: '1', label: '私行客户' },
+    { value: '2', label: '钻石客户' },
+    { value: '3', label: '白金客户' },
+    { value: '4', label: '黄金客户' },
+    { value: '5', label: '白银客户' },
+    { value: '6', label: '优质客户' },
+    { value: '7', label: '价值客户' },
+    { value: '8', label: '大众客户' },
+  ]
+  public customerPotential = [
+    { value: '1', label: '高' },
+    { value: '2', label: '中' },
+    { value: '3', label: '低' },
+  ]
   // public channel = [{value:'线上挖掘',label:'线上挖掘'},{value:'线下挖掘',label:'线下挖掘'}]
-  public tradType = [{value:'1',label:'保本式交易'},{value:'2',label:'封闭式交易'},{value:'3',label:'开放式交易'}]
+  public tradType = [{value:'1',label:'工资代发'},{value:'2',label:'一般客户'},{value:'3',label:'学费代发'},]
   public formGroup: FormGroup = this.fb.group({})
+  public chandelType = [{value:'1',label:'网银'},{value:'2',label:'手机app'}]
+  public tradArea = [{value:'1',label:'高新区'},{value:'2',label:'雁塔区'}]
 
   constructor(private modalRef: ModalRef, private fb: FormBuilder) {}
 

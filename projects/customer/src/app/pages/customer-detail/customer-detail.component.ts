@@ -16,6 +16,9 @@ export class CustomerDetailComponent implements OnInit {
   @ViewChild('addInfo', { static: true })
   private addInfoTemp: TemplateRef<any>
 
+  @ViewChild('addTag', { static: true })
+  private addTagTemp: TemplateRef<any>
+
   public valuecate: any = ''
   public valuetype: any = ''
   public prductType = [
@@ -23,6 +26,18 @@ export class CustomerDetailComponent implements OnInit {
     { value: '债劵', label: '债劵' },
     { value: '股票', label: '股票' }
   ]
+
+  public tagCatesels = [
+    { value: '1', label: '基金' },
+    { value: '2', label: '债劵' },
+    { value: '2', label: '保险' },
+    { value: '2', label: '贷款' },
+    { value: '2', label: '理财产品' },
+    { value: '2', label: '存款' },
+    { value: '3', label: '股票' }
+  ]
+  public tagTypesels = [{ value: '1', label: '手动', selected:true}]
+
   public category = [
     { value: '小于10万', label: '小于10万' },
     { value: '10-50万', label: '10-50万' },
@@ -307,6 +322,17 @@ export class CustomerDetailComponent implements OnInit {
       .open({
         title: '基本信息补充',
         component: this.addInfoTemp
+      })
+      .subscribe(() => {
+        this.message.success('sucess')
+      })
+  }
+
+  public addTagFun() {
+    this.modal
+      .open({
+        title: '手动添加标签',
+        component: this.addTagTemp
       })
       .subscribe(() => {
         this.message.success('sucess')

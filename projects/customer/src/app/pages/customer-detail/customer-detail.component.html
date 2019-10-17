@@ -1,10 +1,10 @@
 <page-header title="客户详情" [breadcrumb]="breadcrumb" [back]="true">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>客户详情</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>客户详情</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
 </page-header>
 
 <tab-container>
@@ -22,12 +22,11 @@
                         <h5>陈先(男士,38岁)</h5>
                         <h5>身份证号:612501199506065980</h5>
                         <p>
-                            <ql-tag class="mr-3" type="primary">旅游达人</ql-tag>
-                            <ql-tag class="mr-3" type="success">理财小白</ql-tag>
-                            <ql-tag class="mr-3" type="warning">有房一族</ql-tag>
                             <ql-tag class="mr-3" type="danger">教育培训</ql-tag>
-                            <ql-tag class="mr-3" type="primary">潜力价值客户</ql-tag>
-                            <ql-tag class="mr-3" type="success">H5活动参与</ql-tag>
+                            <ql-tag class="mr-3" type="danger">潜力价值客户</ql-tag>
+                            <ql-tag class="mr-3" type="primary">旅游达人</ql-tag>
+                            <ql-tag class="mr-3" type="warning">有房一族</ql-tag>
+                            <ql-tag class="mr-3" type="success">理财小白</ql-tag>
                         </p>
                         <div class="rightcss" ql-col [span]="7">
                             <span>客户经理:</span>
@@ -217,13 +216,11 @@
     </tab-item>
     <tab-item title="客户联络">
         <ql-card>
-            <div>
-                <data-table [model]="contactData">
-                    <ql-table-column model-key="bussiness" label="业务" width="105"> </ql-table-column>
-                    <ql-table-column model-key="chandel" label="办理渠道"> </ql-table-column>
-                    <ql-table-column model-key="time" label="办理时间" width="150"> </ql-table-column>
-                </data-table>
-            </div>
+            <data-table [model]="contactData">
+                <ql-table-column model-key="bussiness" label="业务" width="105"> </ql-table-column>
+                <ql-table-column model-key="chandel" label="办理渠道"> </ql-table-column>
+                <ql-table-column model-key="time" label="办理时间" width="150"> </ql-table-column>
+            </data-table>
         </ql-card>
     </tab-item>
     <tab-item title="客户持有产品">
@@ -343,7 +340,6 @@
                             </div>
                         </label-container>
                     </ql-card>
-
                     <ql-card header="标签列表">
                         <data-table [model]="tagInfo">
                             <ql-table-column model-key="tagname" label="标签名称"> </ql-table-column>
@@ -351,6 +347,9 @@
                             <ql-table-column model-key="tagtype" label="标签类型"> </ql-table-column>
                             <ql-table-column model-key="tagtime" label="标签时间"> </ql-table-column>
                         </data-table>
+                        <div ql-col span="24" class="ql-text-right ql-margin-top ql-padding">
+                            <ql-button type="primary" size="small" (click)="addTagFun()">增加手动标签</ql-button>
+                        </div>
                     </ql-card>
                 </div>
             </div>
@@ -372,6 +371,33 @@
             </ql-form-item>
             <ql-form-item label="潜在客户群名称" ql-col span="12">
                 <ql-input placeholder="请输入内容"></ql-input>
+            </ql-form-item>
+            <ql-form-item ql-col span="24" class="ql-text-right">
+                <ql-button type="primary" size="small">重置</ql-button>
+                <ql-button type="primary" size="small" (click)="modal.close()">保存</ql-button>
+            </ql-form-item>
+        </ql-form>
+    </ql-card>
+</ng-template>
+
+<ng-template #addTag>
+    <ql-card>
+        <ql-form ql-row gutter="24" class="ql-margin-top">
+            <ql-form-item label="标签名称" ql-col span="12">
+                <ql-input placeholder="请输入内容"></ql-input>
+            </ql-form-item>
+            <ql-form-item label="标签分类" ql-col span="12">
+                <ql-select [clearable]="true">
+                    <ql-option *ngFor="let item of tagCatesels" [label]="item.label" [value]="item.value"> </ql-option>
+                </ql-select>
+            </ql-form-item>
+            <ql-form-item label="标签类型" ql-col span="12">
+                <ql-select [clearable]="true">
+                    <ql-option *ngFor="let item of tagTypesels" [label]="item.label" [value]="item.value"> </ql-option>
+                </ql-select>
+            </ql-form-item>
+            <ql-form-item label="标签时间" ql-col span="12">
+                <ql-date-picker></ql-date-picker>
             </ql-form-item>
             <ql-form-item ql-col span="24" class="ql-text-right">
                 <ql-button type="primary" size="small">重置</ql-button>

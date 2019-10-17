@@ -49,6 +49,20 @@
                     </ql-form-item>
                 </div>
                 <div ql-col span="12 ">
+                    <ql-form-item label="客户等级">
+                        <ql-select [clearable]="true">
+                            <ql-option *ngFor="let item of customerLevel" [label]="item.label" [value]="item.value"> </ql-option>
+                        </ql-select>
+                    </ql-form-item>
+                </div>
+                <div ql-col span="12 ">
+                    <ql-form-item label="客户潜力值">
+                        <ql-select [clearable]="true">
+                            <ql-option *ngFor="let item of customerPotential" [label]="item.label" [value]="item.value"> </ql-option>
+                        </ql-select>
+                    </ql-form-item>
+                </div>
+                <div ql-col span="12 ">
                     <ql-form-item label="学历 ">
                         <ql-select [clearable]="true">
                             <ql-option *ngFor="let item of schoolitems" [label]="item.label" [value]="item.value"> </ql-option>
@@ -56,7 +70,7 @@
                     </ql-form-item>
                 </div>
                 <div ql-col span="12 ">
-                    <ql-form-item label="信用评级 ">
+                    <ql-form-item label="星级评级 ">
                         <ql-select [clearable]="true">
                             <ql-option *ngFor="let item of starcomment" [label]="item.label" [value]="item.value"> </ql-option>
                         </ql-select>
@@ -174,6 +188,21 @@
                 <div ql-col span="8">
                     <ql-form-item label="">
                         <ql-input placeholder="交易金额最大值"></ql-input>
+                    </ql-form-item>
+                </div>
+                <div ql-col span="8"></div>
+                <div ql-col span="8">
+                    <ql-form-item label="交易渠道">
+                        <ql-select [clearable]="true">
+                            <ql-option *ngFor="let item of chandelType " [label]="item.label" [value]="item.value"> </ql-option>
+                        </ql-select>
+                    </ql-form-item>
+                </div>
+                <div ql-col span="8">
+                    <ql-form-item label="交易区域">
+                        <ql-select [clearable]="true">
+                            <ql-option *ngFor="let item of tradArea" [label]="item.label" [value]="item.value"> </ql-option>
+                        </ql-select>
                     </ql-form-item>
                 </div>
                 <div ql-col span="8"></div>
