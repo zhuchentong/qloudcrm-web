@@ -13,10 +13,11 @@ import config from '../assets/config.json'
 import { Store } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
 import { ApiService } from './services/api.service'
-import { ActivityListComponent } from './pages/activity-list/activity-list.component'
+import { ActivityListComponent } from './pages/activity-list/activity-list.component';
+import { TemplateFilterComponent } from './pages/template-filter/template-filter.component'
 
 // 页面列表
-const PAGES = [ActivityListComponent]
+const PAGES = [ActivityListComponent,TemplateFilterComponent]
 
 // 组件列表
 const COMPONENTS = []
@@ -38,7 +39,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, TemplateFilterComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule],
   providers,
