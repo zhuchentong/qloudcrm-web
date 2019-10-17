@@ -19,6 +19,7 @@ import { ApprovalListComponent } from './pages/approval-list/approval-list.compo
 import { ActivilyMonitorComponent } from './pages/activily-monitor/activily-monitor.component'
 import { ActivilyCommentComponent } from './pages/activily-comment/activily-comment.component'
 import { RecommendListComponent } from './pages/recommend-list/recommend-list.component'
+import { ExplorCreateComponent } from './pages/explor-create/explor-create.component'
 
 // 页面列表
 const PAGES = [
@@ -27,7 +28,8 @@ const PAGES = [
   ApprovalListComponent,
   ActivilyMonitorComponent,
   ActivilyCommentComponent,
-  RecommendListComponent
+  RecommendListComponent,
+  ExplorCreateComponent
 ]
 
 // 组件列表
