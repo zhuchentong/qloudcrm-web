@@ -1,3 +1,20 @@
 .tab-item__content {
-  padding: 5px;
+  width: 100%;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: opacity 0.45s;
+
+  &.active {
+    padding: 5px;
+    height: auto;
+    opacity: 1;
+  }
+
+  &.inactive {
+    height: 0;
+    padding: 0 !important;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
 }
