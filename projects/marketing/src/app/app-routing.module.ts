@@ -5,16 +5,29 @@ import { ActivityListComponent } from './pages/activity-list/activity-list.compo
 import { ConflictListComponent } from './pages/conflict-list/conflict-list.component'
 import { ChannelListComponent } from './pages/channel-list/channel-list.component'
 import { ConflictDetialComponent } from './pages/conflict-detial/conflict-detial.component'
+import { ExploreListComponent } from './pages/explore-list/explore-list.component'
+import { ApprovalListComponent } from './pages/approval-list/approval-list.component'
+import { ActivilyMonitorComponent } from './pages/activily-monitor/activily-monitor.component'
+import { ActivilyCommentComponent } from './pages/activily-comment/activily-comment.component'
+import { RecommendListComponent } from './pages/recommend-list/recommend-list.component'
+import { ExploreCreateComponent } from './pages/explore-create/explore-create.component'
 
-const routes: Routes = [{ path: 'marketing/activity-list', component: ActivityListComponent },
+const routes: Routes = [
+  { path: 'marketing/activity-list', component: ActivityListComponent },
+  { path: 'marketing/explore-list', component: ExploreListComponent },
+  { path: 'marketing/approval-list', component: ApprovalListComponent },
+  { path: 'marketing/activity-monitor', component: ActivilyMonitorComponent },
+  { path: 'marketing/activity-comment', component: ActivilyCommentComponent },
+  { path: 'marketing/recommend-list', component: RecommendListComponent },
+  { path: 'marketing/explore-create', component: ExploreCreateComponent },
   { path: 'marketing/conflict-list', component: ConflictListComponent },
   { path: 'marketing/channel-list', component: ChannelListComponent },
-  { path: 'marketing/conflict-detial/:id', component: ConflictDetialComponent}
-                        ]
+  { path: 'marketing/conflict-detial/:id', component: ConflictDetialComponent }
+]
 
 routes.push({
   path: environment.production ? '' : 'marketing',
-  redirectTo: '/marketing/activity-list',
+  redirectTo: '/marketing/explore-list',
   pathMatch: 'full'
 })
 
@@ -27,4 +40,5 @@ routes.push({
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

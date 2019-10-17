@@ -10,7 +10,9 @@
       </ul>
     </div>
   </div>
-  <div class="tab-item__container" #tabContent>
-    <ng-content></ng-content>
+  <div class="tab-item__container" [ngStyle]="containerStyle" #tabContent>
+    <div class="tab-item__body" *ngFor="let tab of tabItemList">
+      <ng-container [ngTemplateOutlet]="tab.content"></ng-container>
+    </div>
   </div>
 </div>

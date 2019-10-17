@@ -1,0 +1,42 @@
+<page-header title="目标探索" [breadcrumb]="breadcrumb" [action]="action">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>目标探索</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action>
+    <ql-button type="primary" [routerLink]="['/marketing/explore-create']">创建探索</ql-button>
+  </ng-template>
+</page-header>
+
+<page-container>
+  <data-form>
+    <ql-form-item label="探索名称">
+      <ql-input></ql-input>
+    </ql-form-item>
+    <ql-form-item label="创建人">
+      <ql-input></ql-input>
+    </ql-form-item>
+    <ql-form-item label="创建机构">
+      <ql-select></ql-select>
+    </ql-form-item>
+    <ql-form-item label="创建时间">
+      <ql-date-picker></ql-date-picker>
+    </ql-form-item>
+  </data-form>
+  <data-table>
+    <ql-table-column model-key="name" label="探索名称"></ql-table-column>
+    <ql-table-column model-key="time" label="探索耗时"></ql-table-column>
+    <ql-table-column model-key="createTime" label="创建时间"></ql-table-column>
+    <ql-table-column model-key="status " label="探索状态"></ql-table-column>
+    <ql-table-column model-key="count" label="客户数量"></ql-table-column>
+    <ql-table-column label="操作">
+      <ng-template #slot let-scope="scope">
+        <a>执行探索</a>
+        <a>创建活动</a>
+        <a>查看结果</a>
+      </ng-template>
+    </ql-table-column>
+  </data-table>
+</page-container>

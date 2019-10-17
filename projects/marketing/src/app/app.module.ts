@@ -18,9 +18,27 @@ import { ConflictListComponent } from './pages/conflict-list/conflict-list.compo
 import { QlDateModule } from 'qloud-angular/package/date-picker/module';
 import { ChannelListComponent } from './pages/channel-list/channel-list.component';
 import { ConflictDetialComponent } from './pages/conflict-detial/conflict-detial.component'
+import { ExploreListComponent } from './pages/explore-list/explore-list.component'
+import { ApprovalListComponent } from './pages/approval-list/approval-list.component'
+import { ActivilyMonitorComponent } from './pages/activily-monitor/activily-monitor.component'
+import { ActivilyCommentComponent } from './pages/activily-comment/activily-comment.component'
+import { RecommendListComponent } from './pages/recommend-list/recommend-list.component'
+import { ExploreCreateComponent } from './pages/explore-create/explore-create.component'
 
 // 页面列表
-const PAGES = [ActivityListComponent,ConflictListComponent]
+const PAGES = [
+  ActivityListComponent,
+  ExploreListComponent,
+  ApprovalListComponent,
+  ActivilyMonitorComponent,
+  ActivilyCommentComponent,
+  RecommendListComponent,
+  ExploreCreateComponent,
+  ConflictListComponent,
+  ConflictDetialComponent,
+  ChannelListComponent
+]
+
 
 // 组件列表
 const COMPONENTS = []

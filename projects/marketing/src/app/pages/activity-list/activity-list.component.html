@@ -1,1 +1,25 @@
-<p>activity-list works!</p>
+<page-header title="活动管理" [breadcrumb]="breadcrumb">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>活动管理</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+</page-header>
+
+<page-container>
+  <data-table>
+    <ql-table-column model-key="name" label="营销活动名称"></ql-table-column>
+    <ql-table-column model-key="startTime " label="营销活动时间"></ql-table-column>
+    <ql-table-column model-key="creator" label="营销发起人"></ql-table-column>
+    <ql-table-column model-key="organization " label="发起机构"></ql-table-column>
+    <ql-table-column model-key="status" label="营销活动状态"></ql-table-column>
+    <ql-table-column label="操作">
+      <ng-template #slot let-scope="scope">
+        <a>查看详情</a>
+        <a>复制活动</a>
+        <a>删除活动</a>
+      </ng-template>
+    </ql-table-column>
+  </data-table>
+</page-container>
