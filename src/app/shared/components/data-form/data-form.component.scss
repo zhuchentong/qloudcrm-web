@@ -29,17 +29,10 @@ $element-height: 30px;
   .form-extend-action {
     .ql-button {
       margin-top: 5px;
-      margin-bottom: 15px;
       min-width: 100px;
       padding: 0;
     }
   }
-
-  // .form-input {
-  //   .form-input-button {
-  //     padding-bottom: 15px;
-  //   }
-  // }
 
   .collapse-container {
     .collapse-icon {
@@ -56,4 +49,8 @@ $element-height: 30px;
       }
     }
   }
+}
+
+.form-action {
+  margin-bottom: 15px;
 }

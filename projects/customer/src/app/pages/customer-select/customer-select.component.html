@@ -11,13 +11,13 @@
 </page-header>
 
 <page-container>
-  <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()">
-    <ql-form-item label="申请时间">
-      <div class="row">
-        <ql-date-picker placeholder="开始申请时间" class="ql-margin-right"> </ql-date-picker>
-        <ql-date-picker placeholder="结束申请时间"> </ql-date-picker>
-      </div>
+  <data-form label-width="100px" [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()">
+    <ql-form-item label="开始申请时间">
+      <ql-date-picker> </ql-date-picker>
     </ql-form-item>
+    <ql-date-picker label="结束申请时间">
+      <ql-date-picker> </ql-date-picker>
+    </ql-date-picker>
     <ql-form-item label="申领人姓名">
       <ql-input></ql-input>
     </ql-form-item>
