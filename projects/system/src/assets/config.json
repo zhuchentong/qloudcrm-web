@@ -1,0 +1,15 @@
+{
+  "default": "true",
+  "pluginName": "系统管理",
+  "pluginIcon": "",
+  "pluginAbbr": "UI",
+  "pluginImg": "/assets/images/svg/profile.svg",
+  "pluginPath": "system",
+  "pluginOrder": 1,
+  "pluginTab": [
+    {
+      "name": "参数配置",
+      "url": "#/system/params-config"
+    }
+  ]
+}
