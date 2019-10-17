@@ -1,50 +1,50 @@
 <page-header title="客户分配" [breadcrumb]="breadcrumb" [action]="action">
-    <ng-template #breadcrumb>
-        <ql-breadcrumb separator="/">
-            <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-            <ql-breadcrumb-item>客户分配</ql-breadcrumb-item>
-        </ql-breadcrumb>
-    </ng-template>
-    <ng-template #action>
-        <ql-button type="primary" [routerLink]="['/customer/my-assign']">创建分配</ql-button>
-        <ql-button type="primary" [routerLink]="['/customer/customer-setrecever']">接收人设置</ql-button>
-    </ng-template>
+  <ng-template #breadcrumb>
+    <ql-breadcrumb separator="/">
+      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>客户分配</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action>
+    <ql-button type="primary" [routerLink]="['/customer/my-assign']">创建分配</ql-button>
+    <ql-button type="primary" [routerLink]="['/customer/customer-setrecever']">接收人设置</ql-button>
+  </ng-template>
 </page-header>
 
 <page-container>
-    <data-form>
-        <ql-form-item label="分配起始时间">
-            <ql-date-picker> </ql-date-picker>
-        </ql-form-item>
-        <ql-form-item label="分配结束时间">
-            <ql-date-picker> </ql-date-picker>
-        </ql-form-item>
-        <ql-form-item label="接收人姓名">
-            <ql-input></ql-input>
-        </ql-form-item>
-        <ql-form-item label="接收机构">
-            <ql-select>
-                <ql-option label="建设银行" value="建设银行"></ql-option>
-                <ql-option label="农业银行" value="农业银行"></ql-option>
-            </ql-select>
-        </ql-form-item>
-        <ql-form-item label="管护角色">
-            <ql-select>
-                <ql-option label="主管户" value="主管户"></ql-option>
-                <ql-option label="辅管户" value="辅管户主"></ql-option>
-            </ql-select>
-        </ql-form-item>
-    </data-form>
-    <data-table [model]="dataList" [selection]="true">
-        <ql-table-column model-key="code" label="客户编号"> </ql-table-column>
-        <ql-table-column model-key="name" label="客户姓名"> </ql-table-column>
-        <ql-table-column model-key="zgjg" label="主管机构"> </ql-table-column>
-        <ql-table-column model-key="zgr" label="主管人"> </ql-table-column>
-        <ql-table-column model-key="jsr" label="接收人"> </ql-table-column>
-        <ql-table-column model-key="ghjs" label="管户角色"> </ql-table-column>
-        <ql-table-column model-key="fpjg" label="分配机构"> </ql-table-column>
-        <ql-table-column model-key="fpr" label="分配人"> </ql-table-column>
-        <ql-table-column model-key="fpzt" label="分配状态"> </ql-table-column>
-        <ql-table-column model-key="fpsj" label="分配时间"> </ql-table-column>
-    </data-table>
+  <data-form label-width="100px">
+    <ql-form-item label="分配起始时间">
+      <ql-date-picker> </ql-date-picker>
+    </ql-form-item>
+    <ql-form-item label="分配结束时间">
+      <ql-date-picker> </ql-date-picker>
+    </ql-form-item>
+    <ql-form-item label="接收人姓名">
+      <ql-input></ql-input>
+    </ql-form-item>
+    <ql-form-item label="接收机构">
+      <ql-select>
+        <ql-option label="建设银行" value="建设银行"></ql-option>
+        <ql-option label="农业银行" value="农业银行"></ql-option>
+      </ql-select>
+    </ql-form-item>
+    <ql-form-item label="管护角色">
+      <ql-select>
+        <ql-option label="主管户" value="主管户"></ql-option>
+        <ql-option label="辅管户" value="辅管户主"></ql-option>
+      </ql-select>
+    </ql-form-item>
+  </data-form>
+  <data-table [model]="dataList" [selection]="true">
+    <ql-table-column model-key="code" label="客户编号"> </ql-table-column>
+    <ql-table-column model-key="name" label="客户姓名"> </ql-table-column>
+    <ql-table-column model-key="zgjg" label="主管机构"> </ql-table-column>
+    <ql-table-column model-key="zgr" label="主管人"> </ql-table-column>
+    <ql-table-column model-key="jsr" label="接收人"> </ql-table-column>
+    <ql-table-column model-key="ghjs" label="管户角色"> </ql-table-column>
+    <ql-table-column model-key="fpjg" label="分配机构"> </ql-table-column>
+    <ql-table-column model-key="fpr" label="分配人"> </ql-table-column>
+    <ql-table-column model-key="fpzt" label="分配状态"> </ql-table-column>
+    <ql-table-column model-key="fpsj" label="分配时间"> </ql-table-column>
+  </data-table>
 </page-container>

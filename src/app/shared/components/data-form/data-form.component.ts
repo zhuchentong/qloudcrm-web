@@ -25,7 +25,7 @@ import { QlForm } from 'qloud-angular/package/form/form'
   providers: [{ provide: QlForm, useExisting: forwardRef(() => DataFormComponent) }]
   // encapsulation: ViewEncapsulation.ShadowDom
 })
-export class DataFormComponent implements OnInit, AfterViewInit {
+export class DataFormComponent implements OnInit, AfterContentInit {
   @Input() public formGroup: FormGroup = this.fb.group({})
   @Input() public button: TemplateRef<void>
   @Input() public action: TemplateRef<void>
@@ -38,7 +38,7 @@ export class DataFormComponent implements OnInit, AfterViewInit {
   @Input('size') size: string
   // right / left / top
   @Input('label-position') labelPosition: string = 'right'
-  @Input('label-width') labelWidth: string = '100px'
+  @Input('label-width') labelWidth: string = '80px'
   @Input('label-suffix') labelSuffix: string
 
   @Output() public submit = new EventEmitter<any>()
@@ -53,7 +53,7 @@ export class DataFormComponent implements OnInit, AfterViewInit {
   private itemWidth = 330
   ngOnInit() {}
 
-  ngAfterViewInit() {
+  ngAfterContentInit() {
     this.updateCollapseEnable()
     this.collapseEnable = !!this.collapseItemList.length
 
