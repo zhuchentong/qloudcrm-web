@@ -1,3 +1,5 @@
-<div class="tab-item__content" *ngIf="active" @enter>
-  <ng-content> </ng-content>
-</div>
+<ng-template #content>
+  <div class="tab-item__content" [ngClass]="{ active: active, inactive: !active }" @enter>
+    <ng-content> </ng-content>
+  </div>
+</ng-template>

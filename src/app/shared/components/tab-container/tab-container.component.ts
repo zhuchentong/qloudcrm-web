@@ -15,6 +15,8 @@ export class TabContainerComponent implements OnInit, AfterContentInit {
   @Input()
   public model
 
+  public currentIndex
+
   constructor() {}
 
   ngOnInit() {}
@@ -30,13 +32,24 @@ export class TabContainerComponent implements OnInit, AfterContentInit {
 
     const tab = this.tabItemList.find(x => x.index === this.model) || this.tabItemList[0]
     tab.active = true
+    this.updateCurrentIndex()
+  }
+
+  public updateCurrentIndex() {
+    this.currentIndex = this.tabItemList.findIndex(x => x.active)
+  }
+
+  public get containerStyle() {
+    return {
+      'margin-left.%': -(this.currentIndex || 0) * 100
+    }
   }
 
   public changeActiveTab(tab: TabItemComponent) {
     this.tabItemList.forEach(item => {
       item.active = item === tab
     })
-
+    this.updateCurrentIndex()
     this.changeEvent.emit(this.tabItemList.indexOf(tab))
   }
 }

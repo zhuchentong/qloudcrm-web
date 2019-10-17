@@ -1,4 +1,4 @@
-import { Component, OnInit, SkipSelf, Input } from '@angular/core'
+import { Component, OnInit, SkipSelf, Input, ViewChild } from '@angular/core'
 import { TabContainerComponent } from '../tab-container/tab-container.component'
 import { trigger, transition, style, animate, state } from '@angular/animations'
 
@@ -14,6 +14,9 @@ export class TabItemComponent implements OnInit {
 
   @Input()
   public index: string
+
+  @ViewChild('content', { static: true })
+  public content
 
   public active = false
 
