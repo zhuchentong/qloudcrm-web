@@ -1,27 +1,64 @@
-<page-header title="推介管理" [breadcrumb]="breadcrumb">
+<page-header title="推介管理" [breadcrumb]="breadcrumb" [action]="action">
   <ng-template #breadcrumb>
     <ql-breadcrumb>
       <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
       <ql-breadcrumb-item>推介管理</ql-breadcrumb-item>
     </ql-breadcrumb>
   </ng-template>
+  <ng-template #action  class="ql-text-right">
+    <ql-button class="page-header__back" *ngIf="back" (click)="location.back()">返回</ql-button>
+  </ng-template>
 </page-header>
-
 <page-container>
-  <data-table>
+  <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()" >  <!--  -->
+    <ql-form-item   label="推荐来源: ">
+      <ql-select >
+        <ql-option *ngFor="let item of recommendSource"
+                   [label]="item.key"
+                   [value]="item.value">
+        </ql-option>
+      </ql-select>
+    </ql-form-item>
+    <ql-form-item label="推荐时间: ">
+      <ql-date-picker>
+      </ql-date-picker>
+    </ql-form-item>
+    <ql-form-item label="转入/转出推荐: " [label-width]="150">
+      <ql-select >
+        <ql-option *ngFor="let item of [{key:'请选择',value:null},{key:'转入',value:1},{key: '转出',value:2}]"
+                   [label]="item.key"
+                   [value]="item.value">
+        </ql-option>
+      </ql-select>
+    </ql-form-item>
+    <ql-form-item label="处理状态: ">
+      <ql-select>
+        <ql-option *ngFor="let item of [{key:'请选择',value:null},{key:'已处理',value:1},{key: '未处理',value:2}]"
+                   [label]="item.key"
+                   [value]="item.value">
+        </ql-option>
+      </ql-select>
+    </ql-form-item>
+    <ql-form-item label="所属机构: ">
+      <ql-input></ql-input>
+    </ql-form-item>
+    <ql-form-item label="所属客户经理: " [label-width]="150">
+      <ql-input></ql-input>
+    </ql-form-item>
+  </data-form>
+  <data-table [model]="recommendManageList" >
     <ql-table-column model-key="origin" label="推荐来源"></ql-table-column>
-    <ql-table-column model-key="product " label="推荐产品"></ql-table-column>
+    <ql-table-column model-key="product" label="推荐产品"></ql-table-column>
     <ql-table-column model-key="name" label="客户姓名"></ql-table-column>
-    <ql-table-column model-key="sex " label="客户性别"></ql-table-column>
+    <ql-table-column model-key="sex" label="客户性别"></ql-table-column>
     <ql-table-column model-key="referrer" label="推荐人"></ql-table-column>
-    <ql-table-column model-key="sendTime" label="转推荐时间"></ql-table-column>
+    <ql-table-column model-key="recommandTime" label="转推荐时间"></ql-table-column>
     <ql-table-column model-key="receiver" label="接收人"></ql-table-column>
-    <ql-table-column model-key="time" label="处理时间"></ql-table-column>
-    <ql-table-column model-key="count" label="处理状态"></ql-table-column>
+    <ql-table-column model-key="deposeTime" label="处理时间"></ql-table-column>
+    <ql-table-column model-key="deposeStatus" label="处理状态"></ql-table-column>
     <ql-table-column label="操作">
       <ng-template #slot let-scope="scope">
-        <a>查看结果</a>
-        <a>同意转入</a>
+        <a (click)="toDetailPage(scope.rowData.id)">详情</a>
       </ng-template>
     </ql-table-column>
   </data-table>

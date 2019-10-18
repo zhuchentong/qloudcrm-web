@@ -13,10 +13,10 @@ import config from '../assets/config.json'
 import { Store } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
 import { ApiService } from './services/api.service'
-import { ActivityListComponent } from './pages/activity-list/activity-list.component';
+import { ActivityListComponent } from './pages/activity-list/activity-list.component'
 import { ConflictListComponent } from './pages/conflict-list/conflict-list.component'
-import { QlDateModule } from 'qloud-angular/package/date-picker/module';
-import { ChannelListComponent } from './pages/channel-list/channel-list.component';
+import { QlDateModule } from 'qloud-angular/package/date-picker/module'
+import { ChannelListComponent } from './pages/channel-list/channel-list.component'
 import { ConflictDetialComponent } from './pages/conflict-detial/conflict-detial.component'
 import { ExploreListComponent } from './pages/explore-list/explore-list.component'
 import { ApprovalListComponent } from './pages/approval-list/approval-list.component'
@@ -24,11 +24,17 @@ import { ActivilyMonitorComponent } from './pages/activily-monitor/activily-moni
 import { ActivilyCommentComponent } from './pages/activily-comment/activily-comment.component'
 import { RecommendListComponent } from './pages/recommend-list/recommend-list.component'
 import { ExploreCreateComponent } from './pages/explore-create/explore-create.component'
-import { TemplateFilterComponent } from './pages/template-filter/template-filter.component';
-import { TemplateDetailComponent } from './pages/template-detail/template-detail.component';
-import { TagComponent } from './components/tag/tag.component';
+import { ActivityCreateComponent } from './pages/activity-create/activity-create.component'
+import { TemplateFilterComponent } from './pages/template-filter/template-filter.component'
+import { TemplateDetailComponent } from './pages/template-detail/template-detail.component'
+import { TagComponent } from './components/tag/tag.component'
 import { AddTemplateComponent } from './pages/add-template/add-template.component'
-
+import { SelectCustomerComponent } from './components/select-customer/select-customer.component'
+import { SelectPruductComponent } from './components/select-pruduct/select-pruduct.component'
+import { SelectEventComponent } from './components/select-event/select-event.component'
+import { SelectInterestComponent } from './components/select-interest/select-interest.component'
+import { SelectExploreComponent } from './components/select-explore/select-explore.component'
+import { RecommendDetialComponent } from './pages/recommend-detial/recommend-detial.component'
 
 // 页面列表
 const PAGES = [
@@ -44,12 +50,25 @@ const PAGES = [
   ChannelListComponent,
   TemplateFilterComponent,
   TemplateDetailComponent,
-  AddTemplateComponent
+  TemplateFilterComponent,
+  TemplateDetailComponent,
+  TagComponent,
+  ChannelListComponent,
+  ConflictDetialComponent,
+  ActivityCreateComponent,
+  AddTemplateComponent,
+  RecommendDetialComponent
 ]
 
-
 // 组件列表
-const COMPONENTS = [TagComponent]
+const COMPONENTS = [
+  TagComponent,
+  SelectCustomerComponent,
+  SelectPruductComponent,
+  SelectEventComponent,
+  SelectInterestComponent,
+  SelectExploreComponent
+]
 
 const startUpFactory = (store: Store) => async () => {
   // 注册菜单
@@ -68,7 +87,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, TemplateFilterComponent, TemplateDetailComponent, TagComponent, ChannelListComponent, ConflictDetialComponent, AddTemplateComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, QlDateModule],
   providers,

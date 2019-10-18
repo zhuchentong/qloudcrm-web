@@ -14,7 +14,8 @@ import {
   ContentChildren,
   QueryList,
   Renderer2,
-  ElementRef
+  ElementRef,
+  HostListener
 } from '@angular/core'
 import { FormGroup, FormBuilder } from '@angular/forms'
 import { QlForm } from 'qloud-angular/package/form/form'
@@ -25,7 +26,7 @@ import { QlForm } from 'qloud-angular/package/form/form'
   providers: [{ provide: QlForm, useExisting: forwardRef(() => DataFormComponent) }]
   // encapsulation: ViewEncapsulation.ShadowDom
 })
-export class DataFormComponent implements OnInit, AfterContentInit {
+export class DataFormComponent implements OnInit, AfterViewInit, AfterContentInit {
   @Input() public formGroup: FormGroup = this.fb.group({})
   @Input() public button: TemplateRef<void>
   @Input() public action: TemplateRef<void>
@@ -51,16 +52,27 @@ export class DataFormComponent implements OnInit, AfterContentInit {
   private collapseItemList = []
   constructor(private fb: FormBuilder, private renderer: Renderer2) {}
   private itemWidth = 330
+
+  @HostListener('window:resize') onResize() {
+    this.updateCollapse()
+  }
+
   ngOnInit() {}
 
   ngAfterContentInit() {
+    this.updateCollapse()
+  }
+  ngAfterViewInit() {
+    setTimeout(() => this.updateCollapse)
+  }
+
+  updateCollapse() {
     this.updateCollapseEnable()
     this.collapseEnable = !!this.collapseItemList.length
 
     if (this.collapseEnable) {
       this.onCollapseChange(true)
     }
-    // this.renderer.setStyle(this.demoDiv.nativeElement, 'background-color', 'red')
   }
 
   onCollapseChange(collapse) {
