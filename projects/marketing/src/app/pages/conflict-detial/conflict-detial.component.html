@@ -1,0 +1,71 @@
+<page-header title="冲突详情" [breadcrumb]="breadcrumb" [back]="true">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>冲突详情</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+</page-header>
+<page-container *ngIf="conflictDetial != null">
+      <ql-card header="营销冲突基本信息" class="ql-margin">
+        <div ql-row>
+          <div class="row wrapinfo">
+
+            <label-container column="4" [border]="true" labelWidth="160">
+              <label-item label="活动编号">{{conflictDetial.actvdCode}}</label-item>
+              <label-item label="活动名称">{{conflictDetial.actvdName}}</label-item>
+              <label-item label="活动渠道">{{conflictDetial.mrktChnl}}</label-item>
+              <label-item label="活动时间">{{conflictDetial.actvdTime}}</label-item>
+              <label-item label="活动发起人">{{conflictDetial.launcher}}</label-item>
+              <label-item label="活动发起机构">{{conflictDetial.launchDpm}}</label-item>
+              <label-item label="活动状态">{{conflictDetial.actvStatus}}</label-item>
+              <label-item label="客户级别">{{conflictDetial.cstmrLvl}}</label-item>
+              <label-item label="睡眠客户数">{{conflictDetial.slpcstm}}</label-item>
+              <label-item label="三次以上营销客户数">{{conflictDetial.cstmThrdTm}}</label-item>
+              <label-item label="重复确认比例">{{conflictDetial.repTime}}</label-item>
+            </label-container>
+        </div>
+        <div ql-row>
+          <div class="row wrapinfo ql-padding">
+            <div class="rightcss" ql-col [span]="20">
+              <h4>冲突营销活动详情</h4>
+          <ql-collapse  [model]="[1]"  *ngFor="let conflictinfo of conflictList" [accordion]="true">
+            <ql-collapse-item   value="1">
+
+              <ng-template #label>
+                <div class="row between-span">
+                  <div class="ql-padding-x">{{conflictinfo.actvdName}}</div>
+                  <div class="row ql-padding-x" >
+                    <div>冲突客户数:{{conflictinfo.conflictUserCount}},</div>
+                    <div>冲突客户百分比:{{conflictinfo.conflictUserPer}}</div>
+                  </div>
+                </div>
+              </ng-template>
+             <data-table [model]="conflictinfo.customers" >
+               <ql-table-column model-key="ctCode" label="客户编号"> </ql-table-column>
+               <ql-table-column model-key="ctName" label="客户姓名"> </ql-table-column>
+               <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>
+               <ql-table-column model-key="ctage" label="年龄" width="80"> </ql-table-column>
+               <ql-table-column model-key="ctType" label="客户类型"> </ql-table-column>
+               <ql-table-column model-key="ctLevel" label="客户等级"> </ql-table-column>
+               <ql-table-column model-key="ctTel" label="客户电话"> </ql-table-column>
+               <ql-table-column model-key="time" label="开户时间"> </ql-table-column>
+               <ql-table-column model-key="assest" label="客户资产" width="80"> </ql-table-column>
+               <ql-table-column model-key="AUM" label="AUM" width="80"> </ql-table-column>
+               <ql-table-column model-key="productnum" label="持有产品数"> </ql-table-column>
+               <ql-table-column model-key="interaTime" label="互动时间"> </ql-table-column>
+               <ql-table-column label="操作">
+                 <ng-template #slot let-scope="scope">
+                   <ql-button type="text" [navigate]="['/customer/customer-detail',{},'customer']">详情</ql-button>
+                 </ng-template>
+               </ql-table-column>
+             </data-table>
+            </ql-collapse-item>
+          </ql-collapse>
+            </div>
+          </div>
+        </div>
+        </div>
+
+      </ql-card>
+</page-container>

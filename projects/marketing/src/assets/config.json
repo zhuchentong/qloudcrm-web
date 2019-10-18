@@ -8,7 +8,7 @@
     "pluginOrder": 1,
     "pluginTab": [{
             "name": "目标探索",
-            "url": "#/marketing/expore-list"
+            "url": "#/marketing/explore-list"
         },
         {
             "name": "模板筛选",
@@ -17,6 +17,14 @@
         {
             "name": "活动管理",
             "url": "#/marketing/activity-list"
+        },
+        {
+            "name": "冲突管理",
+            "url": "#/marketing/conflict-list"
+        },
+        {
+            "name": "渠道管理",
+            "url": "#/marketing/channel-list"
         },
         {
             "name": "活动审批",
