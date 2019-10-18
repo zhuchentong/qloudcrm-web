@@ -13,10 +13,9 @@ import { RecommendListComponent } from './pages/recommend-list/recommend-list.co
 import { ExploreCreateComponent } from './pages/explore-create/explore-create.component'
 import { TemplateFilterComponent } from './pages/template-filter/template-filter.component'
 import { TemplateDetailComponent } from './pages/template-detail/template-detail.component'
+import { ActivityCreateComponent } from './pages/activity-create/activity-create.component'
 import { AddTemplateComponent } from './pages/add-template/add-template.component'
 import { RecommendDetialComponent } from './pages/recommend-detial/recommend-detial.component'
-
-
 
 const routes: Routes = [
   { path: 'marketing/activity-list', component: ActivityListComponent },
@@ -24,6 +23,7 @@ const routes: Routes = [
   { path: 'marketing/approval-list', component: ApprovalListComponent },
   { path: 'marketing/activity-monitor', component: ActivilyMonitorComponent },
   { path: 'marketing/activity-comment', component: ActivilyCommentComponent },
+  { path: 'marketing/activity-create', component: ActivityCreateComponent },
   { path: 'marketing/recommend-list', component: RecommendListComponent },
   { path: 'marketing/recommend-detail/:id', component: RecommendDetialComponent },
   { path: 'marketing/explore-create', component: ExploreCreateComponent },
@@ -50,5 +50,4 @@ routes.push({
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule {}

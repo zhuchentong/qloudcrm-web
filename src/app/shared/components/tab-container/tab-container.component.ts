@@ -15,12 +15,19 @@ export class TabContainerComponent implements OnInit, AfterContentInit {
   @Input()
   public model
 
+  @Input('tab-position') public TabPosition: 'top' | 'left' | 'right' | 'bottom' = 'top'
+
   public currentIndex
 
   constructor() {}
 
   ngOnInit() {}
 
+  get containerClass() {
+    return {
+      ['position-' + this.TabPosition]: true
+    }
+  }
   public registerTabItem(tabItem: TabItemComponent) {
     this.tabItemList.push(tabItem)
   }
