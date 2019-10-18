@@ -32,6 +32,10 @@
       "url": "#/marketing/recommend-list"
     },
     {
+      "name": "权益管理",
+      "url": "#/marketing/equities-list"
+    },
+    {
       "name": "冲突管理",
       "url": "#/marketing/conflict-list"
     },
