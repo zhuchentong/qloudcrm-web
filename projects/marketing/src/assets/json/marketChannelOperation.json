@@ -1,0 +1,25 @@
+[{
+  "channelCode": "CHNNL_001",
+  "channelName": "短信渠道",
+  "channelSenderType": "系统",
+  "sendType": "主动式",
+  "circuitDays": "7",
+  "sendTime": "1"
+},
+  {
+    "channelCode": "CHNNL_002",
+    "channelName": "人工渠道",
+    "channelSenderType": "客户经理",
+    "sendType": "主动式",
+    "circuitDays": "30",
+    "sendTime": "1"
+  },
+  {
+    "channelCode": "CHNNL_003",
+    "channelName": "人工渠道",
+    "channelSenderType": "呼叫中心",
+    "sendType": "主动式",
+    "circuitDays": "30",
+    "sendTime": "2"
+  }
+]
