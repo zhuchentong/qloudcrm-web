@@ -4,7 +4,7 @@
       <ql-button size="small" type="primary">全选</ql-button>
     </ng-template>
     <ng-template #action>
-      <ql-button type="success">提交</ql-button>
+      <ql-button type="success" (click)="modalRef.close(true)">提交</ql-button>
     </ng-template>
     <ql-form-item label="客户号">
       <ql-input></ql-input>
