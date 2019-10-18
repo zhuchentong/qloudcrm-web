@@ -23,7 +23,8 @@ import { ApprovalListComponent } from './pages/approval-list/approval-list.compo
 import { ActivilyMonitorComponent } from './pages/activily-monitor/activily-monitor.component'
 import { ActivilyCommentComponent } from './pages/activily-comment/activily-comment.component'
 import { RecommendListComponent } from './pages/recommend-list/recommend-list.component'
-import { ExploreCreateComponent } from './pages/explore-create/explore-create.component'
+import { ExploreCreateComponent } from './pages/explore-create/explore-create.component';
+import { RecommendDetialComponent } from './pages/recommend-detial/recommend-detial.component'
 
 // 页面列表
 const PAGES = [
@@ -60,7 +61,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ChannelListComponent, ConflictDetialComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ChannelListComponent, ConflictDetialComponent, RecommendDetialComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, QlDateModule],
   providers,
