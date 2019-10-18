@@ -1,0 +1,47 @@
+<page-header title="创建活动" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>活动管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>创建活动</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action>
+    <ql-button type="primary">提交</ql-button>
+  </ng-template>
+</page-header>
+
+<page-container>
+  <ql-card header="活动信息">
+    <ql-form label-width="120px" ql-row>
+      <ql-form-item ql-col span="12" label="活动名称">
+        <ql-input></ql-input>
+      </ql-form-item>
+      <ql-form-item ql-col span="24" label="活动内容及方案">
+        <ql-input type="textarea" [autosize]="{ minRows: 6, maxRows: 12 }"></ql-input>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="活动开始时间">
+        <ql-date-picker></ql-date-picker>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="活动结束时间">
+        <ql-date-picker></ql-date-picker>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="渠道选择">
+        <ql-select></ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="营销要求">
+        <ql-select></ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="营销监测时间">
+        <ql-select></ql-select>
+      </ql-form-item>
+    </ql-form>
+  </ql-card>
+  <ql-card hader="活动用户"> </ql-card>
+  <ql-card hader="活动阶梯"> </ql-card>
+  <ql-card hader="活动目标"> </ql-card>
+</page-container>
+
+<ng-template #eventList></ng-template>
+<ng-template #adList></ng-template>
+<ng-template #productList></ng-template>

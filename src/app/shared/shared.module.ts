@@ -26,6 +26,7 @@ import { EchartService } from './utils/echart.service'
 import { ClipboardModule } from 'ngx-clipboard'
 import { TabItemComponent } from './components/tab-item/tab-item.component'
 import { TabContainerComponent } from './components/tab-container/tab-container.component'
+import { CardHeaderComponent } from './components/card-header/card-header.component'
 
 const COMPONENTS = [
   ModalContainerComponent,
@@ -39,7 +40,8 @@ const COMPONENTS = [
   DividerComponent,
   PageContainerComponent,
   TabItemComponent,
-  TabContainerComponent
+  TabContainerComponent,
+  CardHeaderComponent
 ]
 const DIRECTIVES = [NavigateDirective]
 const PIPES = [DictPipe]
