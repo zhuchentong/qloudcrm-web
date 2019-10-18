@@ -1,9 +1,12 @@
-<page-header title="筛选模板" [breadcrumb]="breadcrumb" [action-group]="false">
+<page-header title="筛选模板" [breadcrumb]="breadcrumb" [action]="action" [action-group]="false">
     <ng-template #breadcrumb>
         <ql-breadcrumb>
             <ql-breadcrumb-item>筛选模板</ql-breadcrumb-item>
             <ql-breadcrumb-item>筛选模板管理</ql-breadcrumb-item>
         </ql-breadcrumb>
+    </ng-template>
+    <ng-template #action>
+        <ql-button size="small" type="primary" [routerLink]="['/marketing/add-template']">添加模板</ql-button>
     </ng-template>
 </page-header>
 
@@ -31,9 +34,9 @@
                 <ql-option *ngFor="let item of stateData" [label]="item.label" [value]="item.value"> </ql-option>
             </ql-select>
         </ql-form-item>
-        <ng-template #button>
+        <!-- <ng-template #button>
             <ql-button size="small" type="primary" [routerLink]="['/marketing/add-template']">添加模板</ql-button>
-        </ng-template>
+        </ng-template> -->
     </data-form>
 
     <data-table [model]="templateList">

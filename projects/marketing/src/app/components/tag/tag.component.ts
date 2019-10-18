@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core'
 import { ApiService } from '../../services/api.service'
-
+import { ModalRef } from '@app/shared/utils'
 @Component({
   selector: 'app-tag',
   templateUrl: './tag.component.html',
   styleUrls: ['./tag.component.scss'],
-  providers: [ApiService]
+  providers: [ApiService, ModalRef]
 })
 export class TagComponent implements OnInit {
   public catalogList: any[] = []
   public tagList: any[] = []
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, public modalRef: ModalRef) {}
 
   ngOnInit() {
     this.getTagCatalogList()
@@ -65,5 +65,9 @@ export class TagComponent implements OnInit {
       // 生成树形结构
       this.tagList = list
     })
+  }
+
+  public onRefresh(){
+    this.modalRef.close()
   }
 }

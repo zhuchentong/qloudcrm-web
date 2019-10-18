@@ -1,5 +1,5 @@
 [{
-        "templateName": "基金达人",
+        "templateName": "理财通用模板",
         "creatTime": "2019-08-12",
         "institu": "兴业高新六路支行",
         "creator": "王文建",
@@ -7,7 +7,7 @@
         "templateState": "有效"
     },
     {
-        "templateName": "金领一族",
+        "templateName": "高级客户模板",
         "creatTime": "2018-09-10",
         "institu": "兴业高新八路支行",
         "creator": "李谷一",
@@ -15,7 +15,7 @@
         "templateState": "有效"
     },
     {
-        "templateName": "理财潜力族",
+        "templateName": "潜力客户模板",
         "creatTime": "2019-08-12",
         "institu": "农业科技二路支行",
         "creator": "王丽",
@@ -23,7 +23,7 @@
         "templateState": "建设中"
     },
     {
-        "templateName": "投资小白理财",
+        "templateName": "精英客户模板",
         "creatTime": "2019-01-31",
         "institu": "招商丈八北路支行",
         "creator": "陈祥",

@@ -1,0 +1,120 @@
+<page-header title="探索结果" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>目标探索</ql-breadcrumb-item>
+            <ql-breadcrumb-item>探索结果</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+</page-header>
+
+<page-container>
+    <ql-card header="客户分布统计">
+        <label-container column="3" [border]="true" labelWidth="160">
+            <label-item label="机构名称">兴业银行丈八北路支行</label-item>
+            <label-item label="客户数">187643</label-item>
+            <label-item label="AUM">3000万</label-item>
+        </label-container>
+        <data-table class="ql-padding" [model]="customertypeList">
+            <ql-table-column model-key="name" label="客户类别"></ql-table-column>
+            <ql-table-column model-key="num" label="客户数量"></ql-table-column>
+            <ql-table-column model-key="AUM" label="AUM"></ql-table-column>
+            <ql-table-column model-key="allassets" label="资产总额"></ql-table-column>
+        </data-table>
+        <!-- <ql-collapse [accordion]="true">
+            <ql-collapse-item label="金卡客户" value="1">
+                <label-container column="3" [border]="true" labelWidth="160">
+                    <label-item label="客户数量">2300</label-item>
+                    <label-item label="AUM">8700万</label-item>
+                    <label-item label="资产总额">2000万</label-item>
+                </label-container>
+            </ql-collapse-item>
+            <ql-collapse-item label="潜力客户" value="1">
+                <label-container column="3" [border]="true" labelWidth="160">
+                    <label-item label="客户数量">10300</label-item>
+                    <label-item label="AUM">1900万</label-item>
+                    <label-item label="资产总额">12000万</label-item>
+                </label-container>
+            </ql-collapse-item>
+            <ql-collapse-item label="白金卡客户" value="1">
+                <label-container column="3" [border]="true" labelWidth="160">
+                    <label-item label="客户数量">400</label-item>
+                    <label-item label="AUM">400万</label-item>
+                    <label-item label="资产总额">9000万</label-item>
+                </label-container>
+            </ql-collapse-item>
+            <ql-collapse-item label="私人银行客户" value="1">
+                <label-container column="3" [border]="true" labelWidth="160">
+                    <label-item label="客户数量">680</label-item>
+                    <label-item label="AUM">800万</label-item>
+                    <label-item label="资产总额">2000万</label-item>
+                </label-container>
+            </ql-collapse-item>
+            <ql-collapse-item label="财富管理客户" value="6">
+                <label-container column="3" [border]="true" labelWidth="160">
+                    <label-item label="客户数量">180</label-item>
+                    <label-item label="AUM">100万</label-item>
+                    <label-item label="资产总额">1200万</label-item>
+                </label-container>
+            </ql-collapse-item>
+        </ql-collapse> -->
+    </ql-card>
+    <ql-card header="产品分布统计">
+        <label-container column="3" [border]="true" labelWidth="160">
+            <label-item label="机构名称">兴业银行丈八北路支行</label-item>
+            <label-item label="产品数">2354</label-item>
+            <label-item label="总资产">9000万</label-item>
+        </label-container>
+        <div class="ql-margin-top"></div>
+        <label-container column="4" [border]="true" labelWidth="160">
+            <label-item label="理财产品数">290</label-item>
+            <label-item label="基金产品数">190</label-item>
+            <label-item label="国债产品数">700</label-item>
+            <label-item label="保险产品数">560</label-item>
+        </label-container>
+        <label-container column="4" [border]="true" labelWidth="160">
+            <label-item label="贵金属产品数">320</label-item>
+            <label-item label="信托产品数">490</label-item>
+            <label-item label="资管产品数">200</label-item>
+            <label-item label="第三方存款产品数">120</label-item>
+        </label-container>
+        <label-container column="4" [border]="true" labelWidth="160">
+            <label-item label="人民币产品数">145</label-item>
+            <label-item label="外币产品数">230</label-item>
+            <label-item label="鑫梦哼产品数">108</label-item>
+            <label-item label="住房贷款产品数">20</label-item>
+        </label-container>
+        <label-container column="4" [border]="true" labelWidth="160">
+            <label-item label="商用房贷款产品数">90</label-item>
+            <label-item label="借记卡产品数">80</label-item>
+            <label-item label="信用卡产品数">99</label-item>
+            <label-item label="电子银行产品数">139</label-item>
+        </label-container>
+    </ql-card>
+
+    <ql-card header="目标客户浏览">
+        <data-table [model]="customerList">
+            <!-- <ql-table-column model-key="code" [render-html]="true" label="客户号"></ql-table-column>
+            <ql-table-column model-key="name" [render-html]="true" label="姓名" width="70"></ql-table-column>
+            <ql-table-column model-key="level" [render-html]="true" label="客户等级"></ql-table-column>
+            <ql-table-column model-key="age" [render-html]="true" label="年龄" width="60"></ql-table-column>
+            <ql-table-column model-key="sex" [render-html]="true" label="性别" width="60"></ql-table-column>
+            <ql-table-column model-key="tel" [render-html]="true" label="手机号"></ql-table-column>
+            <ql-table-column model-key="producttype" [render-html]="true" label="产品类型" width="85"></ql-table-column>
+            <ql-table-column model-key="productcode" [render-html]="true" label="产品代码"></ql-table-column>
+            <ql-table-column model-key="productown" [render-html]="true" label="持有产品额"></ql-table-column>
+            <ql-table-column model-key="aum" [render-html]="true" label="AUM" width="80"></ql-table-column>
+            <ql-table-column model-key="balance" [render-html]="true" label="资产余额" width="85"></ql-table-column> -->
+            <ql-table-column model-key="ctName" label="客户姓名"> </ql-table-column>
+            <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>
+            <ql-table-column model-key="ctage" label="年龄" width="80"> </ql-table-column>
+            <ql-table-column model-key="ctLevel" label="客户等级"> </ql-table-column>
+            <ql-table-column model-key="ctTel" label="客户电话"> </ql-table-column>
+            <ql-table-column model-key="time" label="开户时间"> </ql-table-column>
+            <ql-table-column model-key="assest" label="客户资产" width="80"> </ql-table-column>
+            <ql-table-column model-key="AUM" label="AUM" width="80"> </ql-table-column>
+            <ql-table-column model-key="productnum" label="持有产品数"> </ql-table-column>
+            <ql-table-column model-key="interaTime" label="互动时间"> </ql-table-column>
+        </data-table>
+    </ql-card>
+</page-container>

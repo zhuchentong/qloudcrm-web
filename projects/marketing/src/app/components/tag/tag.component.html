@@ -1,4 +1,9 @@
 <page-container>
+    <data-form [submitText]="'提交'" (submit)="onRefresh()" [showReset]="false">
+        <!-- <ng-template #action>
+            <ql-button type="success" (click)="modalRef.close(true)">提交</ql-button>
+        </ng-template> -->
+    </data-form>
     <div ql-row type="flex">
         <ql-tree (modelChange)="onCatalogChange($event)" [accordion]="true" [model]="catalogList" ql-col span="6"></ql-tree>
         <data-table ql-col span="18" [model]="tagList" [selection]="true">

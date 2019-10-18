@@ -1,206 +1,206 @@
 <page-header title="我的客户" [breadcrumb]="breadcrumb" [action]="action">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>我的客户</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
-  <ng-template #action class="ql-text-right">
-    <ql-button type="primary" [routerLink]="['/customer/customer-level']">客户等级变动</ql-button>
-    <ql-button type="primary" [routerLink]="['/customer/customer-assets']">客户资产变动</ql-button>
-  </ng-template>
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>我的客户</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+    <ng-template #action class="ql-text-right">
+        <ql-button type="primary" [routerLink]="['/customer/customer-level']">客户等级变动</ql-button>
+        <ql-button type="primary" [routerLink]="['/customer/customer-assets']">客户资产变动</ql-button>
+    </ng-template>
 </page-header>
 
 <page-container>
-  <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()" [action]="formAction" [button]="button">
-    <ql-form-item label="客户名称">
-      <ql-input></ql-input>
-    </ql-form-item>
-    <ql-form-item label="客户对象">
-      <ql-select></ql-select>
-    </ql-form-item>
-    <ql-form-item label="客户分类">
-      <ql-select></ql-select>
-    </ql-form-item>
-    <ng-template #button>
-      <ql-button size="small" type="primary" (click)="search()">高级搜索</ql-button>
-    </ng-template>
-    <ng-template #formAction>
-      <ql-button size="small" type="primary">拨打电话</ql-button>
-      <ql-button size="small" type="success">发送短信</ql-button>
-      <ql-button size="small" type="info">发现邮件</ql-button>
-      <ql-button *ngIf="showGroup" size="small" type="success" (click)="onChangeGroup()">移动分组</ql-button>
-      <ql-button *ngIf="showGroup" size="small" type="success" (click)="onCreateGroup()">创建分组</ql-button>
-    </ng-template>
-  </data-form>
+    <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()" [action]="formAction" [button]="button">
+        <ql-form-item label="客户名称">
+            <ql-input></ql-input>
+        </ql-form-item>
+        <ql-form-item label="客户对象">
+            <ql-select></ql-select>
+        </ql-form-item>
+        <ql-form-item label="客户分类">
+            <ql-select></ql-select>
+        </ql-form-item>
+        <ng-template #button>
+            <ql-button size="small" type="primary" (click)="search()">高级搜索</ql-button>
+        </ng-template>
+        <ng-template #formAction>
+            <ql-button size="small" type="primary">拨打电话</ql-button>
+            <ql-button size="small" type="success">发送短信</ql-button>
+            <ql-button size="small" type="info">发现邮件</ql-button>
+            <ql-button *ngIf="showGroup" size="small" type="success" (click)="onChangeGroup()">移动分组</ql-button>
+            <ql-button *ngIf="showGroup" size="small" type="success" (click)="onCreateGroup()">创建分组</ql-button>
+        </ng-template>
+    </data-form>
 
-  <data-table (selection-change)="onCheckChange($event)" [model]="customerList" [selection]="true">
-    <ql-table-column model-key="ctCode" label="客户编号"> </ql-table-column>
-    <ql-table-column model-key="ctName" label="客户姓名"> </ql-table-column>
-    <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>
-    <ql-table-column model-key="ctage" label="年龄" width="80"> </ql-table-column>
-    <ql-table-column model-key="ctType" label="客户类型"> </ql-table-column>
-    <ql-table-column model-key="ctLevel" label="客户等级"> </ql-table-column>
-    <ql-table-column model-key="ctTel" label="客户电话"> </ql-table-column>
-    <ql-table-column model-key="time" label="开户时间"> </ql-table-column>
-    <ql-table-column model-key="assest" label="客户资产" width="80"> </ql-table-column>
-    <ql-table-column model-key="AUM" label="AUM" width="80"> </ql-table-column>
-    <ql-table-column model-key="productnum" label="持有产品数"> </ql-table-column>
-    <ql-table-column model-key="interaTime" label="互动时间"> </ql-table-column>
-    <ql-table-column label="操作">
-      <ng-template #slot let-scope="scope">
-        <!-- <ql-button type="text">数据维护</ql-button> -->
-        <ql-button type="text" [routerLink]="['/customer/customer-detail']">详情</ql-button>
-        <ql-button type="text">删除</ql-button>
-      </ng-template>
-    </ql-table-column>
-  </data-table>
+    <data-table (selection-change)="onCheckChange($event)" [model]="customerList" [selection]="true">
+        <ql-table-column model-key="ctCode" label="客户编号"> </ql-table-column>
+        <ql-table-column model-key="ctName" label="客户姓名"> </ql-table-column>
+        <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>
+        <ql-table-column model-key="ctage" label="年龄" width="80"> </ql-table-column>
+        <ql-table-column model-key="ctType" label="客户类型"> </ql-table-column>
+        <ql-table-column model-key="ctLevel" label="客户等级"> </ql-table-column>
+        <ql-table-column model-key="ctTel" label="客户电话"> </ql-table-column>
+        <ql-table-column model-key="time" label="开户时间"> </ql-table-column>
+        <ql-table-column model-key="assest" label="客户资产" width="80"> </ql-table-column>
+        <ql-table-column model-key="AUM" label="AUM" width="80"> </ql-table-column>
+        <ql-table-column model-key="productnum" label="持有产品数"> </ql-table-column>
+        <ql-table-column model-key="interaTime" label="互动时间"> </ql-table-column>
+        <ql-table-column label="操作">
+            <ng-template #slot let-scope="scope">
+                <!-- <ql-button type="text">数据维护</ql-button> -->
+                <ql-button type="text" [routerLink]="['/customer/customer-detail']">详情</ql-button>
+                <ql-button type="text">删除</ql-button>
+            </ng-template>
+        </ql-table-column>
+    </data-table>
 </page-container>
 
 <ng-template #addGroup>
-  <ql-card>
-    <ql-form label-width="100px" ql-row gutter="24" class="ql-margin-top">
-      <ql-form-item label="群组名称" ql-col span="12">
-        <ql-input placeholder="请输入内容"></ql-input>
-      </ql-form-item>
-      <ql-form-item label="客群类型" ql-col span="12">
-        <ql-select [clearable]="true"> </ql-select>
-      </ql-form-item>
-      <ql-form-item label="客群状态" ql-col span="12">
-        <ql-select [clearable]="true"> </ql-select>
-      </ql-form-item>
-      <ql-form-item label="创建人" ql-col span="12">
-        <ql-input placeholder="请输入内容"></ql-input>
-      </ql-form-item>
-      <ql-form-item label="创建时间" ql-col span="12">
-        <ql-date-picker> </ql-date-picker>
-      </ql-form-item>
-      <ql-form-item label="群组描述" ql-col span="24" class="ql-margin-top">
-        <ql-input type="textarea" [rows]="2" placeholder="请输入内容"> </ql-input>
-      </ql-form-item>
-    </ql-form>
-  </ql-card>
-  <ql-card>
-    <div class="text-left">
-      <div ql-row gutter="24" class="senior">
-        <div ql-col [span]="3" class="tittle">性别</div>
-        <div ql-col [span]="21">
-          <ql-radio class="radio" label="男">男</ql-radio>
-          <ql-radio class="radio" label="女">女</ql-radio>
+    <ql-card>
+        <ql-form label-width="100px" ql-row gutter="24" class="ql-margin-top">
+            <ql-form-item label="群组名称" ql-col span="12">
+                <ql-input placeholder="请输入内容"></ql-input>
+            </ql-form-item>
+            <ql-form-item label="客群类型" ql-col span="12">
+                <ql-select [clearable]="true"> </ql-select>
+            </ql-form-item>
+            <ql-form-item label="客群状态" ql-col span="12">
+                <ql-select [clearable]="true"> </ql-select>
+            </ql-form-item>
+            <ql-form-item label="创建人" ql-col span="12">
+                <ql-input placeholder="请输入内容"></ql-input>
+            </ql-form-item>
+            <ql-form-item label="创建时间" ql-col span="12">
+                <ql-date-picker> </ql-date-picker>
+            </ql-form-item>
+            <ql-form-item label="群组描述" ql-col span="24" class="ql-margin-top">
+                <ql-input type="textarea" [rows]="2" placeholder="请输入内容"> </ql-input>
+            </ql-form-item>
+        </ql-form>
+    </ql-card>
+    <ql-card>
+        <div class="text-left">
+            <div ql-row gutter="24" class="senior">
+                <div ql-col [span]="3" class="tittle">性别</div>
+                <div ql-col [span]="21">
+                    <ql-radio class="radio" label="男">男</ql-radio>
+                    <ql-radio class="radio" label="女">女</ql-radio>
+                </div>
+            </div>
+            <div ql-row gutter="24" class="senior">
+                <div ql-col [span]="3" class="tittle">年龄</div>
+                <div ql-col [span]="21">
+                    <ql-radio class="radio" label="青年">青年(18-35)</ql-radio>
+                    <ql-radio class="radio" label="中年">中年(36-55)</ql-radio>
+                    <ql-radio class="radio" label="老年">老年(56以上)</ql-radio>
+                </div>
+            </div>
+            <div ql-row gutter="24" class="senior">
+                <div ql-col [span]="3" class="tittle">学历</div>
+                <div ql-col [span]="21">
+                    <ql-radio class="radio" label="专科">专科</ql-radio>
+                    <ql-radio class="radio" label="本科">本科</ql-radio>
+                    <ql-radio class="radio" label="硕士">硕士</ql-radio>
+                    <ql-radio class="radio" label="博士">博士</ql-radio>
+                </div>
+            </div>
+            <div ql-row gutter="24" class="senior">
+                <div ql-col [span]="3" class="tittle">收入</div>
+                <div ql-col [span]="21">
+                    <ql-radio class="radio" label="低收入">(小于3000)低收入</ql-radio>
+                    <ql-radio class="radio" label="中低收入">(小于5000)低收入</ql-radio>
+                    <ql-radio class="radio" label="中级收入">(不小于15000)中级</ql-radio>
+                    <ql-radio class="radio" label="中高收入">(不小于30000)</ql-radio>
+                    <ql-radio class="radio" label="高收入">(不小于50000)</ql-radio>
+                </div>
+            </div>
+            <div ql-row gutter="24" class="senior">
+                <div ql-col [span]="3" class="tittle">渠道偏好</div>
+                <div ql-col [span]="21">
+                    <ql-radio class="radio" label="微信">微信</ql-radio>
+                    <ql-radio class="radio" label="电话">电话</ql-radio>
+                    <ql-radio class="radio" label="短信">短信</ql-radio>
+                    <ql-radio class="radio" label="网银">网银</ql-radio>
+                    <ql-radio class="radio" label="手银">手银</ql-radio>
+                    <ql-radio class="radio" label="网点">网点</ql-radio>
+                </div>
+            </div>
+            <div ql-row gutter="24" class="senior">
+                <div ql-col [span]="3" class="tittle">卡等级</div>
+                <div ql-col [span]="21">
+                    <ql-radio class="radio" label="普卡">普卡</ql-radio>
+                    <ql-radio class="radio" label="银卡">银卡</ql-radio>
+                    <ql-radio class="radio" label="金卡">金卡</ql-radio>
+                    <ql-radio class="radio" label="钻石卡">钻石卡</ql-radio>
+                </div>
+            </div>
+            <div ql-row gutter="24" class="senior">
+                <div ql-col [span]="3" class="tittle">客户状态</div>
+                <div ql-col [span]="21">
+                    <ql-radio class="radio" label="睡眠">睡眠</ql-radio>
+                    <ql-radio class="radio" label="游离">游离</ql-radio>
+                    <ql-radio class="radio" label="低忠诚">低忠诚</ql-radio>
+                    <ql-radio class="radio" label="高贡献">钻石卡</ql-radio>
+                </div>
+            </div>
+            <div ql-row gutter="24" class="senior">
+                <div ql-col [span]="3" class="tittle">产品</div>
+                <div ql-col [span]="21">
+                    <ql-radio class="radio" label="定期">定期</ql-radio>
+                    <ql-radio class="radio" label="存款">存款</ql-radio>
+                    <ql-radio class="radio" label="理财">理财</ql-radio>
+                    <ql-radio class="radio" label="保险">保险</ql-radio>
+                </div>
+            </div>
+            <div ql-row gutter="24" class="senior">
+                <div ql-col [span]="3" class="tittle">风险</div>
+                <div ql-col [span]="21">
+                    <ql-radio class="radio" label="低风险">低风险</ql-radio>
+                    <ql-radio class="radio" label="中风险">中风险</ql-radio>
+                    <ql-radio class="radio" label="高风险">高风险</ql-radio>
+                </div>
+            </div>
+            <div ql-row gutter="24" class="senior">
+                <div ql-col [span]="3" class="tittle">投资类型</div>
+                <div ql-col [span]="21">
+                    <ql-radio class="radio" label="保守">保守</ql-radio>
+                    <ql-radio class="radio" label="激进">激进</ql-radio>
+                    <ql-radio class="radio" label="冒险">冒险</ql-radio>
+                </div>
+            </div>
+            <div ql-row gutter="24" class="senior">
+                <div ql-col [span]="3" class="tittle">客户积分</div>
+                <div ql-col [span]="21">
+                    <ql-radio class="radio" label="0">0</ql-radio>
+                    <ql-radio class="radio" label="0-200">0-200</ql-radio>
+                    <ql-radio class="radio" label="200-500">200-500</ql-radio>
+                    <ql-radio class="radio" label="200-500">500以上</ql-radio>
+                </div>
+            </div>
         </div>
-      </div>
-      <div ql-row gutter="24" class="senior">
-        <div ql-col [span]="3" class="tittle">年龄</div>
-        <div ql-col [span]="21">
-          <ql-radio class="radio" label="青年">青年(18-35)</ql-radio>
-          <ql-radio class="radio" label="中年">中年(36-55)</ql-radio>
-          <ql-radio class="radio" label="老年">老年(56以上)</ql-radio>
-        </div>
-      </div>
-      <div ql-row gutter="24" class="senior">
-        <div ql-col [span]="3" class="tittle">学历</div>
-        <div ql-col [span]="21">
-          <ql-radio class="radio" label="专科">专科</ql-radio>
-          <ql-radio class="radio" label="本科">本科</ql-radio>
-          <ql-radio class="radio" label="硕士">硕士</ql-radio>
-          <ql-radio class="radio" label="博士">博士</ql-radio>
-        </div>
-      </div>
-      <div ql-row gutter="24" class="senior">
-        <div ql-col [span]="3" class="tittle">收入</div>
-        <div ql-col [span]="21">
-          <ql-radio class="radio" label="低收入">(小于3000)低收入</ql-radio>
-          <ql-radio class="radio" label="中低收入">(小于5000)低收入</ql-radio>
-          <ql-radio class="radio" label="中级收入">(不小于15000)中级</ql-radio>
-          <ql-radio class="radio" label="中高收入">(不小于30000)</ql-radio>
-          <ql-radio class="radio" label="高收入">(不小于50000)</ql-radio>
-        </div>
-      </div>
-      <div ql-row gutter="24" class="senior">
-        <div ql-col [span]="3" class="tittle">渠道偏好</div>
-        <div ql-col [span]="21">
-          <ql-radio class="radio" label="微信">微信</ql-radio>
-          <ql-radio class="radio" label="电话">电话</ql-radio>
-          <ql-radio class="radio" label="短信">短信</ql-radio>
-          <ql-radio class="radio" label="网银">网银</ql-radio>
-          <ql-radio class="radio" label="手银">手银</ql-radio>
-          <ql-radio class="radio" label="网点">网点</ql-radio>
-        </div>
-      </div>
-      <div ql-row gutter="24" class="senior">
-        <div ql-col [span]="3" class="tittle">卡等级</div>
-        <div ql-col [span]="21">
-          <ql-radio class="radio" label="普卡">普卡</ql-radio>
-          <ql-radio class="radio" label="银卡">银卡</ql-radio>
-          <ql-radio class="radio" label="金卡">金卡</ql-radio>
-          <ql-radio class="radio" label="钻石卡">钻石卡</ql-radio>
-        </div>
-      </div>
-      <div ql-row gutter="24" class="senior">
-        <div ql-col [span]="3" class="tittle">客户状态</div>
-        <div ql-col [span]="21">
-          <ql-radio class="radio" label="睡眠">睡眠</ql-radio>
-          <ql-radio class="radio" label="游离">游离</ql-radio>
-          <ql-radio class="radio" label="低忠诚">低忠诚</ql-radio>
-          <ql-radio class="radio" label="高贡献">钻石卡</ql-radio>
-        </div>
-      </div>
-      <div ql-row gutter="24" class="senior">
-        <div ql-col [span]="3" class="tittle">产品</div>
-        <div ql-col [span]="21">
-          <ql-radio class="radio" label="定期">定期</ql-radio>
-          <ql-radio class="radio" label="存款">存款</ql-radio>
-          <ql-radio class="radio" label="理财">理财</ql-radio>
-          <ql-radio class="radio" label="保险">保险</ql-radio>
-        </div>
-      </div>
-      <div ql-row gutter="24" class="senior">
-        <div ql-col [span]="3" class="tittle">风险</div>
-        <div ql-col [span]="21">
-          <ql-radio class="radio" label="低风险">低风险</ql-radio>
-          <ql-radio class="radio" label="中风险">中风险</ql-radio>
-          <ql-radio class="radio" label="高风险">高风险</ql-radio>
-        </div>
-      </div>
-      <div ql-row gutter="24" class="senior">
-        <div ql-col [span]="3" class="tittle">投资类型</div>
-        <div ql-col [span]="21">
-          <ql-radio class="radio" label="保守">保守</ql-radio>
-          <ql-radio class="radio" label="激进">激进</ql-radio>
-          <ql-radio class="radio" label="冒险">冒险</ql-radio>
-        </div>
-      </div>
-      <div ql-row gutter="24" class="senior">
-        <div ql-col [span]="3" class="tittle">客户积分</div>
-        <div ql-col [span]="21">
-          <ql-radio class="radio" label="0">0</ql-radio>
-          <ql-radio class="radio" label="0-200">0-200</ql-radio>
-          <ql-radio class="radio" label="200-500">200-500</ql-radio>
-          <ql-radio class="radio" label="200-500">500以上</ql-radio>
-        </div>
-      </div>
-    </div>
-  </ql-card>
+    </ql-card>
 
-  <div>
-    <ql-button type="primary" (click)="modal.close(true)">创建</ql-button>
-    <ql-button type="primary" (click)="modal.close()">取消</ql-button>
-  </div>
+    <div>
+        <ql-button type="primary" (click)="modal.close(true)">创建</ql-button>
+        <ql-button type="primary" (click)="modal.close()">取消</ql-button>
+    </div>
 </ng-template>
 
 <ng-template #changeGroup>
-  <data-table [model]="groupList">
-    <ql-table-column model-key="code" label="群组编号"> </ql-table-column>
-    <ql-table-column model-key="name" label="群组名称"> </ql-table-column>
-    <ql-table-column model-key="description" label="群组描述"> </ql-table-column>
-    <ql-table-column model-key="createTime" label="创建时间"> </ql-table-column>
-    <ql-table-column model-key="creator" label="创建人"> </ql-table-column>
-    <ql-table-column model-key="count" label="客户数量"> </ql-table-column>
-    <ql-table-column model-key="state" label="群组状态"> </ql-table-column>
-    <ql-table-column label="操作" width="280">
-      <ng-template #slot let-scope="scope">
-        <ql-button type="text" (click)="modal.close(true)">选择</ql-button>
-      </ng-template>
-    </ql-table-column>
-  </data-table>
+    <data-table [model]="groupList">
+        <ql-table-column model-key="code" label="群组编号"> </ql-table-column>
+        <ql-table-column model-key="name" label="群组名称"> </ql-table-column>
+        <ql-table-column model-key="description" label="群组描述"> </ql-table-column>
+        <ql-table-column model-key="createTime" label="创建时间"> </ql-table-column>
+        <ql-table-column model-key="creator" label="创建人"> </ql-table-column>
+        <ql-table-column model-key="count" label="客户数量"> </ql-table-column>
+        <ql-table-column model-key="state" label="群组状态"> </ql-table-column>
+        <ql-table-column label="操作" width="280">
+            <ng-template #slot let-scope="scope">
+                <ql-button type="text" (click)="modal.close(true)">选择</ql-button>
+            </ng-template>
+        </ql-table-column>
+    </data-table>
 </ng-template>

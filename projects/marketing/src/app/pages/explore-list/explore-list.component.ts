@@ -7,6 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExploreListComponent implements OnInit {
 
+  public exportListData = [
+    {
+      "name":"精英客户",
+      "time":"20小时",
+      'createTime':'2018-12-32',
+      'status':'成功',
+      'count':'187643'
+    }
+  ]
+
   constructor() { }
 
   ngOnInit() {

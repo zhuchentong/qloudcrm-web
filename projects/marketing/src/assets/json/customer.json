@@ -1,6 +1,7 @@
 [{
         "ctCode": "TED3434",
         "ctName": "张三丰",
+        "ctsex": "男",
         "ctage": "38",
         "ctType": "重要客户",
         "ctLevel": "金卡客户",
@@ -14,6 +15,7 @@
     {
         "ctCode": "NJNC63",
         "ctName": "赵六",
+        "ctsex": "男",
         "ctage": "31",
         "ctType": "重要客户",
         "ctLevel": "金卡客户",
@@ -26,6 +28,7 @@
     }, {
         "ctCode": "UI4324",
         "ctName": "钟馗",
+        "ctsex": "男",
         "ctage": "56",
         "ctType": "重要客户",
         "ctLevel": "金卡客户",
@@ -38,6 +41,7 @@
     }, {
         "ctCode": "CC3YI8",
         "ctName": "王万达",
+        "ctsex": "女",
         "ctage": "45",
         "ctType": "普通客户",
         "ctLevel": "银卡客户",
@@ -50,6 +54,7 @@
     }, {
         "ctCode": "HYD9803",
         "ctName": "法海",
+        "ctsex": "男",
         "ctage": "24",
         "ctType": "重要客户",
         "ctLevel": "金卡客户",
@@ -62,6 +67,7 @@
     }, {
         "ctCode": "HUY64",
         "ctName": "刘美丽",
+        "ctsex": "女",
         "ctage": "39",
         "ctType": "精选客户",
         "ctLevel": "钻石客户",
