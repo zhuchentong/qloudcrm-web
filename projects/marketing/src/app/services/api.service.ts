@@ -2,10 +2,9 @@ import { NetService } from '@core/http'
 import { Injectable } from '@angular/core'
 import { of } from 'rxjs'
 
-
-import TemplatelistList from  '../../assets/json/template-list.json'
-import customerTagList from  '../../assets/json/customer-tag.json'
-
+import TemplatelistList from '../../assets/json/template-list.json'
+import customerTagList from '../../assets/json/customer-tag.json'
+import customerList from '../../assets/json/customer.json'
 import MarketActivationConfliction from '../../assets/json/marketActivationConfliction.json'
 import MarketChannelOperation from '../../assets/json/marketChannelOperation.json'
 
@@ -13,6 +12,9 @@ import MarketChannelOperation from '../../assets/json/marketChannelOperation.jso
 export class ApiService {
   constructor(private net: NetService) {}
 
+  public getCustomerList() {
+    return of(customerList)
+  }
   public getTemplatelistList() {
     return of(TemplatelistList)
   }
@@ -24,13 +26,11 @@ export class ApiService {
         .filter(x => parent === undefined || x.parent === parent)
     )
   }
-  public getConflictMarketActivation (){
+  public getConflictMarketActivation() {
     return of(MarketActivationConfliction)
   }
 
-  public getMarketChannelOpertion (){
+  public getMarketChannelOpertion() {
     return of(MarketChannelOperation)
   }
-
 }
-

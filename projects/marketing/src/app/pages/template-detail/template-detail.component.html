@@ -37,9 +37,17 @@
         </label-container>
     </ql-card>
     <ql-card header="客户标签属性">
-        <label-container column="1" [border]="true">
-            <label-item label="客户标签">商旅客户，理财达人，高消费客户，摄影爱好者</label-item>
-        </label-container>
+        <div ql-row gutter="24">
+            <data-table [model]="tagList">
+                <ql-table-column model-key="code" label="标签编码"></ql-table-column>
+                <ql-table-column model-key="type" label="标签类别"></ql-table-column>
+                <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
+                <ql-table-column model-key="description" label="标签说明"></ql-table-column>
+                <ql-table-column model-key="createTime" label="创建日期"></ql-table-column>
+                <ql-table-column model-key="customerCount" label="客户数量"></ql-table-column>
+                <ql-table-column model-key="state" label="标签状态"></ql-table-column>
+            </data-table>
+        </div>
     </ql-card>
     <ql-card header="客户产品属性">
         <!-- <label-container column="2" [border]="true">

@@ -35,6 +35,8 @@
     margin: 5px;
     background: #fff;
     box-shadow: 0px 0px 5px grey;
+    text-align: left;
+
     &.position-top {
       position: absolute;
       top: 50px;
@@ -57,7 +59,7 @@
       width: 75%;
     }
     &.modal-size-huge {
-      min-width: 90%;
+      width: 90%;
     }
   }
 }

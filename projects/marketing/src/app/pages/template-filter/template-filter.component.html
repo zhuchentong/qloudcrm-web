@@ -32,7 +32,7 @@
             </ql-select>
         </ql-form-item>
         <ng-template #button>
-            <ql-button size="small" type="primary" (click)="addTemplateFun()">添加模板</ql-button>
+            <ql-button size="small" type="primary" [routerLink]="['/marketing/add-template']">添加模板</ql-button>
         </ng-template>
     </data-form>
 
@@ -51,7 +51,7 @@
     </data-table>
 
     <!-- 新建模板 -->
-    <ng-template #addTemplate>
+    <!-- <ng-template #addTemplate>
         <div>
             <ql-form [inline]="true" ql-row label-width="110px" [formGroup]="formGroup">
                 <ql-card header="模板名称范围" class="ql-text-left">
@@ -219,6 +219,6 @@
                 </div>
             </ql-form>
         </div>
-    </ng-template>
+    </ng-template> -->
 
 </page-container>

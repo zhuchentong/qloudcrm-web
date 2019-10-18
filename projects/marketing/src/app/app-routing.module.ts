@@ -14,6 +14,7 @@ import { ExploreCreateComponent } from './pages/explore-create/explore-create.co
 import { TemplateFilterComponent } from './pages/template-filter/template-filter.component'
 import { TemplateDetailComponent } from './pages/template-detail/template-detail.component'
 import { ActivityCreateComponent } from './pages/activity-create/activity-create.component'
+import { AddTemplateComponent } from './pages/add-template/add-template.component'
 
 const routes: Routes = [
   { path: 'marketing/activity-list', component: ActivityListComponent },
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'marketing/channel-list', component: ChannelListComponent },
   { path: 'marketing/conflict-detial/:id', component: ConflictDetialComponent },
   { path: 'marketing/template-filter', component: TemplateFilterComponent },
-  { path: 'marketing/template-detail', component: TemplateDetailComponent }
+  { path: 'marketing/template-detail', component: TemplateDetailComponent },
+  { path: 'marketing/add-template', component: AddTemplateComponent }
 ]
 
 routes.push({

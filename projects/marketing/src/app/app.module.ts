@@ -24,10 +24,16 @@ import { ActivilyMonitorComponent } from './pages/activily-monitor/activily-moni
 import { ActivilyCommentComponent } from './pages/activily-comment/activily-comment.component'
 import { RecommendListComponent } from './pages/recommend-list/recommend-list.component'
 import { ExploreCreateComponent } from './pages/explore-create/explore-create.component'
+import { ActivityCreateComponent } from './pages/activity-create/activity-create.component'
 import { TemplateFilterComponent } from './pages/template-filter/template-filter.component'
 import { TemplateDetailComponent } from './pages/template-detail/template-detail.component'
 import { TagComponent } from './components/tag/tag.component'
-import { ActivityCreateComponent } from './pages/activity-create/activity-create.component'
+import { AddTemplateComponent } from './pages/add-template/add-template.component'
+import { SelectCustomerComponent } from './components/select-customer/select-customer.component'
+import { SelectPruductComponent } from './components/select-pruduct/select-pruduct.component'
+import { SelectEventComponent } from './components/select-event/select-event.component'
+import { SelectInterestComponent } from './components/select-interest/select-interest.component';
+import { SelectExploreComponent } from './components/select-explore/select-explore.component'
 
 // 页面列表
 const PAGES = [
@@ -48,11 +54,18 @@ const PAGES = [
   TagComponent,
   ChannelListComponent,
   ConflictDetialComponent,
-  ActivityCreateComponent
+  ActivityCreateComponent,
+  AddTemplateComponent
 ]
 
 // 组件列表
-const COMPONENTS = [TagComponent]
+const COMPONENTS = [
+  TagComponent,
+  SelectCustomerComponent,
+  SelectPruductComponent,
+  SelectEventComponent,
+  SelectInterestComponent
+]
 
 const startUpFactory = (store: Store) => async () => {
   // 注册菜单
@@ -71,7 +84,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, SelectExploreComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, QlDateModule],
   providers,

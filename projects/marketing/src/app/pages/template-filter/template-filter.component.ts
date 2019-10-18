@@ -1,4 +1,4 @@
-import { style } from '@angular/animations';
+// import { style } from '@angular/animations';
 import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core'
 import { ModalService } from '@app/shared/utils'
 import { QlMessageService } from 'qloud-angular'
