@@ -10,7 +10,10 @@
 <ng-template #selectionColumn>
   <ql-table-column model-key="__selection__" label="选择" width="60">
     <ng-template #slot let-scope="scope">
-      <ql-checkbox (modelChange)="onCheckChange($event, scope.rowData)"></ql-checkbox>
+      <ql-checkbox
+        [model]="scope.rowData.__selection__"
+        (modelChange)="onCheckChange($event, scope.rowData)"
+      ></ql-checkbox>
     </ng-template>
   </ql-table-column>
 </ng-template>

@@ -1,0 +1,13 @@
+[
+  {"id":"eq_001","type":"现金抵用券","name":"红包雨权益","chargeOffType":"核销后支付","company":"总行","upTime":"2010-10-18","count":"1000","lastCount":"99","expireTime":"2050-12-31"},
+  {"id":"eq_002","type":"现金红包券","name":"理财红包","chargeOffType":"核销后支付","company":"总行","upTime":"2010-10-18","count":"1000","lastCount":"10","expireTime":"2050-12-31"},
+  {"id":"eq_003","type":"流量充值包","name":"流量不够我给你充","chargeOffType":"核销后支付","company":"总行","upTime":"2010-10-18","count":"1000","lastCount":"20","expireTime":"2050-12-31"},
+  {"id":"eq_004","type":"电影票","name":"爱电影","chargeOffType":"核销后支付","company":"支行网点","upTime":"2010-10-18","count":"1000","lastCount":"30","expireTime":"2050-12-31"},
+  {"id":"eq_005","type":"会员码","name":"赢优酷会员","chargeOffType":"核销后支付","company":"支行网点","upTime":"2010-10-18","count":"1000","lastCount":"100","expireTime":"2050-12-31"},
+  {"id":"eq_007","type":"兑换券","name":"贷款赠品","chargeOffType":"赠予后核销","company":"支行网点","upTime":"2010-10-18","count":"1000","lastCount":"302","expireTime":"2050-12-31"},
+  {"id":"eq_008","type":"流量充值包","name":"充充充","chargeOffType":"赠予后核销","company":"支行网点","upTime":"2010-10-18","count":"1000","lastCount":"408","expireTime":"2050-12-31"},
+  {"id":"eq_006","type":"现金抵用券","name":"我帮你付","chargeOffType":"赠予后核销","company":"分行","upTime":"2010-10-18","count":"1000","lastCount":"555","expireTime":"2050-12-31"},
+  {"id":"eq_009","type":"电影票","name":"爱电影2","chargeOffType":"赠予后核销","company":"分行","upTime":"2010-10-18","count":"1000","lastCount":"332","expireTime":"2050-12-31"},
+  {"id":"eq_010","type":"会员码","name":"赢优酷会员","chargeOffType":"支付后核销","company":"分行","upTime":"2010-10-18","count":"1000","lastCount":"91","expireTime":"2050-12-31"},
+  {"id":"eq_011","type":"现金红包券","name":"理财红包","chargeOffType":"支付后核销","company":"其他","upTime":"2010-10-18","count":"1000","lastCount":"5","expireTime":"2050-12-31"}
+]

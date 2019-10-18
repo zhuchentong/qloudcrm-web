@@ -1,7 +1,7 @@
 <page-container>
   <data-form [showReset]="false" (submit)="onRefresh()" [button]="button" [action]="action">
     <ng-template #button>
-      <ql-button size="small" type="primary">全选</ql-button>
+      <ql-button size="small" type="primary" (click)="table.toggleSelection()">全选</ql-button>
     </ng-template>
     <ng-template #action>
       <ql-button type="success" (click)="modalRef.close(true)">提交</ql-button>
@@ -32,7 +32,7 @@
     </ql-form-item>
   </data-form>
 
-  <data-table [model]="customerList" [selection]="true">
+  <data-table #table [model]="customerList" [selection]="true">
     <ql-table-column model-key="ctCode" label="客户编号"> </ql-table-column>
     <ql-table-column model-key="ctName" label="客户姓名"> </ql-table-column>
     <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>

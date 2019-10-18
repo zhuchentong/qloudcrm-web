@@ -1,0 +1,61 @@
+<page-header title="权益管理" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>新增权益</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action>
+    <ql-button type="primary">提交</ql-button>
+  </ng-template>
+</page-header>
+<page-container>
+  <ql-card header="新增权益">
+    <ql-form label-width="120px" ql-row>
+      <ql-form-item ql-col  label="权益类型">
+        <ql-input></ql-input>
+      </ql-form-item>
+      <ql-form-item ql-col  label="权益名称">
+        <ql-input type="textarea" [autosize]="{ minRows: 6, maxRows: 12 }"></ql-input>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="核销方式">
+        <ql-date-picker></ql-date-picker>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="提供服务商">
+        <ql-date-picker></ql-date-picker>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="权益总数量">
+        <ql-select></ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="到期时间">
+        <ql-select></ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="权益描述">
+        <ql-select></ql-select>
+      </ql-form-item>
+
+      <ql-form-item ql-col span="12" label="适用范围">
+        <ql-select></ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="权益特征">
+        <ql-select></ql-select>
+      </ql-form-item>
+
+      <ql-form-item ql-col span="12" label="兑换码上传">
+        <ql-select></ql-select>
+      </ql-form-item>
+
+      <ql-form-item ql-col span="12" label="支持客户级别">
+      <ql-select></ql-select>
+    </ql-form-item>
+
+      <ql-form-item ql-col span="12" label="支持卡片性质">
+        <ql-select></ql-select>
+      </ql-form-item>
+
+      <ql-form-item ql-col span="12" label="支持渠道方式">
+        <ql-select></ql-select>
+      </ql-form-item>
+    </ql-form>
+  </ql-card>
+</page-container>
