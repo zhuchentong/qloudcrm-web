@@ -26,7 +26,8 @@ import { RecommendListComponent } from './pages/recommend-list/recommend-list.co
 import { ExploreCreateComponent } from './pages/explore-create/explore-create.component'
 import { TemplateFilterComponent } from './pages/template-filter/template-filter.component';
 import { TemplateDetailComponent } from './pages/template-detail/template-detail.component';
-import { TagComponent } from './components/tag/tag.component'
+import { TagComponent } from './components/tag/tag.component';
+import { AddTemplateComponent } from './pages/add-template/add-template.component'
 
 
 // 页面列表
@@ -42,7 +43,8 @@ const PAGES = [
   ConflictDetialComponent,
   ChannelListComponent,
   TemplateFilterComponent,
-  TemplateDetailComponent
+  TemplateDetailComponent,
+  AddTemplateComponent
 ]
 
 
@@ -66,7 +68,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, TemplateFilterComponent, TemplateDetailComponent, TagComponent, ChannelListComponent, ConflictDetialComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, TemplateFilterComponent, TemplateDetailComponent, TagComponent, ChannelListComponent, ConflictDetialComponent, AddTemplateComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, QlDateModule],
   providers,

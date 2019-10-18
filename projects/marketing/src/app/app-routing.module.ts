@@ -13,6 +13,7 @@ import { RecommendListComponent } from './pages/recommend-list/recommend-list.co
 import { ExploreCreateComponent } from './pages/explore-create/explore-create.component'
 import { TemplateFilterComponent } from './pages/template-filter/template-filter.component'
 import { TemplateDetailComponent } from './pages/template-detail/template-detail.component'
+import { AddTemplateComponent } from './pages/add-template/add-template.component'
 
 
 
@@ -28,7 +29,8 @@ const routes: Routes = [
   { path: 'marketing/channel-list', component: ChannelListComponent },
   { path: 'marketing/conflict-detial/:id', component: ConflictDetialComponent },
   { path: 'marketing/template-filter', component: TemplateFilterComponent },
-  { path: 'marketing/template-detail', component: TemplateDetailComponent }
+  { path: 'marketing/template-detail', component: TemplateDetailComponent },
+  { path: 'marketing/add-template', component: AddTemplateComponent }
 ]
 
 routes.push({
