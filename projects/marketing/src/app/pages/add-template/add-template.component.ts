@@ -4,7 +4,6 @@ import { QlMessageService } from 'qloud-angular'
 import { ApiService } from '../../services/api.service'
 import { FormGroup, FormBuilder } from '@angular/forms'
 
-import { TagComponent } from '../../components/tag/tag.component'
 
 @Component({
   selector: 'app-add-template',

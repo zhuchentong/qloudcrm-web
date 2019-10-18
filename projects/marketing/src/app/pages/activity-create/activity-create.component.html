@@ -1,67 +1,67 @@
 <page-header title="创建活动" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>活动管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>创建活动</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
-  <ng-template #action>
-    <ql-button type="primary">提交</ql-button>
-  </ng-template>
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>活动管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>创建活动</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+    <ng-template #action>
+        <ql-button type="primary">提交</ql-button>
+    </ng-template>
 </page-header>
 
 <page-container>
-  <ql-card header="活动信息">
-    <ql-form label-width="120px" ql-row>
-      <ql-form-item ql-col span="12" label="活动名称">
-        <ql-input></ql-input>
-      </ql-form-item>
-      <ql-form-item ql-col span="24" label="活动内容及方案">
-        <ql-input type="textarea" [autosize]="{ minRows: 6, maxRows: 12 }"></ql-input>
-      </ql-form-item>
-      <ql-form-item ql-col span="12" label="活动开始时间">
-        <ql-date-picker></ql-date-picker>
-      </ql-form-item>
-      <ql-form-item ql-col span="12" label="活动结束时间">
-        <ql-date-picker></ql-date-picker>
-      </ql-form-item>
-      <ql-form-item ql-col span="12" label="渠道选择">
-        <ql-select></ql-select>
-      </ql-form-item>
-      <ql-form-item ql-col span="12" label="营销要求">
-        <ql-select></ql-select>
-      </ql-form-item>
-      <ql-form-item ql-col span="12" label="营销监测时间">
-        <ql-select></ql-select>
-      </ql-form-item>
-    </ql-form>
-  </ql-card>
-  <ql-card>
-    <ng-template #header card-header>
-      <card-header title="活动用户">
-        <ql-button type="primary" (click)="onSelectCustomer()" size="small">添加用户</ql-button>
-        <ql-button type="primary" size="small">添加探索</ql-button>
-        <ql-upload class="ql-margin-left" [show-file-list]="false">
-          <ng-template #trigger>
-            <ql-button size="small" type="primary">导入用户</ql-button>
-          </ng-template>
-        </ql-upload>
-      </card-header>
-    </ng-template>
-    <data-table [model]="customerList">
-      <ql-table-column model-key="ctCode" label="客户编号"> </ql-table-column>
-      <ql-table-column model-key="ctName" label="客户姓名"> </ql-table-column>
-      <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>
-      <ql-table-column model-key="ctage" label="年龄" width="80"> </ql-table-column>
-      <ql-table-column model-key="ctType" label="客户类型"> </ql-table-column>
-      <ql-table-column model-key="ctLevel" label="客户等级"> </ql-table-column>
-      <ql-table-column model-key="ctTel" label="客户电话"> </ql-table-column>
-      <ql-table-column model-key="time" label="开户时间"> </ql-table-column>
-    </data-table>
-  </ql-card>
-  <ql-card header="活动阶梯"> </ql-card>
-  <ql-card header="活动目标"> </ql-card>
+    <ql-card header="活动信息">
+        <ql-form label-width="120px" ql-row>
+            <ql-form-item ql-col span="12" label="活动名称">
+                <ql-input></ql-input>
+            </ql-form-item>
+            <ql-form-item ql-col span="24" label="活动内容及方案">
+                <ql-input type="textarea" [autosize]="{ minRows: 6, maxRows: 12 }"></ql-input>
+            </ql-form-item>
+            <ql-form-item ql-col span="12" label="活动开始时间">
+                <ql-date-picker></ql-date-picker>
+            </ql-form-item>
+            <ql-form-item ql-col span="12" label="活动结束时间">
+                <ql-date-picker></ql-date-picker>
+            </ql-form-item>
+            <ql-form-item ql-col span="12" label="渠道选择">
+                <ql-select></ql-select>
+            </ql-form-item>
+            <ql-form-item ql-col span="12" label="营销要求">
+                <ql-select></ql-select>
+            </ql-form-item>
+            <ql-form-item ql-col span="12" label="营销监测时间">
+                <ql-select></ql-select>
+            </ql-form-item>
+        </ql-form>
+    </ql-card>
+    <ql-card>
+        <ng-template #header card-header>
+            <card-header title="活动用户">
+                <ql-button type="primary" (click)="onSelectCustomer()" size="small">添加用户</ql-button>
+                <ql-button type="primary" size="small">添加探索</ql-button>
+                <ql-upload class="ql-margin-left" [show-file-list]="false">
+                    <ng-template #trigger>
+                        <ql-button size="small" type="primary">导入用户</ql-button>
+                    </ng-template>
+                </ql-upload>
+            </card-header>
+        </ng-template>
+        <data-table [model]="customerList">
+            <ql-table-column model-key="ctCode" label="客户编号"> </ql-table-column>
+            <ql-table-column model-key="ctName" label="客户姓名"> </ql-table-column>
+            <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>
+            <ql-table-column model-key="ctage" label="年龄" width="80"> </ql-table-column>
+            <ql-table-column model-key="ctType" label="客户类型"> </ql-table-column>
+            <ql-table-column model-key="ctLevel" label="客户等级"> </ql-table-column>
+            <ql-table-column model-key="ctTel" label="客户电话"> </ql-table-column>
+            <ql-table-column model-key="time" label="开户时间"> </ql-table-column>
+        </data-table>
+    </ql-card>
+    <ql-card header="活动阶梯"> </ql-card>
+    <ql-card header="活动目标"> </ql-card>
 </page-container>
 
 <ng-template #eventList></ng-template>

@@ -3,6 +3,9 @@ import { Injectable } from '@angular/core'
 import { of } from 'rxjs'
 
 import TemplatelistList from '../../assets/json/template-list.json'
+import customerDelList from '../../assets/json/customer-del.json'
+
+
 import customerTagList from '../../assets/json/customer-tag.json'
 import customerList from '../../assets/json/customer.json'
 import MarketActivationConfliction from '../../assets/json/marketActivationConfliction.json'
@@ -32,6 +35,10 @@ export class ApiService {
 
   public getMarketChannelOpertion() {
     return of(MarketChannelOperation)
+  }
+
+  public getcustomerDelList (){
+    return of(customerDelList)
   }
 
   public getRecommendManageList() {
