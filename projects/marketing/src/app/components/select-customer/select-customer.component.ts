@@ -4,7 +4,8 @@ import { ModalRef } from '@app/shared/utils'
 @Component({
   selector: 'app-select-customer',
   templateUrl: './select-customer.component.html',
-  styleUrls: ['./select-customer.component.scss']
+  styleUrls: ['./select-customer.component.scss'],
+  providers: [ModalRef]
 })
 export class SelectCustomerComponent implements OnInit {
   public customerList: any[] = []
