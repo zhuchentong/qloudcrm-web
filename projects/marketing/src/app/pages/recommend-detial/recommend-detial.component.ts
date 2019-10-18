@@ -69,7 +69,7 @@ export class RecommendDetialComponent implements OnInit {
     {
       contactTime: '2010-01-01',
       product: '健康理财宝C类',
-      right: '送积分',
+      right: '会员码',
       channel: '手机APP',
       record: '推荐过程',
       result: '确认购买'
@@ -77,7 +77,7 @@ export class RecommendDetialComponent implements OnInit {
     {
       contactTime: '2011-03-01',
       product: '天天一份利',
-      right: '送话费',
+      right: '现金红包券',
       channel: '呼叫中心',
       record: '推荐过程',
       result: '感兴趣，后期购买'
@@ -85,7 +85,7 @@ export class RecommendDetialComponent implements OnInit {
     {
       contactTime: '2012-02-01',
       product: '聚益生金A',
-      right: '红包',
+      right: '现金红包券',
       channel: '客户经理',
       record: '推荐过程',
       result: '犹豫期期待跟进'
@@ -93,7 +93,7 @@ export class RecommendDetialComponent implements OnInit {
     {
       contactTime: '2013-06-01',
       product: '健康理财宝C类',
-      right: '低利率贷款',
+      right: '现金抵用券',
       channel: '网点柜面',
       record: '推荐过程',
       result: '不感兴趣'
@@ -101,7 +101,7 @@ export class RecommendDetialComponent implements OnInit {
     {
       contactTime: '2014-07-01',
       product: '聚益生金A',
-      right: '分期面手续费',
+      right: '话费充值包',
       channel: '手机APP',
       record: '推荐过程',
       result: '客户联系不到'
@@ -109,7 +109,7 @@ export class RecommendDetialComponent implements OnInit {
     {
       contactTime: '2015-09-01',
       product: '天天一份利',
-      right: '送积分',
+      right: '话费充值包',
       channel: '手机APP',
       record: '推荐过程',
       result: '客户联系方式无效'
@@ -117,7 +117,7 @@ export class RecommendDetialComponent implements OnInit {
     {
       contactTime: '2016-10-01',
       product: '朝朝盈',
-      right: '红包',
+      right: '电影票',
       channel: '呼叫中心',
       record: '推荐过程',
       result: '犹豫期期待跟进'
@@ -125,7 +125,7 @@ export class RecommendDetialComponent implements OnInit {
     {
       contactTime: '2017-11-01',
       product: '健康理财宝B类',
-      right: '低利率贷款',
+      right: '电影票',
       channel: '客户经理',
       record: '推荐过程',
       result: '感兴趣，后期购买'
@@ -133,7 +133,7 @@ export class RecommendDetialComponent implements OnInit {
     {
       contactTime: '2018-12-01',
       product: '聚益生金C',
-      right: '首月高利率',
+      right: '兑换券',
       channel: '手机APP',
       record: '推荐过程',
       result: '确认购买'

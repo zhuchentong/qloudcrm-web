@@ -16,6 +16,8 @@ import { TemplateDetailComponent } from './pages/template-detail/template-detail
 import { ActivityCreateComponent } from './pages/activity-create/activity-create.component'
 import { AddTemplateComponent } from './pages/add-template/add-template.component'
 import { RecommendDetialComponent } from './pages/recommend-detial/recommend-detial.component'
+import { EquitiesListComponent } from './pages/equities-list/equities-list.component'
+import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component'
 
 const routes: Routes = [
   { path: 'marketing/activity-list', component: ActivityListComponent },
@@ -32,7 +34,9 @@ const routes: Routes = [
   { path: 'marketing/conflict-detial/:id', component: ConflictDetialComponent },
   { path: 'marketing/template-filter', component: TemplateFilterComponent },
   { path: 'marketing/template-detail', component: TemplateDetailComponent },
-  { path: 'marketing/add-template', component: AddTemplateComponent }
+  { path: 'marketing/add-template', component: AddTemplateComponent },
+  { path: 'marketing/equities-list', component: EquitiesListComponent },
+  { path: 'marketing/equities-create', component: EquitiesCreateComponent }
 ]
 
 routes.push({

@@ -11,7 +11,7 @@
         <div ql-row>
           <div class="row wrapinfo">
 
-            <label-container column="4" [border]="true" labelWidth="160">
+            <label-container column="3" [border]="true" labelWidth="160">
               <label-item label="活动编号">{{conflictDetial.actvdCode}}</label-item>
               <label-item label="活动名称">{{conflictDetial.actvdName}}</label-item>
               <label-item label="活动渠道">{{conflictDetial.mrktChnl}}</label-item>
@@ -27,7 +27,7 @@
         </div>
         <div ql-row>
           <div class="row wrapinfo ql-padding">
-            <div class="rightcss" ql-col [span]="20">
+            <div class="rightcss" ql-col >
               <h4>冲突营销活动详情</h4>
           <ql-collapse  [model]="[1]"  *ngFor="let conflictinfo of conflictList" [accordion]="true">
             <ql-collapse-item   value="1">
