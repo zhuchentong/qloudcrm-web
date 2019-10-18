@@ -1,69 +1,235 @@
 <page-header title="创建活动" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
-    <ng-template #breadcrumb>
-        <ql-breadcrumb>
-            <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
-            <ql-breadcrumb-item>活动管理</ql-breadcrumb-item>
-            <ql-breadcrumb-item>创建活动</ql-breadcrumb-item>
-        </ql-breadcrumb>
-    </ng-template>
-    <ng-template #action>
-        <ql-button type="primary">提交</ql-button>
-    </ng-template>
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>活动管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>创建活动</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action>
+    <ql-button type="primary">提交</ql-button>
+  </ng-template>
 </page-header>
 
 <page-container>
-    <ql-card header="活动信息">
+  <tab-container>
+    <tab-item title="活动信息">
+      <ql-card header="基本信息">
         <ql-form label-width="120px" ql-row>
-            <ql-form-item ql-col span="12" label="活动名称">
-                <ql-input></ql-input>
-            </ql-form-item>
-            <ql-form-item ql-col span="24" label="活动内容及方案">
-                <ql-input type="textarea" [autosize]="{ minRows: 6, maxRows: 12 }"></ql-input>
-            </ql-form-item>
-            <ql-form-item ql-col span="12" label="活动开始时间">
-                <ql-date-picker></ql-date-picker>
-            </ql-form-item>
-            <ql-form-item ql-col span="12" label="活动结束时间">
-                <ql-date-picker></ql-date-picker>
-            </ql-form-item>
-            <ql-form-item ql-col span="12" label="渠道选择">
-                <ql-select></ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="12" label="营销要求">
-                <ql-select></ql-select>
-            </ql-form-item>
-            <ql-form-item ql-col span="12" label="营销监测时间">
-                <ql-select></ql-select>
-            </ql-form-item>
+          <ql-form-item ql-col span="12" label="活动名称">
+            <ql-input></ql-input>
+          </ql-form-item>
+          <ql-form-item ql-col span="24" label="活动内容及方案">
+            <ql-input type="textarea" [autosize]="{ minRows: 6, maxRows: 12 }"></ql-input>
+          </ql-form-item>
+          <ql-form-item ql-col span="12" label="活动开始时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item ql-col span="12" label="活动结束时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item ql-col span="12" label="监测开始时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item ql-col span="12" label="监测结束时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item ql-col span="12" label="渠道选择">
+            <ql-select>
+              <ql-option label="短信" value="短信"></ql-option>
+              <ql-option label="人工" value="人工"></ql-option>
+              <ql-option label="邮件" value="邮件"></ql-option>
+              <ql-option label="管户经理" value="管户经理"></ql-option>
+              <ql-option label="柜面" value="柜面"></ql-option>
+              <ql-option label="网银" value="网银"></ql-option>
+            </ql-select>
+          </ql-form-item>
+          <ql-form-item ql-col span="12" label="资源预算">
+            <ql-input></ql-input>
+          </ql-form-item>
+          <ql-form-item ql-col span="24" label="关键字">
+            <ql-input></ql-input>
+          </ql-form-item>
         </ql-form>
-    </ql-card>
-    <ql-card>
-        <ng-template #header card-header>
-            <card-header title="活动用户">
-                <ql-button type="primary" (click)="onSelectCustomer()" size="small">添加用户</ql-button>
-                <ql-button type="primary" size="small">添加探索</ql-button>
-                <ql-upload class="ql-margin-left" [show-file-list]="false">
-                    <ng-template #trigger>
-                        <ql-button size="small" type="primary">导入用户</ql-button>
-                    </ng-template>
-                </ql-upload>
-            </card-header>
+      </ql-card>
+      <ql-card>
+        <ng-template #header>
+          <card-header title="营销要求">
+            <ql-button type="primary" (click)="activityClaim.push({ date: '', value: '' })" size="small"
+              >添加目标</ql-button
+            >
+          </card-header>
+        </ng-template>
+        <ql-form ql-row label-width="100px">
+          <ng-container *ngFor="let item of activityClaim; let i = index">
+            <ql-form-item ql-col span="10" label="要求日期">
+              <ql-date-picker [model]="item.date"></ql-date-picker>
+            </ql-form-item>
+            <ql-form-item ql-col span="10" label="成功率">
+              <ql-input [model]="item.value"></ql-input>
+            </ql-form-item>
+            <div ql-col span="4" class="text-center">
+              <ql-button (click)="activityClaim.splice(i, 1)" type="text" *ngIf="i > 0">X</ql-button>
+            </div>
+          </ng-container>
+        </ql-form>
+      </ql-card>
+      <ql-card>
+        <ng-template #header>
+          <card-header title="活动事件">
+            <ql-button type="primary" (click)="onSelectEvent()" size="small">添加事件</ql-button>
+          </card-header>
+        </ng-template>
+        <data-table [model]="eventList">
+          <ql-table-column model-key="eventType" label="事件类型"> </ql-table-column>
+          <ql-table-column model-key="eventName" label="事件名称"> </ql-table-column>
+        </data-table>
+      </ql-card>
+      <ql-card>
+        <ng-template #header>
+          <card-header title="广告页面">
+            <ql-button type="primary" (click)="onSelectAd()" size="small">添加广告事件</ql-button>
+          </card-header>
+        </ng-template>
+        <data-table [model]="adList">
+          <ql-table-column model-key="eventType" label="事件类型"> </ql-table-column>
+          <ql-table-column model-key="eventName" label="事件名称"> </ql-table-column>
+        </data-table>
+      </ql-card>
+      <ql-card>
+        <ng-template #header>
+          <card-header title="活动产品">
+            <ql-button type="primary" (click)="onSelectProduct()" size="small">添加产品</ql-button>
+          </card-header>
+        </ng-template>
+        <data-table [model]="productList">
+          <ql-table-column model-key="productName" label="产品名称"> </ql-table-column>
+        </data-table>
+      </ql-card>
+      <ql-card>
+        <ng-template #header>
+          <card-header title="活动用户">
+            <ql-button type="primary" (click)="onSelectCustomer()" size="small">添加用户</ql-button>
+            <ql-button type="primary" (click)="onSelectExplore()" size="small">添加探索</ql-button>
+            <ql-upload class="ql-margin-left" [show-file-list]="false">
+              <ng-template #trigger>
+                <ql-button size="small" type="primary">导入用户</ql-button>
+              </ng-template>
+            </ql-upload>
+          </card-header>
         </ng-template>
         <data-table [model]="customerList">
-            <ql-table-column model-key="ctCode" label="客户编号"> </ql-table-column>
-            <ql-table-column model-key="ctName" label="客户姓名"> </ql-table-column>
-            <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>
-            <ql-table-column model-key="ctage" label="年龄" width="80"> </ql-table-column>
-            <ql-table-column model-key="ctType" label="客户类型"> </ql-table-column>
-            <ql-table-column model-key="ctLevel" label="客户等级"> </ql-table-column>
-            <ql-table-column model-key="ctTel" label="客户电话"> </ql-table-column>
-            <ql-table-column model-key="time" label="开户时间"> </ql-table-column>
+          <ql-table-column model-key="ctCode" label="客户编号"> </ql-table-column>
+          <ql-table-column model-key="ctName" label="客户姓名"> </ql-table-column>
+          <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>
+          <ql-table-column model-key="ctage" label="年龄" width="80"> </ql-table-column>
+          <ql-table-column model-key="ctType" label="客户类型"> </ql-table-column>
+          <ql-table-column model-key="ctLevel" label="客户等级"> </ql-table-column>
+          <ql-table-column model-key="ctTel" label="客户电话"> </ql-table-column>
+          <ql-table-column model-key="time" label="开户时间"> </ql-table-column>
         </data-table>
-    </ql-card>
-    <ql-card header="活动阶梯"> </ql-card>
-    <ql-card header="活动目标"> </ql-card>
+      </ql-card>
+      <ql-card>
+        <ng-template #header>
+          <card-header title="权益列表">
+            <ql-button type="primary" (click)="onSelectInterest()" size="small">添加权益</ql-button>
+          </card-header>
+        </ng-template>
+        <data-table [model]="interestList">
+          <ql-table-column model-key="name" label="权益名称"> </ql-table-column>
+        </data-table>
+      </ql-card>
+    </tab-item>
+    <tab-item title="活动阶梯">
+      <ql-form ql-row>
+        <ql-form-item ql-col span="10" label="阶梯开始时间">
+          <ql-date-picker #startPicker size="small"></ql-date-picker>
+        </ql-form-item>
+        <ql-form-item ql-col span="10" label="阶梯结束时间">
+          <ql-date-picker #endPicker size="small"></ql-date-picker>
+        </ql-form-item>
+        <div ql-col span="4" class="text-center">
+          <ql-button size="small" type="primary" (click)="addLadder(startPicker, endPicker)">添加阶梯</ql-button>
+        </div>
+      </ql-form>
+      <ql-collapse>
+        <ql-collapse-item
+          *ngFor="let item of ladderList; let i = index"
+          [label]="item.startTime + ' - ' + item.endTime"
+          [value]="i"
+        >
+          <ql-card>
+            <ng-template #header>
+              <card-header title="营销要求">
+                <ql-button type="primary" (click)="item.activityTarget.push({ type: '', value: '' })" size="small"
+                  >添加目标</ql-button
+                >
+              </card-header>
+            </ng-template>
+            <ql-form ql-row label-width="100px">
+              <ng-container *ngFor="let item of item.activityTarget; let i = index">
+                <ql-form-item ql-col span="10" label="目标类型">
+                  <ql-select [model]="item.type">
+                    <ql-option *ngFor="let value of activeTargetType" [label]="value" [value]="value"></ql-option>
+                  </ql-select>
+                </ql-form-item>
+                <ql-form-item ql-col span="10" label="目标值">
+                  <ql-input [model]="item.value"></ql-input>
+                </ql-form-item>
+                <div ql-col span="4" class="text-center">
+                  <ql-button (click)="item.activityTarget.splice(i, 1)" type="text" *ngIf="i > 0">X</ql-button>
+                </div>
+              </ng-container>
+            </ql-form>
+          </ql-card>
+          <ql-card>
+            <ng-template #header>
+              <card-header title="活动产品">
+                <ql-button type="primary" (click)="onSelectProduct()" size="small">添加产品</ql-button>
+              </card-header>
+            </ng-template>
+            <data-table [model]="item.productList">
+              <ql-table-column model-key="productName" label="产品名称"> </ql-table-column>
+            </data-table>
+          </ql-card>
+          <ql-card>
+            <ng-template #header>
+              <card-header title="权益列表">
+                <ql-button type="primary" (click)="onSelectInterest()" size="small">添加权益</ql-button>
+              </card-header>
+            </ng-template>
+            <data-table [model]="item.interestList">
+              <ql-table-column model-key="name" label="权益名称"> </ql-table-column>
+            </data-table>
+          </ql-card>
+        </ql-collapse-item>
+      </ql-collapse>
+    </tab-item>
+    <tab-item title="活动目标">
+      <ql-card>
+        <ng-template #header>
+          <card-header title="营销目标">
+            <ql-button type="primary" (click)="activityTarget.push({ type: '', value: '' })" size="small"
+              >添加目标</ql-button
+            >
+          </card-header>
+        </ng-template>
+        <ql-form ql-row label-width="100px">
+          <ng-container *ngFor="let item of activityTarget; let i = index">
+            <ql-form-item ql-col span="10" label="目标类型">
+              <ql-select [model]="item.type">
+                <ql-option *ngFor="let value of activeTargetType" [label]="value" [value]="value"></ql-option>
+              </ql-select>
+            </ql-form-item>
+            <ql-form-item ql-col span="10" label="目标值">
+              <ql-input [model]="item.value"></ql-input>
+            </ql-form-item>
+            <div ql-col span="4" class="text-center">
+              <ql-button (click)="activityTarget.splice(i, 1)" type="text" *ngIf="i > 0">X</ql-button>
+            </div>
+          </ng-container>
+        </ql-form>
+      </ql-card>
+    </tab-item>
+  </tab-container>
 </page-container>
-
-<ng-template #eventList></ng-template>
-<ng-template #adList></ng-template>
-<ng-template #productList></ng-template>

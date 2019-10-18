@@ -1,1 +1,18 @@
-<p>select-explore works!</p>
+<data-form [showReset]="false" (submit)="onRefresh()" [button]="button" [action]="action">
+  <ng-template #button>
+    <ql-button size="small" type="primary" (click)="table.toggleSelection()">全选</ql-button>
+  </ng-template>
+  <ng-template #action>
+    <ql-button type="success" (click)="modalRef.close(true)">提交</ql-button>
+  </ng-template>
+  <ql-form-item label="探索名称">
+    <ql-input> </ql-input>
+  </ql-form-item>
+</data-form>
+<data-table #table [model]="exploreList">
+  <ql-table-column model-key="name" label="探索名称"></ql-table-column>
+  <ql-table-column model-key="time" label="探索耗时"></ql-table-column>
+  <ql-table-column model-key="createTime" label="创建时间"></ql-table-column>
+  <ql-table-column model-key="status " label="探索状态"></ql-table-column>
+  <ql-table-column model-key="count" label="客户数量"></ql-table-column>
+</data-table>
