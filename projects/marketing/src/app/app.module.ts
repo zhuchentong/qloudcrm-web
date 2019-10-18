@@ -35,7 +35,8 @@ import { SelectEventComponent } from './components/select-event/select-event.com
 import { SelectInterestComponent } from './components/select-interest/select-interest.component'
 import { SelectExploreComponent } from './components/select-explore/select-explore.component'
 import { RecommendDetialComponent } from './pages/recommend-detial/recommend-detial.component';
-import { EquitiesListComponent } from './pages/equities-list/equities-list.component'
+import { EquitiesListComponent } from './pages/equities-list/equities-list.component';
+import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component'
 
 // 页面列表
 const PAGES = [
@@ -59,7 +60,8 @@ const PAGES = [
   ActivityCreateComponent,
   AddTemplateComponent,
   RecommendDetialComponent,
-  EquitiesListComponent
+  EquitiesListComponent,
+  EquitiesCreateComponent
 ]
 
 // 组件列表
