@@ -6,8 +6,8 @@ import { of } from 'rxjs'
 import TemplatelistList from  '../../assets/json/template-list.json'
 import customerTagList from  '../../assets/json/customer-tag.json'
 
-// import MarketActivationConfliction from '../../assets/json/marketActivationConfliction.json'
-// import MarketChannelOperation from '../../assets/json/marketChannelOperation.json'
+import MarketActivationConfliction from '../../assets/json/marketActivationConfliction.json'
+import MarketChannelOperation from '../../assets/json/marketChannelOperation.json'
 
 @Injectable()
 export class ApiService {
