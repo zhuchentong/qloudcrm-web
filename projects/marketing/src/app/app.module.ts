@@ -35,12 +35,9 @@ import { SelectEventComponent } from './components/select-event/select-event.com
 import { SelectInterestComponent } from './components/select-interest/select-interest.component'
 import { SelectExploreComponent } from './components/select-explore/select-explore.component'
 import { RecommendDetialComponent } from './pages/recommend-detial/recommend-detial.component';
-<<<<<<< HEAD
 import { ExploreResultComponent } from './pages/explore-result/explore-result.component'
-=======
 import { EquitiesListComponent } from './pages/equities-list/equities-list.component';
 import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component'
->>>>>>> 1d79e2705bb323bf48d8a0b72aa7954cb765315c
 
 // 页面列表
 const PAGES = [
@@ -64,12 +61,9 @@ const PAGES = [
   ActivityCreateComponent,
   AddTemplateComponent,
   RecommendDetialComponent,
-<<<<<<< HEAD
-  ExploreResultComponent
-=======
+  ExploreResultComponent,
   EquitiesListComponent,
   EquitiesCreateComponent
->>>>>>> 1d79e2705bb323bf48d8a0b72aa7954cb765315c
 ]
 
 // 组件列表
