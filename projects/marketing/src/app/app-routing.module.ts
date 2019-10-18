@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'marketing/template-filter', component: TemplateFilterComponent },
   { path: 'marketing/template-detail', component: TemplateDetailComponent },
   { path: 'marketing/add-template', component: AddTemplateComponent },
-  { path: '/marketing/equities-list', component: EquitiesListComponent }
+  { path: 'marketing/equities-list', component: EquitiesListComponent }
 ]
 
 routes.push({
