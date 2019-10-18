@@ -86,18 +86,31 @@ export class DataTableComponent implements OnInit {
     this.table.transformColumnsData()
   }
 
+  public toggleSelection() {
+    const value = this.selectionList.length < this.table.model.length
+
+    if (this.table.model) {
+      this.table.model.forEach(x => {
+        x.__selection__ = value
+        this.onCheckChange(value, x)
+      })
+    }
+
+    this.table.transformModelData()
+  }
+
   public onPageChange(index) {
     this.page.pageIndex = index
     this.pageChangeEvent.emit(index)
   }
 
+  // TODO:修正选择列表
   public onCheckChange(value, data) {
     if (value) {
       this.selectionList.push(data)
     } else {
       this.selectionList = this.selectionList.filter(x => x !== data)
     }
-
     this.checkChangeEvent.emit(this.selectionList)
   }
 }

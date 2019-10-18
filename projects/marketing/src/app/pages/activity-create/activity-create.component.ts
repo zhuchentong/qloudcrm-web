@@ -20,6 +20,7 @@ export class ActivityCreateComponent implements OnInit {
       this.customerList = data
     })
   }
+
   public onSelectCustomer() {
     this.modal
       .open({
@@ -27,6 +28,8 @@ export class ActivityCreateComponent implements OnInit {
         size: 'huge',
         component: SelectCustomerComponent
       })
-      .subscribe(data => {})
+      .subscribe(data => {
+        this.getCustomerList()
+      })
   }
 }
