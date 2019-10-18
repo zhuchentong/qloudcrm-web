@@ -1,1 +1,22 @@
-<p>select-event works!</p>
+<page-container>
+  <data-form [showReset]="false" (submit)="onRefresh()" [button]="button" [action]="action">
+    <ng-template #button>
+      <ql-button size="small" type="primary" (click)="table.toggleSelection()">全选</ql-button>
+    </ng-template>
+    <ng-template #action>
+      <ql-button type="success" (click)="modalRef.close(true)">提交</ql-button>
+    </ng-template>
+    <ql-form-item label="事件类型">
+      <ql-select>
+        <ql-option label="交易"></ql-option>
+        <ql-option label="行为"></ql-option>
+        <ql-option label="时间"></ql-option>
+      </ql-select>
+    </ql-form-item>
+  </data-form>
+
+  <data-table #table [model]="eventList" [selection]="true" height="420px">
+    <ql-table-column model-key="eventType" label="事件类型"> </ql-table-column>
+    <ql-table-column model-key="eventName" label="事件名称"> </ql-table-column>
+  </data-table>
+</page-container>

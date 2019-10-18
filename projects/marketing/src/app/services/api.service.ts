@@ -5,16 +5,20 @@ import { of } from 'rxjs'
 import TemplatelistList from '../../assets/json/template-list.json'
 import customerDelList from '../../assets/json/customer-del.json'
 
-
 import customerTagList from '../../assets/json/customer-tag.json'
 import customerList from '../../assets/json/customer.json'
 import MarketActivationConfliction from '../../assets/json/marketActivationConfliction.json'
 import MarketChannelOperation from '../../assets/json/marketChannelOperation.json'
 import RecommendManageList from '../../assets/json/recommendmanagelist.json'
-import EquitiesManageList from '../../assets/json/equities-list.json';
+import eventList from '../../assets/json/event-list.json'
+import EquitiesManageList from '../../assets/json/equities-list.json'
 @Injectable()
 export class ApiService {
   constructor(private net: NetService) {}
+
+  public getEventList() {
+    return of(eventList)
+  }
 
   public getCustomerList() {
     return of(customerList)
@@ -38,7 +42,7 @@ export class ApiService {
     return of(MarketChannelOperation)
   }
 
-  public getcustomerDelList (){
+  public getcustomerDelList() {
     return of(customerDelList)
   }
 
