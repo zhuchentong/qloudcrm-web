@@ -32,8 +32,9 @@ import { AddTemplateComponent } from './pages/add-template/add-template.componen
 import { SelectCustomerComponent } from './components/select-customer/select-customer.component'
 import { SelectPruductComponent } from './components/select-pruduct/select-pruduct.component'
 import { SelectEventComponent } from './components/select-event/select-event.component'
-import { SelectInterestComponent } from './components/select-interest/select-interest.component';
+import { SelectInterestComponent } from './components/select-interest/select-interest.component'
 import { SelectExploreComponent } from './components/select-explore/select-explore.component'
+import { RecommendDetialComponent } from './pages/recommend-detial/recommend-detial.component'
 
 // 页面列表
 const PAGES = [
@@ -55,7 +56,8 @@ const PAGES = [
   ChannelListComponent,
   ConflictDetialComponent,
   ActivityCreateComponent,
-  AddTemplateComponent
+  AddTemplateComponent,
+  RecommendDetialComponent
 ]
 
 // 组件列表
@@ -64,7 +66,8 @@ const COMPONENTS = [
   SelectCustomerComponent,
   SelectPruductComponent,
   SelectEventComponent,
-  SelectInterestComponent
+  SelectInterestComponent,
+  SelectExploreComponent
 ]
 
 const startUpFactory = (store: Store) => async () => {
@@ -84,7 +87,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, SelectExploreComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, QlDateModule],
   providers,
