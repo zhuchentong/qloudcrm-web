@@ -1,39 +1,42 @@
 {
-  "default": "true",
-  "pluginName": "营销管理",
-  "pluginIcon": "",
-  "pluginAbbr": "UI",
-  "pluginImg": "/assets/images/svg/profile.svg",
-  "pluginPath": "marketing",
-  "pluginOrder": 1,
-  "pluginTab": [
-    {
-      "name": "目标探索",
-      "url": "#/marketing/explore-list"
-    },
-    {
-      "name": "活动管理",
-      "url": "#/marketing/activity-list"
-    },
-    {
-      "name": "冲突管理",
-      "url": "#/marketing/conflict-list"
-    },
-    {
-      "name": "渠道管理",
-      "url": "#/marketing/channel-list"
-    },
-    {
-      "name": "活动审批",
-      "url": "#/marketing/approval-list"
-    },
-    {
-      "name": "活动监控",
-      "url": "#/marketing/activity-monitor"
-    },
-    {
-      "name": "推介管理",
-      "url": "#/marketing/recommend-list"
-    }
-  ]
+    "default": "true",
+    "pluginName": "营销管理",
+    "pluginIcon": "",
+    "pluginAbbr": "UI",
+    "pluginImg": "/assets/images/svg/profile.svg",
+    "pluginPath": "marketing",
+    "pluginOrder": 1,
+    "pluginTab": [{
+            "name": "目标探索",
+            "url": "#/marketing/explore-list"
+        },
+        {
+            "name": "模板筛选",
+            "url": "#/marketing/template-filter"
+        },
+        {
+            "name": "活动管理",
+            "url": "#/marketing/activity-list"
+        },
+        {
+            "name": "冲突管理",
+            "url": "#/marketing/conflict-list"
+        },
+        {
+            "name": "渠道管理",
+            "url": "#/marketing/channel-list"
+        },
+        {
+            "name": "活动审批",
+            "url": "#/marketing/approval-list"
+        },
+        {
+            "name": "活动监控",
+            "url": "#/marketing/activity-monitor"
+        },
+        {
+            "name": "推介管理",
+            "url": "#/marketing/recommend-list"
+        }
+    ]
 }

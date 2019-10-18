@@ -11,6 +11,11 @@ import { ActivilyMonitorComponent } from './pages/activily-monitor/activily-moni
 import { ActivilyCommentComponent } from './pages/activily-comment/activily-comment.component'
 import { RecommendListComponent } from './pages/recommend-list/recommend-list.component'
 import { ExploreCreateComponent } from './pages/explore-create/explore-create.component'
+import { TemplateFilterComponent } from './pages/template-filter/template-filter.component'
+import { TemplateDetailComponent } from './pages/template-detail/template-detail.component'
+import { AddTemplateComponent } from './pages/add-template/add-template.component'
+
+
 
 const routes: Routes = [
   { path: 'marketing/activity-list', component: ActivityListComponent },
@@ -22,7 +27,10 @@ const routes: Routes = [
   { path: 'marketing/explore-create', component: ExploreCreateComponent },
   { path: 'marketing/conflict-list', component: ConflictListComponent },
   { path: 'marketing/channel-list', component: ChannelListComponent },
-  { path: 'marketing/conflict-detial/:id', component: ConflictDetialComponent }
+  { path: 'marketing/conflict-detial/:id', component: ConflictDetialComponent },
+  { path: 'marketing/template-filter', component: TemplateFilterComponent },
+  { path: 'marketing/template-detail', component: TemplateDetailComponent },
+  { path: 'marketing/add-template', component: AddTemplateComponent }
 ]
 
 routes.push({

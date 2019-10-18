@@ -1,0 +1,224 @@
+<page-header title="筛选模板" [breadcrumb]="breadcrumb" [action-group]="false">
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>筛选模板</ql-breadcrumb-item>
+            <ql-breadcrumb-item>筛选模板管理</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+</page-header>
+
+<page-container>
+    <data-form [showReset]="false" [formGroup]="formGroup" [button]="button">
+        <ql-form-item label="模板名称">
+            <ql-input></ql-input>
+        </ql-form-item>
+        <ql-form-item label="创建人">
+            <ql-select></ql-select>
+        </ql-form-item>
+        <ql-form-item label="创建机构">
+            <ql-select></ql-select>
+        </ql-form-item>
+        <ql-form-item label="创建日期">
+            <ql-date-picker> </ql-date-picker>
+        </ql-form-item>
+        <ql-form-item label="共享范围">
+            <ql-select placeholder="请选择" [clearable]="true">
+                <ql-option *ngFor="let item of shareData" [label]="item.label" [value]="item.value"> </ql-option>
+            </ql-select>
+        </ql-form-item>
+        <ql-form-item label="模板状态">
+            <ql-select placeholder="请选择" [clearable]="true">
+                <ql-option *ngFor="let item of stateData" [label]="item.label" [value]="item.value"> </ql-option>
+            </ql-select>
+        </ql-form-item>
+        <ng-template #button>
+            <ql-button size="small" type="primary" [routerLink]="['/marketing/add-template']">添加模板</ql-button>
+        </ng-template>
+    </data-form>
+
+    <data-table [model]="templateList">
+        <ql-table-column model-key="templateName" label="模板名称"> </ql-table-column>
+        <ql-table-column model-key="creatTime" label="创建时间"> </ql-table-column>
+        <ql-table-column model-key="institu" label="创建机构"> </ql-table-column>
+        <ql-table-column model-key="creator" label="创建人"> </ql-table-column>
+        <ql-table-column model-key="scope" label="共享范围"> </ql-table-column>
+        <ql-table-column model-key="templateState" label="模板状态"> </ql-table-column>
+        <ql-table-column label="操作">
+            <ng-template #slot let-scope="scope">
+                <ql-button type="text" size="small" [routerLink]="['/marketing/template-detail']">详情</ql-button>
+            </ng-template>
+        </ql-table-column>
+    </data-table>
+
+    <!-- 新建模板 -->
+    <!-- <ng-template #addTemplate>
+        <div>
+            <ql-form [inline]="true" ql-row label-width="110px" [formGroup]="formGroup">
+                <ql-card header="模板名称范围" class="ql-text-left">
+                    <div ql-row gutter="24">
+                        <div ql-col span="24">
+                            <ql-form-item label="筛选模板名称">
+                                <ql-input></ql-input>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12">
+                            <ql-form-item label="模板筛选范围">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of shareData" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12">
+                            <ql-form-item label="查询时间基点">
+                                <ql-date-picker></ql-date-picker>
+                            </ql-form-item>
+                        </div>
+                    </div>
+                </ql-card>
+                <ql-card header="客户基本属性" class="ql-text-left">
+                    <div ql-row gutter="12">
+                        <div ql-col span="12 ">
+                            <ql-form-item label="职业">
+                                <ql-input></ql-input>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12">
+                            <ql-form-item label="AUM">
+                                <ql-input></ql-input>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="24">
+                            <div ql-col span="12">
+                                <ql-form-item label="总资产">
+                                    <ql-input></ql-input>
+                                </ql-form-item>
+                            </div>
+                        </div>
+                        <div ql-col span="12">
+                            <ql-form-item label="性别">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of sexitems" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12 ">
+                            <ql-form-item label="年龄 ">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of ageitems" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12 ">
+                            <ql-form-item label="婚姻">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of marryitems" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12 ">
+                            <ql-form-item label="所属行业">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of jopTypeitems" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12 ">
+                            <ql-form-item label="客户等级">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of customerLevel" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12 ">
+                            <ql-form-item label="客户潜力值">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of customerPotential" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12 ">
+                            <ql-form-item label="学历 ">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of schoolitems" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12 ">
+                            <ql-form-item label="星级评级 ">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of starcomment" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12 ">
+                            <ql-form-item label="理财风险">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of lcrick" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12 ">
+                            <ql-form-item label="基金风险">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of jijinrick" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12">
+                            <ql-form-item label="开户时间 ">
+                                <ql-date-picker> </ql-date-picker>
+                            </ql-form-item>
+                        </div>
+                    </div>
+                </ql-card>
+                <div class="ql-text-left">
+                    <h4>已有标签</h4>
+                    <data-table ql-col [model]="tagList">
+                        <ql-table-column model-key="code" label="标签编码"></ql-table-column>
+                        <ql-table-column model-key="type" label="标签类别"></ql-table-column>
+                        <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
+                        <ql-table-column model-key="description" label="标签说明"></ql-table-column>
+                        <ql-table-column model-key="createTime" label="创建日期"></ql-table-column>
+                        <ql-table-column model-key="customerCount" label="客户数量"></ql-table-column>
+                        <ql-table-column model-key="state" label="标签状态"></ql-table-column>
+                    </data-table>
+                    <div ql-col [span]="24" class="ql-text-right ql-padding">
+                        <ql-button type="primary" size="small" (click)="addTagFun()">新加标签</ql-button>
+                    </div>
+                </div>
+                <ql-card header="客户产品属性筛选" class="ql-text-left">
+                    <div ql-row gutter="24">
+                        <data-table [model]="">
+                            <ql-table-column model-key="" label="产品名称"> </ql-table-column>
+                            <ql-table-column model-key="" label="产品代码"> </ql-table-column>
+                            <ql-table-column model-key="" label="产品类别"> </ql-table-column>
+                        </data-table>
+                    </div>
+                </ql-card>
+                <ql-card header="客户签约类型属性" class="ql-text-left">
+                    <div ql-row gutter="24">
+                        <div ql-col span="12">
+                            <ql-form-item label="签约类型 ">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of signType" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                        <div ql-col span="12">
+                            <ql-form-item label="参数值">
+                                <ql-select [clearable]="true">
+                                    <ql-option *ngFor="let item of paramValue" [label]="item.label" [value]="item.value"> </ql-option>
+                                </ql-select>
+                            </ql-form-item>
+                        </div>
+                    </div>
+                </ql-card>
+                <div ql-col [span]="24" class="ql-text-right ql-padding">
+                    <ql-button type="primary" size="small">保存</ql-button>
+                    <ql-button type="primary" size="small">提交</ql-button>
+                </div>
+            </ql-form>
+        </div>
+    </ng-template> -->
+
+</page-container>

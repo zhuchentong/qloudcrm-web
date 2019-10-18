@@ -25,6 +25,10 @@ import { ActivilyCommentComponent } from './pages/activily-comment/activily-comm
 import { RecommendListComponent } from './pages/recommend-list/recommend-list.component'
 import { ExploreCreateComponent } from './pages/explore-create/explore-create.component';
 import { RecommendDetialComponent } from './pages/recommend-detial/recommend-detial.component'
+import { TemplateFilterComponent } from './pages/template-filter/template-filter.component';
+import { TemplateDetailComponent } from './pages/template-detail/template-detail.component';
+import { TagComponent } from './components/tag/tag.component';
+import { AddTemplateComponent } from './pages/add-template/add-template.component'
 
 // 页面列表
 const PAGES = [
@@ -37,12 +41,15 @@ const PAGES = [
   ExploreCreateComponent,
   ConflictListComponent,
   ConflictDetialComponent,
-  ChannelListComponent
+  ChannelListComponent,
+  TemplateFilterComponent,
+  TemplateDetailComponent,
+  AddTemplateComponent
 ]
 
 
 // 组件列表
-const COMPONENTS = []
+const COMPONENTS = [TagComponent]
 
 const startUpFactory = (store: Store) => async () => {
   // 注册菜单
@@ -61,7 +68,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ChannelListComponent, ConflictDetialComponent, RecommendDetialComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, TemplateFilterComponent, TemplateDetailComponent, TagComponent, ChannelListComponent, ConflictDetialComponent, AddTemplateComponent,RecommendDetialComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, QlDateModule],
   providers,

@@ -1,0 +1,64 @@
+<page-header title="模板详情" [breadcrumb]="breadcrumb" [action-group]="false" [back]="true">
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>筛选模板</ql-breadcrumb-item>
+            <ql-breadcrumb-item>模板详情</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+</page-header>
+
+<page-container>
+    <ql-card header="模板信息">
+        <label-container column="3" [border]="true" labelWidth="160">
+            <label-item label="模板名称">理财通用模板</label-item>
+            <label-item label="创建时间">2019-08-30</label-item>
+            <label-item label="创建机构">兴业银行高新六路支行</label-item>
+            <label-item label="创建人">王文童</label-item>
+            <label-item label="共享范围">支行共享</label-item>
+            <label-item label="模板状态">创建中</label-item>
+        </label-container>
+    </ql-card>
+    <ql-card header="筛选客户基本属性">
+        <label-container column="3" [border]="true" labelWidth="160">
+            <label-item label="职业">律师</label-item>
+            <label-item label="AUM">3万</label-item>
+            <label-item label="总资产">180万</label-item>
+            <label-item label="性别">男</label-item>
+            <label-item label="年龄">30岁以上</label-item>
+            <label-item label="婚姻">已婚</label-item>
+            <label-item label="所属行业">信息咨询服务</label-item>
+            <label-item label="客户等级">白金客户</label-item>
+            <label-item label="客户潜力值">高</label-item>
+            <label-item label="学历">研究生</label-item>
+            <label-item label="星级评级">4星客户</label-item>
+            <label-item label="理财风险">中高</label-item>
+            <label-item label="基金风险">低</label-item>
+            <label-item label="开户时间">2019-08-12</label-item>
+        </label-container>
+    </ql-card>
+    <ql-card header="客户标签属性">
+        <div ql-row gutter="24">
+            <data-table [model]="tagList">
+                <ql-table-column model-key="code" label="标签编码"></ql-table-column>
+                <ql-table-column model-key="type" label="标签类别"></ql-table-column>
+                <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
+                <ql-table-column model-key="description" label="标签说明"></ql-table-column>
+                <ql-table-column model-key="createTime" label="创建日期"></ql-table-column>
+                <ql-table-column model-key="customerCount" label="客户数量"></ql-table-column>
+                <ql-table-column model-key="state" label="标签状态"></ql-table-column>
+            </data-table>
+        </div>
+    </ql-card>
+    <ql-card header="客户产品属性">
+        <!-- <label-container column="2" [border]="true">
+            <label-item label="签约类型"></label-item>
+            <label-item label="参数值"></label-item>
+        </label-container> -->
+    </ql-card>
+    <ql-card header="客户签约类型">
+        <label-container column="2" [border]="true">
+            <label-item label="签约类型"></label-item>
+            <label-item label="参数值"></label-item>
+        </label-container>
+    </ql-card>
+</page-container>
