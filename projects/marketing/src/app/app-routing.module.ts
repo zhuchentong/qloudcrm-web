@@ -14,6 +14,7 @@ import { ExploreCreateComponent } from './pages/explore-create/explore-create.co
 import { TemplateFilterComponent } from './pages/template-filter/template-filter.component'
 import { TemplateDetailComponent } from './pages/template-detail/template-detail.component'
 import { AddTemplateComponent } from './pages/add-template/add-template.component'
+import { RecommendDetialComponent } from './pages/recommend-detial/recommend-detial.component'
 
 
 
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'marketing/activity-monitor', component: ActivilyMonitorComponent },
   { path: 'marketing/activity-comment', component: ActivilyCommentComponent },
   { path: 'marketing/recommend-list', component: RecommendListComponent },
+  { path: 'marketing/recommend-detail/:id', component: RecommendDetialComponent },
   { path: 'marketing/explore-create', component: ExploreCreateComponent },
   { path: 'marketing/conflict-list', component: ConflictListComponent },
   { path: 'marketing/channel-list', component: ChannelListComponent },

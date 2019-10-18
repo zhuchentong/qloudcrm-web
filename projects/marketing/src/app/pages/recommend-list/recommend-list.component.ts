@@ -49,4 +49,8 @@ export class RecommendListComponent implements OnInit {
     })
   }
 
+  public toDetailPage(id:string){
+     this.router.navigate(['/marketing/recommend-detail',id])
+  }
+
 }

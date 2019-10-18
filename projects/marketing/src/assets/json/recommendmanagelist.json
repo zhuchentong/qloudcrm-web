@@ -1,4 +1,5 @@
 [{
+  "id": "recm_001",
   "origin": "客户经理",
   "product": "泰康稳健增利",
   "name": "张三",
@@ -10,6 +11,7 @@
   "deposeStatus": "未处理"
 },
   {
+    "id": "recm_002",
     "origin": "手机APP",
     "product": "聚益生金",
     "name": "李四",
@@ -21,6 +23,7 @@
     "deposeStatus": "已处理"
   },
   {
+    "id": "recm_003",
     "origin": "网银浏览",
     "product": "泰康稳健增利A",
     "name": "张三",
@@ -32,6 +35,7 @@
     "deposeStatus": "未处理"
   },
   {
+    "id": "recm_004",
     "origin": "网点柜面",
     "product": "泰康稳健增利C",
     "name": "张三",
@@ -43,6 +47,7 @@
     "deposeStatus": "未处理"
   },
   {
+    "id": "recm_005",
     "origin": "呼叫中心",
     "product": "泰康稳健增利",
     "name": "张三",
@@ -54,6 +59,7 @@
     "deposeStatus": "未处理"
   },
   {
+    "id": "recm_006",
     "origin": "微信公众号",
     "product": "泰康稳健增利",
     "name": "张三",
@@ -65,6 +71,7 @@
     "deposeStatus": "已处理"
   },
   {
+    "id": "recm_007",
     "origin": "手机APP",
     "product": "泰康稳健增利",
     "name": "张三",
@@ -76,6 +83,7 @@
     "deposeStatus": "已处理"
   },
   {
+    "id": "recm_008",
     "origin": "其他渠道",
     "product": "泰康稳健增利",
     "name": "张三",
@@ -87,6 +95,7 @@
     "deposeStatus": "未处理"
   },
   {
+    "id": "recm_009",
     "origin": "手机APP",
     "product": "泰康稳健增利",
     "name": "张三",
@@ -98,6 +107,7 @@
     "deposeStatus": "未处理"
   },
   {
+    "id": "recm_010",
     "origin": "客户经理",
     "product": "泰康稳健增利",
     "name": "张三",
@@ -109,117 +119,9 @@
     "deposeStatus": "已处理"
   },
   {
+    "id": "recm_011",
     "origin": "客户经理",
     "product": "泰康稳健增利",
-    "name": "张三",
-    "sex": "男",
-    "referrer": "王五",
-    "recommandTime": "2019-10-18",
-    "receiver": "张三",
-    "deposeTime": "2019-10-18",
-    "deposeStatus": "未处理"
-  },
-  {
-    "origin": "客户经理",
-    "product": "泰康稳健增利",
-    "name": "张三",
-    "sex": "男",
-    "referrer": "王五",
-    "recommandTime": "2019-10-18",
-    "receiver": "张三",
-    "deposeTime": "2019-10-18",
-    "deposeStatus": "未处理"
-  },
-  {
-    "origin": "客户经理",
-    "product": "泰康稳健增利",
-    "name": "张三",
-    "sex": "男",
-    "referrer": "王五",
-    "recommandTime": "2019-10-18",
-    "receiver": "张三",
-    "deposeTime": "2019-10-18",
-    "deposeStatus": "未处理"
-  },
-  {
-    "origin": "其他渠道",
-    "product": "泰康稳健增利",
-    "name": "张三",
-    "sex": "男",
-    "referrer": "王五",
-    "recommandTime": "2019-10-18",
-    "receiver": "张三",
-    "deposeTime": "2019-10-18",
-    "deposeStatus": "未处理"
-  },
-  {
-    "origin": "客户经理",
-    "product": "泰康稳健增利",
-    "name": "张三",
-    "sex": "男",
-    "referrer": "王五",
-    "recommandTime": "2019-10-18",
-    "receiver": "张三",
-    "deposeTime": "2019-10-18",
-    "deposeStatus": "未处理"
-  },
-  {
-    "origin": "客户经理",
-    "product": "泰康稳健增利",
-    "name": "张三",
-    "sex": "男",
-    "referrer": "王五",
-    "recommandTime": "2019-10-18",
-    "receiver": "张三",
-    "deposeTime": "2019-10-18",
-    "deposeStatus": "未处理"
-  },
-  {
-    "origin": "网银浏览",
-    "product": "泰康稳健增利",
-    "name": "美丽",
-    "sex": "女",
-    "referrer": "王五",
-    "recommandTime": "2019-10-18",
-    "receiver": "美丽",
-    "deposeTime": "2019-10-18",
-    "deposeStatus": "未处理"
-  },
-  {
-    "origin": "客户经理",
-    "product": "泰康稳健增利",
-    "name": "张三",
-    "sex": "男",
-    "referrer": "王五",
-    "recommandTime": "2019-10-18",
-    "receiver": "张三",
-    "deposeTime": "2019-10-18",
-    "deposeStatus": "未处理"
-  },{
-  "origin": "客户经理",
-  "product": "泰康稳健增利",
-  "name": "张三",
-  "sex": "男",
-  "referrer": "王五",
-  "recommandTime": "2019-10-18",
-  "receiver": "张三",
-  "deposeTime": "2019-10-18",
-  "deposeStatus": "未处理"
-},
-  {
-    "origin": "网点柜面",
-    "product": "泰康稳健增利F",
-    "name": "张三",
-    "sex": "男",
-    "referrer": "王五",
-    "recommandTime": "2019-10-18",
-    "receiver": "张三",
-    "deposeTime": "2019-10-18",
-    "deposeStatus": "未处理"
-  },
-  {
-    "origin": "网银浏览",
-    "product": "泰康稳健增利E",
     "name": "张三",
     "sex": "男",
     "referrer": "王五",
