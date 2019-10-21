@@ -14,7 +14,7 @@
     <ql-form label-width="120px" ql-row>
 
       <ql-form-item ql-col span="12" label="权益类型">
-        <ql-select>
+        <ql-select placeholder="请选择">
           <ql-option *ngFor="let item of equitiesTypes"
                      [label]="item.key"
                      [value]="item.value">
@@ -31,7 +31,7 @@
 <!--      </ql-form-item>-->
 
       <ql-form-item ql-col span="12" label="核销方式">
-        <ql-select>
+        <ql-select placeholder="请选择">
           <ql-option *ngFor="let item of chargeOffType"
                      [label]="item.key"
                      [value]="item.value">
@@ -40,7 +40,7 @@
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="提供服务商">
-        <ql-select>
+        <ql-select placeholder="请选择">
           <ql-option *ngFor="let item of provideCompany"
                      [label]="item.key"
                      [value]="item.value">
@@ -64,7 +64,7 @@
         <ql-select></ql-select>
       </ql-form-item>
       <ql-form-item ql-col span="12" label="权益特征">
-        <ql-select></ql-select>
+        <ql-select placeholder="请选择"></ql-select>
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="兑换码上传">
@@ -80,7 +80,7 @@
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="支持客户级别">
-        <ql-select></ql-select>
+        <ql-select placeholder="请选择"></ql-select>
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="支持卡片性质">
@@ -88,7 +88,7 @@
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="支持渠道方式">
-        <ql-select></ql-select>
+        <ql-select placeholder="请选择"></ql-select>
       </ql-form-item>
     </ql-form>
   </ql-card>

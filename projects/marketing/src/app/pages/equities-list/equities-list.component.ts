@@ -17,14 +17,12 @@ export class EquitiesListComponent implements OnInit {
   public back:boolean = true;
   public formGroup: FormGroup = this.fb.group({})
   public provideCompany: any[] =[
-    {key:'请选择',value:null},
     {key:'总行',value:1},
     {key: '分行',value:2},
     {key: '支行网点',value:3},
     {key: '其他',value:4}];
 
   public equitiesTypes: any[] =[
-    {key:'请选择',value:null},
     {key:'现金抵用券',value:1},
     {key: '现金红包券',value:2},
     {key: '流量充值包',value:3},
@@ -37,7 +35,6 @@ export class EquitiesListComponent implements OnInit {
   // 赠予后核销
 
   public chargeOffType: any[] =[
-    {key:'请选择',value:null},
     {key:'支付后核销',value:1},
     {key:'核销后支付',value:2},
     {key:'赠予后核销',value:3},
@@ -92,6 +89,6 @@ export class EquitiesListComponent implements OnInit {
    * @param id
    */
   public checkDetail(id:string){
-
+     this.router.navigate(['/marketing/equities-detail'])
   }
 }
