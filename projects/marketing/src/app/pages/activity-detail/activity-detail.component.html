@@ -1,0 +1,66 @@
+<page-header title="活动详情" [breadcrumb]="breadcrumb" [back]="true">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>活动管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>活动详情</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+</page-header>
+
+<page-container>
+  <tab-container>
+    <tab-item title="活动信息">
+      <ql-card header="基本信息">
+        <label-container column="2">
+          <label-item label="活动名称">十月金秋 </label-item>
+          <label-item label="活动开始时间">2019年10月01日 00:00</label-item>
+          <label-item label="活动结束时间">2019年10月10日 00:00</label-item>
+          <label-item label="监测开始时间">2019年10月01日 00:00</label-item>
+          <label-item label="监测结束时间">2019年10月10日 00:00</label-item>
+          <label-item label="渠道选择">网银</label-item>
+          <label-item label="资金预算">200,000.00元</label-item>
+          <label-item label="关键字" column="2">
+            <div class="row">
+              <ql-tag class="ql-margin-x">家庭</ql-tag>
+              <ql-tag class="ql-margin-x">中秋</ql-tag>
+              <ql-tag class="ql-margin-x">团圆</ql-tag>
+            </div>
+          </label-item>
+          <label-item label="活动内容" column="2">
+            十月金秋送大礼...
+          </label-item>
+        </label-container>
+      </ql-card>
+    </tab-item>
+    <tab-item title="活动阶梯">
+      <ql-collapse>
+        <ql-collapse-item *ngFor="let item of ladderList" [label]="item.time">
+          <ql-card header="营销要求">
+            <label-container>
+              <ng-container *ngFor="let targetItem of item.targetList">
+                <label-item [label]="targetItem.type">{{ targetItem.value }}</label-item>
+              </ng-container>
+            </label-container>
+          </ql-card>
+          <ql-card header="产品列表">
+            <data-table [model]="item.productList">
+              <ql-table-column model-key="productName" label="产品名称"> </ql-table-column>
+            </data-table>
+          </ql-card>
+          <ql-card header="权益列表">
+            <data-table [model]="item.interestList">
+              <ql-table-column model-key="name" label="权益名称"> </ql-table-column>
+            </data-table>
+          </ql-card>
+        </ql-collapse-item>
+      </ql-collapse>
+    </tab-item>
+    <tab-item title="活动目标">
+      <label-container column="2">
+        <label-item label="销售额">50,000.00元</label-item>
+        <label-item label="客户访问量">200,000.00次</label-item>
+      </label-container>
+    </tab-item>
+  </tab-container>
+</page-container>

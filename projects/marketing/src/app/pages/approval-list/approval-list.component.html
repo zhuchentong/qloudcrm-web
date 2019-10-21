@@ -8,17 +8,18 @@
 </page-header>
 
 <page-container>
-  <data-table>
+  <data-table [model]="activityList">
     <ql-table-column model-key="name" label="营销活动名称"></ql-table-column>
-    <ql-table-column model-key="startTime " label="营销活动时间"></ql-table-column>
+    <ql-table-column model-key="startTime" label="活动开始时间"></ql-table-column>
+    <ql-table-column model-key="endTime" label="活动结束时间"></ql-table-column>
     <ql-table-column model-key="creator" label="营销发起人"></ql-table-column>
-    <ql-table-column model-key="organization " label="发起机构"></ql-table-column>
+    <ql-table-column model-key="organization" label="发起机构"></ql-table-column>
     <ql-table-column model-key="status" label="营销活动状态"></ql-table-column>
-    <ql-table-column label="操作">
+    <ql-table-column label="操作" width="250px">
       <ng-template #slot let-scope="scope">
-        <a>查看详情</a>
-        <a>确认执行</a>
-        <a>驳回活动</a>
+        <ql-button type="text">查看详情</ql-button>
+        <ql-button type="text">确认执行</ql-button>
+        <ql-button type="text">驳回活动</ql-button>
       </ng-template>
     </ql-table-column>
   </data-table>

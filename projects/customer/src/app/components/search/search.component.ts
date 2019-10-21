@@ -64,7 +64,7 @@ export class SearchComponent implements OnInit {
     { value: '3', label: '低' },
   ]
   // public channel = [{value:'线上挖掘',label:'线上挖掘'},{value:'线下挖掘',label:'线下挖掘'}]
-  public tradType = [{value:'1',label:'工资代发'},{value:'2',label:'一般客户'},{value:'3',label:'学费代发'},]
+  public tradType = [{value:'1',label:'存款'},{value:'2',label:'贷款'},{value:'3',label:'理财'},{value:'4',label:'基金'}]
   public formGroup: FormGroup = this.fb.group({})
   public chandelType = [{value:'1',label:'网银'},{value:'2',label:'手机app'}]
   public tradArea = [{value:'1',label:'高新区'},{value:'2',label:'雁塔区'}]

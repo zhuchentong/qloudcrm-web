@@ -10,29 +10,57 @@
 
 <page-container>
   <ql-card>
-    <ng-template #header>
-      <ql-select placeholder="选择时间范围">
-        <ql-option *ngFor="let item of seltimes" [label]="item.label" [value]="item.value"> </ql-option>
-      </ql-select>
-    </ng-template>
-    <label-container column="4" [border]="true" labelWidth="160">
-      <label-item label="资产余额变动客户"> <a (click)="queryCustomer()">13</a></label-item>
-      <label-item label="存款余额变动客户"><a (click)="queryCustomer()">126</a></label-item>
-      <label-item label="投资理财余额变动客户"><a (click)="queryCustomer()">32</a></label-item>
-      <label-item label="贷款客户"><a (click)="queryCustomer()">9</a></label-item>
-      <label-item label="客户资产余额（万）"><a (click)="queryCustomer()">25</a></label-item>
-      <label-item label="存款余额（万）"><a (click)="queryCustomer()">500</a></label-item>
-      <label-item label="投资理财余额（万）"><a (click)="queryCustomer()">120</a></label-item>
-      <label-item label="贷款余额（万）"><a (click)="queryCustomer()">100</a></label-item>
-    </label-container>
+
+    <div echarts [options]="labelOption[0]" [merge]="labelOption[1]"  [ngStyle]="{height: hdata6 == 'NaNpx' ? '400px' : hdata6}" [loading]="loading"></div>
+
+    <table  class="table table-striped table-bordered table-hover">
+      <thead style="text-align: center;font-size: 0.4em;">
+      <tr>
+        <th scope="col" colspan="7">
+          <ql-select placeholder="选择时间范围" style="float: left">
+            <ql-option *ngFor="let item of seltimes" [label]="item.label" [value]="item.value"> </ql-option>
+          </ql-select>
+        </th>
+      </tr>
+      <tr>
+        <th scope="col">资产类型</th>
+        <th scope="col">变动客户数</th>
+        <th scope="col">变动金额</th>
+        <th scope="col">资产余额</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let data of changeData; let i = index"  style="text-align: center;font-size: 0.3em;">
+        <td>{{data.name}}</td>
+        <td><a (click)="queryCustomer()">{{data.up}} 人</a></td>
+        <td><a (click)="queryCustomer()">￥{{data.down}}</a></td>
+        <td><a (click)="queryCustomer()">￥{{data.total}}</a></td>
+      </tr>
+      </tbody>
+    </table>
+
+    <!--<ng-template #header>-->
+      <!--<ql-select placeholder="选择时间范围">-->
+        <!--<ql-option *ngFor="let item of seltimes" [label]="item.label" [value]="item.value"> </ql-option>-->
+      <!--</ql-select>-->
+    <!--</ng-template>-->
+    <!--<label-container column="4" [border]="true" labelWidth="160">-->
+      <!--<label-item label="资产余额变动客户"> <a (click)="queryCustomer()">13</a></label-item>-->
+      <!--<label-item label="存款余额变动客户"><a (click)="queryCustomer()">126</a></label-item>-->
+      <!--<label-item label="投资理财余额变动客户"><a (click)="queryCustomer()">32</a></label-item>-->
+      <!--<label-item label="贷款客户"><a (click)="queryCustomer()">9</a></label-item>-->
+      <!--<label-item label="客户资产余额（万）"><a (click)="queryCustomer()">25</a></label-item>-->
+      <!--<label-item label="存款余额（万）"><a (click)="queryCustomer()">500</a></label-item>-->
+      <!--<label-item label="投资理财余额（万）"><a (click)="queryCustomer()">120</a></label-item>-->
+      <!--<label-item label="贷款余额（万）"><a (click)="queryCustomer()">100</a></label-item>-->
+    <!--</label-container>-->
 
     <divider></divider>
 
     <data-table [model]="dataassets" [action]="tableAction" [selection]="true">
       <ng-template #tableAction>
-        <ql-button size="small" type="primary">拨打电话</ql-button>
         <ql-button size="small" type="success">发送短信</ql-button>
-        <ql-button size="small" type="info">发现邮件</ql-button>
+        <ql-button size="small" type="info">发送邮件</ql-button>
       </ng-template>
       <ql-table-column model-key="code" label="客户号"> </ql-table-column>
       <ql-table-column model-key="name" label="姓名"> </ql-table-column>

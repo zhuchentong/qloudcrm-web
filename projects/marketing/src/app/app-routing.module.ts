@@ -19,15 +19,20 @@ import { RecommendDetialComponent } from './pages/recommend-detial/recommend-det
 import { ExploreResultComponent } from './pages/explore-result/explore-result.component'
 import { EquitiesListComponent } from './pages/equities-list/equities-list.component'
 import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component'
+import { ActivityDetailComponent } from './pages/activity-detail/activity-detail.component'
+import { ApprovalDetailComponent } from './pages/approval-detail/approval-detail.component'
+import { ExploreConditionComponent } from './pages/explore-condition/explore-condition.component'
 import { EquitiesDetailComponent } from './pages/equities-detail/equities-detail.component'
 
 const routes: Routes = [
   { path: 'marketing/activity-list', component: ActivityListComponent },
   { path: 'marketing/explore-list', component: ExploreListComponent },
   { path: 'marketing/approval-list', component: ApprovalListComponent },
+  { path: 'marketing/approval-detail', component: ApprovalDetailComponent },
   { path: 'marketing/activity-monitor', component: ActivilyMonitorComponent },
   { path: 'marketing/activity-comment', component: ActivilyCommentComponent },
   { path: 'marketing/activity-create', component: ActivityCreateComponent },
+  { path: 'marketing/activity-detail', component: ActivityDetailComponent },
   { path: 'marketing/recommend-list', component: RecommendListComponent },
   { path: 'marketing/recommend-detail/:id', component: RecommendDetialComponent },
   { path: 'marketing/explore-create', component: ExploreCreateComponent },
@@ -40,6 +45,7 @@ const routes: Routes = [
   { path: 'marketing/explore-result', component: ExploreResultComponent },
   { path: 'marketing/equities-list', component: EquitiesListComponent },
   { path: 'marketing/equities-create', component: EquitiesCreateComponent },
+  { path: 'marketing/explore-condition', component: ExploreConditionComponent },
   { path: 'marketing/equities-detail', component: EquitiesDetailComponent }
 ]
 

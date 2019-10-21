@@ -14,9 +14,24 @@ import { Store } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
 import { ApiService } from './services/api.service'
 import { ProductListComponent } from './pages/product-list/product-list.component'
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component'
+import { ComboDetailComponent } from './pages/combo-detail/combo-detail.component'
+import { ComboListComponent } from './pages/combo-list/combo-list.component'
+import { ComboCreateComponent } from './pages/combo-create/combo-create.component'
+import { AttentionListComponent } from './pages/attention-list/attention-list.component'
+import { ProductDocumentComponent } from './pages/product-document/product-document.component';
+import { ProductCreateComponent } from './pages/product-create/product-create.component'
 
 // 页面列表
-const PAGES = [ProductListComponent]
+const PAGES = [
+  ProductListComponent,
+  ProductDetailComponent,
+  ComboDetailComponent,
+  ComboListComponent,
+  ComboCreateComponent,
+  AttentionListComponent,
+  ProductDocumentComponent
+]
 
 // 组件列表
 const COMPONENTS = []
@@ -38,7 +53,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ProductCreateComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule],
   providers,

@@ -34,10 +34,13 @@ import { SelectPruductComponent } from './components/select-pruduct/select-prudu
 import { SelectEventComponent } from './components/select-event/select-event.component'
 import { SelectInterestComponent } from './components/select-interest/select-interest.component'
 import { SelectExploreComponent } from './components/select-explore/select-explore.component'
-import { RecommendDetialComponent } from './pages/recommend-detial/recommend-detial.component';
+import { RecommendDetialComponent } from './pages/recommend-detial/recommend-detial.component'
 import { ExploreResultComponent } from './pages/explore-result/explore-result.component'
-import { EquitiesListComponent } from './pages/equities-list/equities-list.component';
-import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component';
+import { ActivityDetailComponent } from './pages/activity-detail/activity-detail.component'
+import { ApprovalDetailComponent } from './pages/approval-detail/approval-detail.component'
+import { EquitiesListComponent } from './pages/equities-list/equities-list.component'
+import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component'
+import { ExploreConditionComponent } from './pages/explore-condition/explore-condition.component'
 import { EquitiesDetailComponent } from './pages/equities-detail/equities-detail.component'
 
 // 页面列表
@@ -65,6 +68,7 @@ const PAGES = [
   ExploreResultComponent,
   EquitiesListComponent,
   EquitiesCreateComponent,
+  ExploreConditionComponent,
   EquitiesDetailComponent
 ]
 
@@ -76,7 +80,9 @@ const COMPONENTS = [
   SelectEventComponent,
   SelectInterestComponent,
   SelectExploreComponent,
-  ExploreResultComponent
+  ExploreResultComponent,
+  ActivityDetailComponent,
+  ApprovalDetailComponent
 ]
 
 const startUpFactory = (store: Store) => async () => {
@@ -96,7 +102,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ExploreResultComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, QlDateModule],
   providers,

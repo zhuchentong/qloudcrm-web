@@ -26,6 +26,7 @@ import {RiskEvaluationRateComponent} from "./pages/public-asset/risk-evaluation-
 import {CalendarComponent} from "./pages/public-asset/calendar/calendar.component";
 import {ProfitTypeComponent} from "./pages/public-asset/profit-type/profit-type.component";
 import {PublicAssetComponent} from "./pages/public-asset/public-asset.component";
+import {TaskSubmitComponent} from "./pages/public-asset/task-submit/task-submit.component";
 
 import {LeverageRatioComponent} from "./pages/public-asset/leverage-ratio/leverage-ratio.component";
 import {IndustryConcentrateComponent} from "./pages/public-asset/industry-concentrate/industry-concentrate.component";
@@ -50,6 +51,7 @@ const COMPONENTS = [AssetProportionComponent,
   CalendarComponent,
   PublicAssetComponent,
   TaskComponent,
+  TaskSubmitComponent,
   CompaignComponent,
   CampaignActivityComponent,
   CampaignCustomerComponent,
