@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core'
+import { FormBuilder, Validators, FormGroup } from '@angular/forms'
+import { QlMessageService } from 'qloud-angular'
+import { plainToClass } from 'class-transformer'
+import { DictService } from '@app/shared/utils/dict.service'
+import { ApiService } from '../../services/api.service'
+import { ModalService } from '@app/shared/utils'
+
 
 @Component({
   selector: 'app-combo-list',
@@ -8,7 +15,11 @@ import { Component, OnInit } from '@angular/core'
 export class ComboListComponent implements OnInit {
   public comboList: any[] = []
 
-  constructor() {}
+  constructor(private apiService: ApiService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.apiService.getcomboList().subscribe(data => {
+      this.comboList = data
+    })
+  }
 }

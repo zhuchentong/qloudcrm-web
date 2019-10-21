@@ -1,7 +1,7 @@
 // import { ApiService } from './../../../../../dashboard/src/app/services/dashboard.service';
 // import { ApiService as MarketingService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core'
-
+import { ApiService as ProductService } from 'projects/product/src/app/services/api.service'
 @Component({
   selector: 'app-approval-detail',
   templateUrl: './approval-detail.component.html',
