@@ -14,8 +14,32 @@
 <page-container>
   <ql-card>
     <ng-template #header>
-      <ql-button>返回</ql-button>
+      <div class="row middle-span" *ngIf="currentItem">
+        <ql-button size="small" icon="arrow-left" (click)="onBack()">返回</ql-button>
+        <div class="ql-margin-x">{{ currentItem.name || currentItem.productName }}</div>
+      </div>
     </ng-template>
-    <div></div>
+    <div ql-row gutter="12" *ngIf="currentList.length; else empty">
+      <div
+        class="text-center document-item"
+        ql-col
+        span="3"
+        *ngFor="let item of currentList"
+        (click)="onOpenItem(item)"
+      >
+        <div [ngSwitch]="item.type">
+          <i class="fa fa-folder-o fa-5x" *ngSwitchCase="'catalog'"></i>
+          <i class="fa fa-cube fa-5x" *ngSwitchCase="'product'"></i>
+          <i class="fa fa-book fa-5x" *ngSwitchCase="'document'"></i>
+        </div>
+        <div class="ql-padding-y">{{ item.name || item.productName }}</div>
+      </div>
+    </div>
   </ql-card>
 </page-container>
+
+<ng-template #empty>
+  <div style="height:300px" class="row middle-span center-span">
+    暂无数据
+  </div>
+</ng-template>
