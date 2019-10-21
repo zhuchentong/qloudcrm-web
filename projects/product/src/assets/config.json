@@ -10,6 +10,18 @@
     {
       "name": "产品目录",
       "url": "#/product/product-list"
+    },
+    {
+      "name": "产品组合",
+      "url": "#/product/combo-list"
+    },
+    {
+      "name": "产品文档",
+      "url": "#/product/product-document"
+    },
+    {
+      "name": "关注产品",
+      "url": "#/product/attention-list"
     }
   ]
 }

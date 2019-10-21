@@ -1,0 +1,21 @@
+<page-header title="产品文档" [breadcrumb]="breadcrumb" [action]="action">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>产品管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>产品文档</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+
+  <ng-template #action>
+    <ql-input placeholder="快速查询"></ql-input>
+  </ng-template>
+</page-header>
+
+<page-container>
+  <ql-card>
+    <div #header>
+      <ql-button>返回</ql-button>
+    </div>
+    <div></div>
+  </ql-card>
+</page-container>

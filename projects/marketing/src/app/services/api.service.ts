@@ -12,6 +12,7 @@ import MarketChannelOperation from '../../assets/json/marketChannelOperation.jso
 import RecommendManageList from '../../assets/json/recommendmanagelist.json'
 import eventList from '../../assets/json/event-list.json'
 import EquitiesManageList from '../../assets/json/equities-list.json'
+import ActivityList from '../../assets/json/activity-list.json'
 @Injectable()
 export class ApiService {
   constructor(private net: NetService) {}
@@ -52,5 +53,9 @@ export class ApiService {
 
   public getEquitiesList() {
     return of(EquitiesManageList)
+  }
+
+  public getActivityList() {
+    return of(ActivityList)
   }
 }

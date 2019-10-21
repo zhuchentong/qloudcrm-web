@@ -1,1 +1,34 @@
-<p>product-list works!</p>
+<page-header title="产品目录" [breadcrumb]="breadcrumb" [action]="action">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>产品管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>产品目录</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action>
+    <ql-button type="primary" routerLink="/product/product-create">新建产品</ql-button>
+  </ng-template>
+</page-header>
+
+<page-container>
+  <div ql-row type="flex">
+    <ql-tree (modelChange)="onCatalogChange($event)" [accordion]="true" [model]="catalogList" ql-col span="6"></ql-tree>
+    <data-table ql-col span="18" [model]="productList" [selection]="true">
+      <ql-table-column model-key="productName" label="产品名称"></ql-table-column>
+      <ql-table-column model-key="productCode" label="产品代码"></ql-table-column>
+      <ql-table-column model-key="productType" label="产品类别"></ql-table-column>
+      <ql-table-column model-key="riskLevel" label="风险等级"></ql-table-column>
+      <ql-table-column model-key="recommandTyep" label="推荐类别"></ql-table-column>
+      <ql-table-column model-key="endTime" label="停售时间"></ql-table-column>
+      <ql-table-column model-key="productRate" label="产品利率"></ql-table-column>
+      <ql-table-column label="操作" width="250px">
+        <ng-template #slot let-scope="scope">
+          <ql-button type="text">关注</ql-button>
+          <ql-button type="text">删除</ql-button>
+          <ql-button type="text" [routerLink]="['/product/product-create', { id: scope.rowData.id }]">修改</ql-button>
+          <ql-button type="text" [routerLink]="['/product/product-detail']">查看详情</ql-button>
+        </ng-template>
+      </ql-table-column>
+    </data-table>
+  </div>
+</page-container>
