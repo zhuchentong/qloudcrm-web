@@ -7,4 +7,61 @@
   </ng-template>
 </page-header>
 
-<page-container> </page-container>
+
+<!--
+营销活动名称
+营销关键字
+营销开展时间
+活动发布机构
+活动推送渠道
+当前活动状态
+活动营销产品
+查询活动范围
+
+-->
+<page-container>
+  <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()"  >
+    <ql-form-item    label="营销活动名称: " label-width="150">
+      <ql-input></ql-input>
+    </ql-form-item>
+    <ql-form-item label="营销关键字: " label-width="150">
+      <ql-input></ql-input>
+    </ql-form-item>
+    <ql-form-item label="营销开展时间: "  label-width="150">
+      <ql-date-picker></ql-date-picker>
+    </ql-form-item>
+    <ql-form-item label="活动发布机构: " label-width="150">
+      <ql-select>
+      </ql-select>
+    </ql-form-item>
+    <ql-form-item label="活动推送渠道: " label-width="150">
+      <ql-select>
+      </ql-select>
+    </ql-form-item>
+    <ql-form-item label="活动营销产品: " label-width="150">
+      <ql-select>
+      </ql-select>
+    </ql-form-item>
+    <ql-form-item label="查询活动范围: " label-width="150">
+      <ql-select>
+      </ql-select>
+    </ql-form-item>
+  </data-form>
+  <data-table  [selection]="true" [model]="dataList">
+    <ql-table-column model-key="activeName" label="营销活动名称"></ql-table-column>
+    <ql-table-column model-key="actionTime" label="营销活动时间"></ql-table-column>
+    <ql-table-column model-key="manager" label="营销发起人"></ql-table-column>
+    <ql-table-column model-key="dep" label="发起机构"></ql-table-column>
+    <ql-table-column model-key="totalCount" label="总覆盖人数"></ql-table-column>
+    <ql-table-column model-key="successCount" label="营销成功人数"></ql-table-column>
+    <ql-table-column model-key="continues" label="待跟进人数"></ql-table-column>
+    <ql-table-column model-key="noneReacts" label="未响应人数"></ql-table-column>
+    <ql-table-column model-key="totalAsset" label="总资产"></ql-table-column>
+    <ql-table-column model-key="perTotalAsset" label="户均总资产"></ql-table-column>
+    <ql-table-column label="操作" width="200" >
+      <ng-template #slot let-scope="scope">
+        <ql-button type="text">详情</ql-button>
+      </ng-template>
+    </ql-table-column>
+  </data-table>
+</page-container>
