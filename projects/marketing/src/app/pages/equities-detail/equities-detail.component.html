@@ -2,7 +2,7 @@
   <ng-template #breadcrumb>
     <ql-breadcrumb>
       <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>新增权益</ql-breadcrumb-item>
+      <ql-breadcrumb-item>权益详情</ql-breadcrumb-item>
     </ql-breadcrumb>
   </ng-template>
   <ng-template #action>
@@ -10,11 +10,11 @@
   </ng-template>
 </page-header>
 <page-container>
-  <ql-card header="新增权益">
+  <ql-card header="权益详情">
     <ql-form label-width="120px" ql-row>
 
-      <ql-form-item ql-col span="12" label="权益类型">
-        <ql-select>
+      <ql-form-item ql-col span="12" label="权益类型"  >
+        <ql-select >
           <ql-option *ngFor="let item of equitiesTypes"
                      [label]="item.key"
                      [value]="item.value">
@@ -26,9 +26,9 @@
       <ql-form-item ql-col span="12" label="权益名称" >
         <ql-input></ql-input>
       </ql-form-item>
-<!--      <ql-form-item ql-col span="12" label="权益名称">-->
-<!--        <ql-input></ql-input>-->
-<!--      </ql-form-item>-->
+      <!--      <ql-form-item ql-col span="12" label="权益名称">-->
+      <!--        <ql-input></ql-input>-->
+      <!--      </ql-form-item>-->
 
       <ql-form-item ql-col span="12" label="核销方式">
         <ql-select>
@@ -67,27 +67,15 @@
         <ql-select></ql-select>
       </ql-form-item>
 
-      <ql-form-item ql-col span="12" label="兑换码上传">
-        <ql-upload [upload-filter]="limit1024.bind(this)">
-          <ng-template #trigger>
-            <ql-button size="small" type="primary">上传文件</ql-button>
-          </ng-template>
-<!--          <ng-template #tip>-->
-<!--            <div class="el-upload__tip">文件不能超过1024kb</div>-->
-<!--          </ng-template>-->
-        </ql-upload>
+      <ql-form-item ql-col span="12" label="创建时间">
 
       </ql-form-item>
 
-      <ql-form-item ql-col span="12" label="支持客户级别">
+      <ql-form-item ql-col span="12" label="创建机构">
         <ql-select></ql-select>
       </ql-form-item>
 
-      <ql-form-item ql-col span="12" label="支持卡片性质">
-        <ql-select></ql-select>
-      </ql-form-item>
-
-      <ql-form-item ql-col span="12" label="支持渠道方式">
+      <ql-form-item ql-col span="12" label="最近更新时间">
         <ql-select></ql-select>
       </ql-form-item>
     </ql-form>

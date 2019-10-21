@@ -19,7 +19,11 @@ import { RecommendDetialComponent } from './pages/recommend-detial/recommend-det
 import { ExploreResultComponent } from './pages/explore-result/explore-result.component'
 import { EquitiesListComponent } from './pages/equities-list/equities-list.component'
 import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component'
+<<<<<<< HEAD
 import { ExploreConditionComponent } from './pages/explore-condition/explore-condition.component'
+=======
+import { EquitiesDetailComponent } from './pages/equities-detail/equities-detail.component'
+>>>>>>> a74456b436ee1c9020f1f9226d75e058e0680634
 
 const routes: Routes = [
   { path: 'marketing/activity-list', component: ActivityListComponent },
@@ -40,7 +44,11 @@ const routes: Routes = [
   { path: 'marketing/explore-result', component: ExploreResultComponent },
   { path: 'marketing/equities-list', component: EquitiesListComponent },
   { path: 'marketing/equities-create', component: EquitiesCreateComponent },
+<<<<<<< HEAD
   { path: 'marketing/explore-condition', component: ExploreConditionComponent }
+=======
+  { path: 'marketing/equities-detail', component: EquitiesDetailComponent }
+>>>>>>> a74456b436ee1c9020f1f9226d75e058e0680634
 ]
 
 routes.push({

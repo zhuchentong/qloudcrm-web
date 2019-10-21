@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service'
+import { QlMessageService } from 'qloud-angular/package/message/message.service'
+import { Location } from '@angular/common'
+import { FormBuilder } from '@angular/forms'
 import { ModalService } from '@shared/utils'
 import { PageService } from '@core/http'
-import { Location } from '@angular/common'
-import { ApiService } from '../../services/api.service'
-import { FormBuilder } from '@angular/forms'
-import { QlMessageService } from 'qloud-angular/package/message/message.service'
 import { Router } from '@angular/router'
 
 @Component({
-  selector: 'app-equities-create',
-  templateUrl: './equities-create.component.html',
-  styleUrls: ['./equities-create.component.scss'],
-  providers: [ModalService,PageService]
+  selector: 'app-equities-detail',
+  templateUrl: './equities-detail.component.html',
+  styleUrls: ['./equities-detail.component.scss'],
+  providers: [ApiService, QlMessageService]
 })
-export class EquitiesCreateComponent implements OnInit {
+export class EquitiesDetailComponent implements OnInit {
   public back:boolean = true;
   public fileList: any[];
   public equitiesTypes: any[] =[
@@ -39,7 +39,21 @@ export class EquitiesCreateComponent implements OnInit {
     {key: '分行',value:2},
     {key: '支行网点',value:3},
     {key: '其他',value:4}];
-
+  public pageData={
+    type:"",
+    name:"",
+    chargeOffType:"",
+    company:"",
+    upTime:"",
+    count:"100",
+    lastCount:"10",
+    expireTime:"2050-12-31",
+    edesc:"支持用户购买理财产品权益",
+    escope:"1",
+    createTime:"2019-10-18",
+    createDep:"支行",
+    updateTime:"2019-10-18"
+  }
   constructor(public location: Location,
               private apiService: ApiService,
               private fb: FormBuilder,
@@ -49,14 +63,6 @@ export class EquitiesCreateComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-  }
-
-  public limit1024(file: File): boolean {
-    if (file.size > 1024000) {
-      this.message.info('文件超过了 1024 kb.')
-      return false
-    }
-    return true
   }
 
 }

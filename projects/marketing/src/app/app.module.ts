@@ -38,7 +38,11 @@ import { RecommendDetialComponent } from './pages/recommend-detial/recommend-det
 import { ExploreResultComponent } from './pages/explore-result/explore-result.component'
 import { EquitiesListComponent } from './pages/equities-list/equities-list.component';
 import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component';
+<<<<<<< HEAD
 import { ExploreConditionComponent } from './pages/explore-condition/explore-condition.component'
+=======
+import { EquitiesDetailComponent } from './pages/equities-detail/equities-detail.component'
+>>>>>>> a74456b436ee1c9020f1f9226d75e058e0680634
 
 // 页面列表
 const PAGES = [
@@ -65,7 +69,11 @@ const PAGES = [
   ExploreResultComponent,
   EquitiesListComponent,
   EquitiesCreateComponent,
+<<<<<<< HEAD
   ExploreConditionComponent
+=======
+  EquitiesDetailComponent
+>>>>>>> a74456b436ee1c9020f1f9226d75e058e0680634
 ]
 
 // 组件列表
