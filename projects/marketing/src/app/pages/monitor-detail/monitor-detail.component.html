@@ -1,1 +1,48 @@
-<p>monitor-detail works!</p>
+<page-header title="活动监控" [breadcrumb]="breadcrumb" [back]="true">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>活动统计详情</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+</page-header>
+<page-container ql-row>
+  <ql-card header="爱理财营销活动统计" ql-row>
+    <div echarts [options]="pageChart"></div>
+  </ql-card>
+  <ql-card header="权益使用情况报表" ql-row>
+    <div ql-row>
+      <h5 class="ql-margin-y">目前已发送权益数量</h5>
+      <div class="row wrapinfo">
+        <label-container column="3" [border]="true" labelWidth="160"  >
+          <label-item *ngFor="let item of publicedEquitiesCount" label="{{item.name}}" >{{item.value}}</label-item>
+        </label-container>
+      </div>
+    </div>
+    <div ql-row>
+      <h5 class="ql-margin-y" >已发送权益使用数量</h5>
+      <div class="row wrapinfo">
+        <label-container column="3" [border]="true" labelWidth="160">
+          <label-item  *ngFor="let item of publicedEquitiesUsed" label="{{item.name}}" >{{item.value}}</label-item>
+        </label-container>
+      </div>
+    </div>
+    <div ql-row>
+      <h5 class="ql-margin-y" >剩余权益种类数量</h5>
+      <div class="row wrapinfo">
+        <label-container column="3" [border]="true" labelWidth="160" >
+          <label-item *ngFor="let item of remainPublicedEquities" label="{{item.name}}" >{{item.value}}</label-item>
+        </label-container>
+      </div>
+    </div>
+    <div ql-row >
+      <div echarts [options]="equitieStatisticChart"></div>
+    </div>
+  </ql-card>
+
+  <ql-card header="营销成功率" ql-row>
+    <label-container column="3" [border]="true" labelWidth="160">
+      <label-item label="营销成功客户数/已联系成功客户数" >60%</label-item>
+    </label-container>
+  </ql-card>
+</page-container>
