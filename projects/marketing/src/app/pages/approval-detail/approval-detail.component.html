@@ -1,1 +1,51 @@
-<p>approval-detail works!</p>
+<page-header title="审批详情" [breadcrumb]="breadcrumb" [back]="true">
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>活动管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>审批详情</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+</page-header>
+
+<page-container>
+    <ql-card header="营销活动基本信息">
+        <label-container column="3" [border]="true" labelWidth="120">
+            <label-item label="营销活动名称">十月金秋-01</label-item>
+            <label-item label="营销关键字">十月国庆</label-item>
+            <label-item label="营销开始时间">2019-10-01</label-item>
+            <label-item label="营销结束时间">2019-10-10</label-item>
+            <label-item label="营销发布人">张大山</label-item>
+            <label-item label="营销发布机构">陕西省高新支行</label-item>
+            <label-item label="营销内容及方案">目标客户的理财调整分析</label-item>
+            <label-item label="营销目标本次">高收入男性客户群体</label-item>
+            <label-item label="营销流转任务">完成</label-item>
+            <label-item label="标准模板营销"></label-item>
+            <label-item label="支行地址信息">陕西省西安市高新区丈八北路45号</label-item>
+            <label-item label="权益资源预计算"></label-item>
+        </label-container>
+    </ql-card>
+
+    <ql-card header="营销任务">
+        <label-container column="1" [border]="true" labelWidth="160">
+            <label-item label="营销任务要求">找到目标客户并挖掘潜力目标客户，抓住目标客户的需求痛点，帮其解决</label-item>
+        </label-container>
+    </ql-card>
+    <ql-card header="营销人员要求">
+        <data-table [model]="markerRequest">
+            <ql-table-column model-key="role" label="角色"></ql-table-column>
+            <ql-table-column model-key="name" label="姓名"></ql-table-column>
+            <ql-table-column model-key="customerNum" label="客户数"></ql-table-column>
+            <ql-table-column model-key="assets" label="总资产"></ql-table-column>
+            <ql-table-column model-key="hjassets" label="户均资产"></ql-table-column>
+            <ql-table-column model-key="liability" label="总负债"></ql-table-column>
+            <ql-table-column model-key="hjliability" label="户均负债"></ql-table-column>
+        </data-table>
+    </ql-card>
+    <div ql-row>
+        <div ql-col class="ql-text-right ql-padding">
+            <ql-button type="primary" size="small">驳回</ql-button>
+            <ql-button type="primary" size="small">确认执行</ql-button>
+        </div>
+    </div>
+</page-container>
