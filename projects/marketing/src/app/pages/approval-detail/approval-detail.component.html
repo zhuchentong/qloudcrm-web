@@ -1,10 +1,14 @@
-<page-header title="审批详情" [breadcrumb]="breadcrumb" [back]="true">
+<page-header title="审批详情" [breadcrumb]="breadcrumb" [back]="true" [action]="action">
     <ng-template #breadcrumb>
         <ql-breadcrumb>
             <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
             <ql-breadcrumb-item>活动管理</ql-breadcrumb-item>
             <ql-breadcrumb-item>审批详情</ql-breadcrumb-item>
         </ql-breadcrumb>
+    </ng-template>
+    <ng-template #action>
+        <ql-button type="primary" size="small">驳回</ql-button>
+        <ql-button type="primary" size="small">确认执行</ql-button>
     </ng-template>
 </page-header>
 
@@ -42,10 +46,4 @@
             <ql-table-column model-key="hjliability" label="户均负债"></ql-table-column>
         </data-table>
     </ql-card>
-    <div ql-row>
-        <div ql-col class="ql-text-right ql-padding">
-            <ql-button type="primary" size="small">驳回</ql-button>
-            <ql-button type="primary" size="small">确认执行</ql-button>
-        </div>
-    </div>
 </page-container>
