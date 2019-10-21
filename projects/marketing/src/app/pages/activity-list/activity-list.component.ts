@@ -16,7 +16,6 @@ export class ActivityListComponent implements OnInit {
 
   getActivityList() {
     this.apiService.getActivityList().subscribe(data => {
-      console.log(data)
       this.activityList = data
     })
   }

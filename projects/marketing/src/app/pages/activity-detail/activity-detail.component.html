@@ -12,7 +12,7 @@
   <tab-container>
     <tab-item title="活动信息">
       <ql-card header="基本信息">
-        <label-container column="2">
+        <label-container column="2" [border]="true" labelWidth="140">
           <label-item label="活动名称">十月金秋 </label-item>
           <label-item label="活动开始时间">2019年10月01日 00:00</label-item>
           <label-item label="活动结束时间">2019年10月10日 00:00</label-item>
@@ -32,6 +32,57 @@
           </label-item>
         </label-container>
       </ql-card>
+      <ql-card header="营销要求">
+        <label-container column="2" [border]="true">
+          <label-item label="日期">2019-10-05</label-item>
+          <label-item label="成功率">30%</label-item>
+          <label-item label="日期">2019-10-07</label-item>
+          <label-item label="成功率">650%</label-item>
+        </label-container>
+      </ql-card>
+      <ql-card header="活动事件">
+        <data-table [model]="eventList">
+          <ql-table-column model-key="eventType" label="事件类型"> </ql-table-column>
+          <ql-table-column model-key="eventName" label="事件名称"> </ql-table-column>
+        </data-table>
+      </ql-card>
+      <ql-card header="广告页面">
+        <data-table [model]="adList">
+          <ql-table-column model-key="eventType" label="事件类型"> </ql-table-column>
+          <ql-table-column model-key="eventName" label="事件名称"> </ql-table-column>
+        </data-table>
+      </ql-card>
+      <ql-card header="活动产品">
+        <data-table [model]="productList">
+          <ql-table-column model-key="productCode" label="产品编号"> </ql-table-column>
+          <ql-table-column model-key="productName" label="产品名称"> </ql-table-column>
+          <ql-table-column model-key="productType" label="产品类型"> </ql-table-column>
+        </data-table>
+      </ql-card>
+      <ql-card header="活动用户">
+        <data-table [model]="customerList">
+          <ql-table-column model-key="ctCode" label="客户编号"> </ql-table-column>
+          <ql-table-column model-key="ctName" label="客户姓名"> </ql-table-column>
+          <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>
+          <ql-table-column model-key="ctage" label="年龄" width="80"> </ql-table-column>
+          <ql-table-column model-key="ctType" label="客户类型"> </ql-table-column>
+          <ql-table-column model-key="ctLevel" label="客户等级"> </ql-table-column>
+          <ql-table-column model-key="ctTel" label="客户电话"> </ql-table-column>
+          <ql-table-column model-key="time" label="开户时间"> </ql-table-column>
+        </data-table>
+      </ql-card>
+      <ql-card header="活动权益">
+        <data-table [model]="interestList">
+          <ql-table-column model-key="type" label="权益类型"></ql-table-column>
+          <ql-table-column model-key="name" label="权益名称"></ql-table-column>
+          <ql-table-column model-key="chargeOffType" label="核销方式"></ql-table-column>
+          <ql-table-column model-key="company" label="提供服务商"></ql-table-column>
+          <ql-table-column model-key="upTime" label="上架时间"></ql-table-column>
+          <ql-table-column model-key="count" label="权益总数量"></ql-table-column>
+          <ql-table-column model-key="lastCount" label="剩余可用数量"></ql-table-column>
+          <ql-table-column model-key="expireTime" label="到期时间"></ql-table-column>
+        </data-table>
+      </ql-card>
     </tab-item>
     <tab-item title="活动阶梯">
       <ql-collapse>
@@ -45,21 +96,32 @@
           </ql-card>
           <ql-card header="产品列表">
             <data-table [model]="item.productList">
+              <ql-table-column model-key="productCode" label="产品编号"> </ql-table-column>
               <ql-table-column model-key="productName" label="产品名称"> </ql-table-column>
+              <ql-table-column model-key="productType" label="产品类型"> </ql-table-column>
             </data-table>
           </ql-card>
           <ql-card header="权益列表">
             <data-table [model]="item.interestList">
-              <ql-table-column model-key="name" label="权益名称"> </ql-table-column>
+              <ql-table-column model-key="type" label="权益类型"></ql-table-column>
+              <ql-table-column model-key="name" label="权益名称"></ql-table-column>
+              <ql-table-column model-key="chargeOffType" label="核销方式"></ql-table-column>
+              <ql-table-column model-key="company" label="提供服务商"></ql-table-column>
+              <ql-table-column model-key="upTime" label="上架时间"></ql-table-column>
+              <ql-table-column model-key="count" label="权益总数量"></ql-table-column>
+              <ql-table-column model-key="lastCount" label="剩余可用数量"></ql-table-column>
+              <ql-table-column model-key="expireTime" label="到期时间"></ql-table-column>
             </data-table>
           </ql-card>
         </ql-collapse-item>
       </ql-collapse>
     </tab-item>
     <tab-item title="活动目标">
-      <label-container column="2">
-        <label-item label="销售额">50,000.00元</label-item>
-        <label-item label="客户访问量">200,000.00次</label-item>
+      <label-container column="2" [border]="true">
+        <label-item label="目标1">销售额</label-item>
+        <label-item label="目标值">50,000.00元</label-item>
+        <label-item label="目标2">客户访问量</label-item>
+        <label-item label="目标值">200,000.00次</label-item>
       </label-container>
     </tab-item>
   </tab-container>
