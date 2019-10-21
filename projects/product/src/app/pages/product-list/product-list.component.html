@@ -13,12 +13,12 @@
 <page-container>
   <div ql-row type="flex">
     <ql-tree (modelChange)="onCatalogChange($event)" [accordion]="true" [model]="catalogList" ql-col span="6"></ql-tree>
-    <data-table ql-col span="18" [model]="productList" [selection]="true">
+    <data-table ql-col span="18" [model]="productList">
       <ql-table-column model-key="productName" label="产品名称"></ql-table-column>
       <ql-table-column model-key="productCode" label="产品代码"></ql-table-column>
       <ql-table-column model-key="productType" label="产品类别"></ql-table-column>
       <ql-table-column model-key="riskLevel" label="风险等级"></ql-table-column>
-      <ql-table-column model-key="recommandTyep" label="推荐类别"></ql-table-column>
+      <ql-table-column model-key="recommandType" label="推荐类别"></ql-table-column>
       <ql-table-column model-key="endTime" label="停售时间"></ql-table-column>
       <ql-table-column model-key="productRate" label="产品利率"></ql-table-column>
       <ql-table-column label="操作" width="250px">
