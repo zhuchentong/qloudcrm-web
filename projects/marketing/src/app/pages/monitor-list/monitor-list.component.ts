@@ -38,4 +38,7 @@ export class MonitorListComponent implements OnInit {
     })
 
   }
+  public toDetail(){
+    this.router.navigate(['/marketing/monitor-detail'])
+  }
 }

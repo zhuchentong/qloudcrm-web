@@ -1,6 +1,6 @@
 [
   {
-    "activeName": "刷卡有礼",
+    "activeName": "爱理财营销活动",
     "actionTime": "2019-10-08",
     "manager": "张三",
     "dep": "信用卡",
@@ -72,7 +72,7 @@
     "perTotalAsset": "100"
   },
   {
-    "activeName": "理财送红包",
+    "activeName": "买车送红包",
     "actionTime": "2019-10-10",
     "manager": "李四",
     "dep": "支行",
@@ -84,7 +84,7 @@
     "perTotalAsset": "100"
   },
   {
-    "activeName": "理财送电影票",
+    "activeName": "汽车分期送电影票",
     "actionTime": "2019-10-10",
     "manager": "李四",
     "dep": "支行",
