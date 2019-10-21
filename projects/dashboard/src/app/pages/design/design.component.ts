@@ -99,6 +99,11 @@ export class DesignComponent implements OnInit {
         "value": "app_view15",
         "label": "客户户均AUM",
         "code": "layoutCompType"
+      },
+      {
+        "value": "app_view16",
+        "label": "待办事项概览",
+        "code": "layoutCompType"
       }
     ];
     layoutCompType = this.ComponentList;

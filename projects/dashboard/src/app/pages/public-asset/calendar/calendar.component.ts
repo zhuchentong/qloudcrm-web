@@ -56,8 +56,8 @@ export class CalendarComponent implements OnInit {
         },
         {
             title: '中秋放假',
-            start: '2013-09-19',
-            end: '2013-09-21'
+            start: '2019-09-19',
+            end: '2019-09-21'
         },
         {
             title: '午饭',
