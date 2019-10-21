@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core'
 
-type chartType = 'pie'
+type chartType = 'pie' | 'funnel'
 
 @Injectable()
 export class EchartService {
