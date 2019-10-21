@@ -16,7 +16,7 @@
       <ql-input></ql-input>
     </ql-form-item>
     <ql-form-item label="提供服务商: " label-width="150">
-      <ql-select>
+      <ql-select placeholder="请选择">
       <ql-option *ngFor="let item of provideCompany"
                  [label]="item.key"
                  [value]="item.value">
