@@ -8,22 +8,25 @@ export class ApiService {
   constructor(private net: NetService) {}
 
   public getProductList(type?, parent?) {
-    return of(
-      productList
-        .filter(x => type === undefined || x.type === type)
-        .filter(x => parent === undefined || x.parent === parent)
-        .map((x: any) => {
-          if (type === 'product') {
-            const target = productList.find(catalog => catalog.id === parent)
-            x.productType = target.name
-          }
+    const data = productList
+      .filter(x => type === undefined || x.type === type)
+      .filter(x => parent === undefined || x.parent === parent)
 
-          return x
-        })
-    )
+    if (type === 'product') {
+      data.forEach((x: any) => {
+        const target = productList.find(item => item.id === x.parent)
+        x.productType = target.name
+      })
+    }
+
+    return of(data)
   }
 
   public getProduct(id) {
-    return of(productList.find(x => x.id === id))
+    const product = productList.find(x => x.id === id) as any
+    const target = productList.find(item => item.id === product.parent)
+    product.productType = target.name
+
+    return of(product)
   }
 }
