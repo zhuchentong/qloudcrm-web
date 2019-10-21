@@ -6,11 +6,13 @@ import { SelectEventComponent } from '../../components/select-event/select-event
 import { SelectExploreComponent } from '../../components/select-explore/select-explore.component'
 import { SelectInterestComponent } from '../../components/select-interest/select-interest.component'
 import { SelectPruductComponent } from '../../components/select-pruduct/select-pruduct.component'
+import { ApiService as ProductService } from 'projects/product/src/app/services/api.service'
 
 @Component({
   selector: 'app-activity-create',
   templateUrl: './activity-create.component.html',
-  styleUrls: ['./activity-create.component.scss']
+  styleUrls: ['./activity-create.component.scss'],
+  providers: [ProductService]
 })
 export class ActivityCreateComponent implements OnInit {
   public customerList: any[] = [] // 客户列表
@@ -36,7 +38,7 @@ export class ActivityCreateComponent implements OnInit {
 
   public activeTargetType = ['销售额', '存款额', '访问用户量', '激活用户量']
 
-  constructor(private modal: ModalService, private apiService: ApiService) {}
+  constructor(private modal: ModalService, private apiService: ApiService, private productService: ProductService) {}
 
   ngOnInit() {}
 
@@ -68,7 +70,11 @@ export class ActivityCreateComponent implements OnInit {
     })
   }
 
-  public getProductList() {}
+  public getProductList() {
+    this.productService.getProductList('product').subscribe(data => {
+      this.productList = data.slice(0, 5)
+    })
+  }
 
   public getInterestList() {}
 
