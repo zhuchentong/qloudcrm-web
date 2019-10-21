@@ -7,7 +7,7 @@
     </ql-breadcrumb>
   </ng-template>
   <ng-template #action>
-    <ql-button type="primary">提交</ql-button>
+    <ql-button type="primary" (click)="onSubmit()">提交</ql-button>
   </ng-template>
 </page-header>
 
@@ -103,7 +103,9 @@
           </card-header>
         </ng-template>
         <data-table [model]="productList">
+          <ql-table-column model-key="productCode" label="产品编号"> </ql-table-column>
           <ql-table-column model-key="productName" label="产品名称"> </ql-table-column>
+          <ql-table-column model-key="productType" label="产品类型"> </ql-table-column>
         </data-table>
       </ql-card>
       <ql-card>
@@ -136,7 +138,14 @@
           </card-header>
         </ng-template>
         <data-table [model]="interestList">
-          <ql-table-column model-key="name" label="权益名称"> </ql-table-column>
+          <ql-table-column model-key="type" label="权益类型"></ql-table-column>
+          <ql-table-column model-key="name" label="权益名称"></ql-table-column>
+          <ql-table-column model-key="chargeOffType" label="核销方式"></ql-table-column>
+          <ql-table-column model-key="company" label="提供服务商"></ql-table-column>
+          <ql-table-column model-key="upTime" label="上架时间"></ql-table-column>
+          <ql-table-column model-key="count" label="权益总数量"></ql-table-column>
+          <ql-table-column model-key="lastCount" label="剩余可用数量"></ql-table-column>
+          <ql-table-column model-key="expireTime" label="到期时间"></ql-table-column>
         </data-table>
       </ql-card>
     </tab-item>
@@ -185,17 +194,19 @@
           <ql-card>
             <ng-template #header>
               <card-header title="活动产品">
-                <ql-button type="primary" (click)="onSelectProduct()" size="small">添加产品</ql-button>
+                <ql-button type="primary" (click)="onSelectProduct(item)" size="small">添加产品</ql-button>
               </card-header>
             </ng-template>
             <data-table [model]="item.productList">
+              <ql-table-column model-key="productCode" label="产品编号"> </ql-table-column>
               <ql-table-column model-key="productName" label="产品名称"> </ql-table-column>
+              <ql-table-column model-key="productType" label="产品类型"> </ql-table-column>
             </data-table>
           </ql-card>
           <ql-card>
             <ng-template #header>
               <card-header title="权益列表">
-                <ql-button type="primary" (click)="onSelectInterest()" size="small">添加权益</ql-button>
+                <ql-button type="primary" (click)="onSelectInterest(item)" size="small">添加权益</ql-button>
               </card-header>
             </ng-template>
             <data-table [model]="item.interestList">

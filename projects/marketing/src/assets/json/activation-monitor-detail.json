@@ -1,0 +1,120 @@
+{
+  "chartData": [
+    {
+      "value": "90",
+      "name": "活动涵盖客户数量"
+    },
+    {
+      "value": "85",
+      "name": "已成功触达客户数量"
+    },
+    {
+      "value": "75",
+      "name": "反馈客户数量"
+    },
+    {
+      "value": "45",
+      "name": "待定跟进客户数量"
+    },
+    {
+      "value": "35",
+      "name": "转推介客户数量"
+    },
+    {
+      "value": "65",
+      "name": "营销成功数量"
+    }
+  ],
+  "equitiesInfo": {
+    "publicedEquitiesCount": [
+      {
+      "value": "100",
+      "name": "现金抵用券"
+      },
+      {
+        "value": "100",
+        "name": "现金红包券"
+      },
+      {
+        "value": "100",
+        "name": "流量充值包"
+      },
+      {
+        "value": "100",
+        "name": "话费充值包"
+      },
+      {
+        "value": "100",
+        "name": "电影票"
+      },
+      {
+        "value": "100",
+        "name": "兑换券"
+      },
+      {
+        "value": "100",
+        "name": "会员码"
+      }
+    ],
+    "publicedEquitiesUsed": [
+      {
+        "value": "60",
+        "name": "现金抵用券"
+      },
+      {
+        "value": "30",
+        "name": "现金红包券"
+      },
+      {
+        "value": "100",
+        "name": "流量充值包"
+      },
+      {
+        "value": "50",
+        "name": "话费充值包"
+      },
+      {
+        "value": "20",
+        "name": "电影票"
+      },
+      {
+        "value": "70",
+        "name": "兑换券"
+      },
+      {
+        "value": "50",
+        "name": "会员码"
+      }
+    ],
+    "remainPublicedEquities": [
+      {
+        "value": "40",
+        "name": "现金抵用券"
+      },
+      {
+        "value": "70",
+        "name": "现金红包券"
+      },
+      {
+        "value": "0",
+        "name": "流量充值包"
+      },
+      {
+        "value": "50",
+        "name": "话费充值包"
+      },
+      {
+        "value": "80",
+        "name": "电影票"
+      },
+      {
+        "value": "30",
+        "name": "兑换券"
+      },
+      {
+        "value": "50",
+        "name": "会员码"
+      }
+    ]
+  }
+}

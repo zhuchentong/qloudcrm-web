@@ -14,6 +14,7 @@ import eventList from '../../assets/json/event-list.json'
 import EquitiesManageList from '../../assets/json/equities-list.json'
 import ActivityList from '../../assets/json/activity-list.json'
 import ActivationMonitorList from '../../assets/json/activation-monitor-list.json'
+import ActivationStattistic from '../../assets/json/activation-monitor-detail.json'
 @Injectable()
 export class ApiService {
   constructor(private net: NetService) {}
@@ -62,5 +63,9 @@ export class ApiService {
 
   public getActivationMonitorList(){
     return of(ActivationMonitorList);
+  }
+
+  public getActivationStattistic(){
+    return of(ActivationStattistic)
   }
 }

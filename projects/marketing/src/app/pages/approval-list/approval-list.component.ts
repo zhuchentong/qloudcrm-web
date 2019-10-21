@@ -14,10 +14,7 @@ import { DictService } from '@app/shared/utils/dict.service'
 })
 export class ApprovalListComponent implements OnInit {
   public activityList: any[] = []
-  constructor(
-    private apiService: ApiService,
-    public modal: ModalService,
-    private message: QlMessageService) {}
+  constructor(private apiService: ApiService, public modal: ModalService, private message: QlMessageService) {}
 
   @ViewChild('statistlook', { static: true })
   private statistlookTemp: TemplateRef<any>
@@ -28,19 +25,18 @@ export class ApprovalListComponent implements OnInit {
 
   getActivityList() {
     this.apiService.getActivityList().subscribe(data => {
-      console.log(data)
-      this.activityList = data
+      this.activityList = data.slice(0, 1)
     })
   }
 
-  public actiityStatis(){
+  public actiityStatis() {
     this.modal
-    .open({
-      title: '活动统计',
-      component: this.statistlookTemp
-    })
-    .subscribe(() => {
-      this.message.success('sucess')
-    })
+      .open({
+        title: '活动统计',
+        component: this.statistlookTemp
+      })
+      .subscribe(() => {
+        this.message.success('sucess')
+      })
   }
 }
