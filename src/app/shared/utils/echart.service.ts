@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core'
 
-type chartType = 'pie'
+type chartType = 'pie' | 'funnel'
 
 @Injectable()
 export class EchartService {
   private chartOptionGenerate = {
-    pie: this.getPieOption
+    pie: this.getPieOption,
+    funnel: this.getFunnelOption
   }
 
   /**
@@ -75,6 +76,65 @@ export class EchartService {
               show: true,
               smooth: false,
               length: 30
+            }
+          },
+          data
+        }
+      ]
+    }
+  }
+
+  private getFunnelOption(data) {
+    return {
+      tooltip: {
+        trigger: 'item',
+        formatter: '{a} <br/>{b} : {c}%'
+      },
+      toolbox: {
+        feature: {
+          dataView: { readOnly: false },
+          restore: {},
+          saveAsImage: {}
+        }
+      },
+      legend: {
+        data: data.map(x => x.name)
+      },
+      calculable: true,
+      series: [
+        {
+          name: '漏斗图',
+          type: 'funnel',
+          left: '10%',
+          top: 60,
+          //x2: 80,
+          bottom: 60,
+          width: '80%',
+          // height: {totalHeight} - y - y2,
+          min: 0,
+          max: 100,
+          minSize: '0%',
+          maxSize: '100%',
+          sort: 'descending',
+          gap: 2,
+          label: {
+            show: true,
+            position: 'inside'
+          },
+          labelLine: {
+            length: 10,
+            lineStyle: {
+              width: 1,
+              type: 'solid'
+            }
+          },
+          itemStyle: {
+            borderColor: '#fff',
+            borderWidth: 1
+          },
+          emphasis: {
+            label: {
+              fontSize: 20
             }
           },
           data

@@ -17,7 +17,6 @@ export class EquitiesCreateComponent implements OnInit {
   public back:boolean = true;
   public fileList: any[];
   public equitiesTypes: any[] =[
-    {key:'请选择',value:null},
     {key:'现金抵用券',value:1},
     {key: '现金红包券',value:2},
     {key: '流量充值包',value:3},
@@ -27,14 +26,12 @@ export class EquitiesCreateComponent implements OnInit {
     {key: '会员码',value:7}];
 
   public chargeOffType: any[] =[
-    {key:'请选择',value:null},
     {key:'支付后核销',value:1},
     {key:'核销后支付',value:2},
     {key:'赠予后核销',value:3},
   ]
 
   public provideCompany: any[] =[
-    {key:'请选择',value:null},
     {key:'总行',value:1},
     {key: '分行',value:2},
     {key: '支行网点',value:3},
