@@ -36,6 +36,8 @@ export class ExploreCreateComponent implements OnInit {
     { value: '7', label: '价值客户' },
     { value: '8', label: '大众客户' },
   ]
+  public aumData = [{ value: '大于等于', label: '大于等于' }, { value: '小于等于', label: '小于等于' }]
+  public aumData2 = [{ value: '大于等于', label: '大于等于' }, { value: '小于等于', label: '小于等于' }]
   public customerPotential = [{value: '1', label: '高' },{ value: '2', label: '中' },{ value: '3', label: '低' }]
   public sexitems = [{ value: '男', label: '男' }, { value: '女', label: '女' }]
   public ageitems = [

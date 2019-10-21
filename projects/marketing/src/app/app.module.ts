@@ -37,7 +37,8 @@ import { SelectExploreComponent } from './components/select-explore/select-explo
 import { RecommendDetialComponent } from './pages/recommend-detial/recommend-detial.component';
 import { ExploreResultComponent } from './pages/explore-result/explore-result.component'
 import { EquitiesListComponent } from './pages/equities-list/equities-list.component';
-import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component'
+import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component';
+import { ExploreConditionComponent } from './pages/explore-condition/explore-condition.component'
 
 // 页面列表
 const PAGES = [
@@ -63,7 +64,8 @@ const PAGES = [
   RecommendDetialComponent,
   ExploreResultComponent,
   EquitiesListComponent,
-  EquitiesCreateComponent
+  EquitiesCreateComponent,
+  ExploreConditionComponent
 ]
 
 // 组件列表
@@ -94,7 +96,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ExploreResultComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ExploreResultComponent, ExploreConditionComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, QlDateModule],
   providers,

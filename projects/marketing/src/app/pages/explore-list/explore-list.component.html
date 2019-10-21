@@ -31,10 +31,11 @@
         <ql-table-column model-key="createTime" label="创建时间"></ql-table-column>
         <ql-table-column model-key="status" label="探索状态"></ql-table-column>
         <ql-table-column model-key="count" label="客户数量"></ql-table-column>
-        <ql-table-column label="操作" width="230">
+        <ql-table-column label="操作" width="300">
             <ng-template #slot let-scope="scope">
                 <ql-button type="text">执行探索</ql-button>
                 <ql-button type="text">创建活动</ql-button>
+                <ql-button type="text" [routerLink]="['/marketing/explore-condition']">查看条件</ql-button>
                 <ql-button type="text" [routerLink]="['/marketing/explore-result']">查看结果</ql-button>
             </ng-template>
         </ql-table-column>
