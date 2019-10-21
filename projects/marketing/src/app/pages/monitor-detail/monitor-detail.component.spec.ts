@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ActivilyMonitorComponent } from './activily-monitor.component';
+import { MonitorDetailComponent } from './monitor-detail.component';
 
-describe('ActivilyMonitorComponent', () => {
-  let component: ActivilyMonitorComponent;
-  let fixture: ComponentFixture<ActivilyMonitorComponent>;
+describe('MonitorDetailComponent', () => {
+  let component: MonitorDetailComponent;
+  let fixture: ComponentFixture<MonitorDetailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ActivilyMonitorComponent ]
+      declarations: [ MonitorDetailComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ActivilyMonitorComponent);
+    fixture = TestBed.createComponent(MonitorDetailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -20,7 +20,6 @@ import { ChannelListComponent } from './pages/channel-list/channel-list.componen
 import { ConflictDetialComponent } from './pages/conflict-detial/conflict-detial.component'
 import { ExploreListComponent } from './pages/explore-list/explore-list.component'
 import { ApprovalListComponent } from './pages/approval-list/approval-list.component'
-import { ActivilyMonitorComponent } from './pages/activily-monitor/activily-monitor.component'
 import { ActivilyCommentComponent } from './pages/activily-comment/activily-comment.component'
 import { RecommendListComponent } from './pages/recommend-list/recommend-list.component'
 import { ExploreCreateComponent } from './pages/explore-create/explore-create.component'
@@ -42,26 +41,23 @@ import { EquitiesListComponent } from './pages/equities-list/equities-list.compo
 import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component'
 import { ExploreConditionComponent } from './pages/explore-condition/explore-condition.component'
 import { EquitiesDetailComponent } from './pages/equities-detail/equities-detail.component'
+import { MonitorListComponent } from './pages/monitor-list/monitor-list.component'
+import { MonitorDetailComponent } from './pages/monitor-detail/monitor-detail.component'
 
 // 页面列表
 const PAGES = [
   ActivityListComponent,
   ExploreListComponent,
   ApprovalListComponent,
-  ActivilyMonitorComponent,
   ActivilyCommentComponent,
   RecommendListComponent,
   ExploreCreateComponent,
   ConflictListComponent,
   ConflictDetialComponent,
-  ChannelListComponent,
-  TemplateFilterComponent,
-  TemplateDetailComponent,
   TemplateFilterComponent,
   TemplateDetailComponent,
   TagComponent,
   ChannelListComponent,
-  ConflictDetialComponent,
   ActivityCreateComponent,
   AddTemplateComponent,
   RecommendDetialComponent,
@@ -69,7 +65,12 @@ const PAGES = [
   EquitiesListComponent,
   EquitiesCreateComponent,
   ExploreConditionComponent,
-  EquitiesDetailComponent
+  EquitiesDetailComponent,
+  ExploreResultComponent,
+  ActivityDetailComponent,
+  ApprovalDetailComponent,
+  MonitorListComponent,
+  MonitorDetailComponent
 ]
 
 // 组件列表
@@ -79,10 +80,7 @@ const COMPONENTS = [
   SelectPruductComponent,
   SelectEventComponent,
   SelectInterestComponent,
-  SelectExploreComponent,
-  ExploreResultComponent,
-  ActivityDetailComponent,
-  ApprovalDetailComponent
+  SelectExploreComponent
 ]
 
 const startUpFactory = (store: Store) => async () => {
