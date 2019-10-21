@@ -1,0 +1,63 @@
+<page-header title="探索条件" [breadcrumb]="breadcrumb" [back]="true">
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>目标探索</ql-breadcrumb-item>
+            <ql-breadcrumb-item>探索条件</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+</page-header>
+
+<page-container>
+    <ql-card header="探索属性">
+        <label-container column="3" [border]="true" labelWidth="160">
+            <label-item label="探索名称">高收入组</label-item>
+            <label-item label="探索机构">工商银行</label-item>
+            <label-item label="探索时间">2018-1-31</label-item>
+        </label-container>
+    </ql-card>
+    <ql-card header="客户属性">
+        <label-container column="4" [border]="true" labelWidth="160">
+            <label-item label="AUM最小值">3万</label-item>
+            <label-item label="AUM最大值">5万</label-item>
+            <label-item label="总资产最小值">80万</label-item>
+            <label-item label="总资产最小值">120万</label-item>
+            <label-item label="性别">男</label-item>
+            <label-item label="婚姻">已婚</label-item>
+            <label-item label="年龄">30-45岁之间</label-item>
+            <label-item label="学历">本科以上</label-item>
+            <label-item label="客户职业">律师</label-item>
+            <label-item label="所属行业">服务咨询行业</label-item>
+            <label-item label="星级评价">四星</label-item>
+            <label-item label="开户时间">2018-12-01</label-item>
+            <label-item label="客户等级">白金客户</label-item>
+            <label-item label="客户潜力值">高</label-item>
+            <label-item label="理财风险">高</label-item>
+            <label-item label="基金风险">低</label-item>
+        </label-container>
+    </ql-card>
+    <ql-card header="客户标签">
+        <data-table [model]="customerTag">
+            <ql-table-column model-key="code" label="标签编码"></ql-table-column>
+            <ql-table-column model-key="type" label="标签类别"></ql-table-column>
+            <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
+            <ql-table-column model-key="description" label="标签说明"></ql-table-column>
+            <ql-table-column model-key="createTime" label="创建日期"></ql-table-column>
+            <ql-table-column model-key="customerCount" label="客户数量"></ql-table-column>
+            <ql-table-column model-key="state" label="标签状态"></ql-table-column>
+        </data-table>
+    </ql-card>
+    <ql-card header="客户签约类型">
+        <label-container column="2" [border]="true" labelWidth="160">
+            <label-item label="签约类型">3万</label-item>
+            <label-item label="参数值">5万</label-item>
+        </label-container>
+    </ql-card>
+    <ql-card header="客户渠道偏好">
+        <label-container column="3" [border]="true" labelWidth="160">
+            <label-item label="渠道类型"></label-item>
+            <label-item label="使用频率次数">30</label-item>
+            <label-item label="日期时间">2018-01-12 15:23:00</label-item>
+        </label-container>
+    </ql-card>
+</page-container>

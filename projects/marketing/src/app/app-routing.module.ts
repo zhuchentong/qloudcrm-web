@@ -21,6 +21,7 @@ import { EquitiesListComponent } from './pages/equities-list/equities-list.compo
 import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component'
 import { ActivityDetailComponent } from './pages/activity-detail/activity-detail.component'
 import { ApprovalDetailComponent } from './pages/approval-detail/approval-detail.component'
+import { ExploreConditionComponent } from './pages/explore-condition/explore-condition.component'
 import { EquitiesDetailComponent } from './pages/equities-detail/equities-detail.component'
 
 const routes: Routes = [
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'marketing/explore-result', component: ExploreResultComponent },
   { path: 'marketing/equities-list', component: EquitiesListComponent },
   { path: 'marketing/equities-create', component: EquitiesCreateComponent },
+  { path: 'marketing/explore-condition', component: ExploreConditionComponent },
   { path: 'marketing/equities-detail', component: EquitiesDetailComponent }
 ]
 

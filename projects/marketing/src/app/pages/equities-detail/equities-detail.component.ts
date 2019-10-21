@@ -39,18 +39,6 @@ export class EquitiesDetailComponent implements OnInit {
     {key: '分行',value:2},
     {key: '支行网点',value:3},
     {key: '其他',value:4}];
-  /**
-   *
-   *
-   *  <ql-table-column model-key="type" label="权益类型"></ql-table-column>
-   <ql-table-column model-key="name" label="权益名称"></ql-table-column>
-   <ql-table-column model-key="chargeOffType" label="核销方式"></ql-table-column>
-   <ql-table-column model-key="company" label="提供服务商"></ql-table-column>
-   <ql-table-column model-key="upTime" label="上架时间"></ql-table-column>
-   <ql-table-column model-key="count" label="权益总数量"></ql-table-column>
-   <ql-table-column model-key="lastCount" label="剩余可用数量"></ql-table-column>
-   <ql-table-column model-key="expireTime" label="到期时间"></ql-table-column>
-   */
   public pageData={
     type:"",
     name:"",

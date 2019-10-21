@@ -40,6 +40,7 @@ import { ActivityDetailComponent } from './pages/activity-detail/activity-detail
 import { ApprovalDetailComponent } from './pages/approval-detail/approval-detail.component'
 import { EquitiesListComponent } from './pages/equities-list/equities-list.component'
 import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component'
+import { ExploreConditionComponent } from './pages/explore-condition/explore-condition.component'
 import { EquitiesDetailComponent } from './pages/equities-detail/equities-detail.component'
 
 // 页面列表
@@ -67,6 +68,7 @@ const PAGES = [
   ExploreResultComponent,
   EquitiesListComponent,
   EquitiesCreateComponent,
+  ExploreConditionComponent,
   EquitiesDetailComponent
 ]
 
