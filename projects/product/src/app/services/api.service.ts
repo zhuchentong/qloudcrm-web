@@ -7,8 +7,6 @@ import productList from '../../assets/json/product-list.json'
 export class ApiService {
   constructor(private net: NetService) {}
 
-  getProductCatalog() {}
-
   public getProductList(type?, parent?) {
     return of(
       productList
@@ -23,5 +21,9 @@ export class ApiService {
           return x
         })
     )
+  }
+
+  public getProduct(id) {
+    return of(productList.find(x => x.id === id))
   }
 }
