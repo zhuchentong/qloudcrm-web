@@ -19,6 +19,7 @@ import { RecommendDetialComponent } from './pages/recommend-detial/recommend-det
 import { ExploreResultComponent } from './pages/explore-result/explore-result.component'
 import { EquitiesListComponent } from './pages/equities-list/equities-list.component'
 import { EquitiesCreateComponent } from './pages/equities-create/equities-create.component'
+import { EquitiesDetailComponent } from './pages/equities-detail/equities-detail.component'
 
 const routes: Routes = [
   { path: 'marketing/activity-list', component: ActivityListComponent },
@@ -38,7 +39,8 @@ const routes: Routes = [
   { path: 'marketing/add-template', component: AddTemplateComponent },
   { path: 'marketing/explore-result', component: ExploreResultComponent },
   { path: 'marketing/equities-list', component: EquitiesListComponent },
-  { path: 'marketing/equities-create', component: EquitiesCreateComponent }
+  { path: 'marketing/equities-create', component: EquitiesCreateComponent },
+  { path: 'marketing/equities-detail', component: EquitiesDetailComponent }
 ]
 
 routes.push({
