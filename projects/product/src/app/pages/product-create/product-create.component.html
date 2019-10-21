@@ -1,1 +1,14 @@
-<p>product-create works!</p>
+<page-header title="创建产品" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>产品管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>产品目录</ql-breadcrumb-item>
+      <ql-breadcrumb-item>创建产品</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action>
+    <ql-button type="primary" (click)="onSubmit()">提交</ql-button>
+  </ng-template>
+</page-header>
+
+<page-container> </page-container>
