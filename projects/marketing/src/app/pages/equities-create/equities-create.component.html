@@ -1,4 +1,4 @@
-<page-header title="新增权益" [breadcrumb]="breadcrumb" [back]="true">
+<page-header title="新增权益" [breadcrumb]="breadcrumb"  [action]="action"  [back]="true">
   <ng-template #breadcrumb>
     <ql-breadcrumb>
       <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
@@ -6,7 +6,7 @@
     </ql-breadcrumb>
   </ng-template>
   <ng-template #action>
-    <ql-button type="primary">提交</ql-button>
+    <ql-button type="primary" (click)="onSubmit()">提交</ql-button>
   </ng-template>
 </page-header>
 <page-container>
