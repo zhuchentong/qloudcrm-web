@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core'
 import { of } from 'rxjs'
 
 import productList from '../../assets/json/product-list.json'
+import comboList from '../../assets/json/combo-list.json'
 @Injectable()
 export class ApiService {
   constructor(private net: NetService) {}
@@ -28,5 +29,9 @@ export class ApiService {
     product.productType = target.name
 
     return of(product)
+  }
+
+  public getcomboList(){
+    return of(comboList)
   }
 }

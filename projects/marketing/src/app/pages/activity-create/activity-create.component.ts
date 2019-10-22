@@ -7,6 +7,8 @@ import { SelectExploreComponent } from '../../components/select-explore/select-e
 import { SelectInterestComponent } from '../../components/select-interest/select-interest.component'
 import { SelectPruductComponent } from '../../components/select-pruduct/select-pruduct.component'
 import { ApiService as ProductService } from 'projects/product/src/app/services/api.service'
+import { Router } from '@angular/router'
+import { QlMessageService } from 'qloud-angular'
 
 @Component({
   selector: 'app-activity-create',
@@ -38,7 +40,13 @@ export class ActivityCreateComponent implements OnInit {
 
   public activeTargetType = ['销售额', '存款额', '访问用户量', '激活用户量']
 
-  constructor(private modal: ModalService, private apiService: ApiService, private productService: ProductService) {}
+  constructor(
+    private router: Router,
+    private modal: ModalService,
+    private apiService: ApiService,
+    private productService: ProductService,
+    private message: QlMessageService
+  ) {}
 
   ngOnInit() {}
 
@@ -70,13 +78,19 @@ export class ActivityCreateComponent implements OnInit {
     })
   }
 
-  public getProductList() {
+  public getProductList(target?) {
     this.productService.getProductList('product').subscribe(data => {
-      this.productList = data.slice(0, 5)
+      const source = target || this
+      source.productList = data.slice(0, 5)
     })
   }
 
-  public getInterestList() {}
+  public getInterestList(target?) {
+    this.apiService.getEquitiesList().subscribe(data => {
+      const source = target || this
+      source.interestList = data.slice(0, 3)
+    })
+  }
 
   public onSelectCustomer() {
     this.modal
@@ -115,14 +129,14 @@ export class ActivityCreateComponent implements OnInit {
   /**
    * 添加权益
    */
-  public onSelectInterest() {
+  public onSelectInterest(target?) {
     this.modal
       .open({
         title: '添加权益',
         component: SelectInterestComponent
       })
       .subscribe(data => {
-        this.getInterestList()
+        this.getInterestList(target)
       })
   }
 
@@ -137,14 +151,19 @@ export class ActivityCreateComponent implements OnInit {
       })
   }
 
-  public onSelectProduct() {
+  public onSelectProduct(target?) {
     this.modal
       .open({
         title: '添加产品',
         component: SelectPruductComponent
       })
       .subscribe(data => {
-        this.getProductList()
+        this.getProductList(target)
       })
+  }
+
+  public onSubmit() {
+    this.message.success('创建成功')
+    this.router.navigate(['/marketing/activity-list'], { replaceUrl: true })
   }
 }

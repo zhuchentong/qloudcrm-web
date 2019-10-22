@@ -1,9 +1,12 @@
+// import { ApiService } from './../../../../../dashboard/src/app/services/dashboard.service';
+// import { ApiService as MarketingService } from './../../services/api.service';
 import { Component, OnInit } from '@angular/core'
-
+import { ApiService as ProductService } from 'projects/product/src/app/services/api.service'
 @Component({
   selector: 'app-approval-detail',
   templateUrl: './approval-detail.component.html',
-  styleUrls: ['./approval-detail.component.scss']
+  styleUrls: ['./approval-detail.component.scss'],
+  // providers:[ApiService]
 })
 export class ApprovalDetailComponent implements OnInit {
   public markerRequest = [
@@ -18,7 +21,7 @@ export class ApprovalDetailComponent implements OnInit {
     }
   ]
 
-  constructor() {}
+  // constructor(private apiService:ApiService,MarketingService) {}
 
   ngOnInit() {}
 }
