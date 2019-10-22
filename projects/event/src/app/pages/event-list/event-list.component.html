@@ -54,7 +54,7 @@
       <ng-template #slot let-scope="scope">
         <ql-button type="text" (click)="execute()" >执行</ql-button>
         <ql-button type="text" (click)="cease()" >停用</ql-button>
-        <ql-button type="text"  >查看</ql-button>
+        <ql-button type="text"  (click)="showItem()" >查看</ql-button>
       </ng-template>
     </ql-table-column>
   </data-table>

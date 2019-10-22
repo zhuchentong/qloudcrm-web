@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 import { ModalService } from '@shared/utils'
 import { PageService } from '@core/http'
 import { QlMessageService } from 'qloud-angular/package/message/message.service'
-import { Router } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
   selector: 'app-event-create',
@@ -16,6 +16,7 @@ import { Router } from '@angular/router'
 export class EventCreateComponent implements OnInit {
   public formGroup: FormGroup = this.fb.group({})
   // public dataList: any[] ;
+  private itemId: string;
   public eventType: any[];
   public channel: any[];
   public customerLevel: any[];
@@ -45,6 +46,7 @@ export class EventCreateComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   public onSubmit() {

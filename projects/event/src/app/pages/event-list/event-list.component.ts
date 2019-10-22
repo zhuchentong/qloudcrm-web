@@ -64,4 +64,8 @@ export class EventListComponent implements OnInit {
     this.message.success('暂停成功');
     this.onRefresh();
   }
+
+  public showItem(){
+    this.router.navigate(['/event/event-detail']);
+  }
 }
