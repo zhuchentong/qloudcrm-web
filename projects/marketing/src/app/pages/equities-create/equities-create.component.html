@@ -1,4 +1,4 @@
-<page-header title="权益管理" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
+<page-header title="新增权益" [breadcrumb]="breadcrumb" [back]="true">
   <ng-template #breadcrumb>
     <ql-breadcrumb>
       <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
@@ -12,39 +12,28 @@
 <page-container>
   <ql-card header="新增权益">
     <ql-form label-width="120px" ql-row>
-
       <ql-form-item ql-col span="12" label="权益类型">
         <ql-select placeholder="请选择">
-          <ql-option *ngFor="let item of equitiesTypes"
-                     [label]="item.key"
-                     [value]="item.value">
-          </ql-option>
+          <ql-option *ngFor="let item of equitiesTypes" [label]="item.key" [value]="item.value"> </ql-option>
         </ql-select>
       </ql-form-item>
 
-
-      <ql-form-item ql-col span="12" label="权益名称" >
+      <ql-form-item ql-col span="12" label="权益名称">
         <ql-input></ql-input>
       </ql-form-item>
-<!--      <ql-form-item ql-col span="12" label="权益名称">-->
-<!--        <ql-input></ql-input>-->
-<!--      </ql-form-item>-->
+      <!--      <ql-form-item ql-col span="12" label="权益名称">-->
+      <!--        <ql-input></ql-input>-->
+      <!--      </ql-form-item>-->
 
       <ql-form-item ql-col span="12" label="核销方式">
         <ql-select placeholder="请选择">
-          <ql-option *ngFor="let item of chargeOffType"
-                     [label]="item.key"
-                     [value]="item.value">
-          </ql-option>
+          <ql-option *ngFor="let item of chargeOffType" [label]="item.key" [value]="item.value"> </ql-option>
         </ql-select>
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="提供服务商">
         <ql-select placeholder="请选择">
-          <ql-option *ngFor="let item of provideCompany"
-                     [label]="item.key"
-                     [value]="item.value">
-          </ql-option>
+          <ql-option *ngFor="let item of provideCompany" [label]="item.key" [value]="item.value"> </ql-option>
         </ql-select>
       </ql-form-item>
 
@@ -56,7 +45,7 @@
         <ql-date-picker></ql-date-picker>
       </ql-form-item>
 
-      <ql-form-item  ql-col span="24" label="权益描述">
+      <ql-form-item ql-col span="24" label="权益描述">
         <ql-input type="textarea" [autosize]="{ minRows: 6, maxRows: 12 }"></ql-input>
       </ql-form-item>
 
@@ -68,15 +57,11 @@
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="兑换码上传">
-        <ql-upload [upload-filter]="limit1024.bind(this)">
+        <ql-upload [show-file-list]="false">
           <ng-template #trigger>
             <ql-button size="small" type="primary">上传文件</ql-button>
           </ng-template>
-<!--          <ng-template #tip>-->
-<!--            <div class="el-upload__tip">文件不能超过1024kb</div>-->
-<!--          </ng-template>-->
         </ql-upload>
-
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="支持客户级别">

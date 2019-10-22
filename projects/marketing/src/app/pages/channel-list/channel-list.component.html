@@ -1,17 +1,14 @@
-<page-header title="渠道管理" [breadcrumb]="breadcrumb" [action]="action">
+<page-header title="渠道管理" [breadcrumb]="breadcrumb">
   <ng-template #breadcrumb>
     <ql-breadcrumb>
       <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
       <ql-breadcrumb-item>渠道管理</ql-breadcrumb-item>
     </ql-breadcrumb>
   </ng-template>
-  <ng-template #action class="ql-text-right">
-    <ql-button class="page-header__back" *ngIf="back" (click)="location.back()">返回</ql-button>
-  </ng-template>
 </page-header>
 <page-container>
   <!--[selection]="true" -->
-  <data-table  [model]="channelList" (selection-change)="onCheckChange($event)" [selection]="true">
+  <data-table [model]="channelList" (selection-change)="onCheckChange($event)" [selection]="true">
     <ql-table-column model-key="channelName" label="渠道"></ql-table-column>
     <ql-table-column model-key="circuitDays" label="时间周期(天)"></ql-table-column>
     <ql-table-column model-key="sendTime" label="发送次数"></ql-table-column>
@@ -19,11 +16,10 @@
       <ng-template #slot let-scope="scope">
         <!-- <ql-button type="text">数据维护</ql-button> -->
         <!--        <ql-button type="text" [routerLink]="['/mar/customer-detail']">详情</ql-button>-->
-        <ql-button type="text" >关闭</ql-button>
+        <ql-button type="text">关闭</ql-button>
         <ql-button type="text">打开</ql-button>
         <ql-button type="text">删除</ql-button>
       </ng-template>
     </ql-table-column>
   </data-table>
 </page-container>
-

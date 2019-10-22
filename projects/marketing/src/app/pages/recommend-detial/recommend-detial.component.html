@@ -1,12 +1,9 @@
-<page-header title="营销管理" [breadcrumb]="breadcrumb" [back]="true">
+<page-header title="营销管理" [breadcrumb]="breadcrumb">
   <ng-template #breadcrumb>
     <ql-breadcrumb>
       <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
       <ql-breadcrumb-item>推荐详情</ql-breadcrumb-item>
     </ql-breadcrumb>
-  </ng-template>
-  <ng-template #action  class="ql-text-right">
-    <ql-button class="page-header__back" *ngIf="back" (click)="location.back()">返回</ql-button>
   </ng-template>
 </page-header>
 <tab-container>
@@ -15,10 +12,13 @@
       <div class="ql-row">
         <div class="row wrapinfo">
           <div ql-col [span]="4">
-            <img class="imgcss" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2882133088,2696092300&fm=26&gp=0.jpg" alt="" />
+            <img
+              class="imgcss"
+              src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2882133088,2696092300&fm=26&gp=0.jpg"
+              alt=""
+            />
             <p class="ql-text-center ql-margin-top ">四星客户</p>
-            <ql-rate class="ql-text-center" [model]="4" [max]="4" [qlDisabled]="true">
-            </ql-rate>
+            <ql-rate class="ql-text-center" [model]="4" [max]="4" [qlDisabled]="true"> </ql-rate>
           </div>
           <div class="rightcss" ql-col [span]="20">
             <h5>陈先(男士,38岁)</h5>
@@ -91,87 +91,87 @@
       </div>
       <div class="wrapinfo ql-padding">
         <h4>客户画像</h4>
-<!--        <ql-collapse  [model]="[1]"  [accordion]="true">-->
-<!--          <ql-collapse-item   value="1">-->
-<!--            <ng-template #label>-->
-<!--              <div class="row between-span">-->
-<!--                <div class="ql-padding-x">客户画像</div>-->
-<!--              </div>-->
-<!--            </ng-template>-->
-            <div class="ql-margin-top ql-margin-bottom">
-              <ql-select >
-                <ql-option *ngFor="let item of tagTypes" [label]="item.label" [value]="item.value"> </ql-option>
-              </ql-select>
-            </div>
-            <data-table [model]="tagInfoList">
-              <ql-table-column model-key="tagname" label="标签名称"> </ql-table-column>
-              <ql-table-column model-key="tagtype" label="标签类型"> </ql-table-column>
-              <ql-table-column model-key="tagtime" label="打标时间"> </ql-table-column>
-            </data-table>
-<!--          </ql-collapse-item>-->
-<!--        </ql-collapse>-->
+        <!--        <ql-collapse  [model]="[1]"  [accordion]="true">-->
+        <!--          <ql-collapse-item   value="1">-->
+        <!--            <ng-template #label>-->
+        <!--              <div class="row between-span">-->
+        <!--                <div class="ql-padding-x">客户画像</div>-->
+        <!--              </div>-->
+        <!--            </ng-template>-->
+        <div class="ql-margin-top ql-margin-bottom">
+          <ql-select>
+            <ql-option *ngFor="let item of tagTypes" [label]="item.label" [value]="item.value"> </ql-option>
+          </ql-select>
+        </div>
+        <data-table [model]="tagInfoList">
+          <ql-table-column model-key="tagname" label="标签名称"> </ql-table-column>
+          <ql-table-column model-key="tagtype" label="标签类型"> </ql-table-column>
+          <ql-table-column model-key="tagtime" label="打标时间"> </ql-table-column>
+        </data-table>
+        <!--          </ql-collapse-item>-->
+        <!--        </ql-collapse>-->
       </div>
       <div class="wrapinfo ql-padding">
         <h4>营销活动记录</h4>
-<!--      <ql-collapse  [model]="[1]"  [accordion]="true" class="ql-margin-top ql-margin-bottom">-->
-<!--        <ql-collapse-item   value="1">-->
-<!--          <ng-template #label>-->
-<!--            <div class="row between-span">-->
-<!--              <div class="ql-padding-x">营销活动记录</div>-->
-<!--            </div>-->
-<!--          </ng-template>-->
-          <data-table [model]="marketList">
-            <ql-table-column model-key="marketName" label="营销活动名称"> </ql-table-column>
-            <ql-table-column model-key="time" label="营销活动时间"> </ql-table-column>
-            <ql-table-column model-key="result" label="营销结果"> </ql-table-column>
-          </data-table>
-<!--        </ql-collapse-item>-->
-<!--      </ql-collapse>-->
+        <!--      <ql-collapse  [model]="[1]"  [accordion]="true" class="ql-margin-top ql-margin-bottom">-->
+        <!--        <ql-collapse-item   value="1">-->
+        <!--          <ng-template #label>-->
+        <!--            <div class="row between-span">-->
+        <!--              <div class="ql-padding-x">营销活动记录</div>-->
+        <!--            </div>-->
+        <!--          </ng-template>-->
+        <data-table [model]="marketList">
+          <ql-table-column model-key="marketName" label="营销活动名称"> </ql-table-column>
+          <ql-table-column model-key="time" label="营销活动时间"> </ql-table-column>
+          <ql-table-column model-key="result" label="营销结果"> </ql-table-column>
+        </data-table>
+        <!--        </ql-collapse-item>-->
+        <!--      </ql-collapse>-->
       </div>
       <div class="wrapinfo ql-padding">
         <h4>用户持有产品</h4>
-<!--      <ql-collapse  [model]="[1]"  [accordion]="true" class="ql-margin-top ql-margin-bottom">-->
-<!--        <ql-collapse-item   value="1">-->
-<!--          <ng-template #label>-->
-<!--            <div class="row between-span">-->
-<!--              <div class="ql-padding-x">用户持有产品</div>-->
-<!--            </div>-->
-<!--          </ng-template>-->
-          <div ql-row>
-            <h4>活期存款</h4>
-            <label-container column="4" [border]="true">
-              <label-item label="账号">78273221</label-item>
-              <label-item label="账户状态">正常</label-item>
-              <label-item label="币种">人民币</label-item>
-              <label-item label="本金">20万</label-item>
-            </label-container>
-            <h4>定期存款</h4>
-            <label-container column="4" [border]="true">
-              <label-item label="账号">78273221</label-item>
-              <label-item label="账户状态">正常</label-item>
-              <label-item label="币种">人民币</label-item>
-              <label-item label="本金">30万</label-item>
-            </label-container>
-          </div>
-<!--        </ql-collapse-item>-->
-<!--      </ql-collapse>-->
+        <!--      <ql-collapse  [model]="[1]"  [accordion]="true" class="ql-margin-top ql-margin-bottom">-->
+        <!--        <ql-collapse-item   value="1">-->
+        <!--          <ng-template #label>-->
+        <!--            <div class="row between-span">-->
+        <!--              <div class="ql-padding-x">用户持有产品</div>-->
+        <!--            </div>-->
+        <!--          </ng-template>-->
+        <div ql-row>
+          <h4>活期存款</h4>
+          <label-container column="4" [border]="true">
+            <label-item label="账号">78273221</label-item>
+            <label-item label="账户状态">正常</label-item>
+            <label-item label="币种">人民币</label-item>
+            <label-item label="本金">20万</label-item>
+          </label-container>
+          <h4>定期存款</h4>
+          <label-container column="4" [border]="true">
+            <label-item label="账号">78273221</label-item>
+            <label-item label="账户状态">正常</label-item>
+            <label-item label="币种">人民币</label-item>
+            <label-item label="本金">30万</label-item>
+          </label-container>
+        </div>
+        <!--        </ql-collapse-item>-->
+        <!--      </ql-collapse>-->
       </div>
       <div class="wrapinfo ql-padding">
         <h4>客户联络信息</h4>
-<!--      <ql-collapse  [model]="[1]"  [accordion]="true" class="ql-margin-top ql-margin-bottom">-->
-<!--        <ql-collapse-item   value="1">-->
-<!--          <ng-template #label>-->
-<!--            <div class="row between-span">-->
-<!--              <div class="ql-padding-x">客户联络信息</div>-->
-<!--            </div>-->
-<!--          </ng-template>-->
-          <data-table [model]="contactData">
-            <ql-table-column model-key="bussiness" label="业务"> </ql-table-column>
-            <ql-table-column model-key="chandel" label="办理渠道"> </ql-table-column>
-            <ql-table-column model-key="time" label="办理时间" > </ql-table-column>
-          </data-table>
-<!--        </ql-collapse-item>-->
-<!--      </ql-collapse>-->
+        <!--      <ql-collapse  [model]="[1]"  [accordion]="true" class="ql-margin-top ql-margin-bottom">-->
+        <!--        <ql-collapse-item   value="1">-->
+        <!--          <ng-template #label>-->
+        <!--            <div class="row between-span">-->
+        <!--              <div class="ql-padding-x">客户联络信息</div>-->
+        <!--            </div>-->
+        <!--          </ng-template>-->
+        <data-table [model]="contactData">
+          <ql-table-column model-key="bussiness" label="业务"> </ql-table-column>
+          <ql-table-column model-key="chandel" label="办理渠道"> </ql-table-column>
+          <ql-table-column model-key="time" label="办理时间"> </ql-table-column>
+        </data-table>
+        <!--        </ql-collapse-item>-->
+        <!--      </ql-collapse>-->
       </div>
     </ql-card>
   </tab-item>
@@ -196,12 +196,12 @@
     <ql-card>
       <div class="ql-row">
         <data-table [model]="recommendRecord">
-          <ql-table-column model-key="contactTime" label="联络时间" > </ql-table-column>
+          <ql-table-column model-key="contactTime" label="联络时间"> </ql-table-column>
           <ql-table-column model-key="product" label="营销产品"> </ql-table-column>
-          <ql-table-column model-key="right" label="使用权益" > </ql-table-column>
+          <ql-table-column model-key="right" label="使用权益"> </ql-table-column>
           <ql-table-column model-key="channel" label="营销渠道"> </ql-table-column>
-          <ql-table-column model-key="record" label="过程记录" > </ql-table-column>
-          <ql-table-column model-key="result" label="营销结果" > </ql-table-column>
+          <ql-table-column model-key="record" label="过程记录"> </ql-table-column>
+          <ql-table-column model-key="result" label="营销结果"> </ql-table-column>
         </data-table>
       </div>
     </ql-card>
