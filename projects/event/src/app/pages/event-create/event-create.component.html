@@ -1,4 +1,4 @@
-<page-header title="权益管理" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
+<page-header title="新增事件" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
   <ng-template #breadcrumb>
     <ql-breadcrumb>
       <ql-breadcrumb-item>事件管理</ql-breadcrumb-item>
@@ -6,91 +6,101 @@
     </ql-breadcrumb>
   </ng-template>
   <ng-template #action>
-    <ql-button type="primary">提交</ql-button>
+    <ql-button type="primary" (click)="onSubmit()">提交</ql-button>
   </ng-template>
 </page-header>
 <page-container>
-<!--  <ql-card header="新增权益">-->
-<!--    <ql-form label-width="120px" ql-row>-->
-
-<!--      <ql-form-item ql-col span="12" label="权益类型">-->
-<!--        <ql-select placeholder="请选择">-->
-<!--          <ql-option *ngFor="let item of equitiesTypes"-->
-<!--                     [label]="item.key"-->
-<!--                     [value]="item.value">-->
-<!--          </ql-option>-->
-<!--        </ql-select>-->
-<!--      </ql-form-item>-->
+  <ql-card header="新增事件">
+    <ql-form label-width="120px" ql-row>
 
 
-<!--      <ql-form-item ql-col span="12" label="权益名称" >-->
-<!--        <ql-input></ql-input>-->
-<!--      </ql-form-item>-->
-<!--      &lt;!&ndash;      <ql-form-item ql-col span="12" label="权益名称">&ndash;&gt;-->
-<!--      &lt;!&ndash;        <ql-input></ql-input>&ndash;&gt;-->
-<!--      &lt;!&ndash;      </ql-form-item>&ndash;&gt;-->
+      <ql-form-item ql-col span="12" label="事件类别:">
+        <ql-select placeholder="请选择">
+          <ql-option *ngFor="let item of eventType"
+                     [label]="item.value"
+                     [value]="item.key">
+          </ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="事件名称:">
+        <ql-input></ql-input>
+      </ql-form-item>
 
-<!--      <ql-form-item ql-col span="12" label="核销方式">-->
-<!--        <ql-select placeholder="请选择">-->
-<!--          <ql-option *ngFor="let item of chargeOffType"-->
-<!--                     [label]="item.key"-->
-<!--                     [value]="item.value">-->
-<!--          </ql-option>-->
-<!--        </ql-select>-->
-<!--      </ql-form-item>-->
+      <ql-form-item ql-col span="12" label="统计开始时间:">
+        <ql-date-picker></ql-date-picker>
+      </ql-form-item>
+      <ql-form-item ql-col span="12" label="统计结束时间:">
+        <ql-date-picker></ql-date-picker>
+      </ql-form-item>
+      <div ql-col>
+        <div ql-row>
+          <ql-form-item ql-col span="6" label="用户行为:">
+            <ql-input></ql-input>
+          </ql-form-item>
+        </div>
+      </div>
+      <div ql-col>
+        <div ql-row>
+          <ql-form-item ql-col label="触发条件:">
+            <ql-input class="ql-padding-right" ql-col span="6"></ql-input>
+            <ql-input class="ql-padding-right" ql-col span="6"></ql-input>
+          </ql-form-item>
+        </div>
+      </div>
+      <div ql-col>
+        <div ql-row>
+          <ql-form-item ql-col label="触发渠道:">
+            <ql-button type="primary" (click)="triggerChannels.push({ channelUrl: ''})" size="small">新增渠道</ql-button>
+            <ng-container *ngFor="let item of triggerChannels; let i = index">
+              <div ql-row>
+                <ql-form-item ql-col span="8" label="页面地址{{i+1}}:">
+                  <ql-input [model]="item.channelUrl"></ql-input>
+                </ql-form-item>
+                <div ql-col span="1" class="text-center">
+                  <ql-button (click)="triggerChannels.splice(i, 1)" type="text" *ngIf="i > 0">X</ql-button>
+                </div>
+              </div>
+            </ng-container>
+          </ql-form-item>
+        </div>
+      </div>
 
-<!--      <ql-form-item ql-col span="12" label="提供服务商">-->
-<!--        <ql-select placeholder="请选择">-->
-<!--          <ql-option *ngFor="let item of provideCompany"-->
-<!--                     [label]="item.key"-->
-<!--                     [value]="item.value">-->
-<!--          </ql-option>-->
-<!--        </ql-select>-->
-<!--      </ql-form-item>-->
+      <div ql-col>
+        <div ql-row>
+          <ql-form-item ql-col label="金额:">
+            <ql-input class="ql-padding-right" ql-col span="6"></ql-input>
+            <ql-input class="ql-padding-right" ql-col span="6"></ql-input>
+          </ql-form-item>
+        </div>
+      </div>
+      <div ql-col>
+        <div ql-row>
+          <ql-form-item ql-col label="客户标签属性:">
+            <ql-button type="primary" (click)="tagAttribute.push({ tag: ''})" size="small">新增标签属性</ql-button>
+            <ng-container *ngFor="let item of tagAttribute; let i = index">
+              <div ql-row>
+                <ql-form-item ql-col span="8" label="客户标签属性{{i+1}}:">
+                  <ql-input [model]="item.tag"></ql-input>
+                </ql-form-item>
+                <div ql-col span="1" class="text-center">
+                  <ql-button (click)="tagAttribute.splice(i, 1)" type="text" *ngIf="i > 0">X</ql-button>
+                </div>
+              </div>
+            </ng-container>
+          </ql-form-item>
+        </div>
+      </div>
+      <ql-form-item ql-col span="12" label="区域设置:">
+        <ql-select placeholder="请选择">
+          <ql-option *ngFor="let item of tradeArea"
+                     [label]="item.value"
+                     [value]="item.key">
+          </ql-option>
+        </ql-select>
+      </ql-form-item>
 
-<!--      <ql-form-item ql-col span="12" label="权益总数量">-->
-<!--        <ql-input></ql-input>-->
-<!--      </ql-form-item>-->
 
-<!--      <ql-form-item ql-col span="12" label="到期时间">-->
-<!--        <ql-date-picker></ql-date-picker>-->
-<!--      </ql-form-item>-->
-
-<!--      <ql-form-item  ql-col span="24" label="权益描述">-->
-<!--        <ql-input type="textarea" [autosize]="{ minRows: 6, maxRows: 12 }"></ql-input>-->
-<!--      </ql-form-item>-->
-
-<!--      <ql-form-item ql-col span="12" label="适用范围">-->
-<!--        <ql-select></ql-select>-->
-<!--      </ql-form-item>-->
-<!--      <ql-form-item ql-col span="12" label="权益特征">-->
-<!--        <ql-select placeholder="请选择"></ql-select>-->
-<!--      </ql-form-item>-->
-
-<!--&lt;!&ndash;      <ql-form-item ql-col span="12" label="兑换码上传">&ndash;&gt;-->
-<!--&lt;!&ndash;        <ql-upload [upload-filter]="limit1024.bind(this)">&ndash;&gt;-->
-<!--&lt;!&ndash;          <ng-template #trigger>&ndash;&gt;-->
-<!--&lt;!&ndash;            <ql-button size="small" type="primary">上传文件</ql-button>&ndash;&gt;-->
-<!--&lt;!&ndash;          </ng-template>&ndash;&gt;-->
-<!--&lt;!&ndash;          &lt;!&ndash;          <ng-template #tip>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;          &lt;!&ndash;            <div class="el-upload__tip">文件不能超过1024kb</div>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;          &lt;!&ndash;          </ng-template>&ndash;&gt;&ndash;&gt;-->
-<!--&lt;!&ndash;        </ql-upload>&ndash;&gt;-->
-
-<!--&lt;!&ndash;      </ql-form-item>&ndash;&gt;-->
-
-<!--      <ql-form-item ql-col span="12" label="支持客户级别">-->
-<!--        <ql-select placeholder="请选择"></ql-select>-->
-<!--      </ql-form-item>-->
-
-<!--      <ql-form-item ql-col span="12" label="支持卡片性质">-->
-<!--        <ql-select></ql-select>-->
-<!--      </ql-form-item>-->
-
-<!--      <ql-form-item ql-col span="12" label="支持渠道方式">-->
-<!--        <ql-select placeholder="请选择"></ql-select>-->
-<!--      </ql-form-item>-->
-<!--    </ql-form>-->
-<!--  </ql-card>-->
+    </ql-form>
+  </ql-card>
 </page-container>
 
