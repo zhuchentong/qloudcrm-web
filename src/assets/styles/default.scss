@@ -1,44 +1,45 @@
-@import "~fullcalendar/dist/fullcalendar.min.css";
-@import "~bootstrap/dist/css/bootstrap.css";
-@import "~font-awesome/css/font-awesome.css";
-
+// 修改p标签默认样式
 p {
   margin: 0;
 }
 
+// 修改a标签默认样式
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+// 修改table单元格间距
 .ql-table th,
 .ql-table td {
   padding-top: 6px !important;
   padding-bottom: 6px !important;
 }
 
-a {
-  //color: #4fb5dd !important;
-  text-decoration: none;
-  cursor: pointer;
-}
+// .ql-table__body-wrapper {
+//   overflow-x: auto !important;
+// }
 
-.ql-table__body-wrapper {
-  overflow-x: auto !important;
-}
+// .ql-table__header-wrapper.ql-table__header-scroll {
+//   overflow-x: hidden !important;
+// }
 
-.ql-table__header-wrapper.ql-table__header-scroll {
-  overflow-x: hidden !important;
-}
+// ql-form-item {
+//   text-align: left;
+// }
 
-ql-form-item {
-  text-align: left;
-}
-
-.formio-dialog.formio-dialog-theme-default.component-settings {
+// 修改formui编辑器弹窗z-index
+.formio-dialog .formio-dialog-theme-default .component-settings {
   z-index: 100000;
 }
 
+// 修复ql-menu默认选中项无border-bottom无颜色问题
 .ql-menu--horizontal > .ql-menu-item.is-active,
 .ql-menu--horizontal > .ql-submenu.is-active .ql-submenu__title {
   border-bottom-color: #357ee2 !important;
 }
 
+// 修复table不剧中问题
 .ql-table.ql-table--enable-row-transition {
   margin: auto;
 }

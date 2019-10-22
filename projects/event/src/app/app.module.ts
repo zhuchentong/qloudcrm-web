@@ -15,9 +15,10 @@ import { UpdateMenuAction } from '@app/store/action/layout.action'
 import { ApiService } from './services/api.service';
 import { EventListComponent } from './pages/event-list/event-list.component';
 import { EventCreateComponent } from './pages/event-create/event-create.component'
+import { EventAnalysisComponent } from './pages/event-analysis/event-analysis.component'
 
 // 页面列表
-const PAGES = [EventListComponent,EventCreateComponent]
+const PAGES = [EventListComponent,EventCreateComponent, EventAnalysisComponent]
 
 // 组件列表
 const COMPONENTS = []
