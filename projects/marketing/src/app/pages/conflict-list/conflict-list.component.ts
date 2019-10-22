@@ -44,4 +44,14 @@ export class ConflictListComponent implements OnInit {
     this.router.navigate(["marketing/conflict-detial",id]);
   }
 
+  public delay(id){
+    this.message.info("延期成功");
+    this.initialTableData();
+  }
+
+  public copy(id){
+    this.message.info("复制成功");
+    this.initialTableData();
+  }
+
 }

@@ -65,7 +65,8 @@ export class EquitiesListComponent implements OnInit {
    * @param id
    */
   public putAway(id:string){
-
+    this.message.success('上架成功');
+    this.onRefresh();
   }
 
   /**
@@ -73,6 +74,8 @@ export class EquitiesListComponent implements OnInit {
    * @param id
    */
   public cease(id:string ){
+    this.message.success('暂停成功');
+    this.onRefresh();
 
   }
 
@@ -81,6 +84,8 @@ export class EquitiesListComponent implements OnInit {
    * @param id
    */
   public delete(id:string ){
+    this.message.success('删除成功');
+    this.onRefresh();
 
   }
 

@@ -38,4 +38,14 @@ export class ChannelListComponent implements OnInit {
       this.channelList = data.sort(x => 0.5 - Math.random())
     })
   }
+  public close(id){
+    this.message.info("关闭成功");
+  }
+  public open(id){
+    this.message.info("打开成功");
+  }
+  public delete(id){
+    this.message.info("删除成功");
+  }
+
 }

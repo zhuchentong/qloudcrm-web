@@ -10,6 +10,10 @@
     {
       "name": "事件列表",
       "url": "#/event/event-list"
+    },
+    {
+      "name": "事件分析",
+      "url": "#/event/event-analysis"
     }
   ]
 }

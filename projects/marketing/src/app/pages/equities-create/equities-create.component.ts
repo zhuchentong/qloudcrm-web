@@ -55,5 +55,8 @@ export class EquitiesCreateComponent implements OnInit {
     }
     return true
   }
-
+  public onSubmit(){
+    this.message.success('新增成功');
+    this.router.navigate(['/marketing/equities-list'])
+  }
 }

@@ -1,0 +1,50 @@
+<page-header title="事件详情" [breadcrumb]="breadcrumb"  [back]="true">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>事件管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>事件详情</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+</page-header>
+<page-container *ngIf="eventDetial != null">
+  <ql-card header="事件基本信息" class="ql-margin">
+    <div ql-row>
+      <div class="row wrapinfo">
+        <label-container column="3" [border]="true" labelWidth="160">
+          <label-item label="事件类别">{{eventDetial.eventType}}</label-item>
+          <label-item label="事件名称">{{eventDetial.eventName}}</label-item>
+          <label-item label="统计开始时间">{{eventDetial.statisticBeginTime}}</label-item>
+          <label-item label="统计结束时间">{{eventDetial.statisticEndTime}}</label-item>
+          <label-item label="用户行为">{{eventDetial.customerDeed}}</label-item>
+          <label-item label="触发条件">{{eventDetial.trigCondition}}</label-item>
+          <label-item label="金额">{{eventDetial.tradeAmount}}</label-item>
+          <label-item label="区域">{{eventDetial.tradeArea}}</label-item>
+        </label-container>
+      </div>
+      <div ql-row>
+      <div class="row wrapinfo ql-padding">
+        <div class="rightcss" ql-col >
+          <h4>触发渠道</h4>
+
+          <label-container column="1"  [border]="true" labelWidth="160">
+
+              <label-item label="页面地址{{i+1}}" *ngFor="let item of eventDetial.traggerChannel ; let i = index" >{{item.url}}</label-item>
+
+          </label-container>
+        </div>
+      </div>
+    </div>
+      <div ql-row>
+        <div class="row wrapinfo ql-padding">
+          <div class="rightcss" ql-col >
+            <h4>客户标签属性</h4>
+            <label-container column="1"  [border]="true" labelWidth="160">
+              <label-item label="标签属性{{i+1}}" *ngFor="let item of eventDetial.customerTagsAttribute ; let i = index" >{{item.tag}}</label-item>
+            </label-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ql-card>
+</page-container>
+

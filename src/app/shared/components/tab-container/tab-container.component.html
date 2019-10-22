@@ -2,7 +2,12 @@
   <div class="tab-header">
     <div class="tab-header__container">
       <ul>
-        <li *ngFor="let item of tabItemList" [class.active]="item.active" (click)="changeActiveTab(item)">
+        <li
+          *ngFor="let item of tabItemList"
+          class="tab-header__item"
+          [class.active]="item.active"
+          (click)="changeActiveTab(item)"
+        >
           <a>
             <span class="tab-header_title">{{ item.title }}</span>
           </a>
