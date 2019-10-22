@@ -52,7 +52,16 @@ export class EventListComponent implements OnInit {
 
   }
 
-  public toDetail(){
+  public createItem(){
     this.router.navigate(['/event/event-create']);
+  }
+
+  public execute(){
+    this.message.success('执行成功');
+  }
+
+  public cease(){
+    this.message.success('暂停成功');
+    this.onRefresh();
   }
 }
