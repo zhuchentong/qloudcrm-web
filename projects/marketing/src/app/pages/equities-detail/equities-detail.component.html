@@ -1,4 +1,4 @@
-<page-header title="权益管理" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
+<page-header title="权益详情" [breadcrumb]="breadcrumb" [back]="true">
   <ng-template #breadcrumb>
     <ql-breadcrumb>
       <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
@@ -9,19 +9,13 @@
 <page-container>
   <ql-card header="权益详情">
     <ql-form label-width="120px" ql-row>
-
-      <ql-form-item ql-col span="12" label="权益类型" >
+      <ql-form-item ql-col span="12" label="权益类型">
         <ql-select [(ngModel)]="pageData.type" placeholder="请选择">
-          <ql-option *ngFor="let item of equitiesTypes"
-                     [label]="item.key"
-                     [value]="item.value"
-          >
-          </ql-option>
+          <ql-option *ngFor="let item of equitiesTypes" [label]="item.key" [value]="item.value"> </ql-option>
         </ql-select>
       </ql-form-item>
 
-
-      <ql-form-item ql-col span="12" label="权益名称"  >
+      <ql-form-item ql-col span="12" label="权益名称">
         <ql-input [value]="pageData.name"></ql-input>
       </ql-form-item>
       <!--      <ql-form-item ql-col span="12" label="权益名称">-->
@@ -30,19 +24,13 @@
 
       <ql-form-item ql-col span="12" label="核销方式">
         <ql-select [(ngModel)]="pageData.chargeOffType" placeholder="请选择">
-          <ql-option *ngFor="let item of chargeOffType"
-                     [label]="item.key"
-                     [value]="item.value">
-          </ql-option>
+          <ql-option *ngFor="let item of chargeOffType" [label]="item.key" [value]="item.value"> </ql-option>
         </ql-select>
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="提供服务商">
         <ql-select [(ngModel)]="pageData.company" placeholder="请选择">
-          <ql-option *ngFor="let item of provideCompany"
-                     [label]="item.key"
-                     [value]="item.value">
-          </ql-option>
+          <ql-option *ngFor="let item of provideCompany" [label]="item.key" [value]="item.value"> </ql-option>
         </ql-select>
       </ql-form-item>
 
@@ -51,10 +39,10 @@
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="到期时间">
-        <ql-date-picker>{{pageData.expireTime | date:'yyyy-MM-dd'}}</ql-date-picker>
+        <ql-date-picker>{{ pageData.expireTime | date: 'yyyy-MM-dd' }}</ql-date-picker>
       </ql-form-item>
 
-      <ql-form-item  ql-col span="24" label="权益描述">
+      <ql-form-item ql-col span="24" label="权益描述">
         <ql-input type="textarea" [value]="pageData.edesc" [autosize]="{ minRows: 6, maxRows: 12 }"></ql-input>
       </ql-form-item>
 
@@ -66,15 +54,15 @@
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="创建时间">
-         <ql-date-picker>{{pageData.createTime | date:'yyyy-MM-dd'}}</ql-date-picker>
+        <ql-date-picker>{{ pageData.createTime | date: 'yyyy-MM-dd' }}</ql-date-picker>
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="创建机构">
-        <ql-select  [(ngModel)]="pageData.createDep"></ql-select>
+        <ql-select [(ngModel)]="pageData.createDep"></ql-select>
       </ql-form-item>
 
       <ql-form-item ql-col span="12" label="最近更新时间">
-        <ql-date-picker ></ql-date-picker>
+        <ql-date-picker></ql-date-picker>
       </ql-form-item>
     </ql-form>
   </ql-card>

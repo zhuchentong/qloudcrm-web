@@ -32,7 +32,6 @@ export class MonitorListComponent implements OnInit {
 
   public formGroup: FormGroup = this.fb.group({})
   public onRefresh(){
-    console.log("fresh data list");
     this.apiService.getActivationMonitorList().subscribe(data => {
       this.dataList = data.sort(x => 0.5 - Math.random())
     })
