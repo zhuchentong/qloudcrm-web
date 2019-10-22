@@ -1,9 +1,12 @@
-<page-header title="事件管理" [breadcrumb]="breadcrumb" [back]="true">
+<page-header title="事件管理" [breadcrumb]="breadcrumb" >
   <ng-template #breadcrumb>
     <ql-breadcrumb>
       <ql-breadcrumb-item>事件管理</ql-breadcrumb-item>
       <ql-breadcrumb-item>事件列表</ql-breadcrumb-item>
     </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action>
+    <ql-button type="primary" [routerLink]="['/marketing/equities-create']">新增事件</ql-button>
   </ng-template>
 </page-header>
 <page-container>
