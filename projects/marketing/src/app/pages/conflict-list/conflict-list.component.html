@@ -1,4 +1,4 @@
-<page-header title="冲突管理" [breadcrumb]="breadcrumb">
+<page-header title="冲突管理" [breadcrumb]="breadcrumb" [back]="true" >
   <ng-template #breadcrumb>
     <ql-breadcrumb>
       <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
@@ -24,8 +24,8 @@
         <!-- <ql-button type="text">数据维护</ql-button> -->
         <!--        <ql-button type="text" [routerLink]="['/mar/customer-detail']">详情</ql-button>-->
         <ql-button type="text" (click)="toDetial(scope.rowData.id)">详情</ql-button>
-        <ql-button type="text">延期</ql-button>
-        <ql-button type="text">复制</ql-button>
+        <ql-button type="text" (click)="delay(scope.rowData.id)">延期</ql-button>
+        <ql-button type="text" (click)="copy(scope.rowData.id)">复制</ql-button>
       </ng-template>
     </ql-table-column>
   </data-table>

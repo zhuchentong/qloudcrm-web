@@ -16,9 +16,9 @@
       <ng-template #slot let-scope="scope">
         <!-- <ql-button type="text">数据维护</ql-button> -->
         <!--        <ql-button type="text" [routerLink]="['/mar/customer-detail']">详情</ql-button>-->
-        <ql-button type="text">关闭</ql-button>
-        <ql-button type="text">打开</ql-button>
-        <ql-button type="text">删除</ql-button>
+        <ql-button type="text" (click)="close('1')">关闭</ql-button>
+        <ql-button type="text" (click)="open('1')">打开</ql-button>
+        <ql-button type="text" (click)="delete('1')">删除</ql-button>
       </ng-template>
     </ql-table-column>
   </data-table>
