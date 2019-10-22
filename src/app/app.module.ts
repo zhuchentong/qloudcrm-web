@@ -13,6 +13,7 @@ import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppProductModule } from 'projects/product/src/app/app.module'
 import { AppSystemModule } from 'projects/system/src/app/app.module'
+import { AppEventModule } from '../../projects/event/src/app/app.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,8 @@ import { AppSystemModule } from 'projects/system/src/app/app.module'
     AppCustomerModule.forRoot(),
     AppMarketingModule.forRoot(),
     AppProductModule.forRoot(),
-    AppSystemModule.forRoot()
+    AppSystemModule.forRoot(),
+    AppEventModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
