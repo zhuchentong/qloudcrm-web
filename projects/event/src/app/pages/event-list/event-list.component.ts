@@ -53,6 +53,6 @@ export class EventListComponent implements OnInit {
   }
 
   public toDetail(){
-    this.router.navigate(['']);
+    this.router.navigate(['/event/event-create']);
   }
 }
