@@ -5,6 +5,9 @@ import { plainToClass } from 'class-transformer'
 import { DictService } from '@app/shared/utils/dict.service'
 import { ApiService } from '../../services/api.service'
 import { ModalService } from '@app/shared/utils'
+import { TagComponent } from '../../components/tag/tag.component'
+import { SelectCustomerComponent } from '../../components/select-customer/select-customer.component'
+import { SelGroupComponent } from '../../components/sel-group/sel-group.component'
 
 
 @Component({

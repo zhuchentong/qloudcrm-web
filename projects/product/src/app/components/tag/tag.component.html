@@ -1,0 +1,24 @@
+<page-container>
+    <data-form [submitText]="'提交'" (submit)="onRefresh()" [showReset]="false">
+        <!-- <ng-template #action>
+            <ql-button type="success" (click)="modalRef.close(true)">提交</ql-button>
+        </ng-template> -->
+    </data-form>
+    <div ql-row type="flex">
+        <ql-tree (modelChange)="onCatalogChange($event)" [accordion]="true" [model]="catalogList" ql-col span="6"></ql-tree>
+        <data-table ql-col span="18" [model]="tagList" [selection]="true">
+            <ql-table-column model-key="name" label="标签名称">
+                <ng-template #slot let-scope="scope">
+                    <a [routerLink]="['/customer/tag-detail', { id: scope.rowData.id }]">{{ scope.rowData.name }}</a>
+                </ng-template>
+            </ql-table-column>
+            <ql-table-column model-key="code" label="标签编码"></ql-table-column>
+            <ql-table-column model-key="type" label="标签类别"></ql-table-column>
+            <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
+            <ql-table-column model-key="description" label="标签说明"></ql-table-column>
+            <ql-table-column model-key="createTime" label="创建日期"></ql-table-column>
+            <ql-table-column model-key="customerCount" label="客户数量"></ql-table-column>
+            <ql-table-column model-key="state" label="标签状态"></ql-table-column>
+        </data-table>
+    </div>
+</page-container>

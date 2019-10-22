@@ -14,6 +14,20 @@
 <page-container>
     <tab-container>
         <tab-item title="产品详情展示">
+            <label-container column="3" [border]="true" labelWidth="160">
+                <label-item label="产品名称">{{productDetaildata.productName}}</label-item>
+                <label-item label="产品代码">{{productDetaildata.productCode}}</label-item>
+                <label-item label="产品目录类别">理财产品</label-item>
+                <label-item label="产品介绍">冠军收益产品</label-item>
+                <label-item label="产品利率">{{productDetaildata.productRate}}</label-item>
+                <label-item label="推荐类别">理财产品</label-item>
+                <label-item label="推荐原因">同等收益产品</label-item>
+                <label-item label="风险等级">{{productDetaildata.riskLevel}}</label-item>
+                <label-item label="发售时间">{{productDetaildata.createTime}}</label-item>
+                <label-item label="停售时间">{{productDetaildata.endTime}}</label-item>
+                <label-item label="适用客户类型标签">商旅客户</label-item>
+                <label-item label="产品说明书下载"></label-item>
+            </label-container>
         </tab-item>
         <tab-item title="业务以及办理规则">
             <ql-card header="适用范围">

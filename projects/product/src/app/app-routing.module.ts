@@ -7,6 +7,11 @@ import { ComboListComponent } from './pages/combo-list/combo-list.component'
 import { ComboDetailComponent } from './pages/combo-detail/combo-detail.component'
 import { ProductDocumentComponent } from './pages/product-document/product-document.component'
 import { AttentionListComponent } from './pages/attention-list/attention-list.component'
+import { ProductCreateComponent } from './pages/product-create/product-create.component'
+import { TagComponent } from './components/tag/tag.component'
+import { SelectCustomerComponent } from './components/select-customer/select-customer.component'
+import { SelGroupComponent } from './components/sel-group/sel-group.component'
+import {ComboCreateComponent } from './pages/combo-create/combo-create.component'
 
 const routes: Routes = [
   { path: 'product/product-list', component: ProductListComponent },
@@ -14,7 +19,9 @@ const routes: Routes = [
   { path: 'product/combo-list', component: ComboListComponent },
   { path: 'product/combo-detail', component: ComboDetailComponent },
   { path: 'product/product-document', component: ProductDocumentComponent },
-  { path: 'product/attention-list', component: AttentionListComponent }
+  { path: 'product/attention-list', component: AttentionListComponent },
+  { path: 'product/product-create', component: ProductCreateComponent },
+  { path: 'product/combo-create', component: ComboCreateComponent }
 ]
 
 routes.push({
