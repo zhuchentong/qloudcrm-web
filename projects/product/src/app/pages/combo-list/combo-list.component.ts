@@ -14,6 +14,14 @@ import { ModalService } from '@app/shared/utils'
 })
 export class ComboListComponent implements OnInit {
   public comboList: any[] = []
+  public productTypes = [
+    {value:'1',label:'理财产品'},
+    {value:'2',label:'基金'},
+    {value:'3',label:'期货'},
+    {value:'4',label:'债劵'},
+    {value:'5',label:'股票'},
+    {value:'6',label:'贵金属'},
+  ]
 
   constructor(private apiService: ApiService) {}
 

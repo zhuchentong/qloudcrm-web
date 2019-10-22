@@ -8,6 +8,24 @@
 </page-header>
 
 <page-container>
+    <data-form label-width="100px">
+        <ql-form-item label="产品组合名称">
+            <ql-input></ql-input>
+        </ql-form-item>
+        <ql-form-item label="产品组合代码">
+            <ql-input></ql-input>
+        </ql-form-item>
+        <ql-form-item label="产品类别">
+            <ql-select>
+                <ql-option *ngFor="let item of productTypes" [label]="item.label" [value]="item.value"> </ql-option>
+            </ql-select>
+        </ql-form-item>
+        <ql-form-item label="销售状态">
+            <ql-select>
+                <ql-option *ngFor="let item of []" [label]="item.label" [value]="item.value"> </ql-option>
+            </ql-select>
+        </ql-form-item>
+    </data-form>
     <data-table [model]="comboList">
         <ql-table-column model-key="comboName" label="产品名称"></ql-table-column>
         <ql-table-column model-key="comboCode" label="产品代码"></ql-table-column>

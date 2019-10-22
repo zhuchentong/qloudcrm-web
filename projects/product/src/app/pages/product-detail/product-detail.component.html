@@ -1,14 +1,117 @@
 <page-header title="产品详情" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>产品管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>产品目录</ql-breadcrumb-item>
-      <ql-breadcrumb-item>产品详情</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
-  <ng-template #action>
-    <ql-button type="primary" [routerLink]="['/product/product-create', { id: id }]">修改</ql-button>
-  </ng-template>
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>产品管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>产品目录</ql-breadcrumb-item>
+            <ql-breadcrumb-item>产品详情</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+    <ng-template #action>
+        <ql-button type="primary" [routerLink]="['/product/product-create', { id: id }]">修改</ql-button>
+    </ng-template>
 </page-header>
 
-<page-container> </page-container>
+<page-container>
+    <tab-container>
+        <tab-item title="产品详情展示">
+        </tab-item>
+        <tab-item title="业务以及办理规则">
+            <ql-card header="适用范围">
+                <p>1.年满十八岁且不超过65周岁的合法公民</p>
+                <p>2.具有一定经济基础人群</p>
+                <p>3.有一定理财基础的人群</p>
+            </ql-card>
+            <ql-card header="办理规定">
+                <p>1.进行风险测试</p>
+                <p>2.风险测试匹配此产品的风险等级</p>
+                <p>3.按照产品流程办理手续</p>
+            </ql-card>
+            <ql-card header="注意事项">
+                <p>1.注意理财产品说明书</p>
+                <p>2.在能力范围内投资，做好投资成本计划</p>
+                <p>3.客户认清自己的风险等级</p>
+                <p>4.收益预期不等同于实际收益</p>
+                <p>5.时刻管住理财产品的动态变化</p>
+            </ql-card>
+        </tab-item>
+        <tab-item title="营销垫板">
+            <ql-card header="目标客户">
+                <label-container column="4" [border]="true" labelWidth="160">
+                    <label-item label="AUM最小值">3万</label-item>
+                    <label-item label="AUM最大值">5万</label-item>
+                    <label-item label="总资产最小值">80万</label-item>
+                    <label-item label="总资产最小值">120万</label-item>
+                    <label-item label="性别">男</label-item>
+                    <label-item label="婚姻">已婚</label-item>
+                    <label-item label="年龄">30-45岁之间</label-item>
+                    <label-item label="学历">本科以上</label-item>
+                    <label-item label="客户职业">律师</label-item>
+                    <label-item label="所属行业">服务咨询行业</label-item>
+                    <label-item label="星级评价">四星</label-item>
+                    <label-item label="开户时间">2018-12-01</label-item>
+                    <label-item label="客户等级">白金客户</label-item>
+                    <label-item label="客户潜力值">高</label-item>
+                    <label-item label="理财风险">高</label-item>
+                    <label-item label="基金风险">低</label-item>
+                </label-container>
+            </ql-card>
+            <ql-card header="客户分组">
+                <data-table [model]="groupList">
+                    <ql-table-column model-key="code" label="群组编号"> </ql-table-column>
+                    <ql-table-column model-key="name" label="群组名称"> </ql-table-column>
+                    <ql-table-column model-key="description" label="群组描述"> </ql-table-column>
+                    <ql-table-column model-key="createTime" label="创建时间"> </ql-table-column>
+                    <ql-table-column model-key="creator" label="创建人"> </ql-table-column>
+                    <ql-table-column model-key="count" label="客户数量"> </ql-table-column>
+                    <ql-table-column model-key="state" label="群组状态"> </ql-table-column>
+                </data-table>
+            </ql-card>
+            <ql-card header="产品特点">
+                <label-container column="1" [border]="true" labelWidth="160">
+                    <label-item label="产品特点">高收益，高回报，专业理财经理一手打造，实时监控动态发展</label-item>
+                </label-container>
+            </ql-card>
+            <ql-card header="营销策略">
+                <p>1.商业银行个人理财业务风险研究</p>
+                <p>2.商业银行个人理财产品创新研究</p>
+                <p>3.个人理财投资的风险与规避措施分析</p>
+                <p>4.基于生命周期理财理论的个人理财投资策略研究 </p>
+                <p>5.银行个人理财产品的利率风险管理</p>
+            </ql-card>
+            <ql-card header="营销模板">
+                <label-container column="3" [border]="true" labelWidth="110">
+                    <label-item label="模板名称">理财通用模板</label-item>
+                    <label-item label="创建时间">2019-08-12</label-item>
+                    <label-item label="创建机构">兴业高新六路支行</label-item>
+                    <label-item label="创建人">王文建</label-item>
+                    <label-item label="共享范围">支行共享</label-item>
+                    <label-item label="模板状态">有效</label-item>
+                </label-container>
+                <div ql-row>
+                    <div ql-col span="24" class="ql-text-right">
+                        <ql-button type="text" (click)="jumpTemplate()">模板详情</ql-button>
+                    </div>
+                </div>
+            </ql-card>
+        </tab-item>
+        <tab-item title="促销活动">
+            <ql-card header="促销活动">
+                <data-table [model]="activityList">
+                    <ql-table-column model-key="name" label="营销活动名称"></ql-table-column>
+                    <ql-table-column model-key="startTime" label="活动开始时间"></ql-table-column>
+                    <ql-table-column model-key="endTime" label="活动结束时间"></ql-table-column>
+                    <ql-table-column model-key="creator" label="营销发起人"></ql-table-column>
+                    <ql-table-column model-key="organization" label="发起机构"></ql-table-column>
+                    <ql-table-column model-key="status" label="营销活动状态"></ql-table-column>
+                    <ql-table-column label="操作" width="250px">
+                        <ng-template #slot let-scope="scope">
+                            <ql-button type="text">新增</ql-button>
+                            <ql-button type="text">修改</ql-button>
+                            <ql-button type="text">删除</ql-button>
+                        </ng-template>
+                    </ql-table-column>
+                </data-table>
+            </ql-card>
+        </tab-item>
+    </tab-container>
+</page-container>

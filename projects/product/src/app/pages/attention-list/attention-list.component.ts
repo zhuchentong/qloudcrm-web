@@ -34,4 +34,7 @@ export class AttentionListComponent implements OnInit {
       this.attentionList = data.splice(15,5)
     })
   }
+
+  public submitFun(){
+  }
 }

@@ -15,7 +15,7 @@ export class ComboDetailComponent implements OnInit {
   public activityList:any = []
   public groupList:any = []
 
-  constructor(private route: ActivatedRoute,private apiServicemark:MarketingService,private apiServicecustomer:CustomerService) {}
+  constructor(private route: ActivatedRoute, private router: Router,private apiServicemark:MarketingService,private apiServicecustomer:CustomerService) {}
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id')
@@ -32,4 +32,8 @@ export class ComboDetailComponent implements OnInit {
   }
 
   getComboDetail() {}
+
+  public jumpTemplate(){
+     this.router.navigate(['/marketing/template-detail'], { replaceUrl: true })
+  }
 }
