@@ -1,0 +1,15 @@
+{
+  "default": "true",
+  "pluginName": "事件管理",
+  "pluginIcon": "",
+  "pluginAbbr": "UI",
+  "pluginImg": "/assets/images/svg/profile.svg",
+  "pluginPath": "event",
+  "pluginOrder": 1,
+  "pluginTab": [
+    {
+      "name": "事件列表",
+      "url": "#/event/event-list"
+    }
+  ]
+}

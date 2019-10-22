@@ -670,6 +670,126 @@
           }
         }
       }
+    },
+    "event": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "projects/event",
+      "sourceRoot": "projects/event/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/event",
+            "index": "projects/event/src/index.html",
+            "main": "projects/event/src/main.ts",
+            "polyfills": "projects/event/src/polyfills.ts",
+            "tsConfig": "projects/event/tsconfig.app.json",
+            "aot": false,
+            "assets": [
+              "projects/event/src/favicon.ico",
+              "projects/event/src/assets"
+            ],
+            "styles": [
+              "src/styles.scss",
+              "projects/event/src/styles.css",
+              "node_modules/qloud-angular/package/index.css",
+              "node_modules/normalize.css/normalize.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/event/src/environments/environment.ts",
+                  "with": "projects/event/src/environments/environment.prod.ts"
+                },
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "event:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "event:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "event:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/event/src/test.ts",
+            "polyfills": "projects/event/src/polyfills.ts",
+            "tsConfig": "projects/event/tsconfig.spec.json",
+            "karmaConfig": "projects/event/karma.conf.js",
+            "assets": [
+              "projects/event/src/favicon.ico",
+              "projects/event/src/assets"
+            ],
+            "styles": [
+              "projects/event/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/event/tsconfig.app.json",
+              "projects/event/tsconfig.spec.json",
+              "projects/event/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/event/e2e/protractor.conf.js",
+            "devServerTarget": "event:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "event:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "qloudcrm-ui"
