@@ -90,8 +90,29 @@
     <!--<tab-item title="按资金用途统计">-->
     <!--</tab-item>-->
 
-    <!--<tab-item title="按客户交易次数统计">-->
-    <!--</tab-item>-->
+    <tab-item title="按客户交易次数排名统计">
+      <ql-card header="2019-10-01 / 2019-10-31">
+        <!--<ql-card>-->
+        <data-table [model]="customerList">
+          <!--<ql-table-column model-key="rank" label="排名"> </ql-table-column>-->
+          <ql-table-column model-key="customerNo" label="客户编号"> </ql-table-column>
+          <ql-table-column model-key="customerName" label="客户名称"> </ql-table-column>
+          <ql-table-column model-key="customerLevel" label="客户等级"> </ql-table-column>
+          <ql-table-column model-key="aum" label="AUM（万元）"> </ql-table-column>
+          <ql-table-column model-key="count" label="交易次数"> </ql-table-column>
+          <ql-table-column model-key="amount" label="发生金额（万元）">
+            <!--<ng-template #slot let-scope="scope">-->
+            <!--{{scope.rowData.count + scope.rowData.amount}}-->
+            <!--</ng-template>-->
+          </ql-table-column>
+          <!--<ql-table-column model-key="startDate" label="统计开始日期"> </ql-table-column>-->
+          <!--<ql-table-column model-key="endDate" label="统计结束日期"> </ql-table-column>-->
+          <ql-table-column model-key="lastTime" label="最后事件时间"> </ql-table-column>
+          <ql-table-column model-key="prevDay" label="上一日事件次数"> </ql-table-column>
+          <ql-table-column model-key="prevRank" label="上一月排名"> </ql-table-column>
+        </data-table>
+      </ql-card>
+    </tab-item>
   </tab-container>
 
 </page-container>

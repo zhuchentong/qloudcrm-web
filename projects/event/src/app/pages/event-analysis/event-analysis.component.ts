@@ -29,6 +29,20 @@ export class EventAnalysisComponent implements OnInit {
       "prevDay": 7, "prevRank": 3, "startDate":"2019-10-01", "endDate":"2019-10-31"}
       ];
 
+  customerList = [
+    {"rank":1, "customerNo": "CC3YI8",
+      "customerName": "王万达", "customerLevel":"黄金客户", "aum": 10, "count": 100,
+      "amount":"10.30", "lastTime": "2019-10-10 10:00:00",
+      "prevDay": 90, "prevRank": 2, "startDate":"2019-10-01", "endDate":"2019-10-31"},
+    {"rank":2, "customerNo": "TED3434",
+      "customerName": "张三丰", "customerLevel":"白金客户", "aum": 20, "count": 20,
+      "amount":"100", "lastTime": "2019-10-18 01:00:00",
+      "prevDay": 18, "prevRank": 1, "startDate":"2019-10-01", "endDate":"2019-10-31"},
+    {"rank":3, "customerNo": "HUY64",
+      "customerName": "刘美丽", "customerLevel":"钻石客户", "aum": 20, "count": 10,
+      "amount":"20.9", "lastTime": "2019-10-20 18:00:00",
+      "prevDay": 7, "prevRank": 3, "startDate":"2019-10-01", "endDate":"2019-10-31"}
+  ];
 
   lineOption: Array<any> = [{
     color: ['#f4c63d', '#40daf1', '#00abff', '#8bd22f', '#893448', '#d95850', '#eb8146', '#ffb248', '#f2d643', '#f95372', '#ebdba4'],
