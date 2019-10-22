@@ -3,9 +3,9 @@ import { FormBuilder, FormGroup } from '@angular/forms'
 import { ModalService } from '@shared/utils'
 import { PageService } from '@core/http'
 import { Location } from '@angular/common'
-import { ApiService } from '../../../../../marketing/src/app/services/api.service'
 import { QlMessageService } from 'qloud-angular/package/message/message.service'
 import { Router } from '@angular/router'
+import { ApiService } from '../../services/api.service'
 
 @Component({
   selector: 'app-event-list',
@@ -17,6 +17,9 @@ export class EventListComponent implements OnInit {
 
   public formGroup: FormGroup = this.fb.group({})
   public dataList: any[] ;
+  public eventType: any[];
+  public channel: any[];
+  public customerLevel: any[];
 
   constructor(public location: Location,
               private apiService: ApiService,
@@ -24,16 +27,28 @@ export class EventListComponent implements OnInit {
               public modal: ModalService,
               public pageService: PageService,
               private message: QlMessageService,
-              private router: Router) { }
+              private router: Router) {
+     this.apiService.getEventType().subscribe(data => {
+      this.eventType = data;
+    });
+    this.apiService.getEventChannel().subscribe(data => {
+      this.channel = data;
+    });
+
+    this.apiService.getCustomerLevel().subscribe(data => {
+      this.customerLevel = data;
+    });
+  }
 
   ngOnInit() {
+    this.onRefresh();
   }
 
   public onRefresh(){
     console.log('fresh data list');
-    this.apiService.getActivationMonitorList().subscribe(data => {
-      // this.dataList = data.sort(x => 0.5 - Math.random())
-    })
+    this.apiService.getEventList().subscribe(data => {
+       this.dataList = data.sort(x => 0.5 - Math.random())
+    });
 
   }
 

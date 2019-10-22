@@ -1,0 +1,346 @@
+{
+  "dataList": [
+    {
+      "eventType": "转账",
+      "eventName": "理财产品到期",
+      "customerLevel": "私行客户",
+      "channel": "网点",
+      "treadArea": "成都",
+      "activation": "交办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "10.20",
+      "time": "10",
+      "remindType": "工作台"
+    },
+    {
+      "eventType": "汇款",
+      "eventName": "客户工资到账",
+      "customerLevel": "全部客户",
+      "channel": "网银",
+      "treadArea": "西安",
+      "activation": "交办",
+      "eventTime": "2019-10-23 11:30:31",
+      "eventAmount": "1.20",
+      "time": "2",
+      "remindType": "短信"
+    },
+    {
+      "eventType": "交易",
+      "eventName": "贵金属",
+      "customerLevel": "钻石客户",
+      "channel": "网点",
+      "treadArea": "上海",
+      "activation": "代办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "5.20",
+      "time": "10",
+      "remindType": "工作台"
+    },
+    {
+      "eventType": "购买",
+      "eventName": "理财产品到期",
+      "customerLevel": "私行客户",
+      "channel": "网点",
+      "treadArea": "成都",
+      "activation": "交办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "10.20",
+      "time": "10",
+      "remindType": "工作台"
+    },
+    {
+      "eventType": "转账",
+      "eventName": "理财产品到期",
+      "customerLevel": "私行客户",
+      "channel": "网点",
+      "treadArea": "成都",
+      "activation": "交办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "10.20",
+      "time": "10",
+      "remindType": "工作台"
+    },
+    {
+      "eventType": "转账",
+      "eventName": "理财产品到期",
+      "customerLevel": "私行客户",
+      "channel": "网点",
+      "treadArea": "成都",
+      "activation": "交办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "10.20",
+      "time": "10",
+      "remindType": "工作台"
+    },
+    {
+      "eventType": "转账",
+      "eventName": "理财产品到期",
+      "customerLevel": "私行客户",
+      "channel": "网点",
+      "treadArea": "成都",
+      "activation": "交办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "10.20",
+      "time": "10",
+      "remindType": "工作台"
+    },{
+      "eventType": "转账",
+      "eventName": "理财产品到期",
+      "customerLevel": "私行客户",
+      "channel": "网点",
+      "treadArea": "成都",
+      "activation": "交办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "10.20",
+      "time": "10",
+      "remindType": "工作台"
+    },
+    {
+      "eventType": "转账",
+      "eventName": "理财产品到期",
+      "customerLevel": "私行客户",
+      "channel": "网点",
+      "treadArea": "成都",
+      "activation": "交办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "10.20",
+      "time": "10",
+      "remindType": "工作台"
+    },
+    {
+      "eventType": "转账",
+      "eventName": "理财产品到期",
+      "customerLevel": "私行客户",
+      "channel": "网点",
+      "treadArea": "成都",
+      "activation": "交办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "10.20",
+      "time": "10",
+      "remindType": "工作台"
+    },
+    {
+      "eventType": "转账",
+      "eventName": "理财产品到期",
+      "customerLevel": "私行客户",
+      "channel": "网点",
+      "treadArea": "成都",
+      "activation": "交办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "10.20",
+      "time": "10",
+      "remindType": "工作台"
+    },
+    {
+      "eventType": "转账",
+      "eventName": "理财产品到期",
+      "customerLevel": "私行客户",
+      "channel": "网点",
+      "treadArea": "成都",
+      "activation": "交办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "10.20",
+      "time": "10",
+      "remindType": "工作台"
+    },
+    {
+      "eventType": "转账",
+      "eventName": "理财产品到期",
+      "customerLevel": "私行客户",
+      "channel": "网点",
+      "treadArea": "成都",
+      "activation": "交办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "10.20",
+      "time": "10",
+      "remindType": "工作台"
+    },
+    {
+      "eventType": "转账",
+      "eventName": "理财产品到期",
+      "customerLevel": "私行客户",
+      "channel": "网点",
+      "treadArea": "成都",
+      "activation": "交办",
+      "eventTime": "2019-10-22 11:30:31",
+      "eventAmount": "10.20",
+      "time": "10",
+      "remindType": "工作台"
+    }
+  ],
+ "eventType": [
+   {
+     "key" : "1",
+     "value": "转账"
+   },
+   {
+     "key" : "2",
+     "value": "汇款"
+   },
+   {
+     "key" : "3",
+     "value": "交易"
+   },
+   {
+     "key" : "4",
+     "value": "购买"
+   },
+   {
+     "key" : "5",
+     "value": "查询"
+   },
+   {
+     "key" : "6",
+     "value": "浏览"
+   },
+   {
+     "key" : "7",
+     "value": "申请"
+   },
+   {
+     "key" : "8",
+     "value": "咨询"
+   },
+   {
+     "key" : "9",
+     "value": "签约"
+   }
+ ],
+  "eventName": [
+    {
+      "key" : "1",
+      "value": "理财产品到期"
+    },
+    {
+      "key" : "2",
+      "value": "贵金属"
+    },
+    {
+      "key" : "3",
+      "value": "客户工资到账"
+    },
+    {
+      "key" : "4",
+      "value": "大额取款预约"
+    }
+  ],
+  "customerLevel": [
+    {
+      "key" : "1",
+      "value": "私行客户"
+    },
+    {
+      "key" : "2",
+      "value": "钻石客户"
+    },
+    {
+      "key" : "3",
+      "value": "白金客户"
+    },
+    {
+      "key" : "4",
+      "value": "黄金客户"
+    },{
+      "key" : "5",
+      "value": "白银客户"
+    },{
+      "key" : "6",
+      "value": "优质客户"
+    },{
+      "key" : "7",
+      "value": "价值客户"
+    },{
+      "key" : "8",
+      "value": "全部客户"
+    }
+  ],
+  "channel":[ {
+    "key" : "1",
+    "value": "网点"
+  },
+    {
+      "key" : "2",
+      "value": "网银"
+    },
+    {
+      "key" : "3",
+      "value": "APP"
+    },
+    {
+      "key" : "4",
+      "value": "微信"
+    },{
+      "key" : "5",
+      "value": "浏览"
+    },{
+      "key" : "6",
+      "value": "无"
+    }],
+  "tradeArea": [
+    {
+      "key" : "1",
+      "value": "成都"
+    },
+    {
+      "key" : "2",
+      "value": "贵阳"
+    },
+    {
+      "key" : "3",
+      "value": "南充"
+    },
+    {
+      "key" : "4",
+      "value": "重庆"
+    },{
+      "key" : "5",
+      "value": "国内"
+    },{
+      "key" : "6",
+      "value": "国外"
+    }
+  ],
+  "activation": [
+    {
+      "key" : "1",
+      "value": "无"
+    },
+    {
+      "key" : "2",
+      "value": "交办"
+    },
+    {
+      "key" : "3",
+      "value": "代办"
+    },
+    {
+      "key" : "4",
+      "value": "警示"
+    },{
+      "key" : "5",
+      "value": "提醒"
+    }
+  ],
+  "remindType": [
+    {
+      "key" : "1",
+      "value": "工作台"
+    },
+    {
+      "key" : "2",
+      "value": "短信"
+    },
+    {
+      "key" : "3",
+      "value": "邮件"
+    }
+  ]
+}
+
+
+
+
+
+
+
+
