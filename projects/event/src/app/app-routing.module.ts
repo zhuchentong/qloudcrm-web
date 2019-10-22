@@ -3,9 +3,10 @@ import { Routes, RouterModule } from '@angular/router'
 import { environment } from '../environments/environment'
 import { EventListComponent } from './pages/event-list/event-list.component'
 
-const routes: Routes = [{
-  path:'event/event-list',component:EventListComponent
-}]
+const routes: Routes = [
+  { path: 'event/event-list', component: EventListComponent },
+  { path: 'event/event-analysis', component: EventListComponent }
+]
 
 routes.push({
   path: environment.production ? '' : 'event',
