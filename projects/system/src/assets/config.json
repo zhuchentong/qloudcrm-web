@@ -8,8 +8,20 @@
   "pluginOrder": 1,
   "pluginTab": [
     {
-      "name": "参数配置",
+      "name": "参数管理",
       "url": "#/system/params-config"
+    },
+    {
+      "name": "日志管理",
+      "url": "#/system/logs-config"
+    },
+    {
+      "name": "密码管理",
+      "url": "#/system/passwd-config"
+    },
+    {
+      "name": "角色设定",
+      "url": "#/system/roles-config"
     }
   ]
 }

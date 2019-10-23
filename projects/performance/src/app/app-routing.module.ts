@@ -10,7 +10,7 @@ const routes: Routes = [
 ]
 
 routes.push({
-  path: environment.production ? '' : 'system',
+  path: environment.production ? '' : 'performance',
   redirectTo: '/performance/performance-rank',
   pathMatch: 'full'
 })

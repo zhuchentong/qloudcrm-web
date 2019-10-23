@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "李明",
+    "roleName": "私行客户经理",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "roleId": 1
+  },
+  {
+    "id": 2,
+    "name": "王一梅",
+    "roleName": "贵宾客户经理",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "roleId": 2
+  },
+  {
+    "id": 3,
+    "name": "李高",
+    "roleName": "",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "roleId": ""
+  },
+  {
+    "id": 4,
+    "name": "侯虹",
+    "roleName": "资深客户经理",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "roleId": 4
+  },
+  {
+    "id": 5,
+    "name": "王一",
+    "roleName": "普通客户经理",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "roleId": 5
+  },
+  {
+    "id": 6,
+    "name": "大鹏",
+    "roleName": "见习客户经理",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "roleId": 6
+  },
+  {
+    "id": 7,
+    "name": "岳云鹏",
+    "roleName": "公共池",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "roleId": 7
+  }
+]

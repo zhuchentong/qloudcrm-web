@@ -1,6 +1,7 @@
 {
   "default": "true",
-  "pluginIcon": "绩效管理",
+  "pluginName": "绩效管理",
+  "pluginIcon": "",
   "pluginAbbr": "UI",
   "pluginImg": "/assets/images/svg/profile.svg",
   "pluginPath": "performance",
