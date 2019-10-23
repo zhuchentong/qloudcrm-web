@@ -1,0 +1,322 @@
+[
+  {
+    "id": 1,
+    "name": "客户管理",
+    "description": "客户管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": ""
+  },
+  {
+    "id": 2,
+    "name": "营销管理",
+    "description": "营销管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": ""
+  },
+  {
+    "id": 3,
+    "name": "产品管理",
+    "description": "产品管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": ""
+  },
+  {
+    "id": 4,
+    "name": "系统管理",
+    "description": "系统管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": ""
+  },
+  {
+    "id": 101,
+    "name": "我的客户",
+    "description": "我的客户",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 102,
+    "name": "客户查询",
+    "description": "客户查询",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 103,
+    "name": "客户视图",
+    "description": "客户视图",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 104,
+    "name": "客户分配",
+    "description": "客户分配",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 105,
+    "name": "客户分组",
+    "description": "客户分组",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 106,
+    "name": "客户标签",
+    "description": "客户标签",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 107,
+    "name": "客户申领",
+    "description": "客户申领",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 1001,
+    "name": "客户等级变动",
+    "description": "客户等级变动",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 101
+  },
+  {
+    "id": 1002,
+    "name": "客户资产变动",
+    "description": "客户资产变动",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 101
+  },
+  {
+    "id": 1003,
+    "name": "客户查询",
+    "description": "客户查询",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 102
+  },
+  {
+    "id": 1004,
+    "name": "客户视图",
+    "description": "客户视图",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 103
+  },
+  {
+    "id": 1005,
+    "name": "我的分配",
+    "description": "我的分配",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 104
+  },
+  {
+    "id": 1006,
+    "name": "接收人设置",
+    "description": "接收人设置",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 104
+  },
+  {
+    "id": 1007,
+    "name": "创建分组",
+    "description": "创建分组",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 105
+  },
+  {
+    "id": 1008,
+    "name": "新建标签",
+    "description": "新建标签",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 106
+  },
+  {
+    "id": 1009,
+    "name": "搜索标签",
+    "description": "搜索标签",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 106
+  },
+  {
+    "id": 1010,
+    "name": "标签视图",
+    "description": "标签视图",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 106
+  },
+  {
+    "id": 201,
+    "name": "目标客户",
+    "description": "目标客户",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 2
+  },
+  {
+    "id": 2001,
+    "name": "目标客户",
+    "description": "目标客户",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 201
+  },
+  {
+    "id": 301,
+    "name": "产品管理",
+    "description": "产品管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 3
+  },
+  {
+  "id": 3001,
+  "name": "产品管理",
+  "description": "产品管理",
+  "createTime": "2019-10-10 11:22",
+  "state": "leaf",
+  "parent": 301
+  },
+  {
+    "id": 401,
+    "name": "参数管理",
+    "description": "参数管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 4
+  },
+  {
+    "id": 402,
+    "name": "日志管理",
+    "description": "日志管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 4
+  },
+  {
+    "id": 403,
+    "name": "密码管理",
+    "description": "日志管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 4
+  },
+  {
+    "id": 404,
+    "name": "角色设定",
+    "description": "角色设定",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 4
+  },
+  {
+    "id": 4001,
+    "name": "单值业务参数",
+    "description": "单值业务参数",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 401
+  },
+  {
+    "id": 4002,
+    "name": "多值业务参数",
+    "description": "多值业务参数",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 401
+  },
+  {
+    "id": 4003,
+    "name": "功能点参数",
+    "description": "功能点参数",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 401
+  },
+  {
+    "id": 4004,
+    "name": "系统参数",
+    "description": "系统参数",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 401
+  },
+  {
+    "id": 4005,
+    "name": "日志管理",
+    "description": "日志管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 402
+  },
+  {
+    "id": 4006,
+    "name": "密码管理",
+    "description": "密码管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 403
+  },
+  {
+    "id": 4007,
+    "name": "角色类型管理",
+    "description": "角色类型管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 404
+  },
+  {
+    "id": 4008,
+    "name": "角色管理",
+    "description": "角色管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 404
+  },
+  {
+    "id": 4009,
+    "name": "用户管理",
+    "description": "用户管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 404
+  },
+  {
+    "id": 4010,
+    "name": "群组管理",
+    "description": "群组管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 404
+  },
+  {
+    "id": 4011,
+    "name": "角色规则设定",
+    "description": "角色规则设定",
+    "createTime": "2019-10-10 11:22",
+    "state": "leaf",
+    "parent": 404
+  }
+]

@@ -1,0 +1,154 @@
+[
+  {
+    "id": 41,
+    "name": "业务角色",
+    "description": "业务角色",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": 0
+  },
+  {
+    "id": 1,
+    "name": "私行客户经理",
+    "description": "私行客户经理",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": 41
+  },
+  {
+    "id": 2,
+    "name": "贵宾客户经理",
+    "description": "贵宾客户经理",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": 41
+  },
+  {
+    "id": 3,
+    "name": "高级客户经理",
+    "description": "高级客户经理",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": 41
+  },
+  {
+    "id": 4,
+    "name": "资深客户经理",
+    "description": "资深客户经理",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": 41
+  },
+  {
+    "id": 5,
+    "name": "普通客户经理",
+    "description": "普通客户经理",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": 41
+  },
+  {
+    "id": 6,
+    "name": "见习客户经理",
+    "description": "见习客户经理",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": 41
+  },
+  {
+    "id": 7,
+    "name": "公共池",
+    "description": "公共池",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": 41
+  },
+  {
+    "id": 21,
+    "name": "管理角色",
+    "description": "管理角色",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": 0
+  },
+  {
+    "id": 8,
+    "name": "超级管理员",
+    "description": "超级管理员",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": 21
+  },
+  {
+    "id": 9,
+    "name": "系统管理员",
+    "description": "系统管理员",
+    "createTime": "2019-10-10 11:22",
+    "state": "暂停",
+    "parent": 21
+  },
+  {
+    "id": 10,
+    "name": "业务管理员",
+    "description": "业务管理员",
+    "createTime": "2019-10-10 11:22",
+    "state": "暂停",
+    "parent": 21
+  },
+  {
+    "id": 31,
+    "name": "职务角色",
+    "description": "职务角色",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": 0
+  },
+  {
+    "id": 11,
+    "name": "总行部门领导",
+    "description": "总行部门领导",
+    "createTime": "2019-10-10 11:22",
+    "state": "暂停",
+    "parent": 31
+  },
+  {
+    "id": 12,
+    "name": "分行行领导",
+    "description": "分行行领导",
+    "createTime": "2019-10-10 11:22",
+    "state": "暂停",
+    "parent": 31
+  },
+  {
+    "id": 13,
+    "name": "分行部门领导",
+    "description": "分行部门领导",
+    "createTime": "2019-10-10 11:22",
+    "state": "暂停",
+    "parent": 31
+  },
+  {
+    "id": 14,
+    "name": "支行行长",
+    "description": "支行行长",
+    "createTime": "2019-10-10 11:22",
+    "state": "暂停",
+    "parent": 31
+  },
+  {
+    "id": 15,
+    "name": "事业部总裁",
+    "description": "事业部总裁",
+    "createTime": "2019-10-10 11:22",
+    "state": "暂停",
+    "parent": 31
+  },
+  {
+    "id": 16,
+    "name": "客户经理组主管",
+    "description": "客户经理组主管",
+    "createTime": "2019-10-10 11:22",
+    "state": "暂停",
+    "parent": 31
+  }
+]

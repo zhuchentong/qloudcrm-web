@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "业务角色",
+    "code": "001",
+    "type": "catalog",
+    "frequency": "",
+    "count": 30,
+    "description": "业务角色说明",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": ""
+  },
+  {
+    "id": 2,
+    "name": "管理角色",
+    "code": "002",
+    "type": "catalog",
+    "frequency": "",
+    "count": 30,
+    "description": "管理角色说明",
+    "createTime": "2019-10-10 11:22",
+    "state": "使用",
+    "parent": ""
+  },
+  {
+    "id": 3,
+    "name": "职务角色",
+    "code": "003",
+    "type": "catalog",
+    "frequency": "",
+    "count": 30,
+    "description": "职务角色说明",
+    "createTime": "2019-10-10 11:22",
+    "state": "暂停",
+    "parent": ""
+  }
+]

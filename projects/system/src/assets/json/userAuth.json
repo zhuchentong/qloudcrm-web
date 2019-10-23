@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "name": "客户管理",
+    "description": "客户管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": ""
+  },
+  {
+    "id": 2,
+    "name": "营销管理",
+    "description": "营销管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": ""
+  },
+  {
+    "id": 3,
+    "name": "产品管理",
+    "description": "产品管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": ""
+  },
+  {
+    "id": 4,
+    "name": "系统管理",
+    "description": "系统管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": ""
+  },
+  {
+    "id": 101,
+    "name": "我的客户",
+    "description": "我的客户",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 102,
+    "name": "客户查询",
+    "description": "客户查询",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 103,
+    "name": "客户视图",
+    "description": "客户视图",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 104,
+    "name": "客户分配",
+    "description": "客户分配",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 105,
+    "name": "客户分组",
+    "description": "客户分组",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 106,
+    "name": "客户标签",
+    "description": "客户标签",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 107,
+    "name": "客户申领",
+    "description": "客户申领",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 1
+  },
+  {
+    "id": 201,
+    "name": "目标客户",
+    "description": "目标客户",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 2
+  },
+  {
+    "id": 301,
+    "name": "产品管理",
+    "description": "产品管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 3
+  },
+  {
+    "id": 401,
+    "name": "参数管理",
+    "description": "参数管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 4
+  },
+  {
+    "id": 402,
+    "name": "日志管理",
+    "description": "日志管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 4
+  },
+  {
+    "id": 403,
+    "name": "密码管理",
+    "description": "日志管理",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 4
+  },
+  {
+    "id": 404,
+    "name": "角色设定",
+    "description": "角色设定",
+    "createTime": "2019-10-10 11:22",
+    "state": "",
+    "parent": 4
+  }
+]
