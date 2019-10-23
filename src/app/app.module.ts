@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppProductModule } from 'projects/product/src/app/app.module'
 import { AppSystemModule } from 'projects/system/src/app/app.module'
 import { AppEventModule } from '../../projects/event/src/app/app.module'
+import { AppPerformanceModule } from 'projects/performance/src/app/app.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,7 +28,8 @@ import { AppEventModule } from '../../projects/event/src/app/app.module'
     AppMarketingModule.forRoot(),
     AppProductModule.forRoot(),
     AppSystemModule.forRoot(),
-    AppEventModule.forRoot()
+    AppEventModule.forRoot(),
+    AppPerformanceModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
