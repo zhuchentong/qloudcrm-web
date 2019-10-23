@@ -1,0 +1,53 @@
+<page-header title="活动统计" [breadcrumb]="breadcrumb" [back]="true">
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>活动审批</ql-breadcrumb-item>
+            <ql-breadcrumb-item>活动统计</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+</page-header>
+
+<page-container>
+    <!-- <label-container column="2" [border]="true" labelWidth="190">
+        <label-item label="营销活动总数量">189</label-item>
+        <label-item label="已经执行营销活动机构分布"></label-item>
+        <label-item label="延期的营销活动数量">15</label-item>
+        <label-item label="待办审批营销工作的数量">39</label-item>
+    </label-container>
+    <label-container column="1" [border]="true" labelWidth="190">
+        <label-item label="已经执行营销活动渠道分布">APP网银、柜面、微信、APP</label-item>
+    </label-container> -->
+    <ql-card header="活动数量">
+        <label-container column="3" [border]="true" labelWidth="190">
+            <label-item label="延期的营销活动数量">70</label-item>
+            <label-item label="待办审批营销活动数量">89</label-item>
+            <label-item label="执行中营销活动数量">30</label-item>
+        </label-container>
+        <div class="ql-padding ql-margin-top">
+            <div echarts [options]="activityNum"></div>
+        </div>
+    </ql-card>
+    <ql-card header="已经执行营销活动机构分布">
+        <data-table [model]="institutData">
+            <ql-table-column model-key="institutName" label="机构名称"></ql-table-column>
+            <ql-table-column model-key="institutDb" label="待办审批营销活动数量"></ql-table-column>
+            <ql-table-column model-key="institutZx" label="执行中营销活动数量"></ql-table-column>
+            <ql-table-column model-key="institutYd" label="延期的营销活动数量"></ql-table-column>
+        </data-table>
+        <div class="ql-padding ql-margin-top">
+            <div echarts [options]="institutNum"></div>
+        </div>
+    </ql-card>
+    <ql-card header="销活动渠道分布">
+        <data-table [model]="channelData">
+            <ql-table-column model-key="channelName" label="机构名称"></ql-table-column>
+            <ql-table-column model-key="channelDb" label="待办审批营销活动数量"></ql-table-column>
+            <ql-table-column model-key="channelZx" label="执行中营销活动数量"></ql-table-column>
+            <ql-table-column model-key="channelYd" label="延期的营销活动数量"></ql-table-column>
+        </data-table>
+        <div class="ql-padding ql-margin-top">
+            <div echarts [options]="channelNum"></div>
+        </div>
+    </ql-card>
+</page-container>

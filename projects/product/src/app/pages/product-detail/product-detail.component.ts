@@ -34,7 +34,6 @@ export class ProductDetailComponent implements OnInit {
 
     this.apiServicepro.getProduct( this.id ).subscribe(data =>{
       this.productDetaildata = data
-      console.log(JSON.stringify(this.productDetaildata))
     })
   }
 

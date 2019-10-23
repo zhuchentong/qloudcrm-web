@@ -28,10 +28,10 @@ export class ApiService {
   }
 
   public getProduct(id) {
-    const product = productList.find(x => x.id === 4101) as any
-    // const product = productList.find(x => x.id === id) as any
-    // const target = productList.find(item => item.id === product.parent)
-    // product.productType = target.name
+    // const product = productList.find(x => x.id === 4101) as any
+    const product = productList.find(x => x.id === Number(id)) as any
+    const target = productList.find(item => item.id === product.parent)
+    product.productType = target.name
     return of(product)
   }
 

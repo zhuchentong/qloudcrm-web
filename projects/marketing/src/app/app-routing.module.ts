@@ -24,6 +24,7 @@ import { ExploreConditionComponent } from './pages/explore-condition/explore-con
 import { EquitiesDetailComponent } from './pages/equities-detail/equities-detail.component'
 import { MonitorListComponent } from './pages/monitor-list/monitor-list.component'
 import { MonitorDetailComponent } from './pages/monitor-detail/monitor-detail.component'
+import { ActivityStatistComponent } from './pages/activity-statist/activity-statist.component'
 
 const routes: Routes = [
   { path: 'marketing/activity-list', component: ActivityListComponent },
@@ -48,7 +49,8 @@ const routes: Routes = [
   { path: 'marketing/equities-list', component: EquitiesListComponent },
   { path: 'marketing/equities-create', component: EquitiesCreateComponent },
   { path: 'marketing/explore-condition', component: ExploreConditionComponent },
-  { path: 'marketing/equities-detail', component: EquitiesDetailComponent }
+  { path: 'marketing/equities-detail', component: EquitiesDetailComponent },
+  { path: 'marketing/activity-statist', component: ActivityStatistComponent }
 ]
 
 routes.push({

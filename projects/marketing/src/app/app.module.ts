@@ -42,7 +42,8 @@ import { EquitiesCreateComponent } from './pages/equities-create/equities-create
 import { ExploreConditionComponent } from './pages/explore-condition/explore-condition.component'
 import { EquitiesDetailComponent } from './pages/equities-detail/equities-detail.component'
 import { MonitorListComponent } from './pages/monitor-list/monitor-list.component'
-import { MonitorDetailComponent } from './pages/monitor-detail/monitor-detail.component'
+import { MonitorDetailComponent } from './pages/monitor-detail/monitor-detail.component';
+import { ActivityStatistComponent } from './pages/activity-statist/activity-statist.component'
 
 // 页面列表
 const PAGES = [
@@ -70,7 +71,8 @@ const PAGES = [
   ActivityDetailComponent,
   ApprovalDetailComponent,
   MonitorListComponent,
-  MonitorDetailComponent
+  MonitorDetailComponent,
+  ActivityStatistComponent
 ]
 
 // 组件列表
@@ -100,7 +102,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ActivityStatistComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, QlDateModule],
   providers,

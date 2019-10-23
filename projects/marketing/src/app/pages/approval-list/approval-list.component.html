@@ -6,7 +6,7 @@
         </ql-breadcrumb>
     </ng-template>
     <ng-template #action>
-        <ql-button type="primary" (click)="actiityStatis()">活动统计</ql-button>
+        <ql-button type="primary" [routerLink]="['/marketing/activity-statist']" (click)="actiityStatis()">活动统计</ql-button>
     </ng-template>
 </page-header>
 
@@ -26,16 +26,4 @@
             </ng-template>
         </ql-table-column>
     </data-table>
-
-    <ng-template #statistlook>
-        <label-container column="2" [border]="true" labelWidth="190">
-            <label-item label="营销活动总数量">189</label-item>
-            <label-item label="已经执行营销活动机构分布"></label-item>
-            <label-item label="延期的营销活动数量">15</label-item>
-            <label-item label="待办审批营销工作的数量">39</label-item>
-        </label-container>
-        <label-container column="1" [border]="true" labelWidth="190">
-            <label-item label="已经执行营销活动渠道分布">APP网银、柜面、微信、APP</label-item>
-        </label-container>
-    </ng-template>
 </page-container>

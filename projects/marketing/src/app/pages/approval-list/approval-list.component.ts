@@ -16,9 +16,6 @@ export class ApprovalListComponent implements OnInit {
   public activityList: any[] = []
   constructor(private apiService: ApiService, public modal: ModalService, private message: QlMessageService) {}
 
-  @ViewChild('statistlook', { static: true })
-  private statistlookTemp: TemplateRef<any>
-
   ngOnInit() {
     this.getActivityList()
   }
@@ -27,16 +24,5 @@ export class ApprovalListComponent implements OnInit {
     this.apiService.getActivityList().subscribe(data => {
       this.activityList = data.slice(0, 1)
     })
-  }
-
-  public actiityStatis() {
-    this.modal
-      .open({
-        title: '活动统计',
-        component: this.statistlookTemp
-      })
-      .subscribe(() => {
-        this.message.success('sucess')
-      })
   }
 }
