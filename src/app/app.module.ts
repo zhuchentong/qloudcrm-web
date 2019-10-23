@@ -28,10 +28,10 @@ import { AppReportModule } from 'projects/report/src/app/app.module'
     AppCustomerModule.forRoot(),
     AppMarketingModule.forRoot(),
     AppProductModule.forRoot(),
-    AppSystemModule.forRoot(),
     AppEventModule.forRoot(),
     AppPerformanceModule.forRoot(),
-    AppReportModule.forRoot()
+    AppReportModule.forRoot(),
+    AppSystemModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
