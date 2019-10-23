@@ -72,6 +72,7 @@ export class CustomerGroupComponent implements OnInit {
     this.modal
     .open({
       title: '客户列表',
+      size:'huge',
       component: this.searchListTemp
     })
     .subscribe(() => {

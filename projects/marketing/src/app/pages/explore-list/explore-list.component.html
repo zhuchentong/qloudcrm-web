@@ -6,7 +6,6 @@
         </ql-breadcrumb>
     </ng-template>
     <ng-template #action>
-        <ql-button type="primary" [routerLink]="['/marketing/activity-create']">创建活动</ql-button>
         <ql-button type="primary" [routerLink]="['/marketing/explore-create']">创建探索</ql-button>
     </ng-template>
 </page-header>
@@ -35,7 +34,7 @@
         <ql-table-column label="操作" width="300">
             <ng-template #slot let-scope="scope">
                 <ql-button type="text">执行探索</ql-button>
-                <ql-button type="text">创建活动</ql-button>
+                <ql-button type="text" [routerLink]="['/marketing/activity-create']">创建活动</ql-button>
                 <ql-button type="text" [routerLink]="['/marketing/explore-condition']">查看条件</ql-button>
                 <ql-button type="text" [routerLink]="['/marketing/explore-result']">查看结果</ql-button>
             </ng-template>
