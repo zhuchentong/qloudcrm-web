@@ -26,9 +26,9 @@
             <ql-button size="small" type="primary" (click)="search()">高级搜索</ql-button>
         </ng-template>
         <ng-template #formAction>
-            <ql-button size="small" type="primary">拨打电话</ql-button>
+            <!--<ql-button size="small" type="primary">拨打电话</ql-button>-->
             <ql-button size="small" type="success">发送短信</ql-button>
-            <ql-button size="small" type="info">发现邮件</ql-button>
+            <ql-button size="small" type="info">发送邮件</ql-button>
             <ql-button *ngIf="showGroup" size="small" type="success" (click)="onChangeGroup()">移动分组</ql-button>
             <ql-button *ngIf="showGroup" size="small" type="success" (click)="onCreateGroup()">创建分组</ql-button>
         </ng-template>
