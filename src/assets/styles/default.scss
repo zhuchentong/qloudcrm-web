@@ -43,3 +43,9 @@ a {
 .ql-table.ql-table--enable-row-transition {
   margin: auto;
 }
+
+// 修改select-dropown高度
+.ql-select-dropdown {
+  max-height: 20rem;
+  overflow: auto;
+}

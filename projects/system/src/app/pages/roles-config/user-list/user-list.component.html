@@ -1,0 +1,87 @@
+<div>
+  <data-form [button]="formButton" [showReset]="false" [formGroup]="formGroup" (submit)="queryUserListByRole()">
+
+    <ql-form-item label="角色">
+      <ql-select [clearable]="true" [popper-class]="'aaa'" (modelChange)="getUserSelect($event)">
+        <ql-option *ngFor="let item of rolesList" [label]="item.name" [value]="item.id"> </ql-option>
+      </ql-select>
+    </ql-form-item>
+
+    <ng-template #formButton>
+      <ql-button size="small" type="primary" (click)="addUserForm()">增加</ql-button>
+    </ng-template>
+
+  </data-form>
+
+  <data-table [model]="userList" [selection]="false">
+
+    <ql-table-column model-key="id" label="用户ID"> </ql-table-column>
+    <ql-table-column model-key="name" label="用户名称"> </ql-table-column>
+    <ql-table-column model-key="createTime" label="创建时间"> </ql-table-column>
+    <ql-table-column model-key="state" label="状态"> </ql-table-column>
+    <ql-table-column model-key="roleName" label="角色" style="white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;" [render-html]="true"> </ql-table-column>
+
+
+    <ql-table-column label="操作">
+      <ng-template #slot let-scope="scope">
+        <ql-button type="text" (click)="updateUserForm(scope.rowData)">编辑</ql-button>
+        <ql-button type="text" (click)="updateUserRole(scope.rowData)">角色</ql-button>
+        <ql-button type="text">删除</ql-button>
+      </ng-template>
+    </ql-table-column>
+  </data-table>
+
+  <ng-template #addUser>
+    <ql-card>
+      <ql-form label-width="100px" ql-row gutter="24" class="ql-margin-top">
+
+        <ql-form-item label="用户名称" ql-col span="12">
+
+          <ql-input placeholder="请输入用户名称" [(ngModel)]="userData.name"></ql-input>
+        </ql-form-item>
+        <ql-form-item label="状态" ql-col span="12">
+          <ql-select [clearable]="true" [(ngModel)]="userData.state">
+            <ql-option *ngFor="let item of userStatus" [label]="item.label" [value]="item.value"> </ql-option>
+          </ql-select>
+        </ql-form-item>
+        <ql-form-item label="创建时间" ql-col span="12">
+          <ql-date-picker type="datetime" format="yyyy-MM-dd hh:mm" [(ngModel)]="userData.createTime"> </ql-date-picker>
+        </ql-form-item>
+
+      </ql-form>
+    </ql-card>
+    <div>
+      <ql-button type="primary" (click)="modal.close(true)">创建</ql-button>
+      <ql-button type="primary" (click)="modal.close()">取消</ql-button>
+    </div>
+  </ng-template>
+
+
+  <ng-template #addUserRole>
+    <div style="height:40rem;">
+
+      <div style="box-sizing: border-box;float: left;width: 300px;margin: 1rem 1rem 1rem 10rem;border: 1px solid #ebeef5;height: 38rem;overflow:auto;padding: 1rem;
+      border-radius: 4px;   background: #fff;   vertical-align: middle;   max-height: 100%;  position: relative;">
+
+        <ql-tree (modelChange)="onCatalogChange($event)" [show-checkbox]="true" [model]="rolesAuthList" #tree></ql-tree>
+
+      </div>
+
+      <div
+        style="box-sizing: border-box;float: right;width: 300px;height: 38rem;overflow:auto;padding: 1rem;margin: 1rem 10rem 1rem 1rem;border: 1px solid #ebeef5; border-radius: 4px;   background: #fff;   vertical-align: middle;  max-height: 100%;  position: relative;">
+        <ql-tree (modelChange)="onUserChange($event)" [show-checkbox]="true" [model]="userAuthList" [default-expand-all]="true"></ql-tree>
+      </div>
+
+    </div>
+
+
+    <div>
+      <ql-button type="primary" (click)="modal.close(true)">创建</ql-button>
+      <ql-button type="primary" (click)="modal.close()">取消</ql-button>
+    </div>
+  </ng-template>
+
+
+</div>

@@ -14,9 +14,14 @@ import { Store } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
 import { ApiService } from './services/api.service'
 import { ParamsConfigComponent } from './pages/params-config/params-config.component'
-
+import { LogsConfigComponent } from './pages/logs-config/logs-config.component'
+import { PasswdConfigComponent } from './pages/passwd-config/passwd-config.component'
+import { RolesConfigComponent } from './pages/roles-config/roles-config.component'
+import { ParamsDetailComponent } from './pages/params-config/params-detail/params-detail.component'
+import { RolesDetailComponent } from './pages/roles-config/roles-detail/roles-detail.component'
+import { UserListComponent } from './pages/roles-config/user-list/user-list.component'
 // 页面列表
-const PAGES = [ParamsConfigComponent]
+const PAGES = [ParamsConfigComponent,LogsConfigComponent,PasswdConfigComponent,RolesConfigComponent,ParamsDetailComponent,RolesDetailComponent,UserListComponent]
 
 // 组件列表
 const COMPONENTS = []

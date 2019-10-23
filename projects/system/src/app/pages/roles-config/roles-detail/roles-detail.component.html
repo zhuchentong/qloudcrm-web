@@ -1,0 +1,133 @@
+<div *ngIf="flag == 'roleType'">
+  <div class="wrapinfo ql-padding">
+    <data-table [model]="rolesList" [action]="formButton">
+      <ng-template #formButton>
+        <ql-button size="small" type="primary" style="margin: 1rem 0" (click)="addRolesType()">增加</ql-button>
+      </ng-template>
+      <ql-table-column model-key="name" label="角色类型"></ql-table-column>
+      <ql-table-column model-key="description" label="角色类型说明"></ql-table-column>
+      <ql-table-column model-key="createTime" label="创建日期"></ql-table-column>
+      <ql-table-column model-key="state" label="状态"></ql-table-column>
+      <ql-table-column label="操作">
+        <ng-template #slot let-scope="scope">
+          <ql-button type="text" (click)="updateRolesTypeData(scope.rowData)">编辑</ql-button>
+          <ql-button type="text">删除</ql-button>
+        </ng-template>
+      </ql-table-column>
+    </data-table>
+  </div>
+</div>
+<div *ngIf="flag == 'role'">
+  <div class="wrapinfo ql-padding">
+    <data-form [button]="formButton" [showReset]="false" (submit)="queryRolesList()">
+      <ql-form-item label="角色类型">
+        <ql-select [clearable]="true" [popper-class]="'aaa'" (modelChange)="getRoleTypeSelect($event)">
+          <ql-option *ngFor="let item of roleType" [label]="item.label" [value]="item.value"> </ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ng-template #formButton>
+        <ql-button size="small" type="primary" style="margin: 1rem 0" (click)="addRolesManages()">增加</ql-button>
+      </ng-template>
+    </data-form>
+    <data-table [model]="rolesList">
+      <ql-table-column model-key="name" label="角色"></ql-table-column>
+      <ql-table-column model-key="description" label="角色说明"></ql-table-column>
+      <ql-table-column model-key="parent" label="角色类型">
+        <ng-template #slot let-scope="scope">
+          <ng-container *ngFor="let type of roleType">
+            <ng-container *ngIf="type.value == scope.rowData.parent">
+              {{ type.label }}
+            </ng-container>
+          </ng-container>
+          <!--{{scope.rowData.parent==1?'业务角色':(scope.rowData.parent==2?'管理角色':'职务角色')}}-->
+        </ng-template>
+      </ql-table-column>
+      <ql-table-column model-key="createTime" label="创建日期"></ql-table-column>
+      <ql-table-column model-key="state" label="状态"></ql-table-column>
+      <ql-table-column label="操作">
+        <ng-template #slot let-scope="scope">
+          <!-- <ql-button type="text">数据维护</ql-button> -->
+          <ql-button type="text" (click)="updateRolesManages(scope.rowData)">编辑</ql-button>
+          <ql-button type="text" (click)="updateRolesAuth(scope.rowData)">权限</ql-button>
+          <ql-button type="text">删除</ql-button>
+        </ng-template>
+      </ql-table-column>
+    </data-table>
+  </div>
+</div>
+
+<ng-template #addRoles>
+  <ql-card>
+    <ql-form label-width="100px" ql-row gutter="24" class="ql-margin-top">
+      <ql-form-item label="角色类型" ql-col span="12">
+        <ql-input placeholder="请输入内容" [(ngModel)]="rolesTypeData.rolesType"></ql-input>
+      </ql-form-item>
+      <ql-form-item label="状态" ql-col span="12">
+        <ql-select [clearable]="true" [(ngModel)]="rolesTypeData.rolesStatus">
+          <ql-option *ngFor="let item of roleStatus" [label]="item.label" [value]="item.value"> </ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item label="创建时间" ql-col span="12">
+        <ql-date-picker [(ngModel)]="rolesTypeData.rolesCreateTime"> </ql-date-picker>
+      </ql-form-item>
+      <ql-form-item label="角色类型说明" ql-col span="24" class="ql-margin-top">
+        <ql-input type="textarea" [rows]="2" placeholder="请输入内容" [(ngModel)]="rolesTypeData.rolesDesc"> </ql-input>
+      </ql-form-item>
+    </ql-form>
+  </ql-card>
+  <div>
+    <ql-button type="primary" (click)="modal.close(true)" *ngIf="!roleTypeEdit">创建</ql-button>
+    <ql-button type="primary" (click)="modal.close(true)" *ngIf="roleTypeEdit">编辑</ql-button>
+    <ql-button type="primary" (click)="modal.close()">取消</ql-button>
+  </div>
+</ng-template>
+<ng-template #addRolesManage>
+  <ql-card>
+    <ql-form label-width="100px" ql-row gutter="24" class="ql-margin-top">
+      <ql-form-item label="角色" ql-col span="12">
+        <ql-input placeholder="请输入内容" [(ngModel)]="rolesTypeData.rolesType"></ql-input>
+      </ql-form-item>
+      <ql-form-item label="状态" ql-col span="12">
+        <ql-select [clearable]="true" [(ngModel)]="rolesTypeData.rolesStatus">
+          <ql-option *ngFor="let item of roleStatus" [label]="item.label" [value]="item.value"> </ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item label="创建时间" ql-col span="12">
+        <ql-date-picker [(ngModel)]="rolesTypeData.rolesCreateTime"> </ql-date-picker>
+      </ql-form-item>
+      <ql-form-item label="角色类别" ql-col span="12">
+        <ql-select [clearable]="true" [(ngModel)]="rolesTypeData.roleType">
+          <ql-option *ngFor="let item of roleType" [label]="item.label" [value]="item.value"> </ql-option>
+        </ql-select>
+      </ql-form-item>
+      <ql-form-item label="角色说明" ql-col span="24" class="ql-margin-top">
+        <ql-input type="textarea" [rows]="2" placeholder="请输入内容" [(ngModel)]="rolesTypeData.rolesDesc"> </ql-input>
+      </ql-form-item>
+    </ql-form>
+  </ql-card>
+  <div>
+    <ql-button type="primary" (click)="modal.close(true)" *ngIf="!roleTypeEdit">创建</ql-button>
+    <ql-button type="primary" (click)="modal.close(true)" *ngIf="roleTypeEdit">编辑</ql-button>
+    <ql-button type="primary" (click)="modal.close()">取消</ql-button>
+  </div>
+</ng-template>
+<ng-template #rolesAuth>
+  <div style="height:40rem;">
+    <div
+      style="box-sizing: border-box;float: left;width: 45%;margin: 1rem;border: solid 1px rgba(180, 180, 180, 0.8);height: 38rem;overflow:auto;padding: 1rem;"
+    >
+      全部菜单权限
+      <ql-tree (modelChange)="onCatalogChange($event)" [show-checkbox]="true" [model]="rolesAuthList" #tree></ql-tree>
+    </div>
+    <div
+      style="box-sizing: border-box;float: right;width: 45%;margin: 1rem;border: solid 1px rgba(180, 180, 180, 0.8);height: 38rem;overflow:auto;padding: 1rem;"
+    >
+      已拥有的菜单权限
+      <ql-tree (modelChange)="onUserCatalogChange($event)" [show-checkbox]="true" [model]="userAuthList"></ql-tree>
+    </div>
+  </div>
+  <div>
+    <ql-button type="primary" (click)="modal.close(true)">确定</ql-button>
+    <ql-button type="primary" (click)="modal.close()">取消</ql-button>
+  </div>
+</ng-template>

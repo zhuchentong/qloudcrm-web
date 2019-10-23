@@ -1,0 +1,34 @@
+<page-header title="角色设定" [breadcrumb]="breadcrumb">
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>系统管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>角色设定</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+</page-header>
+
+<page-container>
+  <tab-container>
+    <tab-item title="角色类型管理">
+      <ql-card>
+        <div ql-row>
+          <app-roles-detail [flag]="'roleType'" (type)="getRoleType($event)"></app-roles-detail>
+        </div>
+      </ql-card>
+    </tab-item>
+    <tab-item title="角色管理">
+      <ql-card>
+        <div ql-row>
+          <app-roles-detail [flag]="'role'" [roleType]="roleType" (roleManage)="getRoeManage($event)"></app-roles-detail>
+        </div>
+      </ql-card>
+    </tab-item>
+    <tab-item title="用户管理">
+      <ql-card>
+        <div ql-row>
+          <app-user-list [roleManage]="roleManage" [roleType]="roleType"></app-user-list>
+        </div>
+      </ql-card>
+    </tab-item>
+  </tab-container>
+</page-container>

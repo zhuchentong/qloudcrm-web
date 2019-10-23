@@ -8,5 +8,18 @@
 </page-header>
 
 <page-container>
-  参数管理
+  <tab-container>
+    <tab-item title="单值业务参数">
+      <app-params-detail [flag]="'single'"></app-params-detail>
+    </tab-item>
+    <tab-item title="多值业务参数">
+      <app-params-detail [flag]="'mup'"></app-params-detail>
+    </tab-item>
+    <tab-item title="功能点参数">
+      <app-params-detail></app-params-detail>
+    </tab-item>
+    <tab-item title="系统参数">
+      <app-params-detail [flag]="'sys'"></app-params-detail>
+    </tab-item>
+  </tab-container>
 </page-container>

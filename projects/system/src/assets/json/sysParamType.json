@@ -1,0 +1,6 @@
+[
+  {"id":1,"name":"token有效时长（小时）","code":"1","type":"catalog","description":"token有效时长（小时）","createTime":"2019-10-10","user":"王力","data":1500,"parent":""},
+  {"id":2,"name":"创建用户默认密码","code":"2","type":"catalog","description":"创建用户默认密码","createTime":"2019-10-10","user":"王力","data":1500,"parent":""},
+  {"id":3,"name":"token有效时长（小时）","code":"3","type":"tag","description":"token有效时长（小时）","createTime":"2019-10-10","user":"王力","data":4,"parent":1},
+  {"id":4,"name":"创建用户默认密码","code":"4","type":"tag","description":"创建用户默认密码","createTime":"2019-10-10","user":"王力","data":"888888","parent":2}
+]
