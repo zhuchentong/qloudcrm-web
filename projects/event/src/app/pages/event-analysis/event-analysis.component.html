@@ -6,4 +6,113 @@
     </ql-breadcrumb>
   </ng-template>
 </page-header>
-<page-container> </page-container>
+<page-container>
+
+  <tab-container>
+    <tab-item title="按排名统计">
+      <ql-card header="2019-10-01 / 2019-10-31">
+      <!--<ql-card>-->
+        <data-table [model]="eventList">
+          <!--<ql-table-column model-key="rank" label="排名"> </ql-table-column>-->
+          <ql-table-column model-key="eventType" label="事件类型"> </ql-table-column>
+          <ql-table-column model-key="eventName" label="事件名称"> </ql-table-column>
+          <ql-table-column model-key="count" label="事件次数"> </ql-table-column>
+          <ql-table-column model-key="amount" label="发生金额（万元）">
+          <!--<ng-template #slot let-scope="scope">-->
+            <!--{{scope.rowData.count + scope.rowData.amount}}-->
+          <!--</ng-template>-->
+          </ql-table-column>
+          <!--<ql-table-column model-key="startDate" label="统计开始日期"> </ql-table-column>-->
+          <!--<ql-table-column model-key="endDate" label="统计结束日期"> </ql-table-column>-->
+          <ql-table-column model-key="lastTime" label="最后事件时间"> </ql-table-column>
+          <ql-table-column model-key="prevDay" label="上一日事件次数"> </ql-table-column>
+          <ql-table-column model-key="prevRank" label="上一月排名"> </ql-table-column>
+        </data-table>
+      </ql-card>
+    </tab-item>
+
+    <tab-item title="按时间统计">
+      <div *ngIf="twoIndex==1" echarts [options]="lineOption[0]" [merge]="lineOption[1]"  [ngStyle]="{height: hdata6 == 'NaNpx' ? '450px' : hdata6}" [loading]="loading"></div>
+      <div *ngIf="twoIndex==1">
+        <table  class="table table-striped table-bordered table-hover">
+          <thead style="text-align: center;font-size: 0.4em;">
+          <tr>
+            <th scope="col">月份</th>
+            <th *ngFor="let data of legengs; let i = index" scope="col">{{data}}</th>
+            <!--<th scope="col">年累计资产变动</th>-->
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of lineres; let i = index" style="text-align: right;font-size: 0.3em;">
+            <td style="text-align: center;">{{data.dataDate}}</td>
+            <td *ngFor="let item of legengs; let j = index">{{data['a'+(j+1)]}}次（{{data['b'+(j+1)]}}万元）</td>
+          </tr>
+
+          </tbody>
+          <tfoot>
+          <tr><td colspan="12">
+            <!--<button style="float: right;font-size: 0.4em;" type="button" (click)="twoHandle(1)" class="btn btn-primary btn-sm">数据图形</button>-->
+          </td></tr>
+
+          </tfoot>
+        </table>
+      </div>
+    </tab-item>
+
+    <tab-item title="按渠道统计">
+      <div *ngIf="twoIndex==1" echarts [options]="lineOption1[0]" [merge]="lineOption1[1]"  [ngStyle]="{height: hdata6 == 'NaNpx' ? '450px' : hdata6}" [loading]="loading"></div>
+      <div *ngIf="twoIndex==1">
+        <table  class="table table-striped table-bordered table-hover">
+          <thead style="text-align: center;font-size: 0.4em;">
+          <tr>
+            <th scope="col">月份</th>
+            <th *ngFor="let data of legengs1; let i = index" scope="col">{{data}}</th>
+            <!--<th scope="col">年累计资产变动</th>-->
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let data of lineres1; let i = index" style="text-align: right;font-size: 0.3em;">
+            <td style="text-align: center;">{{data.dataDate}}</td>
+            <td *ngFor="let item of legengs1; let j = index">{{data['a'+(j+1)]}}次（{{data['b'+(j+1)]}}万元）</td>
+          </tr>
+
+          </tbody>
+          <tfoot>
+          <tr><td colspan="12">
+            <!--<button style="float: right;font-size: 0.4em;" type="button" (click)="twoHandle(1)" class="btn btn-primary btn-sm">数据图形</button>-->
+          </td></tr>
+
+          </tfoot>
+        </table>
+      </div>
+    </tab-item>
+
+    <!--<tab-item title="按资金用途统计">-->
+    <!--</tab-item>-->
+
+    <tab-item title="按客户交易次数排名统计">
+      <ql-card header="2019-10-01 / 2019-10-31">
+        <!--<ql-card>-->
+        <data-table [model]="customerList">
+          <!--<ql-table-column model-key="rank" label="排名"> </ql-table-column>-->
+          <ql-table-column model-key="customerNo" label="客户编号"> </ql-table-column>
+          <ql-table-column model-key="customerName" label="客户名称"> </ql-table-column>
+          <ql-table-column model-key="customerLevel" label="客户等级"> </ql-table-column>
+          <ql-table-column model-key="aum" label="AUM（万元）"> </ql-table-column>
+          <ql-table-column model-key="count" label="交易次数"> </ql-table-column>
+          <ql-table-column model-key="amount" label="发生金额（万元）">
+            <!--<ng-template #slot let-scope="scope">-->
+            <!--{{scope.rowData.count + scope.rowData.amount}}-->
+            <!--</ng-template>-->
+          </ql-table-column>
+          <!--<ql-table-column model-key="startDate" label="统计开始日期"> </ql-table-column>-->
+          <!--<ql-table-column model-key="endDate" label="统计结束日期"> </ql-table-column>-->
+          <ql-table-column model-key="lastTime" label="最后事件时间"> </ql-table-column>
+          <ql-table-column model-key="prevDay" label="上一日事件次数"> </ql-table-column>
+          <ql-table-column model-key="prevRank" label="上一月排名"> </ql-table-column>
+        </data-table>
+      </ql-card>
+    </tab-item>
+  </tab-container>
+
+</page-container>
