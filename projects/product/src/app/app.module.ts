@@ -21,6 +21,11 @@ import { ComboCreateComponent } from './pages/combo-create/combo-create.componen
 import { AttentionListComponent } from './pages/attention-list/attention-list.component'
 import { ProductDocumentComponent } from './pages/product-document/product-document.component';
 import { ProductCreateComponent } from './pages/product-create/product-create.component'
+import { TagComponent } from './components/tag/tag.component'
+import { SelectCustomerComponent } from './components/select-customer/select-customer.component';
+import { SelGroupComponent } from './components/sel-group/sel-group.component'
+import { SelectPruductComponent } from './components/select-pruduct/select-pruduct.component'
+
 
 // 页面列表
 const PAGES = [
@@ -30,11 +35,12 @@ const PAGES = [
   ComboListComponent,
   ComboCreateComponent,
   AttentionListComponent,
-  ProductDocumentComponent
+  ProductDocumentComponent,
+  ProductCreateComponent
 ]
 
 // 组件列表
-const COMPONENTS = []
+const COMPONENTS = [ TagComponent, SelectCustomerComponent,SelGroupComponent,SelectPruductComponent ]
 
 const startUpFactory = (store: Store) => async () => {
   // 注册菜单
@@ -53,7 +59,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ProductCreateComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ProductCreateComponent, SelGroupComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule],
   providers,

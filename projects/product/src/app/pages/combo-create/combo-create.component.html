@@ -1,14 +1,105 @@
-<page-header title="创建组合" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>产品管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>产品组合</ql-breadcrumb-item>
-      <ql-breadcrumb-item>创建组合</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
-  <ng-template #action>
-    <ql-button type="primary" (click)="onSubmit()">提交</ql-button>
-  </ng-template>
+<page-header title="创建组合" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>产品管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>产品组合</ql-breadcrumb-item>
+            <ql-breadcrumb-item>创建组合</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+    <ng-template #action>
+        <ql-button type="primary" (click)="onSubmit()">提交</ql-button>
+    </ng-template>
 </page-header>
 
-<page-container> </page-container>
+<page-container>
+    <ql-form label-width="130px">
+        <ql-card header="产品详情">
+            <div ql-row>
+                <ql-form-item label="产品组合名称" ql-col span="12">
+                    <ql-input> </ql-input>
+                </ql-form-item>
+                <ql-form-item label="产品组合编码" ql-col span="12">
+                    <ql-input> </ql-input>
+                </ql-form-item>
+                <ql-form-item label="产品组合介绍" ql-col span="12">
+                    <ql-input></ql-input>
+                </ql-form-item>
+                <ql-form-item label="预期利率" ql-col span="12">
+                    <ql-input></ql-input>
+                </ql-form-item>
+            </div>
+        </ql-card>
+        <ql-card header="业务及办理规定">
+            <div ql-row>
+                <ql-form-item label="适用范围" ql-col span="24">
+                    <ql-input type="textarea" [autosize]="{ minRows: 6, maxRows: 10}" placeholder="请输入内容">
+                    </ql-input>
+                </ql-form-item>
+                <ql-form-item label="办理规定" ql-col span="24">
+                    <ql-input type="textarea" [autosize]="{ minRows: 6, maxRows: 10}" placeholder="请输入内容"></ql-input>
+                </ql-form-item>
+                <ql-form-item label="适用范围" ql-col span="24">
+                    <ql-input type="textarea" [autosize]="{ minRows: 6, maxRows: 10}" placeholder="请输入内容">
+                    </ql-input>
+                </ql-form-item>
+            </div>
+        </ql-card>
+        <ql-card header="营销垫板">
+            <!-- <ng-template #header>
+                <card-header title="选择客户">
+                    <ql-button type="primary" (click)="onSelectCustomer()" size="small">添加客户</ql-button>
+                </card-header>
+            </ng-template> -->
+            <ng-template #header card-header>
+                <card-header title="选择客户">
+                    <ql-button type="primary" (click)="onSelectCustomer()" size="small">选择客户</ql-button>
+                </card-header>
+            </ng-template>
+        </ql-card>
+        <ql-card>
+            <ng-template #header>
+                <card-header title="选择客户标签">
+                    <ql-button type="primary" (click)="onSelectTag()" size="small">选择标签</ql-button>
+                </card-header>
+            </ng-template>
+        </ql-card>
+        <ql-card>
+            <ng-template #header>
+                <card-header title="选择分组">
+                    <ql-button type="primary" (click)="onSelectGroup()" size="small">选择分组</ql-button>
+                </card-header>
+            </ng-template>
+        </ql-card>
+        <ql-card>
+            <ng-template #header>
+                <card-header title="选择产品">
+                    <ql-button type="primary" (click)="onSelectProduct()" size="small">选择产品</ql-button>
+                </card-header>
+            </ng-template>
+        </ql-card>
+        <ql-card header="促销活动">
+            <div ql-row>
+                <ql-form-item ql-col span="12" label="活动主题">
+                    <ql-input placeholder="请输入内容"></ql-input>
+                </ql-form-item>
+                <ql-form-item label="活动范围" ql-col span="12">
+                    <ql-select placeholder="选择活动范围" style="float: left">
+                        <ql-option *ngFor="let item of []" [label]="item.label" [value]="item.value"> </ql-option>
+                    </ql-select>
+                </ql-form-item>
+                <ql-form-item label="活动内容" ql-col span="12">
+                    <ql-input placeholder="请输入内容"></ql-input>
+                </ql-form-item>
+                <ql-form-item label="活动附带权益" ql-col span="12">
+                    <ql-input placeholder="请输入内容"></ql-input>
+                </ql-form-item>
+                <ql-form-item label="活动开始时间" ql-col span="12">
+                    <ql-date-picker></ql-date-picker>
+                </ql-form-item>
+                <ql-form-item label="活动结束时间" ql-col span="12">
+                    <ql-date-picker></ql-date-picker>
+                </ql-form-item>
+            </div>
+        </ql-card>
+    </ql-form>
+</page-container>

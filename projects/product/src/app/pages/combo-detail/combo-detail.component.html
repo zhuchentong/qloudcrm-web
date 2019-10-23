@@ -1,4 +1,4 @@
-<page-header title="组合详情" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
+<page-header title="组合详情" [breadcrumb]="breadcrumb" [action]="action" [back]="true">
     <ng-template #breadcrumb>
         <ql-breadcrumb>
             <ql-breadcrumb-item>产品管理</ql-breadcrumb-item>
@@ -13,25 +13,73 @@
 
 <tab-container>
     <tab-item title="产品组合详情信息展示">
-        <label-container column="3" [border]="true" labelWidth="110">
-            <label-item label="产品组合名称">金葵1号黄金2号组合</label-item>
-            <label-item label="产品组合代码">C1030819A00</label-item>
-            <label-item label="预期收益">5.8%/年</label-item>
-        </label-container>
-        <label-container column="1" [border]="true" labelWidth="110">
-            <label-item label="产品组合介绍">收益冠军产品强强联合，利益最大化</label-item>
-        </label-container>
-        <label-container column="3" [border]="true" labelWidth="110">
-            <label-item label="存款">30万</label-item>
-            <label-item label="贷款">18万</label-item>
-            <label-item label="资管">20万</label-item>
-            <label-item label="理财">10万</label-item>
-            <label-item label="黄金"></label-item>
-            <label-item label="国债"></label-item>
-            <label-item label="保险"></label-item>
-            <label-item label="信托"></label-item>
-            <label-item label="电子银行"></label-item>
-        </label-container>
+        <ql-card header="产品组合基本信息">
+            <label-container column="3" [border]="true" labelWidth="110">
+                <label-item label="产品组合名称">金葵1号黄金2号组合</label-item>
+                <label-item label="产品组合代码">C1030819A00</label-item>
+                <label-item label="预期收益">5.8%/年</label-item>
+            </label-container>
+            <label-container column="1" [border]="true" labelWidth="110">
+                <label-item label="产品组合介绍">收益冠军产品强强联合，利益最大化</label-item>
+            </label-container>
+        </ql-card>
+        <ql-card header="产品详细产品">
+            <ql-collapse [accordion]="true">
+                <ql-collapse-item label="存款" value="1">
+                    <label-container column="3" [border]="true" labelWidth="110">
+                        <label-item label="产品名称">金葵存款</label-item>
+                        <label-item label="产品代码">C119A00</label-item>
+                        <label-item label="份数">1</label-item>
+                    </label-container>
+                </ql-collapse-item>
+                <ql-collapse-item label="贷款" value="2">
+                    <label-container column="3" [border]="true" labelWidth="110">
+                        <label-item label="产品名称">金葵贷款</label-item>
+                        <label-item label="产品代码">C119A00</label-item>
+                        <label-item label="份数">1</label-item>
+                    </label-container>
+                </ql-collapse-item>
+                <ql-collapse-item label="资管" value="3">
+                    <label-container column="3" [border]="true" labelWidth="110">
+                        <label-item label="产品名称">黄金资管</label-item>
+                        <label-item label="产品代码">C119A00</label-item>
+                        <label-item label="份数">3</label-item>
+                    </label-container>
+                </ql-collapse-item>
+                <ql-collapse-item label="理财" value="4">
+                    <label-container column="3" [border]="true" labelWidth="110">
+                        <label-item label="产品名称">金葵理财</label-item>
+                        <label-item label="产品代码">H119A00</label-item>
+                        <label-item label="份数">1</label-item>
+                    </label-container>
+                </ql-collapse-item>
+                <ql-collapse-item label="黄金" value="5">
+                    <label-container column="1" [border]="true" labelWidth="110">
+                        <label-item label="黄金产品">无</label-item>
+                    </label-container>
+                </ql-collapse-item>
+                <ql-collapse-item label="国债" value="6">
+                    <label-container column="1" [border]="true" labelWidth="110">
+                        <label-item label="国债产品">无</label-item>
+                    </label-container>
+                </ql-collapse-item>
+                <ql-collapse-item label="保险" value="7">
+                    <label-container column="1" [border]="true" labelWidth="110">
+                        <label-item label="保险产品">无</label-item>
+                    </label-container>
+                </ql-collapse-item>
+                <ql-collapse-item label="基金" value="8">
+                    <label-container column="1" [border]="true" labelWidth="110">
+                        <label-item label="基金产品">无</label-item>
+                    </label-container>
+                </ql-collapse-item>
+                <ql-collapse-item label="信托" value="9">
+                    <label-container column="1" [border]="true" labelWidth="110">
+                        <label-item label="信托产品">无</label-item>
+                    </label-container>
+                </ql-collapse-item>
+            </ql-collapse>
+        </ql-card>
     </tab-item>
     <tab-item title="业务以及办理规则">
         <ql-card header="适用范围">

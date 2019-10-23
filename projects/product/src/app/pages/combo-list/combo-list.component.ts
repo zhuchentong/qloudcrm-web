@@ -6,7 +6,6 @@ import { DictService } from '@app/shared/utils/dict.service'
 import { ApiService } from '../../services/api.service'
 import { ModalService } from '@app/shared/utils'
 
-
 @Component({
   selector: 'app-combo-list',
   templateUrl: './combo-list.component.html',
