@@ -1,0 +1,19 @@
+{
+  "default": "true",
+  "pluginName": "报表管理",
+  "pluginIcon": "",
+  "pluginAbbr": "UI",
+  "pluginImg": "/assets/images/svg/profile.svg",
+  "pluginPath": "report",
+  "pluginOrder": 1,
+  "pluginTab": [
+    {
+      "name": "客户总览",
+      "url": "#/report/customer-view"
+    },
+    {
+      "name": "资产结构总览",
+      "url": "#/report/asset-view"
+    }
+  ]
+}

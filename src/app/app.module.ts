@@ -15,6 +15,7 @@ import { AppProductModule } from 'projects/product/src/app/app.module'
 import { AppSystemModule } from 'projects/system/src/app/app.module'
 import { AppEventModule } from 'projects/event/src/app/app.module'
 import { AppPerformanceModule } from 'projects/performance/src/app/app.module'
+import { AppReportModule } from 'projects/report/src/app/app.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -29,7 +30,8 @@ import { AppPerformanceModule } from 'projects/performance/src/app/app.module'
     AppProductModule.forRoot(),
     AppSystemModule.forRoot(),
     AppEventModule.forRoot(),
-    AppPerformanceModule.forRoot()
+    AppPerformanceModule.forRoot(),
+    AppReportModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
