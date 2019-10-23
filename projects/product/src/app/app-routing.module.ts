@@ -12,6 +12,7 @@ import { TagComponent } from './components/tag/tag.component'
 import { SelectCustomerComponent } from './components/select-customer/select-customer.component'
 import { SelGroupComponent } from './components/sel-group/sel-group.component'
 import {ComboCreateComponent } from './pages/combo-create/combo-create.component'
+import { SelectPruductComponent } from './components/select-pruduct/select-pruduct.component'
 
 const routes: Routes = [
   { path: 'product/product-list', component: ProductListComponent },

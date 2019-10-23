@@ -24,6 +24,8 @@ import { ProductCreateComponent } from './pages/product-create/product-create.co
 import { TagComponent } from './components/tag/tag.component'
 import { SelectCustomerComponent } from './components/select-customer/select-customer.component';
 import { SelGroupComponent } from './components/sel-group/sel-group.component'
+import { SelectPruductComponent } from './components/select-pruduct/select-pruduct.component'
+
 
 // 页面列表
 const PAGES = [
@@ -38,7 +40,7 @@ const PAGES = [
 ]
 
 // 组件列表
-const COMPONENTS = [ TagComponent, SelectCustomerComponent,SelGroupComponent ]
+const COMPONENTS = [ TagComponent, SelectCustomerComponent,SelGroupComponent,SelectPruductComponent ]
 
 const startUpFactory = (store: Store) => async () => {
   // 注册菜单

@@ -8,6 +8,7 @@ import { NetService, PageService } from '@app/core/http'
 import { TagComponent } from '../../components/tag/tag.component'
 import { SelectCustomerComponent } from '../../components/select-customer/select-customer.component'
 import { SelGroupComponent } from '../../components/sel-group/sel-group.component'
+import { SelectPruductComponent } from '../../components/select-pruduct/select-pruduct.component'
 
 
 @Component({
@@ -55,6 +56,16 @@ export class ComboCreateComponent implements OnInit {
         title: '选择分组',
         size: 'huge',
         component: SelGroupComponent
+      })
+      .subscribe(data => {})
+  }
+
+  public onSelectProduct(){
+    this.modal
+      .open({
+        title: '选择产品',
+        size: 'huge',
+        component: SelectPruductComponent
       })
       .subscribe(data => {})
   }
