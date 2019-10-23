@@ -1,12 +1,15 @@
 <div>
-  <data-form [showReset]="false" [formGroup]="formGroup" (submit)="queryUserListByRole()">
-    <ql-button size="small" type="primary" style="margin: 1rem 0" (click)="addUserForm()">增加</ql-button>
+  <data-form [button]="formButton" [showReset]="false" [formGroup]="formGroup" (submit)="queryUserListByRole()">
 
-    <ql-form-item label="角色" style="position: absolute;right: 10rem;">
+    <ql-form-item label="角色">
       <ql-select [clearable]="true" [popper-class]="'aaa'" (modelChange)="getUserSelect($event)">
         <ql-option *ngFor="let item of rolesList" [label]="item.name" [value]="item.id"> </ql-option>
       </ql-select>
     </ql-form-item>
+
+    <ng-template #formButton>
+      <ql-button size="small" type="primary" (click)="addUserForm()">增加</ql-button>
+    </ng-template>
 
   </data-form>
 
