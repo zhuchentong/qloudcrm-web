@@ -1,3 +1,4 @@
+import { ProductCreateComponent } from './../product-create/product-create.component';
 import { ModalService } from '@app/shared/utils'
 import { ApiService } from '../../services/api.service'
 import { Router } from '@angular/router'
@@ -15,20 +16,52 @@ import { SelectPruductComponent } from '../../components/select-pruduct/select-p
   selector: 'app-combo-create',
   templateUrl: './combo-create.component.html',
   styleUrls: ['./combo-create.component.scss'],
-  providers: [ModalService, PageService]
+  providers: [ModalService, PageService,ApiService]
 })
 export class ComboCreateComponent implements OnInit {
+
+  public customerList = []
+  public customerTag = []
+  public customerGroup = []
+  public productList = []
+
   constructor(
     private fb: FormBuilder,
     public modal: ModalService,
     public pageService: PageService,
     private message: QlMessageService,
+    private apiService: ApiService,
     private router: Router
   ) {}
 
   ngOnInit() {}
 
   onSubmit() {}
+
+  public getCustomerList() {
+    this.apiService.getCustomerList().subscribe(data => {
+      this.customerList = data
+    })
+  }
+
+  public getCustomerTag(){
+    this.apiService.getCustomerTagList().subscribe(data=>{
+      this.customerTag = data.splice(16,4)
+    })
+  }
+
+  public getCustomerGroup(){
+    this.apiService.getCustomerGroupList().subscribe(data=>{
+      this.customerGroup = data
+    })
+  }
+
+  public getProductList(){
+    this.apiService.getProductList().subscribe(data=>{
+      this.productList = data.splice(14,3)
+      console.log(this.productList)
+    })
+  }
 
   public onSelectCustomer() {
     this.modal
@@ -37,7 +70,9 @@ export class ComboCreateComponent implements OnInit {
         size: 'huge',
         component: SelectCustomerComponent
       })
-      .subscribe(data => {})
+      .subscribe(data => {
+        this.getCustomerList()
+      })
   }
 
   public onSelectTag() {
@@ -47,7 +82,9 @@ export class ComboCreateComponent implements OnInit {
         size: 'huge',
         component: TagComponent
       })
-      .subscribe(data => {})
+      .subscribe(data => {
+        this.getCustomerTag()
+      })
   }
 
   public onSelectGroup(){
@@ -57,7 +94,9 @@ export class ComboCreateComponent implements OnInit {
         size: 'huge',
         component: SelGroupComponent
       })
-      .subscribe(data => {})
+      .subscribe(data => {
+        this.getCustomerGroup()
+      })
   }
 
   public onSelectProduct(){
@@ -67,6 +106,8 @@ export class ComboCreateComponent implements OnInit {
         size: 'huge',
         component: SelectPruductComponent
       })
-      .subscribe(data => {})
+      .subscribe(data => {
+        this.getProductList()
+      })
   }
 }

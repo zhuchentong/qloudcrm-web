@@ -8,25 +8,50 @@ import { NetService, PageService } from '@app/core/http'
 import { TagComponent } from '../../components/tag/tag.component'
 import { SelectCustomerComponent } from '../../components/select-customer/select-customer.component'
 import { SelGroupComponent } from '../../components/sel-group/sel-group.component'
-
 @Component({
   selector: 'app-product-create',
   templateUrl: './product-create.component.html',
   styleUrls: ['./product-create.component.scss'],
-  providers: [ModalService, PageService]
+  providers: [ModalService, PageService,ApiService]
 })
 export class ProductCreateComponent implements OnInit {
+  public customerList = []
+  public customerTag = []
+  public customerGroup = []
   constructor(
     private fb: FormBuilder,
     public modal: ModalService,
     public pageService: PageService,
     private message: QlMessageService,
+    private apiService:ApiService,
     private router: Router
   ) {}
 
   ngOnInit() {}
 
   onSubmit() {}
+
+  public getCustomerList() {
+    this.apiService.getCustomerList().subscribe(data => {
+      this.customerList = data
+    })
+  }
+
+  public getCustomerTag(){
+    this.apiService.getCustomerTagList().subscribe(data=>{
+      this.customerTag = data.splice(16,4)
+      console.log(this.customerTag)
+    })
+  }
+
+  public getCustomerGroup(){
+    this.apiService.getCustomerGroupList().subscribe(data=>{
+      this.customerGroup = data
+      console.log(this.customerGroup)
+    })
+  }
+
+
 
   public onSelectCustomer() {
     this.modal
@@ -35,7 +60,9 @@ export class ProductCreateComponent implements OnInit {
         size: 'huge',
         component: SelectCustomerComponent
       })
-      .subscribe(data => {})
+      .subscribe(data => {
+        this.getCustomerList()
+      })
   }
 
   public onSelectTag() {
@@ -45,7 +72,9 @@ export class ProductCreateComponent implements OnInit {
         size: 'huge',
         component: TagComponent
       })
-      .subscribe(data => {})
+      .subscribe(data => {
+        this.getCustomerTag()
+      })
   }
 
   public onSelectGroup(){
@@ -55,6 +84,8 @@ export class ProductCreateComponent implements OnInit {
         size: 'huge',
         component: SelGroupComponent
       })
-      .subscribe(data => {})
+      .subscribe(data => {
+        this.getCustomerGroup()
+      })
   }
 }

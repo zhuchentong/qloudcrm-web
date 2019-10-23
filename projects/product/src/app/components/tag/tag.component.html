@@ -1,8 +1,11 @@
 <page-container>
-    <data-form [submitText]="'提交'" (submit)="onRefresh()" [showReset]="false">
-        <!-- <ng-template #action>
+    <data-form [showReset]="false" (submit)="onRefresh()" [action]="action">
+        <ql-form-item label="标签编码">
+            <ql-input></ql-input>
+        </ql-form-item>
+        <ng-template #action>
             <ql-button type="success" (click)="modalRef.close(true)">提交</ql-button>
-        </ng-template> -->
+        </ng-template>
     </data-form>
     <div ql-row type="flex">
         <ql-tree (modelChange)="onCatalogChange($event)" [accordion]="true" [model]="catalogList" ql-col span="6"></ql-tree>

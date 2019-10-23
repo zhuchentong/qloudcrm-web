@@ -87,12 +87,16 @@
                     <ql-button type="primary" (click)="onSelectCustomer()" size="small">选择客户</ql-button>
                 </card-header>
             </ng-template>
-            <!--
-            <ng-template #header>
-                <card-header title="客户分组">
-                    <ql-button type="primary" (click)="onSelectGroup()" size="small">选择分组</ql-button>
-                </card-header>
-            </ng-template> -->
+            <data-table [model]="customerList">
+                <ql-table-column model-key="ctCode" label="客户编号"> </ql-table-column>
+                <ql-table-column model-key="ctName" label="客户姓名"> </ql-table-column>
+                <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>
+                <ql-table-column model-key="ctage" label="年龄" width="80"> </ql-table-column>
+                <ql-table-column model-key="ctType" label="客户类型"> </ql-table-column>
+                <ql-table-column model-key="ctLevel" label="客户等级"> </ql-table-column>
+                <ql-table-column model-key="ctTel" label="客户电话"> </ql-table-column>
+                <ql-table-column model-key="time" label="开户时间"> </ql-table-column>
+            </data-table>
         </ql-card>
         <ql-card>
             <ng-template #header>
@@ -100,6 +104,16 @@
                     <ql-button type="primary" (click)="onSelectTag()" size="small">选择标签</ql-button>
                 </card-header>
             </ng-template>
+            <data-table [model]="customerTag">
+                <ql-table-column model-key="name" label="标签名称"></ql-table-column>
+                <ql-table-column model-key="code" label="标签编码"></ql-table-column>
+                <ql-table-column model-key="type" label="标签类别"></ql-table-column>
+                <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
+                <ql-table-column model-key="description" label="标签说明"></ql-table-column>
+                <ql-table-column model-key="createTime" label="创建日期"></ql-table-column>
+                <ql-table-column model-key="count" label="客户数量"></ql-table-column>
+                <ql-table-column model-key="state" label="标签状态"></ql-table-column>
+            </data-table>
         </ql-card>
         <ql-card>
             <ng-template #header>
@@ -107,6 +121,15 @@
                     <ql-button type="primary" (click)="onSelectGroup()" size="small">选择分组</ql-button>
                 </card-header>
             </ng-template>
+            <data-table [model]="customerGroup">
+                <ql-table-column model-key="code" label="群组编号"> </ql-table-column>
+                <ql-table-column model-key="name" label="群组名称"> </ql-table-column>
+                <ql-table-column model-key="description" label="群组描述"> </ql-table-column>
+                <ql-table-column model-key="createTime" label="创建时间"> </ql-table-column>
+                <ql-table-column model-key="creator" label="创建人"> </ql-table-column>
+                <ql-table-column model-key="count" label="客户数量"> </ql-table-column>
+                <ql-table-column model-key="state" label="群组状态"> </ql-table-column>
+            </data-table>
         </ql-card>
         <ql-card header="促销活动">
             <div ql-row>
