@@ -12,10 +12,6 @@
       "url": "#/performance/performance-quota"
     },
     {
-      "name": "业绩排名",
-      "url": "#/performance/performance-rank"
-    },
-    {
       "name": "业绩统计",
       "url": "#/performance/performance-statistic"
     }

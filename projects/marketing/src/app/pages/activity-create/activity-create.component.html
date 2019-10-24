@@ -15,27 +15,27 @@
   <tab-container>
     <tab-item title="活动信息">
       <ql-card header="基本信息">
-        <ql-form label-width="120px" ql-row>
+        <ql-form [formGroup]="activityGroup" label-width="120px" ql-row>
           <ql-form-item ql-col span="12" label="活动名称">
-            <ql-input></ql-input>
+            <ql-input formControlName="name"></ql-input>
           </ql-form-item>
           <ql-form-item ql-col span="24" label="活动内容及方案">
-            <ql-input type="textarea" [autosize]="{ minRows: 6, maxRows: 12 }"></ql-input>
+            <ql-input formControlName="context" type="textarea" [autosize]="{ minRows: 6, maxRows: 12 }"></ql-input>
           </ql-form-item>
           <ql-form-item ql-col span="12" label="活动开始时间">
-            <ql-date-picker></ql-date-picker>
+            <ql-date-picker formControlName="startTime"></ql-date-picker>
           </ql-form-item>
           <ql-form-item ql-col span="12" label="活动结束时间">
-            <ql-date-picker></ql-date-picker>
+            <ql-date-picker formControlName="endTime"></ql-date-picker>
           </ql-form-item>
           <ql-form-item ql-col span="12" label="监测开始时间">
-            <ql-date-picker></ql-date-picker>
+            <ql-date-picker formControlName="monitorStartTime"></ql-date-picker>
           </ql-form-item>
           <ql-form-item ql-col span="12" label="监测结束时间">
-            <ql-date-picker></ql-date-picker>
+            <ql-date-picker formControlName="monitorEndTime"></ql-date-picker>
           </ql-form-item>
           <ql-form-item ql-col span="12" label="渠道选择">
-            <ql-select>
+            <ql-select formControlName="channel">
               <ql-option label="短信" value="短信"></ql-option>
               <ql-option label="人工" value="人工"></ql-option>
               <ql-option label="邮件" value="邮件"></ql-option>
@@ -45,10 +45,10 @@
             </ql-select>
           </ql-form-item>
           <ql-form-item ql-col span="12" label="资源预算">
-            <ql-input></ql-input>
+            <ql-input formControlName="budget"></ql-input>
           </ql-form-item>
           <ql-form-item ql-col span="24" label="关键字">
-            <ql-input></ql-input>
+            <ql-input formControlName="keywords"></ql-input>
           </ql-form-item>
         </ql-form>
       </ql-card>
@@ -63,10 +63,13 @@
         <ql-form ql-row label-width="100px">
           <ng-container *ngFor="let item of activityClaim; let i = index">
             <ql-form-item ql-col span="10" label="要求日期">
-              <ql-date-picker [model]="item.date"></ql-date-picker>
+              <ql-date-picker [(ngModel)]="item.date"></ql-date-picker>
             </ql-form-item>
             <ql-form-item ql-col span="10" label="成功率">
-              <ql-input [model]="item.value"></ql-input>
+              <div class="row">
+                <ql-input [(ngModel)]="item.value"></ql-input>
+                <span>%</span>
+              </div>
             </ql-form-item>
             <div ql-col span="4" class="text-center">
               <ql-button (click)="activityClaim.splice(i, 1)" type="text" *ngIf="i > 0">X</ql-button>
@@ -178,12 +181,12 @@
             <ql-form ql-row label-width="100px">
               <ng-container *ngFor="let item of item.activityTarget; let i = index">
                 <ql-form-item ql-col span="10" label="目标类型">
-                  <ql-select [model]="item.type">
+                  <ql-select [(ngModel)]="item.type">
                     <ql-option *ngFor="let value of activeTargetType" [label]="value" [value]="value"></ql-option>
                   </ql-select>
                 </ql-form-item>
                 <ql-form-item ql-col span="10" label="目标值">
-                  <ql-input [model]="item.value"></ql-input>
+                  <ql-input [(ngModel)]="item.value"></ql-input>
                 </ql-form-item>
                 <div ql-col span="4" class="text-center">
                   <ql-button (click)="item.activityTarget.splice(i, 1)" type="text" *ngIf="i > 0">X</ql-button>
@@ -210,7 +213,14 @@
               </card-header>
             </ng-template>
             <data-table [model]="item.interestList">
-              <ql-table-column model-key="name" label="权益名称"> </ql-table-column>
+              <ql-table-column model-key="type" label="权益类型"></ql-table-column>
+              <ql-table-column model-key="name" label="权益名称"></ql-table-column>
+              <ql-table-column model-key="chargeOffType" label="核销方式"></ql-table-column>
+              <ql-table-column model-key="company" label="提供服务商"></ql-table-column>
+              <ql-table-column model-key="upTime" label="上架时间"></ql-table-column>
+              <ql-table-column model-key="count" label="权益总数量"></ql-table-column>
+              <ql-table-column model-key="lastCount" label="剩余可用数量"></ql-table-column>
+              <ql-table-column model-key="expireTime" label="到期时间"></ql-table-column>
             </data-table>
           </ql-card>
         </ql-collapse-item>
@@ -228,12 +238,12 @@
         <ql-form ql-row label-width="100px">
           <ng-container *ngFor="let item of activityTarget; let i = index">
             <ql-form-item ql-col span="10" label="目标类型">
-              <ql-select [model]="item.type">
+              <ql-select [(ngModel)]="item.type">
                 <ql-option *ngFor="let value of activeTargetType" [label]="value" [value]="value"></ql-option>
               </ql-select>
             </ql-form-item>
             <ql-form-item ql-col span="10" label="目标值">
-              <ql-input [model]="item.value"></ql-input>
+              <ql-input [(ngModel)]="item.value"></ql-input>
             </ql-form-item>
             <div ql-col span="4" class="text-center">
               <ql-button (click)="activityTarget.splice(i, 1)" type="text" *ngIf="i > 0">X</ql-button>

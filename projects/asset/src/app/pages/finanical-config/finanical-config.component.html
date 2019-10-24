@@ -17,7 +17,14 @@
       <ql-form-item label="风险等级: " ql-col span="6">
         <ql-select placeholder="请选择" formControlName="riskLevel">
           <ql-option
-            *ngFor="let item of [{ key: 'R1', value: 1 }, { key: 'R2', value: 2 }, { key: 'R3', value: 3 },{ key: 'R4', value: 4 }]"
+            *ngFor="
+              let item of [
+                { key: 'R1', value: 1 },
+                { key: 'R2', value: 2 },
+                { key: 'R3', value: 3 },
+                { key: 'R4', value: 4 }
+              ]
+            "
             [label]="item.key"
             [value]="item.value"
           >
@@ -25,15 +32,16 @@
         </ql-select>
       </ql-form-item>
       <ql-form-item label="报酬: " formGroupName="assumption" ql-col span="12">
-        <ql-input formControlName="start"   ql-col span="4" ></ql-input>
+        <ql-input formControlName="start" ql-col span="4"></ql-input>
         <div ql-col span="1">%</div>
         <div ql-col span="2" align="center">-</div>
-        <ql-input formControlName="end"  ql-col span="4"></ql-input>
+        <ql-input formControlName="end" ql-col span="4"></ql-input>
         <div ql-col span="1">%</div>
       </ql-form-item>
     </div>
   </data-form>
-  <div ql-row *ngIf="assetConfigure!=null || managerWealth!=null">
+  <div ql-row *ngIf="assetConfigure!=null || managerWealth!=null;else empty;">
+
     <ql-card ql-col span="12" class="ql-padding-x" header="资产分析">
       <div>
         <div echarts [options]="assetConfigure"></div>
@@ -41,4 +49,11 @@
     </ql-card>
     <ql-card ql-col span="12" class="ql-padding-x" header="理财项目"></ql-card>
   </div>
+  <ng-template #empty>
+    <div class="row middel-span center-span" style="height: 400px">
+      暂无数据
+    </div>
+  </ng-template>
 </page-container>
+
+

@@ -3,7 +3,7 @@
     <ql-button size="small" type="primary" (click)="table.toggleSelection()">全选</ql-button>
   </ng-template>
   <ng-template #action>
-    <ql-button type="success" (click)="modalRef.close(true)">提交</ql-button>
+    <ql-button type="success"  (click)="modalRef.close(table.getSelections())">提交</ql-button>
   </ng-template>
   <ql-form-item label="探索名称">
     <ql-input> </ql-input>

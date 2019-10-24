@@ -9,6 +9,9 @@ import { SelectPruductComponent } from '../../components/select-pruduct/select-p
 import { ApiService as ProductService } from 'projects/product/src/app/services/api.service'
 import { Router } from '@angular/router'
 import { QlMessageService } from 'qloud-angular'
+import { FormGroup, FormBuilder } from '@angular/forms'
+import { Store } from '@ngxs/store'
+import { AddActivityAction } from '../../store/action/activity.action'
 
 @Component({
   selector: 'app-activity-create',
@@ -40,13 +43,31 @@ export class ActivityCreateComponent implements OnInit {
 
   public activeTargetType = ['销售额', '存款额', '访问用户量', '激活用户量']
 
+  public activityGroup: FormGroup
   constructor(
+    private store: Store,
     private router: Router,
     private modal: ModalService,
     private apiService: ApiService,
     private productService: ProductService,
-    private message: QlMessageService
-  ) {}
+    private message: QlMessageService,
+    private fb: FormBuilder
+  ) {
+    this.activityGroup = fb.group({
+      name: [''],
+      startTime: [''],
+      endTime: [''],
+      creator: ['张小明'],
+      organization: ['陕西西安高新支行'],
+      status: ['待审批'],
+      context: [''],
+      monitorStartTime: [''],
+      monitorEndTime: [''],
+      channel: [''],
+      budget: [''],
+      keywords: ['']
+    })
+  }
 
   ngOnInit() {}
 
@@ -100,7 +121,7 @@ export class ActivityCreateComponent implements OnInit {
         component: SelectCustomerComponent
       })
       .subscribe(data => {
-        this.getCustomerList()
+        this.customerList = [...this.customerList, ...data]
       })
   }
 
@@ -111,7 +132,7 @@ export class ActivityCreateComponent implements OnInit {
         component: SelectEventComponent
       })
       .subscribe(data => {
-        this.getEventList()
+        this.eventList = [...this.eventList, ...data]
       })
   }
 
@@ -122,7 +143,7 @@ export class ActivityCreateComponent implements OnInit {
         component: SelectExploreComponent
       })
       .subscribe(data => {
-        this.getCustomerList()
+        this.customerList = [...this.customerList, ...data]
       })
   }
 
@@ -136,7 +157,8 @@ export class ActivityCreateComponent implements OnInit {
         component: SelectInterestComponent
       })
       .subscribe(data => {
-        this.getInterestList(target)
+        target = target || this
+        target.interestList = [...target.interestList, ...data]
       })
   }
 
@@ -147,7 +169,7 @@ export class ActivityCreateComponent implements OnInit {
         component: SelectEventComponent
       })
       .subscribe(data => {
-        this.getAdList()
+        this.adList = [...this.adList, ...data]
       })
   }
 
@@ -158,12 +180,33 @@ export class ActivityCreateComponent implements OnInit {
         component: SelectPruductComponent
       })
       .subscribe(data => {
-        this.getProductList(target)
+        target = target || this
+        target.productList = [...target.productList, ...data]
       })
   }
 
+  /**
+   * 添加活动
+   */
   public onSubmit() {
-    this.message.success('创建成功')
-    this.router.navigate(['/marketing/activity-list'], { replaceUrl: true })
+    console.log(this.activityGroup.value)
+    this.store
+      .dispatch(
+        new AddActivityAction({
+          ...this.activityGroup.value,
+          activityClaim: this.activityClaim,
+          eventList: this.eventList,
+          adList: this.adList,
+          productList: this.productList,
+          customerList: this.customerList,
+          interestList: this.interestList,
+          ladderList: this.ladderList,
+          activityTarget: this.activityTarget
+        })
+      )
+      .subscribe(() => {
+        this.message.success('创建成功')
+        this.router.navigate(['/marketing/activity-list'], { replaceUrl: true })
+      })
   }
 }

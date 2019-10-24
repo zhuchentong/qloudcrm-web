@@ -13,31 +13,29 @@
     <tab-item title="活动信息">
       <ql-card header="基本信息">
         <label-container column="2" [border]="true" labelWidth="140">
-          <label-item label="活动名称">十月金秋 </label-item>
-          <label-item label="活动开始时间">2019年10月01日 00:00</label-item>
-          <label-item label="活动结束时间">2019年10月10日 00:00</label-item>
-          <label-item label="监测开始时间">2019年10月01日 00:00</label-item>
-          <label-item label="监测结束时间">2019年10月10日 00:00</label-item>
-          <label-item label="渠道选择">网银</label-item>
-          <label-item label="资金预算">200,000.00元</label-item>
-          <label-item label="关键字" column="2">
+          <label-item label="活动名称">{{ activity?.name }}</label-item>
+          <label-item label="活动开始时间">{{ activity?.startTime }}</label-item>
+          <label-item label="活动结束时间">{{ activity?.endTime }}</label-item>
+          <label-item label="监测开始时间">{{ activity?.monitorStartTime }}</label-item>
+          <label-item label="监测结束时间">{{ activity?.monitorEndTime }}</label-item>
+          <label-item label="渠道选择">{{ activity?.channel }}</label-item>
+          <label-item label="资金预算">{{ activity?.budget }}元</label-item>
+          <label-item label="关键字" column="2" *ngIf="activity?.keywords">
             <div class="row">
-              <ql-tag class="ql-margin-x">家庭</ql-tag>
-              <ql-tag class="ql-margin-x">中秋</ql-tag>
-              <ql-tag class="ql-margin-x">团圆</ql-tag>
+              <ql-tag class="ql-margin-x" *ngFor="let keyword of activity.keywords.split(' ')">{{ keyword }}</ql-tag>
             </div>
           </label-item>
           <label-item label="活动内容" column="2">
-            十月金秋送大礼...
+            {{ activity?.context }}
           </label-item>
         </label-container>
       </ql-card>
       <ql-card header="营销要求">
-        <label-container column="2" [border]="true">
-          <label-item label="日期">2019-10-05</label-item>
-          <label-item label="成功率">30%</label-item>
-          <label-item label="日期">2019-10-07</label-item>
-          <label-item label="成功率">650%</label-item>
+        <label-container column="2" [border]="true" *ngIf="activity.activityClaim">
+          <ng-container *ngFor="let item of activity.activityClaim">
+            <label-item label="日期">{{ item.date }}</label-item>
+            <label-item label="成功率">{{ item.value }}%</label-item>
+          </ng-container>
         </label-container>
       </ql-card>
       <ql-card header="活动事件">
@@ -86,10 +84,10 @@
     </tab-item>
     <tab-item title="活动阶梯">
       <ql-collapse>
-        <ql-collapse-item *ngFor="let item of ladderList" [label]="item.time">
+        <ql-collapse-item *ngFor="let item of ladderList" [label]="item.startTime + ' - ' + item.endTime">
           <ql-card header="营销要求">
             <label-container>
-              <ng-container *ngFor="let targetItem of item.targetList">
+              <ng-container *ngFor="let targetItem of item.activityTarget">
                 <label-item [label]="targetItem.type">{{ targetItem.value }}</label-item>
               </ng-container>
             </label-container>
@@ -117,11 +115,11 @@
       </ql-collapse>
     </tab-item>
     <tab-item title="活动目标">
-      <label-container column="2" [border]="true">
-        <label-item label="目标1">销售额</label-item>
-        <label-item label="目标值">50,000.00元</label-item>
-        <label-item label="目标2">客户访问量</label-item>
-        <label-item label="目标值">200,000.00次</label-item>
+      <label-container column="2" [border]="true" *ngIf="activity?.activityTarget">
+        <ng-container *ngFor="let item of activity.activityTarget">
+          <label-item label="目标类型">{{ item.type }}</label-item>
+          <label-item label="目标值">{{ item.value }}</label-item>
+        </ng-container>
       </label-container>
     </tab-item>
   </tab-container>
