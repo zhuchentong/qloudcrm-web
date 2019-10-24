@@ -24,7 +24,8 @@ import { ProductCreateComponent } from './pages/product-create/product-create.co
 import { TagComponent } from './components/tag/tag.component'
 import { SelectCustomerComponent } from './components/select-customer/select-customer.component';
 import { SelGroupComponent } from './components/sel-group/sel-group.component'
-import { SelectPruductComponent } from './components/select-pruduct/select-pruduct.component'
+import { SelectPruductComponent } from './components/select-pruduct/select-pruduct.component';
+import { ProductQualityComponent } from './pages/product-quality/product-quality.component'
 
 
 // 页面列表
@@ -36,7 +37,8 @@ const PAGES = [
   ComboCreateComponent,
   AttentionListComponent,
   ProductDocumentComponent,
-  ProductCreateComponent
+  ProductCreateComponent,
+  ProductQualityComponent
 ]
 
 // 组件列表
@@ -59,7 +61,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ProductCreateComponent, SelGroupComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ProductCreateComponent, SelGroupComponent, ProductQualityComponent],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule],
   providers,

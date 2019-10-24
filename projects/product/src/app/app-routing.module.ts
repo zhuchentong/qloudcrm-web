@@ -13,6 +13,7 @@ import { SelectCustomerComponent } from './components/select-customer/selec
 import { SelGroupComponent } from './components/sel-group/sel-group.component'
 import {ComboCreateComponent } from './pages/combo-create/combo-create.component'
 import { SelectPruductComponent } from './components/select-pruduct/select-pruduct.component'
+import { ProductQualityComponent } from './pages/product-quality/product-quality.component'
 
 const routes: Routes = [
   { path: 'product/product-list', component: ProductListComponent },
@@ -22,7 +23,8 @@ const routes: Routes = [
   { path: 'product/product-document', component: ProductDocumentComponent },
   { path: 'product/attention-list', component: AttentionListComponent },
   { path: 'product/product-create', component: ProductCreateComponent },
-  { path: 'product/combo-create', component: ComboCreateComponent }
+  { path: 'product/combo-create', component: ComboCreateComponent },
+  { path: 'product/product-quality', component: ProductQualityComponent }
 ]
 
 routes.push({

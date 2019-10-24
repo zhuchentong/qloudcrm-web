@@ -43,7 +43,7 @@ import { ExploreConditionComponent } from './pages/explore-condition/explore-con
 import { EquitiesDetailComponent } from './pages/equities-detail/equities-detail.component'
 import { MonitorListComponent } from './pages/monitor-list/monitor-list.component'
 import { MonitorDetailComponent } from './pages/monitor-detail/monitor-detail.component';
-import { ActivityStatistComponent } from './pages/activity-statist/activity-statist.component'
+import { ActivityStatistComponent } from './pages/activity-statist/activity-statist.component';
 
 // 页面列表
 const PAGES = [
