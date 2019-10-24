@@ -1,33 +1,33 @@
 <page-header title="客户标签" [breadcrumb]="breadcrumb" [action]="actionjump" [action-group]="false">
-    <ng-template #breadcrumb>
-        <ql-breadcrumb>
-            <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-            <ql-breadcrumb-item>客户标签</ql-breadcrumb-item>
-        </ql-breadcrumb>
-    </ng-template>
-    <ng-template #actionjump class="ql-text-right">
-        <ql-button type="primary" routerLink="/customer/tag-create">新建标签</ql-button>
-        <ql-button type="primary" routerLink="/customer/tag-search">搜索标签</ql-button>
-        <ql-button type="primary" routerLink="/customer/tag-view">标签视图</ql-button>
-    </ng-template>
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item>客户标签</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #actionjump class="ql-text-right">
+    <ql-button type="primary" routerLink="/customer/tag-create">新建标签</ql-button>
+    <ql-button type="primary" routerLink="/customer/tag-search">搜索标签</ql-button>
+    <ql-button type="primary" routerLink="/customer/tag-view">标签视图</ql-button>
+  </ng-template>
 </page-header>
 
 <page-container>
-    <div ql-row type="flex">
-        <ql-tree (modelChange)="onCatalogChange($event)" [accordion]="true" [model]="catalogList" ql-col span="6"></ql-tree>
-        <data-table ql-col span="18" [model]="tagList" [selection]="true">
-            <ql-table-column model-key="name" label="标签名称">
-                <ng-template #slot let-scope="scope">
-                    <a [routerLink]="['/customer/tag-detail', { id: scope.rowData.id }]">{{ scope.rowData.name }}</a>
-                </ng-template>
-            </ql-table-column>
-            <ql-table-column model-key="code" label="标签编码"></ql-table-column>
-            <ql-table-column model-key="type" label="标签类别"></ql-table-column>
-            <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
-            <ql-table-column model-key="description" label="标签说明"></ql-table-column>
-            <ql-table-column model-key="createTime" label="创建日期"></ql-table-column>
-            <ql-table-column model-key="customerCount" label="客户数量"></ql-table-column>
-            <ql-table-column model-key="state" label="标签状态"></ql-table-column>
-        </data-table>
-    </div>
+  <div ql-row type="flex">
+    <ql-tree (modelChange)="onCatalogChange($event)" [accordion]="true" [model]="catalogList" ql-col span="6"></ql-tree>
+    <data-table ql-col span="18" [model]="tagList" [selection]="true">
+      <ql-table-column model-key="name" label="标签名称">
+        <ng-template #slot let-scope="scope">
+          <a [routerLink]="['/customer/tag-detail', { id: scope.rowData.id }]">{{ scope.rowData.name }}</a>
+        </ng-template>
+      </ql-table-column>
+      <ql-table-column model-key="code" label="标签编码"></ql-table-column>
+      <ql-table-column model-key="catalog" label="标签分类"></ql-table-column>
+      <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
+      <ql-table-column model-key="description" label="标签说明"></ql-table-column>
+      <ql-table-column model-key="createTime" label="创建日期"></ql-table-column>
+      <ql-table-column model-key="count" label="客户数量"></ql-table-column>
+      <ql-table-column model-key="state" label="标签状态"></ql-table-column>
+    </data-table>
+  </div>
 </page-container>
