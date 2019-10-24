@@ -19,13 +19,13 @@ import { ComboDetailComponent } from './pages/combo-detail/combo-detail.componen
 import { ComboListComponent } from './pages/combo-list/combo-list.component'
 import { ComboCreateComponent } from './pages/combo-create/combo-create.component'
 import { AttentionListComponent } from './pages/attention-list/attention-list.component'
-import { ProductDocumentComponent } from './pages/product-document/product-document.component';
+import { ProductDocumentComponent } from './pages/product-document/product-document.component'
 import { ProductCreateComponent } from './pages/product-create/product-create.component'
-import { TagComponent } from './components/tag/tag.component'
-import { SelectCustomerComponent } from './components/select-customer/select-customer.component';
+import { TagComponent } from './components/tag/tag.component'
+import { SelectCustomerComponent } from './components/select-customer/select-customer.component'
 import { SelGroupComponent } from './components/sel-group/sel-group.component'
 import { SelectPruductComponent } from './components/select-pruduct/select-pruduct.component'
-
+import { ExcellentListComponent } from './pages/excellent-list/excellent-list.component'
 
 // 页面列表
 const PAGES = [
@@ -36,11 +36,12 @@ const PAGES = [
   ComboCreateComponent,
   AttentionListComponent,
   ProductDocumentComponent,
-  ProductCreateComponent
+  ProductCreateComponent,
+  ExcellentListComponent
 ]
 
 // 组件列表
-const COMPONENTS = [ TagComponent, SelectCustomerComponent,SelGroupComponent,SelectPruductComponent ]
+const COMPONENTS = [TagComponent, SelectCustomerComponent, SelGroupComponent, SelectPruductComponent]
 
 const startUpFactory = (store: Store) => async () => {
   // 注册菜单
@@ -59,7 +60,7 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [AppComponent, ...PAGES, ...COMPONENTS, ProductCreateComponent, SelGroupComponent],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
   entryComponents: [...COMPONENTS],
   imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule],
   providers,
