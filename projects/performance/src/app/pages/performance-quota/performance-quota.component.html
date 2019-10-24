@@ -8,5 +8,9 @@
 </page-header>
 
 <page-container>
-  绩效指标
+  <ql-card >
+
+    <div echarts [options]="lineOption1[0]" [merge]="lineOption1[1]"   [loading]="loading"></div>
+
+  </ql-card>
 </page-container>
