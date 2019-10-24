@@ -36,8 +36,6 @@ export class FinanicalConfigComponent implements OnInit {
   ngOnInit() {}
 
   public onRefresh() {
-    console.log(JSON.stringify(this.formGroup.value))
-    // this.reflashData();
     this.getCustomerViewData()
   }
 

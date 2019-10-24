@@ -53,7 +53,6 @@ export class ActivityDetailComponent implements OnInit {
   public getActivityDetail() {
     this.apiService.getActivity(this.activityId).subscribe(data => {
       this.activity = data
-      console.log(JSON.stringify(data))
       this.adList = this.activity.adList
       this.customerList = this.activity.customerList
       this.eventList = this.activity.eventList
