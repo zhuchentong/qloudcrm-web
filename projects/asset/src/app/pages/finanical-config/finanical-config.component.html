@@ -33,7 +33,7 @@
       </ql-form-item>
     </div>
   </data-form>
-  <div ql-row *ngIf="assetConfigure!=null || managerWealth!=null">
+  <div ql-row *ngIf="assetConfigure!=null || managerWealth!=null;else empty;">
     <ql-card ql-col span="12" class="ql-padding-x" header="资产分析">
       <div>
         <div echarts [options]="assetConfigure"></div>
@@ -41,4 +41,11 @@
     </ql-card>
     <ql-card ql-col span="12" class="ql-padding-x" header="理财项目"></ql-card>
   </div>
+  <ng-template #empty>
+    <div class="row middel-span center-span" style="height: 400px">
+      暂无数据
+    </div>
+  </ng-template>
 </page-container>
+
+
