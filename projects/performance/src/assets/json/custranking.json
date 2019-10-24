@@ -5,11 +5,11 @@
     "custName": "李铭",
     "startTime": "2014-07-01",
     "endTime": "2019-02-18",
-    "netProfits": "1000.000.0",
+    "netProfits": "1000000",
     "saleCount": "100",
-    "saleAmount": "2000.000.0",
+    "saleAmount": "2000000",
     "levelCount": "4",
-    "aumCount": "100.000.00",
+    "aumCount": "100000",
     "taskCount": "4"
   },
   {
@@ -18,11 +18,11 @@
     "custName": "王武",
     "startTime": "2014-07-01",
     "endTime": "2019-02-18",
-    "netProfits": "500.000.0",
+    "netProfits": "500000",
     "saleCount": "90",
-    "saleAmount": "900.000.0",
+    "saleAmount": "900000",
     "levelCount": "3",
-    "aumCount": "60.000.00",
+    "aumCount": "60000",
     "taskCount": "3"
   },
   {
@@ -31,11 +31,11 @@
     "custName": "赵高",
     "startTime": "2014-07-01",
     "endTime": "2019-02-18",
-    "netProfits": "430.000.0",
+    "netProfits": "430000",
     "saleCount": "80",
-    "saleAmount": "800.000.0",
+    "saleAmount": "800000",
     "levelCount": "2",
-    "aumCount": "9.000.00",
+    "aumCount": "9000",
     "taskCount": "2"
   },
   {
@@ -44,11 +44,11 @@
     "custName": "林东",
     "startTime": "2014-07-01",
     "endTime": "2019-02-18",
-    "netProfits": "400.000.0",
+    "netProfits": "400000",
     "saleCount": "70",
-    "saleAmount": "700.000.0",
+    "saleAmount": "700000",
     "levelCount": "1",
-    "aumCount": "6.000.00",
+    "aumCount": "60000",
     "taskCount": "1"
   },
   {
@@ -57,11 +57,11 @@
     "custName": "秦方",
     "startTime": "2014-07-01",
     "endTime": "2019-02-18",
-    "netProfits": "340.000.0",
+    "netProfits": "340000",
     "saleCount": "40",
-    "saleAmount": "400.000.0",
+    "saleAmount": "400000",
     "levelCount": "1",
-    "aumCount": "4.000.00",
+    "aumCount": "4000",
     "taskCount": "1"
   }
 ]

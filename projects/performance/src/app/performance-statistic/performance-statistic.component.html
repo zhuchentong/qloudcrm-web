@@ -7,4 +7,47 @@
   </ng-template>
 </page-header>
 
-<page-container> </page-container>
+<page-container>
+  <ql-card>
+    <ng-template #header>
+      <div class="clearfix">
+        <div class="card-title">
+          <data-form>
+            <ql-form-item label="机构类别">
+              <ql-select></ql-select>
+            </ql-form-item>
+            <ql-form-item label="指标类别">
+              <ql-select></ql-select>
+            </ql-form-item>
+            <ql-form-item label="周期选择">
+              <ql-select></ql-select>
+            </ql-form-item>
+          </data-form>
+        </div>
+      </div>
+    </ng-template>
+    <div  echarts [options]="options[0]" [merge]="options[1]"   [loading]="loading"></div>
+
+  </ql-card>
+  <ql-card>
+    <ng-template #header>
+      <div class="clearfix">
+        <div class="card-title">
+          <data-form>
+            <ql-form-item label="机构类别">
+              <ql-select></ql-select>
+            </ql-form-item>
+            <ql-form-item label="指标类别">
+              <ql-select></ql-select>
+            </ql-form-item>
+            <ql-form-item label="周期选择">
+              <ql-select></ql-select>
+            </ql-form-item>
+          </data-form>
+        </div>
+      </div>
+    </ng-template>
+    <div  echarts [options]="options2[0]" [merge]="options2[1]"   [loading]="loading"></div>
+
+  </ql-card>
+</page-container>
