@@ -15,9 +15,10 @@ import { UpdateMenuAction } from '@app/store/action/layout.action'
 import { ApiService } from './services/api.service'
 import { PerformanceRankComponent } from './pages/performance-rank/performance-rank.component'
 import { PerformanceQuotaComponent } from './pages/performance-quota/performance-quota.component'
+import { PerformanceStatisticComponent } from './performance-statistic/performance-statistic.component'
 
 // 页面列表
-const PAGES = [PerformanceRankComponent, PerformanceQuotaComponent]
+const PAGES = [PerformanceRankComponent, PerformanceQuotaComponent, PerformanceStatisticComponent]
 
 // 组件列表
 const COMPONENTS = []
