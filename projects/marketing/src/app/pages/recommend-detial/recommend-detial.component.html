@@ -1,209 +1,163 @@
 <page-header title="营销管理" [breadcrumb]="breadcrumb" [back]="true">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>推荐详情</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>推荐详情</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
 </page-header>
 <tab-container>
-  <tab-item title="推荐客户信息">
-    <ql-card>
-      <div class="ql-row">
-        <div class="row wrapinfo">
-          <div ql-col [span]="4">
-            <img
-              class="imgcss"
-              src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2882133088,2696092300&fm=26&gp=0.jpg"
-              alt=""
-            />
-            <p class="ql-text-center ql-margin-top ">四星客户</p>
-            <ql-rate class="ql-text-center" [model]="4" [max]="4" [qlDisabled]="true"> </ql-rate>
-          </div>
-          <div class="rightcss" ql-col [span]="20">
-            <h5>陈先(男士,38岁)</h5>
-            <h5>身份证号:612501199506065980</h5>
-            <p>
-              <ql-tag class="mr-3" type="danger">教育培训</ql-tag>
-              <ql-tag class="mr-3" type="danger">潜力价值客户</ql-tag>
-              <ql-tag class="mr-3" type="primary">旅游达人</ql-tag>
-              <ql-tag class="mr-3" type="warning">有房一族</ql-tag>
-              <ql-tag class="mr-3" type="success">理财小白</ql-tag>
-            </p>
-            <div class="rightcss" ql-col [span]="7">
-              <span>客户经理:</span>
-              <span>孟萍</span>
+    <tab-item title="推荐客户信息">
+        <ql-card header="客户信息">
+            <div ql-row>
+                <div ql-col [span]="4">
+                    <img class="imgcss" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2882133088,2696092300&fm=26&gp=0.jpg" alt="" />
+                    <p class="ql-text-center ql-margin-top ">四星客户</p>
+                    <ql-rate class="ql-text-center" [model]="4" [max]="4" [qlDisabled]="true"> </ql-rate>
+                </div>
+                <div class="rightcss" ql-col [span]="20">
+                    <h5>陈先(男士,38岁)</h5>
+                    <h5>身份证号:612501199506065980</h5>
+                    <p>
+                        <ql-tag class="mr-3" type="danger">教育培训</ql-tag>
+                        <ql-tag class="mr-3" type="danger">潜力价值客户</ql-tag>
+                        <ql-tag class="mr-3" type="primary">旅游达人</ql-tag>
+                        <ql-tag class="mr-3" type="warning">有房一族</ql-tag>
+                        <ql-tag class="mr-3" type="success">理财小白</ql-tag>
+                    </p>
+                    <div class="rightcss" ql-col [span]="7">
+                        <span>客户经理:</span>
+                        <span>孟萍</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="7">
+                        <span>客户等级:</span>
+                        <span>白金客户</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="10">
+                        <span>客户分组:</span>
+                        <span>金领旅游组</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="7">
+                        <span>综合积分:</span>
+                        <span>320分</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="7">
+                        <span>AUM:</span>
+                        <span>3万</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="10">
+                        <span>归属机构:</span>
+                        <span>中国建设银行</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="7">
+                        <span>出生日期:</span>
+                        <span>1989-06-20</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="7">
+                        <span>星座:</span>
+                        <span>巨蟹座</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="10">
+                        <span>财富潜力值:</span>
+                        <span>高</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="7">
+                        <span>电话:</span>
+                        <span>189-267-77671</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="7">
+                        <span>微信：</span>
+                        <span>ZStyi124</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="10">
+                        <span>邮箱：</span>
+                        <span>18926777671@163.com</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="7">
+                        <span>资产余额：</span>
+                        <span>100万</span>
+                    </div>
+                    <div class="rightcss" ql-col [span]="15">
+                        <p>家庭住址：陕西省西安市莲湖区土门街道234号</p>
+                    </div>
+                    <div ql-col [span]="2"></div>
+                </div>
             </div>
-            <div class="rightcss" ql-col [span]="7">
-              <span>客户等级:</span>
-              <span>白金客户</span>
+        </ql-card>
+        <ql-card header="客户画像">
+            <div class="ql-margin-top ql-margin-bottom">
+                <ql-select>
+                    <ql-option *ngFor="let item of tagTypes" [label]="item.label" [value]="item.value"> </ql-option>
+                </ql-select>
             </div>
-            <div class="rightcss" ql-col [span]="10">
-              <span>客户分组:</span>
-              <span>金领旅游组</span>
+            <data-table [model]="tagInfoList">
+                <ql-table-column model-key="tagname" label="标签名称"> </ql-table-column>
+                <ql-table-column model-key="tagtype" label="标签类型"> </ql-table-column>
+                <ql-table-column model-key="tagtime" label="打标时间"> </ql-table-column>
+            </data-table>
+        </ql-card>
+        <ql-card header="营销活动记录">
+            <data-table [model]="marketList">
+                <ql-table-column model-key="marketName" label="营销活动名称"> </ql-table-column>
+                <ql-table-column model-key="time" label="营销活动时间"> </ql-table-column>
+                <ql-table-column model-key="result" label="营销结果"> </ql-table-column>
+            </data-table>
+        </ql-card>
+        <ql-card header="客户持有产品">
+            <div ql-row>
+                <h4>活期存款</h4>
+                <label-container column="4" [border]="true">
+                    <label-item label="账号">78273221</label-item>
+                    <label-item label="账户状态">正常</label-item>
+                    <label-item label="币种">人民币</label-item>
+                    <label-item label="本金">20万</label-item>
+                </label-container>
+                <h4>定期存款</h4>
+                <label-container column="4" [border]="true">
+                    <label-item label="账号">78273221</label-item>
+                    <label-item label="账户状态">正常</label-item>
+                    <label-item label="币种">人民币</label-item>
+                    <label-item label="本金">30万</label-item>
+                </label-container>
             </div>
-            <div class="rightcss" ql-col [span]="7">
-              <span>综合积分:</span>
-              <span>320分</span>
+        </ql-card>
+        <ql-card header="客户联络信息">
+            <data-table [model]="contactData">
+                <ql-table-column model-key="bussiness" label="业务"> </ql-table-column>
+                <ql-table-column model-key="chandel" label="办理渠道"> </ql-table-column>
+                <ql-table-column model-key="time" label="办理时间"> </ql-table-column>
+            </data-table>
+        </ql-card>
+    </tab-item>
+    <tab-item title="首次线索记录">
+        <ql-card>
+            <div class="ql-row">
+                <div class="wrapinfo ql-padding">
+                    <h4>首次线索记录</h4>
+                    <label-container column="4" [border]="true">
+                        <label-item label="客户事件">理财咨询</label-item>
+                        <label-item label="触达方式">呼叫中心</label-item>
+                        <label-item label="实际联络时间">2009-10-18</label-item>
+                        <label-item label="联络人">王刚</label-item>
+                        <label-item label="感兴趣产品">聚益生金</label-item>
+                        <label-item label="需求详情">稳健性理财产品</label-item>
+                    </label-container>
+                </div>
             </div>
-            <div class="rightcss" ql-col [span]="7">
-              <span>AUM:</span>
-              <span>3万</span>
+        </ql-card>
+    </tab-item>
+    <tab-item title="跟进执行记录">
+        <ql-card>
+            <div class="ql-row">
+                <data-table [model]="recommendRecord">
+                    <ql-table-column model-key="contactTime" label="联络时间"> </ql-table-column>
+                    <ql-table-column model-key="product" label="营销产品"> </ql-table-column>
+                    <ql-table-column model-key="right" label="使用权益"> </ql-table-column>
+                    <ql-table-column model-key="channel" label="营销渠道"> </ql-table-column>
+                    <ql-table-column model-key="record" label="过程记录"> </ql-table-column>
+                    <ql-table-column model-key="result" label="营销结果"> </ql-table-column>
+                </data-table>
             </div>
-            <div class="rightcss" ql-col [span]="10">
-              <span>归属机构:</span>
-              <span>中国建设银行</span>
-            </div>
-            <div class="rightcss" ql-col [span]="7">
-              <span>出生日期:</span>
-              <span>1989-06-20</span>
-            </div>
-            <div class="rightcss" ql-col [span]="7">
-              <span>星座:</span>
-              <span>巨蟹座</span>
-            </div>
-            <div class="rightcss" ql-col [span]="10">
-              <span>财富潜力值:</span>
-              <span>高</span>
-            </div>
-            <div class="rightcss" ql-col [span]="7">
-              <span>电话:</span>
-              <span>189-267-77671</span>
-            </div>
-            <div class="rightcss" ql-col [span]="7">
-              <span>微信：</span>
-              <span>ZStyi124</span>
-            </div>
-            <div class="rightcss" ql-col [span]="10">
-              <span>邮箱：</span>
-              <span>18926777671@163.com</span>
-            </div>
-            <div class="rightcss" ql-col [span]="7">
-              <span>资产余额：</span>
-              <span>100万</span>
-            </div>
-            <div class="rightcss" ql-col [span]="15">
-              <p>家庭住址：陕西省西安市莲湖区土门街道234号</p>
-            </div>
-            <div ql-col [span]="2"></div>
-          </div>
-        </div>
-      </div>
-      <div class="wrapinfo ql-padding">
-        <h4>客户画像</h4>
-        <!--        <ql-collapse  [model]="[1]"  [accordion]="true">-->
-        <!--          <ql-collapse-item   value="1">-->
-        <!--            <ng-template #label>-->
-        <!--              <div class="row between-span">-->
-        <!--                <div class="ql-padding-x">客户画像</div>-->
-        <!--              </div>-->
-        <!--            </ng-template>-->
-        <div class="ql-margin-top ql-margin-bottom">
-          <ql-select>
-            <ql-option *ngFor="let item of tagTypes" [label]="item.label" [value]="item.value"> </ql-option>
-          </ql-select>
-        </div>
-        <data-table [model]="tagInfoList">
-          <ql-table-column model-key="tagname" label="标签名称"> </ql-table-column>
-          <ql-table-column model-key="tagtype" label="标签类型"> </ql-table-column>
-          <ql-table-column model-key="tagtime" label="打标时间"> </ql-table-column>
-        </data-table>
-        <!--          </ql-collapse-item>-->
-        <!--        </ql-collapse>-->
-      </div>
-      <div class="wrapinfo ql-padding">
-        <h4>营销活动记录</h4>
-        <!--      <ql-collapse  [model]="[1]"  [accordion]="true" class="ql-margin-top ql-margin-bottom">-->
-        <!--        <ql-collapse-item   value="1">-->
-        <!--          <ng-template #label>-->
-        <!--            <div class="row between-span">-->
-        <!--              <div class="ql-padding-x">营销活动记录</div>-->
-        <!--            </div>-->
-        <!--          </ng-template>-->
-        <data-table [model]="marketList">
-          <ql-table-column model-key="marketName" label="营销活动名称"> </ql-table-column>
-          <ql-table-column model-key="time" label="营销活动时间"> </ql-table-column>
-          <ql-table-column model-key="result" label="营销结果"> </ql-table-column>
-        </data-table>
-        <!--        </ql-collapse-item>-->
-        <!--      </ql-collapse>-->
-      </div>
-      <div class="wrapinfo ql-padding">
-        <h4>用户持有产品</h4>
-        <!--      <ql-collapse  [model]="[1]"  [accordion]="true" class="ql-margin-top ql-margin-bottom">-->
-        <!--        <ql-collapse-item   value="1">-->
-        <!--          <ng-template #label>-->
-        <!--            <div class="row between-span">-->
-        <!--              <div class="ql-padding-x">用户持有产品</div>-->
-        <!--            </div>-->
-        <!--          </ng-template>-->
-        <div ql-row>
-          <h4>活期存款</h4>
-          <label-container column="4" [border]="true">
-            <label-item label="账号">78273221</label-item>
-            <label-item label="账户状态">正常</label-item>
-            <label-item label="币种">人民币</label-item>
-            <label-item label="本金">20万</label-item>
-          </label-container>
-          <h4>定期存款</h4>
-          <label-container column="4" [border]="true">
-            <label-item label="账号">78273221</label-item>
-            <label-item label="账户状态">正常</label-item>
-            <label-item label="币种">人民币</label-item>
-            <label-item label="本金">30万</label-item>
-          </label-container>
-        </div>
-        <!--        </ql-collapse-item>-->
-        <!--      </ql-collapse>-->
-      </div>
-      <div class="wrapinfo ql-padding">
-        <h4>客户联络信息</h4>
-        <!--      <ql-collapse  [model]="[1]"  [accordion]="true" class="ql-margin-top ql-margin-bottom">-->
-        <!--        <ql-collapse-item   value="1">-->
-        <!--          <ng-template #label>-->
-        <!--            <div class="row between-span">-->
-        <!--              <div class="ql-padding-x">客户联络信息</div>-->
-        <!--            </div>-->
-        <!--          </ng-template>-->
-        <data-table [model]="contactData">
-          <ql-table-column model-key="bussiness" label="业务"> </ql-table-column>
-          <ql-table-column model-key="chandel" label="办理渠道"> </ql-table-column>
-          <ql-table-column model-key="time" label="办理时间"> </ql-table-column>
-        </data-table>
-        <!--        </ql-collapse-item>-->
-        <!--      </ql-collapse>-->
-      </div>
-    </ql-card>
-  </tab-item>
-  <tab-item title="首次线索记录">
-    <ql-card>
-      <div class="ql-row">
-        <div class="wrapinfo ql-padding">
-          <h4>首次线索记录</h4>
-          <label-container column="4" [border]="true">
-            <label-item label="客户事件">理财咨询</label-item>
-            <label-item label="触达方式">呼叫中心</label-item>
-            <label-item label="实际联络时间">2009-10-18</label-item>
-            <label-item label="联络人">王刚</label-item>
-            <label-item label="感兴趣产品">聚益生金</label-item>
-            <label-item label="需求详情">稳健性理财产品</label-item>
-          </label-container>
-        </div>
-      </div>
-    </ql-card>
-  </tab-item>
-  <tab-item title="跟进执行记录">
-    <ql-card>
-      <div class="ql-row">
-        <data-table [model]="recommendRecord">
-          <ql-table-column model-key="contactTime" label="联络时间"> </ql-table-column>
-          <ql-table-column model-key="product" label="营销产品"> </ql-table-column>
-          <ql-table-column model-key="right" label="使用权益"> </ql-table-column>
-          <ql-table-column model-key="channel" label="营销渠道"> </ql-table-column>
-          <ql-table-column model-key="record" label="过程记录"> </ql-table-column>
-          <ql-table-column model-key="result" label="营销结果"> </ql-table-column>
-        </data-table>
-      </div>
-    </ql-card>
-  </tab-item>
+        </ql-card>
+    </tab-item>
 </tab-container>
