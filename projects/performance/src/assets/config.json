@@ -8,12 +8,16 @@
   "pluginOrder": 1,
   "pluginTab": [
     {
-      "name": "绩效排名",
+      "name": "绩效指标",
+      "url": "#/performance/performance-quota"
+    },
+    {
+      "name": "业绩排名",
       "url": "#/performance/performance-rank"
     },
     {
-      "name": "绩效指标",
-      "url": "#/performance/performance-quota"
+      "name": "业绩统计",
+      "url": "#/performance/performance-statistic"
     }
   ]
 }

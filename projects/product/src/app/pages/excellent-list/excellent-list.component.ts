@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core'
 import { ApiService } from '../../services/api.service'
 
 @Component({
-  selector: 'app-product-quality',
-  templateUrl: './product-quality.component.html',
-  styleUrls: ['./product-quality.component.scss']
+  selector: 'app-excellent-list',
+  templateUrl: './excellent-list.component.html',
+  styleUrls: ['./excellent-list.component.scss']
 })
-export class ProductQualityComponent implements OnInit {
+export class ExcellentListComponent implements OnInit {
+
 
   public productList = []
 
@@ -21,5 +22,6 @@ export class ProductQualityComponent implements OnInit {
   ngOnInit() {
     this.getProductList()
   }
+
 
 }

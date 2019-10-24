@@ -11,11 +11,12 @@
             "url": "#/product/product-list"
         },
         {
+            "name": "优选产品",
+            "url": "#/product/excellent-list"
+        },
+        {
             "name": "产品组合",
             "url": "#/product/combo-list"
-        }, {
-            "name": "优选产品",
-            "url": "#/product/product-quality"
         },
         {
             "name": "产品文档",

@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router'
 import { environment } from '../environments/environment'
 import { PerformanceRankComponent } from './pages/performance-rank/performance-rank.component'
 import { PerformanceQuotaComponent } from './pages/performance-quota/performance-quota.component'
+import { PerformanceStatisticComponent } from './performance-statistic/performance-statistic.component'
 
 const routes: Routes = [
   { path: 'performance/performance-rank', component: PerformanceRankComponent },
-  { path: 'performance/performance-quota', component: PerformanceQuotaComponent }
+  { path: 'performance/performance-quota', component: PerformanceQuotaComponent },
+  { path: 'performance/performance-statistic', component: PerformanceStatisticComponent }
 ]
 
 routes.push({

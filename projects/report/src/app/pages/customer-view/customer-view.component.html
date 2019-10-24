@@ -1,12 +1,32 @@
-<page-header title="客户总览" [breadcrumb]="breadcrumb">
+<page-header title="客户总览" [breadcrumb]="breadcrumb" [action]="action">
   <ng-template #breadcrumb>
     <ql-breadcrumb>
       <ql-breadcrumb-item>报表管理</ql-breadcrumb-item>
       <ql-breadcrumb-item>客户总览</ql-breadcrumb-item>
     </ql-breadcrumb>
   </ng-template>
+  <ng-template #action>
+    <ql-button type="primary">导出数据</ql-button>
+  </ng-template>
 </page-header>
 
 <page-container>
-  客户总览
+  <data-table (selection-change)="onCheckChange($event)" [model]="customerList">
+    <ql-table-column model-key="customerLevel" label="客户等级"> </ql-table-column>
+    <ql-table-column model-key="count" label="客户数"> </ql-table-column>
+    <ql-table-column model-key="enableCount" label="有效客户数"> </ql-table-column>
+    <ql-table-column model-key="newCount" label="本月新增客户数"> </ql-table-column>
+    <ql-table-column model-key="lostCount" label="本月流失客户数"> </ql-table-column>
+    <ql-table-column model-key="upCount" label="本月升级客户数"> </ql-table-column>
+    <ql-table-column model-key="downCount" label="本月降级客户数"> </ql-table-column>
+    <ql-table-column model-key="activeCount" label="本月活跃客户数"> </ql-table-column>
+    <ql-table-column model-key="amount" label="资产余额（万元）"> </ql-table-column>
+    <!--<ql-table-column label="操作">-->
+      <!--<ng-template #slot let-scope="scope">-->
+        <!--&lt;!&ndash; <ql-button type="text">数据维护</ql-button> &ndash;&gt;-->
+        <!--<ql-button type="text" [routerLink]="['/customer/customer-detail']">详情</ql-button>-->
+        <!--<ql-button type="text">删除</ql-button>-->
+      <!--</ng-template>-->
+    <!--</ql-table-column>-->
+  </data-table>
 </page-container>

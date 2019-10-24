@@ -16,6 +16,7 @@ import { AppSystemModule } from 'projects/system/src/app/app.module'
 import { AppEventModule } from 'projects/event/src/app/app.module'
 import { AppPerformanceModule } from 'projects/performance/src/app/app.module'
 import { AppReportModule } from 'projects/report/src/app/app.module'
+import { AppAssetModule } from 'projects/asset/src/app/app.module'
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { AppReportModule } from 'projects/report/src/app/app.module'
     AppCustomerModule.forRoot(),
     AppMarketingModule.forRoot(),
     AppProductModule.forRoot(),
+    AppAssetModule.forRoot(),
     AppEventModule.forRoot(),
     AppPerformanceModule.forRoot(),
     AppReportModule.forRoot(),
