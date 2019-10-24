@@ -9,11 +9,11 @@
   "pluginTab": [
     {
       "name": "绩效指标",
-      "url": "#/performance/performance-rank"
+      "url": "#/performance/performance-quota"
     },
     {
       "name": "业绩排名",
-      "url": "#/performance/performance-quota"
+      "url": "#/performance/performance-rank"
     },
     {
       "name": "业绩统计",
