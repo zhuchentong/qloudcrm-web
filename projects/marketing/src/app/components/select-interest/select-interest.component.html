@@ -1,4 +1,4 @@
-<data-table height="400" [model]="interestList" [selection]="true">
+<data-table #table height="400" [model]="interestList" [selection]="true">
   <ql-table-column model-key="type" label="权益类型"></ql-table-column>
   <ql-table-column model-key="name" label="权益名称"></ql-table-column>
   <ql-table-column model-key="chargeOffType" label="核销方式"></ql-table-column>
@@ -9,6 +9,6 @@
   <ql-table-column model-key="expireTime" label="到期时间"></ql-table-column>
 </data-table>
 <div class="text-center ql-margin">
-  <ql-button type="primary" (click)="modalRef.close(true)">提交</ql-button>
+  <ql-button type="primary"  (click)="modalRef.close(table.getSelections())">提交</ql-button>
   <ql-button (click)="modalRef.close()">取消</ql-button>
 </div>
