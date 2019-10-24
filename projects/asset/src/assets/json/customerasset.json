@@ -1,0 +1,33 @@
+{
+  "assetPartition": [
+    {
+      "value": 50,
+      "name": "现金"
+    },
+    {
+      "value": 8,
+      "name": "权益"
+    },
+    {
+      "value": 20,
+      "name": "私募"
+    },
+    {
+      "value": 30,
+      "name": "公募"
+    },
+    {
+      "value": 13,
+      "name": "国债"
+    },
+    {
+      "value": 7,
+      "name": "其他"
+    }
+  ],
+  "manageWhealth": [
+    {
+      "name": ""
+    }
+  ]
+}
