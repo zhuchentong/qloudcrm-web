@@ -219,7 +219,7 @@
         "name": "老年",
         "code": "103",
         "type": "tag",
-        "frequency": "",
+        "frequency": 234,
         "count": 30,
         "description": "测试",
         "createTime": "2019-10-10 11:22",
