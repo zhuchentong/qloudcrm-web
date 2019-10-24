@@ -1,0 +1,68 @@
+ [
+    {
+      "rank": "1",
+      "orgCode": "TED3434",
+      "orgName": "工商银行科技四路支行",
+      "startTime": "2014-07-01",
+      "endTime": "2019-02-18",
+      "netProfits": "1000.000.0",
+      "saleCount": "100",
+      "saleAmount": "2000.000.0",
+      "levelCount": "4",
+      "aumCount": "100.000.00",
+      "taskCount": "4"
+    },
+    {
+      "rank": "2",
+      "orgCode": "JHF432",
+      "orgName": "招商银行高新六路支行",
+      "startTime": "2014-07-01",
+      "endTime": "2019-02-18",
+      "netProfits": "500.000.0",
+      "saleCount": "90",
+      "saleAmount": "900.000.0",
+      "levelCount": "3",
+      "aumCount": "60.000.00",
+      "taskCount": "3"
+    },
+    {
+      "rank": "3",
+      "orgCode": "GFTJ544",
+      "orgName": "浦发唐延路支行",
+      "startTime": "2014-07-01",
+      "endTime": "2019-02-18",
+      "netProfits": "430.000.0",
+      "saleCount": "80",
+      "saleAmount": "800.000.0",
+      "levelCount": "2",
+      "aumCount": "9.000.00",
+      "taskCount": "2"
+    },
+    {
+      "rank": "4",
+      "orgCode": "TGKJ3434",
+      "orgName": "兴业高新六路支行",
+      "startTime": "2014-07-01",
+      "endTime": "2019-02-18",
+      "netProfits": "400.000.0",
+      "saleCount": "70",
+      "saleAmount": "700.000.0",
+      "levelCount": "1",
+      "aumCount": "6.000.00",
+      "taskCount": "1"
+    },
+    {
+      "rank": "5",
+      "orgCode": "GGJGHF7",
+      "orgName": "农业科技二路支行",
+      "startTime": "2014-07-01",
+      "endTime": "2019-02-18",
+      "netProfits": "340.000.0",
+      "saleCount": "40",
+      "saleAmount": "400.000.0",
+      "levelCount": "1",
+      "aumCount": "4.000.00",
+      "taskCount": "1"
+    }
+  ]
+
