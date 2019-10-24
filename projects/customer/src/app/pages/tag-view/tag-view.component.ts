@@ -13,9 +13,10 @@ export class TagViewComponent implements OnInit {
 
   constructor(private apiService: ApiService) {
     this.apiService.getCustomerTagList('tag').subscribe(data => {
-      this.hotTagList = data.sort(x => 0.3 - Math.random())
-      this.userTagList = data.sort(x => 0.4 - Math.random())
-      this.newTagList = data.sort(x => 0.5 - Math.random())
+      const list = data.sort(x => 0.3 - Math.random()).slice(0, 10)
+      this.hotTagList = list.sort(x => 0.3 - Math.random()).slice(0, 10)
+      this.userTagList = list.sort(x => 0.4 - Math.random()).slice(0, 10)
+      this.newTagList = list.sort(x => 0.5 - Math.random()).slice(0, 10)
     })
   }
 

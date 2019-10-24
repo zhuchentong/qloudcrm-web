@@ -4,7 +4,7 @@ import { ApiService } from '../../services/api.service'
 @Component({
   selector: 'app-customer-tag',
   templateUrl: './customer-tag.component.html',
-  styleUrls: ['./customer-tag.component.css'],
+  styleUrls: ['./customer-tag.component.scss'],
   providers: [ApiService]
 })
 export class CustomerTagComponent implements OnInit {
