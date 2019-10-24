@@ -7,6 +7,225 @@
   </ng-template>
 </page-header>
 
+
 <page-container>
-  绩效排名
+
+  <tab-container>
+    <tab-item title="综合创利排名">
+        <ql-card header="员工排名">
+        <data-form>
+          <ql-form-item label="机构类别">
+            <ql-select></ql-select>
+          </ql-form-item>
+          <ql-form-item label="角色类别">
+            <ql-select></ql-select>
+          </ql-form-item>
+          <ql-form-item label="员工姓名">
+            <ql-input></ql-input>
+          </ql-form-item>
+          <ql-form-item label="开始时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item label="结束时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+        </data-form>
+        <data-table [model]="custList">
+          <!--<ql-table-column model-key="rank" label="排名"> </ql-table-column>-->
+          <ql-table-column model-key="rank" label="排名"> </ql-table-column>
+          <ql-table-column model-key="custCode" label="员工号"> </ql-table-column>
+          <ql-table-column model-key="custName" label="员工姓名"> </ql-table-column>
+          <ql-table-column model-key="startTime" label="开始时间"> </ql-table-column>
+          <ql-table-column model-key="endTime" label="结束时间"></ql-table-column>
+          <ql-table-column model-key="netProfits" label="净利润"> </ql-table-column>
+        </data-table>
+      </ql-card>
+        <ql-card header="机构排名">
+          <!--<ql-card>-->
+          <data-form>
+            <ql-form-item label="机构类别">
+              <ql-select></ql-select>
+            </ql-form-item>
+            <ql-form-item label="开始时间">
+              <ql-date-picker></ql-date-picker>
+            </ql-form-item>
+            <ql-form-item label="结束时间">
+              <ql-date-picker></ql-date-picker>
+            </ql-form-item>
+          </data-form>
+          <data-table [model]="orgList">
+            <ql-table-column model-key="rank" label="排名"> </ql-table-column>
+            <ql-table-column model-key="orgCode" label="机构代码"> </ql-table-column>
+            <ql-table-column model-key="orgName" label="机构名称"> </ql-table-column>
+            <ql-table-column model-key="startTime" label="开始时间"> </ql-table-column>
+            <ql-table-column model-key="endTime" label="结束时间"></ql-table-column>
+            <ql-table-column model-key="netProfits" label="净利润"> </ql-table-column>
+          </data-table>
+        </ql-card>
+    </tab-item>
+    <tab-item title="产品销售排名">
+      <ql-card header="员工排名">
+
+        <data-form>
+          <ql-form-item label="机构类别">
+            <ql-select></ql-select>
+          </ql-form-item>
+          <ql-form-item label="角色类别">
+            <ql-select></ql-select>
+          </ql-form-item>
+          <ql-form-item label="员工姓名">
+            <ql-input></ql-input>
+          </ql-form-item>
+          <ql-form-item label="开始时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item label="结束时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item label="指标名称">
+            <ql-select></ql-select>
+          </ql-form-item>
+        </data-form>
+        <data-table [model]="custList">
+          <!--<ql-table-column model-key="rank" label="排名"> </ql-table-column>-->
+          <ql-table-column model-key="rank" label="排名"> </ql-table-column>
+          <ql-table-column model-key="custCode" label="员工号"> </ql-table-column>
+          <ql-table-column model-key="custName" label="员工姓名"> </ql-table-column>
+          <ql-table-column model-key="startTime" label="开始时间"> </ql-table-column>
+          <ql-table-column model-key="endTime" label="结束时间"></ql-table-column>
+          <ql-table-column model-key="saleCount" label="销售量"> </ql-table-column>
+          <ql-table-column model-key="saleAmount" label="销售金额"> </ql-table-column>
+        </data-table>
+      </ql-card>
+      <ql-card header="机构排名">
+        <data-form>
+          <ql-form-item label="开始时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item label="结束时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item label="指标名称">
+            <ql-select></ql-select>
+          </ql-form-item>
+        </data-form>
+        <data-table [model]="orgList">
+          <ql-table-column model-key="rank" label="排名"> </ql-table-column>
+          <ql-table-column model-key="orgCode" label="机构代码"> </ql-table-column>
+          <ql-table-column model-key="orgName" label="机构名称"> </ql-table-column>
+          <ql-table-column model-key="startTime" label="开始时间"> </ql-table-column>
+          <ql-table-column model-key="endTime" label="结束时间"></ql-table-column>
+          <ql-table-column model-key="saleCount" label="销售量"> </ql-table-column>
+          <ql-table-column model-key="saleAmount" label="销售金额"> </ql-table-column>
+        </data-table>
+      </ql-card>
+    </tab-item>
+    <tab-item title="客户提升排名">
+      <ql-card header="员工排名">
+        <data-form>
+          <ql-form-item label="机构类别">
+            <ql-select></ql-select>
+          </ql-form-item>
+          <ql-form-item label="角色类别">
+            <ql-select></ql-select>
+          </ql-form-item>
+          <ql-form-item label="员工姓名">
+            <ql-input></ql-input>
+          </ql-form-item>
+          <ql-form-item label="开始时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item label="结束时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item label="指标名称">
+            <ql-select></ql-select>
+          </ql-form-item>
+        </data-form>
+        <data-table [model]="custList">
+          <!--<ql-table-column model-key="rank" label="排名"> </ql-table-column>-->
+          <ql-table-column model-key="rank" label="排名"> </ql-table-column>
+          <ql-table-column model-key="custCode" label="员工号"> </ql-table-column>
+          <ql-table-column model-key="custName" label="员工姓名"> </ql-table-column>
+          <ql-table-column model-key="startTime" label="开始时间"> </ql-table-column>
+          <ql-table-column model-key="endTime" label="结束时间"></ql-table-column>
+          <ql-table-column model-key="levelCount" label="客户等级提升数"> </ql-table-column>
+          <ql-table-column model-key="aumCount" label="管户客户AUM提升数"> </ql-table-column>
+        </data-table>
+      </ql-card>
+      <ql-card header="机构排名">
+        <data-form>
+          <ql-form-item label="开始时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item label="结束时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item label="指标名称">
+            <ql-select></ql-select>
+          </ql-form-item>
+        </data-form>
+        <!--<ql-card>-->
+        <data-table [model]="orgList">
+          <ql-table-column model-key="rank" label="排名"> </ql-table-column>
+          <ql-table-column model-key="orgCode" label="机构代码"> </ql-table-column>
+          <ql-table-column model-key="orgName" label="机构名称"> </ql-table-column>
+          <ql-table-column model-key="startTime" label="开始时间"> </ql-table-column>
+          <ql-table-column model-key="endTime" label="结束时间"></ql-table-column>
+          <ql-table-column model-key="levelCount" label="客户等级提升数"> </ql-table-column>
+          <ql-table-column model-key="aumCount" label="管户客户AUM提升数"> </ql-table-column>
+        </data-table>
+      </ql-card>
+    </tab-item>
+    <tab-item title="营销任务排名">
+      <ql-card header="员工排名">
+        <data-form>
+          <ql-form-item label="机构类别">
+            <ql-select></ql-select>
+          </ql-form-item>
+          <ql-form-item label="角色类别">
+            <ql-select></ql-select>
+          </ql-form-item>
+          <ql-form-item label="员工姓名">
+            <ql-input></ql-input>
+          </ql-form-item>
+          <ql-form-item label="开始时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item label="结束时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+        </data-form>
+        <data-table [model]="custList">
+          <ql-table-column model-key="rank" label="排名"> </ql-table-column>
+          <ql-table-column model-key="custCode" label="员工号"> </ql-table-column>
+          <ql-table-column model-key="custName" label="员工姓名"> </ql-table-column>
+          <ql-table-column model-key="startTime" label="开始时间"> </ql-table-column>
+          <ql-table-column model-key="endTime" label="结束时间"></ql-table-column>
+          <ql-table-column model-key="taskCount" label="任务完成数"> </ql-table-column>
+        </data-table>
+      </ql-card>
+      <ql-card header="机构排名">
+        <data-form>
+          <ql-form-item label="开始时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+          <ql-form-item label="结束时间">
+            <ql-date-picker></ql-date-picker>
+          </ql-form-item>
+        </data-form>
+        <!--<ql-card>-->
+        <data-table [model]="orgList">
+          <ql-table-column model-key="rank" label="排名"> </ql-table-column>
+          <ql-table-column model-key="orgCode" label="机构代码"> </ql-table-column>
+          <ql-table-column model-key="orgName" label="机构名称"> </ql-table-column>
+          <ql-table-column model-key="startTime" label="开始时间"> </ql-table-column>
+          <ql-table-column model-key="endTime" label="结束时间"></ql-table-column>
+          <ql-table-column model-key="taskCount" label="任务完成数"> </ql-table-column>
+        </data-table>
+      </ql-card>
+    </tab-item>
+  </tab-container>
 </page-container>
+
+
