@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class PerformanceStatisticComponent implements OnInit {
   options = [{
     title: {
-      text: '业绩变化图'
+      text: '业绩变化折线图'
     },
     tooltip: {
       trigger: 'axis'
@@ -67,6 +67,9 @@ export class PerformanceStatisticComponent implements OnInit {
       ]
     }];
   options2 =[{
+    title: {
+      text: '业绩变化柱形图'
+    },
     color: ['#3685ea', '#006699', '#448bea', '#e5323e'],
     tooltip: {
       trigger: 'axis',
@@ -80,7 +83,7 @@ export class PerformanceStatisticComponent implements OnInit {
     //   height:40
     // },
     grid: {
-      top: '20',
+      top: '40',
       left: '3%',
       right: '4%',
       bottom: '8%',
