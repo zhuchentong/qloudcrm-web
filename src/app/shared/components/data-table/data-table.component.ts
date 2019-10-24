@@ -1,4 +1,15 @@
-import { Component, OnInit, forwardRef, Input, TemplateRef, ViewChild, Output, EventEmitter } from '@angular/core'
+import {
+  Component,
+  OnInit,
+  forwardRef,
+  Input,
+  TemplateRef,
+  ViewChild,
+  Output,
+  EventEmitter,
+  SimpleChanges,
+  OnChanges
+} from '@angular/core'
 import { QlTable } from 'qloud-angular/package/table/table'
 import { toBase64String } from '@angular/compiler/src/output/source_map'
 import { TableColumn, WidthItem } from 'qloud-angular/package/table/table.interface'
@@ -10,7 +21,7 @@ import { PageService } from '@app/core/http'
   styleUrls: ['./data-table.component.scss'],
   providers: [{ provide: QlTable, useExisting: forwardRef(() => DataTableComponent) }]
 })
-export class DataTableComponent implements OnInit {
+export class DataTableComponent implements OnInit, OnChanges {
   @Input() public model: any[] = []
   @Input() public height: number
   @Input() public page: PageService
@@ -21,13 +32,23 @@ export class DataTableComponent implements OnInit {
   @Output('selection-change') public checkChangeEvent: EventEmitter<any> = new EventEmitter()
   @ViewChild('table', { static: true }) public table: QlTable
 
-  public selectionList: any[] = []
+  public selectionList = new Set()
+
   private skipColumnWidthUpdate = false
 
   public customColumnList = {
     __index__: this.addIndexColumn,
     __selection__: this.addSelectionColumn
   }
+
+  public source = []
+
+  public ngOnChanges(changes: SimpleChanges) {
+    if ('model' in changes) {
+      this.source = this.model.map(x => Object.assign({}, x))
+    }
+  }
+
   constructor() {
     // super()
   }
@@ -81,22 +102,22 @@ export class DataTableComponent implements OnInit {
 
   public transformColumnsData() {
     if (!this.table.model) {
-      this.table.model = this.model || []
+      this.table.model = this.source || []
     }
     this.table.transformColumnsData()
   }
 
   public toggleSelection() {
-    const value = this.selectionList.length < this.table.model.length
+    const value = this.selectionList.size < this.table.model.length
 
     if (this.table.model) {
-      this.table.model.forEach(x => {
+      this.table.model.forEach((x, index) => {
         x.__selection__ = value
-        this.onCheckChange(value, x)
+        this.onCheckChange(value, { index })
       })
-    }
 
-    this.table.transformModelData()
+      this.table.transformModelData()
+    }
   }
 
   public onPageChange(index) {
@@ -104,12 +125,17 @@ export class DataTableComponent implements OnInit {
     this.pageChangeEvent.emit(index)
   }
 
-  // TODO:修正选择列表
-  public onCheckChange(value, data) {
+  public getSelections() {
+    return Array.from(this.selectionList)
+  }
+
+  public onCheckChange(value, { index }) {
+    const data = this.model[index]
+
     if (value) {
-      this.selectionList.push(data)
+      this.selectionList.add(data)
     } else {
-      this.selectionList = this.selectionList.filter(x => x !== data)
+      this.selectionList.delete(data)
     }
     this.checkChangeEvent.emit(this.selectionList)
   }

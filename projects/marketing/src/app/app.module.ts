@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
 import config from '../assets/config.json'
 
-import { Store } from '@ngxs/store'
+import { Store, NgxsModule } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
 import { ApiService } from './services/api.service'
 import { ActivityListComponent } from './pages/activity-list/activity-list.component'
@@ -42,8 +42,9 @@ import { EquitiesCreateComponent } from './pages/equities-create/equities-create
 import { ExploreConditionComponent } from './pages/explore-condition/explore-condition.component'
 import { EquitiesDetailComponent } from './pages/equities-detail/equities-detail.component'
 import { MonitorListComponent } from './pages/monitor-list/monitor-list.component'
-import { MonitorDetailComponent } from './pages/monitor-detail/monitor-detail.component';
-import { ActivityStatistComponent } from './pages/activity-statist/activity-statist.component';
+import { MonitorDetailComponent } from './pages/monitor-detail/monitor-detail.component'
+import { ActivityStatistComponent } from './pages/activity-statist/activity-statist.component'
+import { states } from './store'
 
 // 页面列表
 const PAGES = [
@@ -104,7 +105,7 @@ export class ConfigModule {}
 @NgModule({
   declarations: [AppComponent, ...PAGES, ...COMPONENTS, ActivityStatistComponent],
   entryComponents: [...COMPONENTS],
-  imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, QlDateModule],
+  imports: [NgxsModule.forFeature(states), SharedModule, CoreModule.forRoot(), AppRoutingModule, QlDateModule],
   providers,
   bootstrap: [AppComponent],
   exports: []

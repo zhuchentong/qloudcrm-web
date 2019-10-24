@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 import { ApiService as ProductService } from 'projects/product/src/app/services/api.service'
 import { ApiService } from '../../services/api.service'
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
   selector: 'app-activity-detail',
@@ -9,13 +10,16 @@ import { ApiService } from '../../services/api.service'
   providers: [ProductService]
 })
 export class ActivityDetailComponent implements OnInit {
+  public activity
+  public activityId
+
   public customerList: any[] = [] // 客户列表
   public eventList: any[] = []
   public interestList: any[] = []
   public adList: any[] = []
   public productList: any[] = []
 
-  public ladderList = [
+  public ladderList: any[] = [
     {
       time: '2019-10-01 - 2019-10-05',
       targetList: [
@@ -33,15 +37,30 @@ export class ActivityDetailComponent implements OnInit {
     }
   ]
 
-  constructor(private apiService: ApiService, private productService: ProductService) {}
+  constructor(private route: ActivatedRoute, private apiService: ApiService, private productService: ProductService) {}
 
   ngOnInit() {
-    this.getAdList()
-    this.getCustomerList()
-    this.getEventList()
-    this.getInterestList()
-    this.getProductList()
-    this.getLadderList()
+    this.activityId = this.route.snapshot.paramMap.get('id')
+    this.getActivityDetail()
+    // this.getAdList()
+    // this.getCustomerList()
+    // this.getEventList()
+    // this.getInterestList()
+    // this.getProductList()
+    // this.getLadderList()
+  }
+
+  public getActivityDetail() {
+    this.apiService.getActivity(this.activityId).subscribe(data => {
+      this.activity = data
+      console.log(JSON.stringify(data))
+      this.adList = this.activity.adList
+      this.customerList = this.activity.customerList
+      this.eventList = this.activity.eventList
+      this.interestList = this.activity.interestList
+      this.productList = this.activity.productList
+      this.ladderList = this.activity.ladderList
+    })
   }
 
   public getLadderList() {

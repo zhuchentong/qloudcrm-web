@@ -1,26 +1,626 @@
 [
   {
-    "name": "十月金秋-01",
-    "startTime": "2019年10月1日",
-    "endTime": "2019年10月10日",
-    "creator": "张大山",
+    "id": 1571903016067,
+    "name": "金秋十月 - 第一期",
+    "startTime": "2019-10-01",
+    "endTime": "2019-10-10",
+    "creator": "张小明",
     "organization": "陕西西安高新支行",
-    "status": "待审批"
+    "status": "待审批",
+    "context": "金秋十月 - 第一期活动方案",
+    "monitorStartTime": "2019-10-01",
+    "monitorEndTime": "2019-10-10",
+    "channel": "人工",
+    "budget": "100，000元",
+    "keywords": "中秋 国庆",
+    "activityClaim": [{ "date": "2019-10-05", "value": "40" }, { "date": "2019-10-09", "value": "80" }],
+    "eventList": [{ "id": 6, "eventType": "交易", "eventName": "存款到期提醒" }],
+    "adList": [{ "id": 19, "eventType": "交易", "eventName": "营销跟进" }],
+    "productList": [
+      {
+        "id": 101,
+        "type": "product",
+        "productName": "优选通知存款",
+        "productCode": "101",
+        "riskLevel": "低",
+        "productType": "个人储蓄存款",
+        "recommandTyep": "",
+        "createTime": "2019-10-21 14:25",
+        "endTime": "2020-10-01 00:00",
+        "productRate": "3.21%/年",
+        "parent": 1
+      },
+      {
+        "id": 104,
+        "type": "product",
+        "productName": "个人大额存款",
+        "productCode": "104",
+        "riskLevel": "低",
+        "productType": "个人储蓄存款",
+        "recommandTyep": "",
+        "createTime": "2019-10-21 14:25",
+        "endTime": "2020-10-01 00:00",
+        "productRate": "4.21%/年",
+        "parent": 1
+      }
+    ],
+    "customerList": [
+      {
+        "ctCode": "TED3434",
+        "ctName": "张三丰",
+        "ctsex": "男",
+        "ctage": "38",
+        "ctType": "重要客户",
+        "ctLevel": "金卡客户",
+        "ctTel": "18739544091",
+        "assest": "45万",
+        "AUM": "0.4万",
+        "productnum": "1",
+        "time": "2014-07-01",
+        "interaTime": "2019-02-18"
+      },
+      {
+        "ctCode": "NJNC63",
+        "ctName": "赵六",
+        "ctsex": "男",
+        "ctage": "31",
+        "ctType": "重要客户",
+        "ctLevel": "金卡客户",
+        "ctTel": "15639544091",
+        "assest": "15万",
+        "AUM": "0.3万",
+        "productnum": "1",
+        "time": "2014-12-01",
+        "interaTime": "2017-09-05"
+      },
+      {
+        "ctCode": "UI4324",
+        "ctName": "钟馗",
+        "ctsex": "男",
+        "ctage": "56",
+        "ctType": "重要客户",
+        "ctLevel": "金卡客户",
+        "ctTel": "1569544091",
+        "assest": "140万",
+        "AUM": "0.5万",
+        "productnum": "2",
+        "time": "2018-12-13",
+        "interaTime": "2017-12-31"
+      },
+      {
+        "ctCode": "HUY64",
+        "ctName": "刘美丽",
+        "ctsex": "女",
+        "ctage": "39",
+        "ctType": "精选客户",
+        "ctLevel": "钻石客户",
+        "ctTel": "15353786636",
+        "assest": "200万",
+        "AUM": "0.7万",
+        "productnum": "2",
+        "time": "2018-09-23",
+        "interaTime": "2018-09-10"
+      }
+    ],
+    "interestList": [
+      {
+        "id": "eq_001",
+        "type": "现金抵用券",
+        "name": "红包雨权益",
+        "chargeOffType": "核销后支付",
+        "company": "总行",
+        "upTime": "2010-10-18",
+        "count": "1000",
+        "lastCount": "99",
+        "expireTime": "2050-12-31"
+      },
+      {
+        "id": "eq_002",
+        "type": "现金红包券",
+        "name": "理财红包",
+        "chargeOffType": "核销后支付",
+        "company": "总行",
+        "upTime": "2010-10-18",
+        "count": "1000",
+        "lastCount": "10",
+        "expireTime": "2050-12-31"
+      }
+    ],
+    "ladderList": [
+      {
+        "startTime": "2019-10-01",
+        "endTime": "2019-10-03",
+        "activityTarget": [{ "type": "访问用户量", "value": "3000人" }],
+        "productList": [
+          {
+            "id": 101,
+            "type": "product",
+            "productName": "优选通知存款",
+            "productCode": "101",
+            "riskLevel": "低",
+            "productType": "个人储蓄存款",
+            "recommandTyep": "",
+            "createTime": "2019-10-21 14:25",
+            "endTime": "2020-10-01 00:00",
+            "productRate": "3.21%/年",
+            "parent": 1
+          }
+        ],
+        "interestList": [
+          {
+            "id": "eq_001",
+            "type": "现金抵用券",
+            "name": "红包雨权益",
+            "chargeOffType": "核销后支付",
+            "company": "总行",
+            "upTime": "2010-10-18",
+            "count": "1000",
+            "lastCount": "99",
+            "expireTime": "2050-12-31"
+          }
+        ]
+      },
+      {
+        "startTime": "2019-10-03",
+        "endTime": "2019-10-09",
+        "activityTarget": [{ "type": "激活用户量", "value": "10000人" }],
+        "productList": [
+          {
+            "id": 102,
+            "type": "product",
+            "productName": "多币种活期存款",
+            "productCode": "102",
+            "riskLevel": "低",
+            "productType": "个人储蓄存款",
+            "recommandTyep": "",
+            "createTime": "2019-10-21 14:25",
+            "endTime": "2020-10-01 00:00",
+            "productRate": "2.53%/年",
+            "parent": 1
+          }
+        ],
+        "interestList": [
+          {
+            "id": "eq_001",
+            "type": "现金抵用券",
+            "name": "红包雨权益",
+            "chargeOffType": "核销后支付",
+            "company": "总行",
+            "upTime": "2010-10-18",
+            "count": "1000",
+            "lastCount": "99",
+            "expireTime": "2050-12-31"
+          },
+          {
+            "id": "eq_002",
+            "type": "现金红包券",
+            "name": "理财红包",
+            "chargeOffType": "核销后支付",
+            "company": "总行",
+            "upTime": "2010-10-18",
+            "count": "1000",
+            "lastCount": "10",
+            "expireTime": "2050-12-31"
+          }
+        ]
+      }
+    ],
+    "activityTarget": [{ "type": "访问用户量", "value": "200000" }, { "type": "激活用户量", "value": "80000" }]
   },
   {
-    "name": "十月金秋-02",
-    "startTime": "2019年10月10日",
-    "endTime": "2019年10月20日",
-    "creator": "张大山",
+    "id": 1571903016089,
+    "name": "金秋十月 - 第二期",
+    "startTime": "2019-10-10",
+    "endTime": "2019-10-20",
+    "creator": "张小明",
     "organization": "陕西西安高新支行",
-    "status": "待审批"
+    "status": "待审批",
+    "context": "金秋十月 - 第二期活动方案",
+    "monitorStartTime": "2019-10-10",
+    "monitorEndTime": "2019-10-20",
+    "channel": "人工",
+    "budget": "100，000元",
+    "keywords": "中秋 国庆",
+    "activityClaim": [{ "date": "2019-10-15", "value": "40" }, { "date": "2019-10-19", "value": "80" }],
+    "eventList": [{ "id": 6, "eventType": "交易", "eventName": "存款到期提醒" }],
+    "adList": [{ "id": 19, "eventType": "交易", "eventName": "营销跟进" }],
+    "productList": [
+      {
+        "id": 101,
+        "type": "product",
+        "productName": "优选通知存款",
+        "productCode": "101",
+        "riskLevel": "低",
+        "productType": "个人储蓄存款",
+        "recommandTyep": "",
+        "createTime": "2019-10-21 14:25",
+        "endTime": "2020-10-01 00:00",
+        "productRate": "3.21%/年",
+        "parent": 1
+      },
+      {
+        "id": 104,
+        "type": "product",
+        "productName": "个人大额存款",
+        "productCode": "104",
+        "riskLevel": "低",
+        "productType": "个人储蓄存款",
+        "recommandTyep": "",
+        "createTime": "2019-10-21 14:25",
+        "endTime": "2020-10-01 00:00",
+        "productRate": "4.21%/年",
+        "parent": 1
+      }
+    ],
+    "customerList": [
+      {
+        "ctCode": "TED3434",
+        "ctName": "张三丰",
+        "ctsex": "男",
+        "ctage": "38",
+        "ctType": "重要客户",
+        "ctLevel": "金卡客户",
+        "ctTel": "18739544091",
+        "assest": "45万",
+        "AUM": "0.4万",
+        "productnum": "1",
+        "time": "2014-07-01",
+        "interaTime": "2019-02-18"
+      },
+      {
+        "ctCode": "NJNC63",
+        "ctName": "赵六",
+        "ctsex": "男",
+        "ctage": "31",
+        "ctType": "重要客户",
+        "ctLevel": "金卡客户",
+        "ctTel": "15639544091",
+        "assest": "15万",
+        "AUM": "0.3万",
+        "productnum": "1",
+        "time": "2014-12-01",
+        "interaTime": "2017-09-05"
+      },
+      {
+        "ctCode": "UI4324",
+        "ctName": "钟馗",
+        "ctsex": "男",
+        "ctage": "56",
+        "ctType": "重要客户",
+        "ctLevel": "金卡客户",
+        "ctTel": "1569544091",
+        "assest": "140万",
+        "AUM": "0.5万",
+        "productnum": "2",
+        "time": "2018-12-13",
+        "interaTime": "2017-12-31"
+      },
+      {
+        "ctCode": "HUY64",
+        "ctName": "刘美丽",
+        "ctsex": "女",
+        "ctage": "39",
+        "ctType": "精选客户",
+        "ctLevel": "钻石客户",
+        "ctTel": "15353786636",
+        "assest": "200万",
+        "AUM": "0.7万",
+        "productnum": "2",
+        "time": "2018-09-23",
+        "interaTime": "2018-09-10"
+      }
+    ],
+    "interestList": [
+      {
+        "id": "eq_001",
+        "type": "现金抵用券",
+        "name": "红包雨权益",
+        "chargeOffType": "核销后支付",
+        "company": "总行",
+        "upTime": "2010-10-18",
+        "count": "1000",
+        "lastCount": "99",
+        "expireTime": "2050-12-31"
+      },
+      {
+        "id": "eq_002",
+        "type": "现金红包券",
+        "name": "理财红包",
+        "chargeOffType": "核销后支付",
+        "company": "总行",
+        "upTime": "2010-10-18",
+        "count": "1000",
+        "lastCount": "10",
+        "expireTime": "2050-12-31"
+      }
+    ],
+    "ladderList": [
+      {
+        "startTime": "2019-10-10",
+        "endTime": "2019-10-15",
+        "activityTarget": [{ "type": "访问用户量", "value": "3000人" }],
+        "productList": [
+          {
+            "id": 101,
+            "type": "product",
+            "productName": "优选通知存款",
+            "productCode": "101",
+            "riskLevel": "低",
+            "productType": "个人储蓄存款",
+            "recommandTyep": "",
+            "createTime": "2019-10-21 14:25",
+            "endTime": "2020-10-01 00:00",
+            "productRate": "3.21%/年",
+            "parent": 1
+          }
+        ],
+        "interestList": [
+          {
+            "id": "eq_001",
+            "type": "现金抵用券",
+            "name": "红包雨权益",
+            "chargeOffType": "核销后支付",
+            "company": "总行",
+            "upTime": "2010-10-18",
+            "count": "1000",
+            "lastCount": "99",
+            "expireTime": "2050-12-31"
+          }
+        ]
+      },
+      {
+        "startTime": "2019-10-15",
+        "endTime": "2019-10-19",
+        "activityTarget": [{ "type": "激活用户量", "value": "10000人" }],
+        "productList": [
+          {
+            "id": 102,
+            "type": "product",
+            "productName": "多币种活期存款",
+            "productCode": "102",
+            "riskLevel": "低",
+            "productType": "个人储蓄存款",
+            "recommandTyep": "",
+            "createTime": "2019-10-21 14:25",
+            "endTime": "2020-10-01 00:00",
+            "productRate": "2.53%/年",
+            "parent": 1
+          }
+        ],
+        "interestList": [
+          {
+            "id": "eq_001",
+            "type": "现金抵用券",
+            "name": "红包雨权益",
+            "chargeOffType": "核销后支付",
+            "company": "总行",
+            "upTime": "2010-10-18",
+            "count": "1000",
+            "lastCount": "99",
+            "expireTime": "2050-12-31"
+          },
+          {
+            "id": "eq_002",
+            "type": "现金红包券",
+            "name": "理财红包",
+            "chargeOffType": "核销后支付",
+            "company": "总行",
+            "upTime": "2010-10-18",
+            "count": "1000",
+            "lastCount": "10",
+            "expireTime": "2050-12-31"
+          }
+        ]
+      }
+    ],
+    "activityTarget": [{ "type": "访问用户量", "value": "200000" }, { "type": "激活用户量", "value": "80000" }]
   },
   {
-    "name": "十月金秋-03",
-    "startTime": "2019年10月20日",
-    "endTime": "2019年10月30日",
-    "creator": "张大山",
+    "id": 1571903016143,
+    "name": "金秋十月 - 第三期",
+    "startTime": "2019-10-20",
+    "endTime": "2019-10-30",
+    "creator": "张小明",
     "organization": "陕西西安高新支行",
-    "status": "待审批"
+    "status": "待审批",
+    "context": "金秋十月 - 第三期活动方案",
+    "monitorStartTime": "2019-10-20",
+    "monitorEndTime": "2019-10-30",
+    "channel": "人工",
+    "budget": "100，000元",
+    "keywords": "中秋 国庆",
+    "activityClaim": [{ "date": "2019-10-25", "value": "40" }, { "date": "2019-10-29", "value": "80" }],
+    "eventList": [{ "id": 6, "eventType": "交易", "eventName": "存款到期提醒" }],
+    "adList": [{ "id": 19, "eventType": "交易", "eventName": "营销跟进" }],
+    "productList": [
+      {
+        "id": 101,
+        "type": "product",
+        "productName": "优选通知存款",
+        "productCode": "101",
+        "riskLevel": "低",
+        "productType": "个人储蓄存款",
+        "recommandTyep": "",
+        "createTime": "2019-10-21 14:25",
+        "endTime": "2020-10-01 00:00",
+        "productRate": "3.21%/年",
+        "parent": 1
+      },
+      {
+        "id": 104,
+        "type": "product",
+        "productName": "个人大额存款",
+        "productCode": "104",
+        "riskLevel": "低",
+        "productType": "个人储蓄存款",
+        "recommandTyep": "",
+        "createTime": "2019-10-21 14:25",
+        "endTime": "2020-10-01 00:00",
+        "productRate": "4.21%/年",
+        "parent": 1
+      }
+    ],
+    "customerList": [
+      {
+        "ctCode": "TED3434",
+        "ctName": "张三丰",
+        "ctsex": "男",
+        "ctage": "38",
+        "ctType": "重要客户",
+        "ctLevel": "金卡客户",
+        "ctTel": "18739544091",
+        "assest": "45万",
+        "AUM": "0.4万",
+        "productnum": "1",
+        "time": "2014-07-01",
+        "interaTime": "2019-02-18"
+      },
+      {
+        "ctCode": "NJNC63",
+        "ctName": "赵六",
+        "ctsex": "男",
+        "ctage": "31",
+        "ctType": "重要客户",
+        "ctLevel": "金卡客户",
+        "ctTel": "15639544091",
+        "assest": "15万",
+        "AUM": "0.3万",
+        "productnum": "1",
+        "time": "2014-12-01",
+        "interaTime": "2017-09-05"
+      },
+      {
+        "ctCode": "UI4324",
+        "ctName": "钟馗",
+        "ctsex": "男",
+        "ctage": "56",
+        "ctType": "重要客户",
+        "ctLevel": "金卡客户",
+        "ctTel": "1569544091",
+        "assest": "140万",
+        "AUM": "0.5万",
+        "productnum": "2",
+        "time": "2018-12-13",
+        "interaTime": "2017-12-31"
+      },
+      {
+        "ctCode": "HUY64",
+        "ctName": "刘美丽",
+        "ctsex": "女",
+        "ctage": "39",
+        "ctType": "精选客户",
+        "ctLevel": "钻石客户",
+        "ctTel": "15353786636",
+        "assest": "200万",
+        "AUM": "0.7万",
+        "productnum": "2",
+        "time": "2018-09-23",
+        "interaTime": "2018-09-10"
+      }
+    ],
+    "interestList": [
+      {
+        "id": "eq_001",
+        "type": "现金抵用券",
+        "name": "红包雨权益",
+        "chargeOffType": "核销后支付",
+        "company": "总行",
+        "upTime": "2010-10-18",
+        "count": "1000",
+        "lastCount": "99",
+        "expireTime": "2050-12-31"
+      },
+      {
+        "id": "eq_002",
+        "type": "现金红包券",
+        "name": "理财红包",
+        "chargeOffType": "核销后支付",
+        "company": "总行",
+        "upTime": "2010-10-18",
+        "count": "1000",
+        "lastCount": "10",
+        "expireTime": "2050-12-31"
+      }
+    ],
+    "ladderList": [
+      {
+        "startTime": "2019-10-20",
+        "endTime": "2019-10-25",
+        "activityTarget": [{ "type": "访问用户量", "value": "3000人" }],
+        "productList": [
+          {
+            "id": 101,
+            "type": "product",
+            "productName": "优选通知存款",
+            "productCode": "101",
+            "riskLevel": "低",
+            "productType": "个人储蓄存款",
+            "recommandTyep": "",
+            "createTime": "2019-10-21 14:25",
+            "endTime": "2020-10-01 00:00",
+            "productRate": "3.21%/年",
+            "parent": 1
+          }
+        ],
+        "interestList": [
+          {
+            "id": "eq_001",
+            "type": "现金抵用券",
+            "name": "红包雨权益",
+            "chargeOffType": "核销后支付",
+            "company": "总行",
+            "upTime": "2010-10-18",
+            "count": "1000",
+            "lastCount": "99",
+            "expireTime": "2050-12-31"
+          }
+        ]
+      },
+      {
+        "startTime": "2019-10-25",
+        "endTime": "2019-10-29",
+        "activityTarget": [{ "type": "激活用户量", "value": "10000人" }],
+        "productList": [
+          {
+            "id": 102,
+            "type": "product",
+            "productName": "多币种活期存款",
+            "productCode": "102",
+            "riskLevel": "低",
+            "productType": "个人储蓄存款",
+            "recommandTyep": "",
+            "createTime": "2019-10-21 14:25",
+            "endTime": "2020-10-01 00:00",
+            "productRate": "2.53%/年",
+            "parent": 1
+          }
+        ],
+        "interestList": [
+          {
+            "id": "eq_001",
+            "type": "现金抵用券",
+            "name": "红包雨权益",
+            "chargeOffType": "核销后支付",
+            "company": "总行",
+            "upTime": "2010-10-18",
+            "count": "1000",
+            "lastCount": "99",
+            "expireTime": "2050-12-31"
+          },
+          {
+            "id": "eq_002",
+            "type": "现金红包券",
+            "name": "理财红包",
+            "chargeOffType": "核销后支付",
+            "company": "总行",
+            "upTime": "2010-10-18",
+            "count": "1000",
+            "lastCount": "10",
+            "expireTime": "2050-12-31"
+          }
+        ]
+      }
+    ],
+    "activityTarget": [{ "type": "访问用户量", "value": "200000" }, { "type": "激活用户量", "value": "80000" }]
   }
 ]

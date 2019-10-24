@@ -1,30 +1,32 @@
 <page-header title="活动管理" [breadcrumb]="breadcrumb" [action]="action">
-    <ng-template #breadcrumb>
-        <ql-breadcrumb>
-            <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
-            <ql-breadcrumb-item [routerLink]="['/marketing/activity-create']">活动管理</ql-breadcrumb-item>
-        </ql-breadcrumb>
-    </ng-template>
-    <ng-template #action>
-        <ql-button type="primary" [routerLink]="['/marketing/explore-create']">创建探索</ql-button>
-        <ql-button type="primary" [routerLink]="['/marketing/activity-create']">新建活动</ql-button>
-    </ng-template>
+  <ng-template #breadcrumb>
+    <ql-breadcrumb>
+      <ql-breadcrumb-item>营销管理</ql-breadcrumb-item>
+      <ql-breadcrumb-item [routerLink]="['/marketing/activity-create']">活动管理</ql-breadcrumb-item>
+    </ql-breadcrumb>
+  </ng-template>
+  <ng-template #action>
+    <ql-button type="primary" [routerLink]="['/marketing/explore-create']">创建探索</ql-button>
+    <ql-button type="primary" [routerLink]="['/marketing/activity-create']">新建活动</ql-button>
+  </ng-template>
 </page-header>
 
 <page-container>
-    <data-table [model]="activityList">
-        <ql-table-column model-key="name" label="营销活动名称"></ql-table-column>
-        <ql-table-column model-key="startTime" label="活动开始时间"></ql-table-column>
-        <ql-table-column model-key="endTime" label="活动结束时间"></ql-table-column>
-        <ql-table-column model-key="creator" label="营销发起人"></ql-table-column>
-        <ql-table-column model-key="organization" label="发起机构"></ql-table-column>
-        <ql-table-column model-key="status" label="营销活动状态"></ql-table-column>
-        <ql-table-column label="操作" width="250px">
-            <ng-template #slot let-scope="scope">
-                <ql-button type="text" [routerLink]="['/marketing/activity-detail']">查看详情</ql-button>
-                <ql-button type="text">复制活动</ql-button>
-                <ql-button type="text">删除活动</ql-button>
-            </ng-template>
-        </ql-table-column>
-    </data-table>
+  <data-table [model]="activityList">
+    <ql-table-column model-key="name" label="营销活动名称"></ql-table-column>
+    <ql-table-column model-key="startTime" label="活动开始时间"></ql-table-column>
+    <ql-table-column model-key="endTime" label="活动结束时间"></ql-table-column>
+    <ql-table-column model-key="creator" label="营销发起人"></ql-table-column>
+    <ql-table-column model-key="organization" label="发起机构"></ql-table-column>
+    <ql-table-column model-key="status" label="营销活动状态"></ql-table-column>
+    <ql-table-column label="操作" width="250px">
+      <ng-template #slot let-scope="scope">
+        <ql-button type="text" [routerLink]="['/marketing/activity-detail', { id: scope.rowData.id }]"
+          >查看详情</ql-button
+        >
+        <ql-button type="text">复制活动</ql-button>
+        <ql-button type="text">删除活动</ql-button>
+      </ng-template>
+    </ql-table-column>
+  </data-table>
 </page-container>

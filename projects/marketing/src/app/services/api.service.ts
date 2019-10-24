@@ -15,9 +15,10 @@ import EquitiesManageList from '../../assets/json/equities-list.json'
 import ActivityList from '../../assets/json/activity-list.json'
 import ActivationMonitorList from '../../assets/json/activation-monitor-list.json'
 import ActivationStattistic from '../../assets/json/activation-monitor-detail.json'
+import { Store } from '@ngxs/store'
 @Injectable()
 export class ApiService {
-  constructor(private net: NetService) {}
+  constructor(private net: NetService, private store: Store) {}
 
   public getEventList() {
     return of(eventList)
@@ -58,14 +59,19 @@ export class ApiService {
   }
 
   public getActivityList() {
-    return of(ActivityList)
+    return of(this.store.selectSnapshot(state => state.activity.activityList).map(x => Object.assign({}, x)))
   }
 
-  public getActivationMonitorList(){
-    return of(ActivationMonitorList);
+  public getActivity(id) {
+    const list = this.store.selectSnapshot(state => state.activity.activityList)
+    return of(list.find(x => x.id.toString() === id.toString()))
   }
 
-  public getActivationStattistic(){
+  public getActivationMonitorList() {
+    return of(ActivationMonitorList)
+  }
+
+  public getActivationStattistic() {
     return of(ActivationStattistic)
   }
 }
