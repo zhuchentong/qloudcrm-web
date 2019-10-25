@@ -3,6 +3,7 @@
         "comboCode": "C1030819A00",
         "expectedRate": "5.01%/年",
         "updateTime": "2019-10-01",
+        "riskLevel": "R5",
         "status": "发售中"
     },
     {
@@ -10,12 +11,14 @@
         "comboCode": "F64474567G1",
         "expectedRate": "4.89%/年",
         "updateTime": "2019-10-02",
+        "riskLevel": "R4",
         "status": "发售中"
     },
     {
         "comboName": "金葵4号黄金1号组合",
         "comboCode": "Y9830819A00",
         "expectedRate": "4.65%/年",
+        "riskLevel": "R4",
         "updateTime": "2019-10-04",
         "status": "发售中"
     }
