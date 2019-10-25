@@ -11,6 +11,7 @@ import rolesAuth from '../../assets/json/rolesAuth.json'
 import userAuth from '../../assets/json/userAuth.json'
 import userList from '../../assets/json/userList.json'
 import rolesLevelList from '../../assets/json/rolesLevelList.json'
+import quotaParamsTypeList from '../../assets/json/quotaParamType.json'
 @Injectable()
 export class ApiService {
   constructor(private net: NetService) {}
@@ -60,5 +61,12 @@ export class ApiService {
   }
   public getUserRoleList() {
     return of(rolesLevelList);
+  }
+  public getQuotaParamsTypeList(type?, parent?) {
+    return of(
+      quotaParamsTypeList
+        .filter(x => type === undefined || x.type === type)
+        .filter(x => parent === undefined || x.parent === parent)
+    )
   }
 }

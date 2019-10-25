@@ -25,7 +25,6 @@ export class LayoutState extends ExtendState {
   @Action(UpdateMenuAction)
   public updateMenu<T>(state: StateContext<any>, { menu }: UpdateMenuAction) {
     const current = state.getState().menu
-
     if (!current.find(x => x.pluginPath === menu.pluginPath)) {
       this.updateState(state, {
         menu: [...state.getState().menu, menu].sort((x, y) => x.pluginOrder - y.pluginOrder)

@@ -1,25 +1,18 @@
 <ql-card>
-  <div class="wrapinfo ql-padding">
+    <div class="wrapinfo ql-padding">
     <ng-template #header>
-      <ql-button
-        *ngIf="isShowAdd && flag != 'single'"
-        size="small"
-        type="primary"
-        style="margin: 1rem 0"
-        (click)="addParam()"
-        >增加</ql-button
-      >
+      <ql-button *ngIf="isShowAdd&&flag!='single'" size="small" type="primary" style="margin: 1rem 0" (click)="addParam()">增加</ql-button>
     </ng-template>
     <div ql-row type="flex" style="flex-wrap: nowrap;">
-      <div *ngIf="flag != 'single'" ql-col span="8">
-        <div style="padding: 1rem;width:83.33%;" *ngIf="flag == 'mup'">
+      <div *ngIf="flag!='single'" ql-col span="8">
+        <div style="padding: 1rem;width:83.33%;" *ngIf="flag=='mup'">
           <ql-input placeholder="输入关键字搜索参数" (keyup)="keyup()" [(ngModel)]="paramName"></ql-input>
         </div>
         <div style="max-height: 34rem !important;overflow: auto !important;">
           <ql-tree (modelChange)="onCatalogChange($event)" [accordion]="true" [model]="catalogList"></ql-tree>
         </div>
       </div>
-      <data-table ql-col span="16" [model]="paramsList" *ngIf="flag != 'single'">
+      <data-table ql-col span="16" [model]="paramsList" *ngIf="flag!='single'">
         <ql-table-column model-key="name" label="参数名称"></ql-table-column>
         <ql-table-column model-key="code" label="参数编码"></ql-table-column>
         <ql-table-column model-key="data" label="参数值"></ql-table-column>
@@ -33,7 +26,7 @@
           </ng-template>
         </ql-table-column>
       </data-table>
-      <data-table ql-col [model]="paramsList" *ngIf="flag == 'single'">
+      <data-table ql-col [model]="paramsList" *ngIf="flag=='single'">
         <ql-table-column model-key="name" label="参数名称"></ql-table-column>
         <ql-table-column model-key="code" label="参数编码"></ql-table-column>
         <ql-table-column model-key="data" label="参数值"></ql-table-column>
@@ -70,8 +63,9 @@
       </ql-form>
     </ql-card>
     <div>
-      <ql-button type="primary" (click)="modal.close(true)">{{ isEdit ? '编辑' : '创建' }}</ql-button>
+      <ql-button type="primary" (click)="modal.close(true)">{{isEdit?'编辑':'创建'}}</ql-button>
       <ql-button type="primary" (click)="modal.close()">取消</ql-button>
     </div>
   </ng-template>
 </ql-card>
+

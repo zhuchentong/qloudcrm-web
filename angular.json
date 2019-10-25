@@ -52,8 +52,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 }
               ]
             }
@@ -158,8 +158,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 }
               ]
             }
@@ -190,7 +190,7 @@
             "tsConfig": "projects/dashboard/tsconfig.spec.json",
             "karmaConfig": "projects/dashboard/karma.conf.js",
             "assets": ["projects/dashboard/src/favicon.ico", "projects/dashboard/src/assets"],
-            "styles": ["src/styles.scss", "projects/dashboard/src/styles.css"],
+            "styles": ["src/styles.scss", "projects/dashboard/src/styles.scss"],
             "scripts": []
           }
         },
@@ -242,7 +242,7 @@
               "node_modules/qloud-angular/package/index.css",
               "node_modules/normalize.css/normalize.css"
             ],
-            "scripts": []
+            "scripts": ["node_modules/echarts-wordcloud/dist/echarts-wordcloud.min.js"]
           },
           "configurations": {
             "production": {
@@ -268,8 +268,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 }
               ]
             }
@@ -382,8 +382,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 }
               ]
             }
@@ -496,8 +496,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 }
               ]
             }
@@ -610,8 +610,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 }
               ]
             }
@@ -690,7 +690,7 @@
             "assets": ["projects/event/src/favicon.ico", "projects/event/src/assets"],
             "styles": [
               "src/styles.scss",
-              "projects/event/src/styles.css",
+              "projects/event/src/styles.scss",
               "node_modules/qloud-angular/package/index.css",
               "node_modules/normalize.css/normalize.css"
             ],
@@ -720,8 +720,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 }
               ]
             }
@@ -752,7 +752,7 @@
             "tsConfig": "projects/event/tsconfig.spec.json",
             "karmaConfig": "projects/event/karma.conf.js",
             "assets": ["projects/event/src/favicon.ico", "projects/event/src/assets"],
-            "styles": ["projects/event/src/styles.css"],
+            "styles": ["projects/event/src/styles.scss"],
             "scripts": []
           }
         },
@@ -800,7 +800,7 @@
             "assets": ["projects/performance/src/favicon.ico", "projects/performance/src/assets"],
             "styles": [
               "src/styles.scss",
-              "projects/performance/src/styles.css",
+              "projects/performance/src/styles.scss",
               "node_modules/qloud-angular/package/index.css",
               "node_modules/normalize.css/normalize.css"
             ],
@@ -826,8 +826,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 }
               ]
             }
@@ -858,7 +858,7 @@
             "tsConfig": "projects/performance/tsconfig.spec.json",
             "karmaConfig": "projects/performance/karma.conf.js",
             "assets": ["projects/performance/src/favicon.ico", "projects/performance/src/assets"],
-            "styles": ["projects/performance/src/styles.css"],
+            "styles": ["projects/performance/src/styles.scss"],
             "scripts": []
           }
         },
@@ -904,7 +904,7 @@
             "tsConfig": "projects/report/tsconfig.app.json",
             "aot": false,
             "assets": ["projects/report/src/favicon.ico", "projects/report/src/assets"],
-            "styles": ["projects/report/src/styles.css"],
+            "styles": ["projects/report/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -927,8 +927,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 }
               ]
             }
@@ -959,7 +959,7 @@
             "tsConfig": "projects/report/tsconfig.spec.json",
             "karmaConfig": "projects/report/karma.conf.js",
             "assets": ["projects/report/src/favicon.ico", "projects/report/src/assets"],
-            "styles": ["projects/report/src/styles.css"],
+            "styles": ["projects/report/src/styles.scss"],
             "scripts": []
           }
         },
@@ -1041,8 +1041,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "5mb",
+                  "maximumError": "10mb"
                 }
               ]
             }

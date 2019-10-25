@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { ApiService } from '../../services/api.service'
+import { EchartService } from '@app/shared/utils/echart.service'
 
 @Component({
   selector: 'app-customer-tag',
@@ -10,11 +11,75 @@ import { ApiService } from '../../services/api.service'
 export class CustomerTagComponent implements OnInit {
   public catalogList: any[] = []
   public tagList: any[] = []
-
-  constructor(private apiService: ApiService) {}
+  public hotList: any[] = []
+  public newList: any[] = []
+  public tagCloudList: any[] = []
+  public tagOptions
+  public wordCloudImg = require('../../../assets/images/image1.png')
+  constructor(private echartService: EchartService, private apiService: ApiService) {}
 
   ngOnInit() {
+    require('echarts-wordcloud')
     this.getTagCatalogList()
+    this.apiService.getCustomerTagList('tag').subscribe(list => {
+      // 生成树形结构
+      this.hotList = list
+        .slice(250, 280)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 5)
+
+      this.newList = list
+        .slice(80, 100)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 5)
+
+      this.tagCloudList = list
+        .slice(0, 20)
+        .sort(() => 0.5 - Math.random())
+        .map(x => x.name)
+
+      this.tagOptions = this.echartService.getOption({
+        type: 'pie',
+        data: [
+          {
+            name: '基础特征',
+            value: 98
+          },
+          {
+            name: '产品特征',
+            value: 121
+          },
+          {
+            name: '金融特征',
+            value: 78
+          },
+          {
+            name: '价值特征',
+            value: 64
+          },
+          {
+            name: '风险特征',
+            value: 39
+          },
+          {
+            name: '行为特征',
+            value: 89
+          },
+          {
+            name: '营销特征',
+            value: 101
+          }
+        ],
+        update: config => {
+          config.legend = undefined
+          return config
+        }
+      })
+    })
+  }
+
+  public onSelectTag(...a) {
+    console.log(a)
   }
 
   private getTagCatalogList() {

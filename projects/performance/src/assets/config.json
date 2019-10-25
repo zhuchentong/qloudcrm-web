@@ -5,7 +5,7 @@
   "pluginAbbr": "UI",
   "pluginImg": "/assets/images/svg/profile.svg",
   "pluginPath": "performance",
-  "pluginOrder": 1,
+  "pluginOrder": 6,
   "pluginTab": [
     {
       "name": "绩效指标",
