@@ -65,7 +65,11 @@
     </ql-form-item>
   </data-form>
   <div ql-row>
-    <ql-card class="ql-padding-x" header="可选理财套餐">
+    <ql-card class="ql-padding-x" >
+      <ng-template #header>
+        <span style="line-height: 36px;">可选理财套餐</span>
+        <ql-button type="primary" style="float: right;" >保存</ql-button>
+      </ng-template>
       <data-table [model]="productList" (selection-change)="onCheckChange($event)" [selection]="true">
         <ql-table-column model-key="productName" label="产品名称"></ql-table-column>
         <ql-table-column model-key="productCode" label="产品代码"></ql-table-column>
