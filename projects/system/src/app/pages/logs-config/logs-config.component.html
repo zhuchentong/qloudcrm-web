@@ -8,5 +8,47 @@
 </page-header>
 
 <page-container>
-  日志管理
+  <data-form [showReset]="false" [formGroup]="formGroup" (submit)="queryLogsList()">
+
+
+    <ql-form-item label="操作人">
+      <ql-input size="small" placeholder="操作人" formControlName="operator"></ql-input>
+
+
+    </ql-form-item>
+    <ql-form-item label="操作时间">
+      <div style="display: flex;">
+        <ql-date-picker size="small" [clearable]="true" (clear-click)="clearFormField('startDate')" placeholder="起始时间" formControlName="startDate">
+        </ql-date-picker>
+        <span style="padding: 0 1rem;color:#b4bccc">~</span>
+        <ql-date-picker size="small" [clearable]="true" placeholder="结束时间" formControlName="endDate" (clear-click)="clearFormField('endDate')"> </ql-date-picker>
+
+      </div>
+
+    </ql-form-item>
+
+  </data-form>
+  <data-table [model]="logsList" [selection]="false" [action]="action">
+    <ng-template #action>
+      <!-- <div style="display: flex;">
+
+        <label style="line-height: 40px;padding: 0 12px;">操作人</label>
+        <ql-input size="small" placeholder="操作人" [(ngModel)]="queryInfo.operator"></ql-input>
+
+
+        <label style="line-height: 40px;padding: 0 12px;">操作时间</label>
+        <ql-date-picker size="small" [(ngModel)]="queryInfo.operateTime"> </ql-date-picker>
+
+
+        <ql-button size="small" type="primary" style="margin: 0rem 2rem;" (click)="queryLogsList()">查询</ql-button>
+      </div> -->
+
+
+
+
+    </ng-template>
+    <ql-table-column model-key="operator" label="操作者"> </ql-table-column>
+    <ql-table-column model-key="operateTime" label="操作时间"> </ql-table-column>
+    <ql-table-column model-key="content" label="内容"> </ql-table-column>
+  </data-table>
 </page-container>

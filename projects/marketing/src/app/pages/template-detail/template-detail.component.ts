@@ -20,7 +20,7 @@ export class TemplateDetailComponent implements OnInit {
 
     this.apiService.getCustomerTagList().subscribe(list => {
       // 生成树形结构
-      this.tagList = list.splice(1,6)
+      this.tagList = list.splice(0,10)
     })
   }
 

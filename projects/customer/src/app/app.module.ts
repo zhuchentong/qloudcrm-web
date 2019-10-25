@@ -12,7 +12,6 @@ import config from '../assets/config.json'
 
 import { Store } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
-
 import { CustomerListComponent } from './pages/customer-list/customer-list.component'
 import { CustomerViewComponent } from './pages/customer-view/customer-view.component'
 import { CustomerGroupComponent } from './pages/customer-group/customer-group.component'

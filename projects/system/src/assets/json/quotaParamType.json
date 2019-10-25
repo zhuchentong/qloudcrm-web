@@ -1,0 +1,75 @@
+[
+  {"id":1,"name":"负债类","code":"1","type":"catalog","description":"负债类","createTime":"2019-10-10 09:10","user":"岳一鹏","data":1500,"parent":""},
+  {"id":2,"name":"客户类","code":"2","type":"catalog","description":"客户类","createTime":"2019-10-10 09:10","user":"岳一鹏","data":1500,"parent":""},
+  {"id":3,"name":"信用卡客户类","code":"3","type":"catalog","description":"信用卡客户类","createTime":"2019-10-24 15:23","user":"岳一鹏","data":1500,"parent":""},
+  {"id":4,"name":"授信客户类","code":"4","type":"catalog","description":"授信客户类","createTime":"2019-10-10 09:10","user":"岳一鹏","data":1500,"parent":""},
+  {"id":5,"name":"签约类","code":"5","type":"catalog","description":"签约类","createTime":"2019-10-10 09:10","user":"岳一鹏","data":1500,"parent":""},
+  {"id":6,"name":"资产类","code":"6","type":"catalog","description":"资产类","createTime":"2019-10-10 09:10","user":"岳一鹏","data":1500,"parent":""},
+  {"id":7,"name":"财富管理类","code":"7","type":"catalog","description":"财富管理类","createTime":"2019-10-10 09:10","user":"岳一鹏","data":1500,"parent":""},
+    
+   
+  {"id":51,"name":"个人客户金融资产总计","code":"51","type":"tag","description":"个人客户金融资产总计","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"负债类","parent":1},
+  {"id":52,"name":"个人存款小计","code":"52","type":"tag","description":"个人存款小计","createTime":"2019-10-24 15:23","user":"岳一鹏","data":"负债类","parent":1},
+  {"id":53,"name":"保本理财小计","code":"53","type":"tag","description":"保本理财小计","createTime":"2019-10-24 15:23","user":"岳一鹏","data":"负债类","parent":1},
+  {"id":54,"name":"本月新增储蓄存款","code":"54","type":"tag","description":"本月新增储蓄存款","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"负债类","parent":1},
+  {"id":55,"name":"本月净增存款","code":"55","type":"tag","description":"本月净增存款","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"负债类","parent":1},
+  {"id":56,"name":"非保本理财小计","code":"56","type":"tag","description":"非保本理财小计","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"负债类","parent":1},
+
+  {"id":57,"name":"AUM300（含）-600万客户","code":"57","type":"tag","description":"AUM300（含）-600万客户","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"客户类","parent":2},
+  {"id":58,"name":"AUM1000万（含）以上客户","code":"58","type":"tag","description":"AUM1000万（含）以上客户","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"客户类","parent":2},
+  {"id":59,"name":"私人银行客户","code":"59","type":"tag","description":"私人银行客户","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"客户类","parent":2},
+  {"id":60,"name":"财富管理客户","code":"60","type":"tag","description":"财富管理客户","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"客户类","parent":2},
+  {"id":61,"name":"白金卡客户","code":"61","type":"tag","description":"白金卡客户","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"客户类","parent":2},
+  {"id":62,"name":"金卡客户","code":"62","type":"tag","description":"金卡客户","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"客户类","parent":2},
+  {"id":63,"name":"潜力客户","code":"63","type":"tag","description":"潜力客户","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"客户类","parent":2},
+  {"id":64,"name":"当月客户流失数量","code":"64","type":"tag","description":"当月客户流失数量","createTime":"2019-10-24 15:23","user":"岳一鹏","data":"客户类","parent":2},
+  {"id":65,"name":"当月升级客户数量","code":"65","type":"tag","description":"当月升级客户数量","createTime":"2019-10-24 15:23","user":"岳一鹏","data":"客户类","parent":2},
+  {"id":66,"name":"当月降低客户数量","code":"66","type":"tag","description":"当月降低客户数量","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"客户类","parent":2},
+   
+  {"id":67,"name":"白金卡信用卡有效新发卡客户数","code":"67","type":"tag","description":"白金卡信用卡有效新发卡客户数","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"信用卡客户类","parent":3},
+  {"id":68,"name":"贵宾卡信用卡有效新发卡客户数","code":"68","type":"tag","description":"贵宾卡信用卡有效新发卡客户数","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"信用卡客户类","parent":3},
+  {"id":69,"name":"普卡信用卡有效新发卡客户数","code":"69","type":"tag","description":"普卡信用卡有效新发卡客户数","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"信用卡客户类","parent":3},
+  {"id":70,"name":"金卡信用卡有效新发卡客户数","code":"70","type":"tag","description":"金卡信用卡有效新发卡客户数","createTime":"2019-10-24 15:23","user":"岳一鹏","data":"信用卡客户类","parent":3},
+  {"id":71,"name":"贵宾卡信用卡新发卡客户数","code":"71","type":"tag","description":"贵宾卡信用卡新发卡客户数","createTime":"2019-10-24 15:23","user":"岳一鹏","data":"信用卡客户类","parent":3},
+  {"id":72,"name":"金卡信用卡新发卡客户数","code":"72","type":"tag","description":"金卡信用卡新发卡客户数","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"信用卡客户类","parent":3},
+  {"id":73,"name":"白金卡信用卡新发卡客户数","code":"73","type":"tag","description":"白金卡信用卡新发卡客户数","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"信用卡客户类","parent":3},
+  {"id":74,"name":"普卡信用卡新发卡","code":"74","type":"tag","description":"普卡信用卡新发卡","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"信用卡客户类","parent":3},
+
+  {"id":75,"name":"按揭贷款客户数","code":"75","type":"tag","description":"按揭贷款客户数","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"授信客户类","parent":4},
+  {"id":76,"name":"个人贷款资客户数","code":"76","type":"tag","description":"个人贷款资客户数","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"授信客户类","parent":4},
+  {"id":77,"name":"住房类贷款客户数","code":"77","type":"tag","description":"住房类贷款客户数","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"授信客户类","parent":4},
+  {"id":78,"name":"消费类贷款客户数","code":"78","type":"tag","description":"消费类贷款客户数","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"授信客户类","parent":4},
+
+  {"id":79,"name":"直销银行签约客户数","code":"79","type":"tag","description":"直销银行签约客户数","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"签约类","parent":5},
+  {"id":80,"name":"个人网上银行客户数","code":"80","type":"tag","description":"个人网上银行客户数","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"签约类","parent":5},
+  {"id":81,"name":"手机银行客户数","code":"81","type":"tag","description":"手机银行客户数","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"签约类","parent":5},
+  {"id":82,"name":"有效基金定投账户","code":"82","type":"tag","description":"有效基金定投账户","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"签约类","parent":5},
+  {"id":83,"name":"账户贵金属签约客户","code":"83","type":"tag","description":"账户贵金属签约客户","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"签约类","parent":5},
+  {"id":84,"name":"三方存管有效净值户","code":"84","type":"tag","description":"三方存管有效净值户","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"签约类","parent":5},
+  {"id":85,"name":"代发薪客户客户","code":"85","type":"tag","description":"代发薪客户客户","createTime":"2019-10-24 15:23","user":"岳一鹏","data":"签约类","parent":5},
+  {"id":86,"name":"理财签约客户","code":"86","type":"tag","description":"理财签约客户","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"签约类","parent":5},
+
+  {"id":87,"name":"个人贷款资产额度统计","code":"87","type":"tag","description":"个人贷款资产额度统计","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"资产类","parent":6},
+  {"id":88,"name":"住房类贷款额度统计","code":"88","type":"tag","description":"住房类贷款额度统计","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"资产类","parent":6},
+  {"id":89,"name":"消费类贷款额度统计","code":"89","type":"tag","description":"消费类贷款额度统计","createTime":"2019-10-24 15:23","user":"岳一鹏","data":"资产类","parent":6},
+  {"id":90,"name":"额度类贷款额度统计","code":"90","type":"tag","description":"额度类贷款额度统计","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"资产类","parent":6},
+
+  {"id":91,"name":"期缴型保险销量","code":"91","type":"tag","description":"期缴型保险销量","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":92,"name":"趸缴型保险销量","code":"92","type":"tag","description":"趸缴型保险销量","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":93,"name":"债券型基金销量","code":"93","type":"tag","description":"债券型基金销量","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":94,"name":"股票型基金销量","code":"94","type":"tag","description":"股票型基金销量","createTime":"2019-10-24 15:23","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":95,"name":"混合型基金销量","code":"95","type":"tag","description":"混合型基金销量","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":96,"name":"货币型基金销量","code":"96","type":"tag","description":"货币型基金销量","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"财富管理类","parent":7},
+
+  {"id":97,"name":"其他基金销量","code":"97","type":"tag","description":"其他基金销量","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":98,"name":"实物贵金属销量","code":"98","type":"tag","description":"实物贵金属销量","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":99,"name":"账户贵金属（纸黄金）销量","code":"99","type":"tag","description":"账户贵金属（纸黄金）销量","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":100,"name":"凭证式国债销量","code":"100","type":"tag","description":"凭证式国债销量","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":101,"name":"储蓄式国债销量","code":"101","type":"tag","description":"储蓄式国债销量","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":102,"name":"保本理财销量","code":"102","type":"tag","description":"保本理财销量","createTime":"2019-10-24 15:23","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":103,"name":"非保本理财销量","code":"103","type":"tag","description":"非保本理财销量","createTime":"2019-10-24 15:23","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":104,"name":"信托产品销量","code":"104","type":"tag","description":"信托产品销量","createTime":"2019-10-24 15:23","user":"岳一鹏","data":"财富管理类","parent":7},
+  {"id":105,"name":"资管产品销量","code":"105","type":"tag","description":"资管产品销量","createTime":"2019-10-10 09:10","user":"岳一鹏","data":"财富管理类","parent":7}
+
+ 
+]

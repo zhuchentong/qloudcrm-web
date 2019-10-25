@@ -1,0 +1,8 @@
+.quota--params-menu {
+  color: #5a5e66;
+}
+.quota--params-menu ::ng-deep .ql-menu-item {
+  padding-left: 10px;
+  height: 26px;
+  line-height: 26px;
+}

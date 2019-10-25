@@ -78,7 +78,7 @@ export class CustomerViewComponent implements OnInit {
     })
 
     this.apiService.getCustomerTagList('tag').subscribe(data => {
-      this.customerTagList = data.sort(x => 0.5 - Math.random())
+      this.customerTagList = data.sort(x => 0.5 - Math.random()).slice(0,10)
     })
 
     this.apiService.getcostomerDetaildkList().subscribe(data => {

@@ -1,44 +1,44 @@
 <page-header title="客户等级变动" [breadcrumb]="breadcrumb" [action-group]="false" [back]="true">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>我的客户</ql-breadcrumb-item>
-      <ql-breadcrumb-item>客户等级变动</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>我的客户</ql-breadcrumb-item>
+            <ql-breadcrumb-item>客户等级变动</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
 </page-header>
 
 <ql-card>
-  <div echarts [options]="labelOption[0]" [merge]="labelOption[1]"  [ngStyle]="{height: hdata6 == 'NaNpx' ? '400px' : hdata6}" [loading]="loading"></div>
+    <div echarts [options]="labelOption[0]" [merge]="labelOption[1]" [ngStyle]="{height: hdata6 == 'NaNpx' ? '400px' : hdata6}" [loading]="loading"></div>
 
-  <table  class="table table-striped table-bordered table-hover">
-    <thead style="text-align: center;font-size: 0.4em;">
-    <tr>
-      <th scope="col" colspan="7">
-        <ql-select placeholder="选择时间范围" style="float: left">
-          <ql-option *ngFor="let item of seltimes" [label]="item.label" [value]="item.value"> </ql-option>
-        </ql-select>
-      </th>
-    </tr>
-    <tr>
-      <th scope="col">客户等级</th>
-      <th scope="col">升级客户数</th>
-      <th scope="col">降级客户数</th>
-      <th scope="col">合计</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let data of changeData; let i = index"  style="text-align: center;font-size: 0.3em;">
-      <td>{{data.name}}</td>
-      <td><a (click)="queryCustomer()">{{data.up}}</a></td>
-      <td><a (click)="queryCustomer()">{{data.down}}</a></td>
-      <td><a (click)="queryCustomer()">{{data.total}}</a></td>
-    </tr>
-    </tbody>
-  </table>
+    <table class="table table-striped table-bordered table-hover">
+        <thead style="text-align: center;font-size: 0.4em;">
+            <tr>
+                <th scope="col" colspan="7">
+                    <ql-select placeholder="选择时间范围" style="float: left">
+                        <ql-option *ngFor="let item of seltimes" [label]="item.label" [value]="item.value"> </ql-option>
+                    </ql-select>
+                </th>
+            </tr>
+            <tr>
+                <th scope="col">客户等级</th>
+                <th scope="col">升级客户数</th>
+                <th scope="col">降级客户数</th>
+                <th scope="col">合计</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let data of changeData; let i = index" style="text-align: center;font-size: 0.3em;">
+                <td>{{data.name}}</td>
+                <td><a (click)="queryCustomer()">{{data.up}}</a></td>
+                <td><a (click)="queryCustomer()">{{data.down}}</a></td>
+                <td><a (click)="queryCustomer()">{{data.total}}</a></td>
+            </tr>
+        </tbody>
+    </table>
 
 
-  <!--<label-container column="3" [border]="true" labelWidth="110">-->
+    <!--<label-container column="3" [border]="true" labelWidth="110">-->
     <!--<label-item label="总客户数"><a>212</a></label-item>-->
     <!--<label-item label="升级客户"><a (click)="queryCustomer()">32</a></label-item>-->
     <!--<label-item label="降级客户"><a (click)="queryCustomer()">54</a></label-item>-->
@@ -48,51 +48,51 @@
     <!--<label-item label="金卡客户"><a (click)="queryCustomer()">11</a></label-item>-->
     <!--<label-item label="潜力客户"><a (click)="queryCustomer()">45</a></label-item>-->
     <!--<label-item label="普通客户"><a (click)="queryCustomer()">107</a></label-item>-->
-  <!--</label-container>-->
-  <divider></divider>
+    <!--</label-container>-->
+    <divider></divider>
 
-  <!-- 查看对应客户 -->
-  <ng-template #searchList>
-    <ql-card>
-      <data-table [model]="customerList">
-        <ql-table-column model-key="ctCode" label="客户编号" width="80"> </ql-table-column>
-        <ql-table-column model-key="ctName" label="客户姓名" width="80"> </ql-table-column>
-        <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>
-        <ql-table-column model-key="ctage" label="年龄" width="80"> </ql-table-column>
-        <ql-table-column model-key="ctType" label="客户类型" width="80"> </ql-table-column>
-        <ql-table-column model-key="ctLevel" label="客户等级" width="80"> </ql-table-column>
-        <ql-table-column model-key="ctTel" label="客户电话" width="80"> </ql-table-column>
-        <ql-table-column model-key="time" label="开户时间" width="80"> </ql-table-column>
-        <ql-table-column model-key="assest" label="客户资产" width="80"> </ql-table-column>
-        <ql-table-column model-key="AUM" label="AUM" width="80"> </ql-table-column>
-        <ql-table-column model-key="productnum" label="持有产品数" width="90"> </ql-table-column>
-        <ql-table-column model-key="interaTime" label="互动时间" width="80"> </ql-table-column>
-        <ql-table-column label="操作" width="80">
-          <ng-template #slot let-scope="scope">
-            <a [routerLink]="['/customer/customer-detail']">详情</a>
-          </ng-template>
-        </ql-table-column>
-      </data-table>
-    </ql-card>
-  </ng-template>
-
-  <data-table [model]="customerlevels" [selection]="true" [action]="tableAction">
-    <ng-template #tableAction>
-      <!--<ql-button size="small" type="primary">拨打电话</ql-button>-->
-      <ql-button size="small" type="success">发送短信</ql-button>
-      <ql-button size="small" type="info">发送邮件</ql-button>
+    <!-- 查看对应客户 -->
+    <ng-template #searchList>
+        <ql-card>
+            <data-table [model]="customerList">
+                <ql-table-column model-key="ctCode" label="客户编号" width="80"> </ql-table-column>
+                <ql-table-column model-key="ctName" label="客户姓名" width="80"> </ql-table-column>
+                <ql-table-column model-key="ctsex" label="性别" width="80"> </ql-table-column>
+                <ql-table-column model-key="ctage" label="年龄" width="80"> </ql-table-column>
+                <ql-table-column model-key="ctType" label="客户类型" width="80"> </ql-table-column>
+                <ql-table-column model-key="ctLevel" label="客户等级" width="80"> </ql-table-column>
+                <ql-table-column model-key="ctTel" label="客户电话" width="80"> </ql-table-column>
+                <ql-table-column model-key="time" label="开户时间" width="80"> </ql-table-column>
+                <ql-table-column model-key="assest" label="客户资产" width="80"> </ql-table-column>
+                <ql-table-column model-key="AUM" label="AUM" width="80"> </ql-table-column>
+                <ql-table-column model-key="productnum" label="持有产品数" width="90"> </ql-table-column>
+                <ql-table-column model-key="interaTime" label="互动时间" width="80"> </ql-table-column>
+                <ql-table-column label="操作" width="80">
+                    <ng-template #slot let-scope="scope">
+                        <a [routerLink]="['/customer/customer-detail']">详情</a>
+                    </ng-template>
+                </ql-table-column>
+            </data-table>
+        </ql-card>
     </ng-template>
-    <ql-table-column model-key="code" label="客户号"></ql-table-column>
-    <ql-table-column model-key="name" label="姓名"></ql-table-column>
-    <ql-table-column model-key="nowlevel" label="目前等级"></ql-table-column>
-    <ql-table-column model-key="beforelevel" label="原等级"></ql-table-column>
-    <ql-table-column model-key="sex" label="性别"></ql-table-column>
-    <ql-table-column model-key="age" label="年龄"></ql-table-column>
-    <ql-table-column model-key="tel" label="电话"></ql-table-column>
-    <ql-table-column model-key="aum" label="AUM"></ql-table-column>
-    <ql-table-column model-key="zcye" label="资产余额"></ql-table-column>
-    <ql-table-column model-key="nljbd" label="年累计资产变动"></ql-table-column>
-    <ql-table-column model-key="cpsl" label="持产品数"></ql-table-column>
-    <ql-table-column model-key="khsj" label="开户时间"></ql-table-column>
-  </data-table>
+
+    <data-table [model]="customerlevels" [action]="tableAction">
+        <ng-template #tableAction>
+            <!--<ql-button size="small" type="primary">拨打电话</ql-button>-->
+            <!-- <ql-button size="small" type="success">发送短信</ql-button>
+      <ql-button size="small" type="info">发送邮件</ql-button> -->
+        </ng-template>
+        <ql-table-column model-key="code" label="客户号"></ql-table-column>
+        <ql-table-column model-key="name" label="姓名"></ql-table-column>
+        <ql-table-column model-key="nowlevel" label="目前等级"></ql-table-column>
+        <ql-table-column model-key="beforelevel" label="原等级"></ql-table-column>
+        <ql-table-column model-key="sex" label="性别"></ql-table-column>
+        <ql-table-column model-key="age" label="年龄"></ql-table-column>
+        <ql-table-column model-key="tel" label="电话"></ql-table-column>
+        <ql-table-column model-key="aum" label="AUM"></ql-table-column>
+        <ql-table-column model-key="zcye" label="资产余额"></ql-table-column>
+        <ql-table-column model-key="nljbd" label="年累计资产变动"></ql-table-column>
+        <ql-table-column model-key="cpsl" label="持产品数"></ql-table-column>
+        <ql-table-column model-key="khsj" label="开户时间"></ql-table-column>
+    </data-table>
 </ql-card>

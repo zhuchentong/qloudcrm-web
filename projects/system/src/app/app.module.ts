@@ -20,11 +20,12 @@ import { RolesConfigComponent } from './pages/roles-config/roles-config.componen
 import { ParamsDetailComponent } from './pages/params-config/params-detail/params-detail.component'
 import { RolesDetailComponent } from './pages/roles-config/roles-detail/roles-detail.component'
 import { UserListComponent } from './pages/roles-config/user-list/user-list.component'
+import { ParamsQuotaComponent } from './pages/params-config/params-quota/params-quota.component'
 // 页面列表
-const PAGES = [ParamsConfigComponent,LogsConfigComponent,PasswdConfigComponent,RolesConfigComponent,ParamsDetailComponent,RolesDetailComponent,UserListComponent]
+const PAGES = [ParamsConfigComponent,LogsConfigComponent,PasswdConfigComponent,RolesConfigComponent]
 
 // 组件列表
-const COMPONENTS = []
+const COMPONENTS = [ParamsQuotaComponent,ParamsDetailComponent,RolesDetailComponent,UserListComponent]
 
 const startUpFactory = (store: Store) => async () => {
   // 注册菜单

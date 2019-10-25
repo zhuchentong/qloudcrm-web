@@ -18,8 +18,8 @@ export class TagDetailComponent implements OnInit {
   public riskOption
   public ageOption
 
-  @ViewChild('tagUser', { static: true })
-  private tagUser
+  @ViewChild('tagInfo', { static: true })
+  private tagInfo
 
   constructor(private echartService: EchartService, private route: ActivatedRoute, private apiService: ApiService) {}
 
@@ -27,7 +27,7 @@ export class TagDetailComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id')
 
     this.getTagDetail(id)
-    this.content = this.tagUser
+    this.content = this.tagInfo
   }
 
   private getTagDetail(id) {

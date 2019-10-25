@@ -3,9 +3,8 @@
         <ql-card header="客户基本属性" class="ql-text-left">
             <ng-template #header>
                 <card-header title="客户基本属性">
-                    <ql-button type="primary" size="small">保存</ql-button>
+                    <ql-button type="primary" size="small" [routerLink]="['/customer/customer-list']">保存</ql-button>
                     <ql-button type="primary" size="small">重置</ql-button>
-
                 </card-header>
             </ng-template>
             <div ql-row gutter="12">
