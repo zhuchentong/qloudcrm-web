@@ -22,7 +22,6 @@ export class CustomerTagComponent implements OnInit {
     require('echarts-wordcloud')
     this.getTagCatalogList()
     this.apiService.getCustomerTagList('tag').subscribe(list => {
-      console.log(list.map(x => x.name))
       // 生成树形结构
       this.hotList = list
         .slice(250, 280)
