@@ -16,6 +16,7 @@ import { ApiService } from './services/api.service'
 import { FinancialPlanComponent } from './pages/financial-plan/financial-plan.component'
 import { FinanicalComboComponent } from './pages/finanical-combo/finanical-combo.component'
 import { FinanicalConfigComponent } from './pages/finanical-config/finanical-config.component'
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 // 页面列表
 const PAGES = [FinancialPlanComponent, FinanicalComboComponent, FinanicalConfigComponent]
@@ -42,7 +43,7 @@ export class ConfigModule {}
 @NgModule({
   declarations: [AppComponent, ...PAGES, ...COMPONENTS],
   entryComponents: [...COMPONENTS],
-  imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule],
+  imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, PdfViewerModule],
   providers,
   bootstrap: [AppComponent],
   exports: []

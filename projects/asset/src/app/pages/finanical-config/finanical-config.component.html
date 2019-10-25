@@ -9,7 +9,7 @@
 </page-header>
 
 <page-container>
-  <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()">
+  <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()" submitText="生成报告">
     <ql-form-item label="客户姓名: ">
       <ql-input formControlName="customerName"></ql-input>
     </ql-form-item>
@@ -41,12 +41,18 @@
     </ql-form-item>
   </data-form>
   <div ql-row *ngIf="assetConfigure != null || managerWealth != null; else empty">
-    <ql-card ql-col span="12" class="ql-padding-x" header="资产分析">
+    <ql-card ql-row class="ql-padding-x" header="资产分析">
       <div>
         <div echarts [options]="assetConfigure"></div>
       </div>
     </ql-card>
-    <ql-card ql-col span="12" class="ql-padding-x" header="理财项目"></ql-card>
+    <ql-card ql-row class="ql-padding-x" header="理财项目">
+      <pdf-viewer [src]="pdfSrc"
+                  [render-text]="true"
+                  style="display: block;">
+
+      </pdf-viewer>
+    </ql-card>
   </div>
   <ng-template #empty>
     <div class="row middel-span center-span" style="height: 400px">

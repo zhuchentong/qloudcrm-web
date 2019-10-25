@@ -9,7 +9,7 @@
 </page-header>
 
 <page-container>
-  <data-form label-width="120px" [formGroup]="formGroup">
+  <data-form label-width="120px" [formGroup]="formGroup" (submit)="onRefresh()" submitText="生成推荐">
     <ql-form-item label="理财目标: ">
       <ql-input formControlName="target"></ql-input>
     </ql-form-item>

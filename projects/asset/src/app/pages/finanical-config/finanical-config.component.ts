@@ -22,6 +22,7 @@ export class FinanicalConfigComponent implements OnInit {
   })
   public assetConfigure
   public managerWealth
+  public pdfSrc= 'assets/pdf/finanical-plan.pdf';
   constructor(
     public location: Location,
     private apiService: ApiService,
