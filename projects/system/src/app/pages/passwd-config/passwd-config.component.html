@@ -8,5 +8,30 @@
 </page-header>
 
 <page-container>
-  密码管理
+  <ql-form [formGroup]="validateForm" label-width="100px" [show-icon]="true" [show-message]="true"
+    class="form-password">
+
+    <ql-form-item label="原密码" [required]="true" [status]="statusCtrl('oldPassword')"
+      [error]="messageCtrl('oldPassword')">
+      <ql-input formControlName="oldPassword" native-type="password"></ql-input>
+    </ql-form-item>
+
+    <ql-form-item label="新密码" [required]="true" [status]="statusCtrl('newPassword')"
+      [error]="messageCtrl('newPassword')">
+      <ql-input formControlName="newPassword" native-type="password"></ql-input>
+    </ql-form-item>
+
+    <ql-form-item label="确认密码" [required]="true" [status]="statusCtrl('confirmPassword')"
+      [error]="messageCtrl('confirmPassword')">
+      <ql-input formControlName="confirmPassword" native-type="password"></ql-input>
+    </ql-form-item>
+
+    <ql-form-item class="button-center">
+      <ql-button type="primary" (click)="submit()">提交</ql-button>
+      <ql-button (click)="reset()">重置</ql-button>
+    </ql-form-item>
+
+
+
+  </ql-form>
 </page-container>

@@ -1,0 +1,69 @@
+<ql-card>
+  <div class="wrapinfo ql-padding">
+    <ng-template #header>
+      <ql-button *ngIf="isShowAdd" size="small" type="primary" style="margin: 1rem 0" (click)="addOrUpdateParam('add')">
+        增加
+      </ql-button>
+    </ng-template>
+    <div ql-row type="flex" style="flex-wrap: nowrap;">
+      <div ql-col span="7">
+
+        <div style="max-height: 34rem !important;overflow: auto !important;">
+          <!-- <ql-tree (modelChange)="onCatalogChange($event)" [accordion]="true" [model]="targetTreeList"></ql-tree> -->
+          <ql-menu [model]="menuIndex" (modelChange)="onMenuIndexChange($event)" class="quota--params-menu">
+            <ng-container *ngFor="let item of targetTreeList">
+              <ql-menu-item [index]="item.id">{{item.name}}</ql-menu-item>
+            </ng-container>
+
+          </ql-menu>
+        </div>
+      </div>
+      <data-table ql-col span="17" [model]="paramsList">
+        <ql-table-column model-key="name" label="指标名称"></ql-table-column>
+        <ql-table-column model-key="code" label="指标编码" width=85></ql-table-column>
+        <ql-table-column model-key="data" label="指标类别"></ql-table-column>
+
+        <ql-table-column model-key="createTime" label="创建日期" width=155></ql-table-column>
+        <ql-table-column model-key="user" label="创建人"></ql-table-column>
+        <ql-table-column label="操作">
+          <ng-template #slot let-scope="scope">
+            <ql-button type="text" (click)="addOrUpdateParam('edit',scope.rowData)">编辑</ql-button>
+            <ql-button type="text" (click)="deleteParam(scope.rowData)">删除</ql-button>
+          </ng-template>
+        </ql-table-column>
+      </data-table>
+
+    </div>
+  </div>
+  <ng-template #addParams>
+    <ql-card>
+      <ql-form label-width="100px" ql-row gutter="24" class="ql-margin-top">
+        <ql-form-item label="指标名称" ql-col span="12">
+          <ql-input placeholder="请输入指标名称" [(ngModel)]="paramData.name"></ql-input>
+        </ql-form-item>
+        <ql-form-item label="指标编码" ql-col span="12">
+          <ql-input placeholder="请输入编码" [(ngModel)]="paramData.code"> </ql-input>
+        </ql-form-item>
+        <ql-form-item label="指标类别" ql-col span="12">
+
+          <ql-select placeholder="请选择指标类别" [clearable]="true" [(ngModel)]="paramData.data">
+
+            <ql-option *ngFor="let item of targetTreeList" [label]="item.name" [value]="item.id"> </ql-option>
+          </ql-select>
+        </ql-form-item>
+        <ql-form-item label="创建时间" ql-col span="12">
+          <ql-date-picker [(ngModel)]="paramData.createTime"> </ql-date-picker>
+        </ql-form-item>
+        <ql-form-item label="指标说明" ql-col span="24" class="ql-margin-top">
+          <ql-input type="textarea" [rows]="2" placeholder="请输入内容" [(ngModel)]="paramData.description"> </ql-input>
+        </ql-form-item>
+      </ql-form>
+    </ql-card>
+    <div>
+      <ql-button type="primary" (click)="modal.close(true)">{{addOrEdit==='edit'?'编辑':'创建'}}</ql-button>
+      <ql-button type="primary" (click)="modal.close()">取消</ql-button>
+    </div>
+  </ng-template>
+
+
+</ql-card>

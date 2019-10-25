@@ -13,21 +13,61 @@
 </page-header>
 
 <page-container>
-  <div ql-row type="flex">
-    <ql-tree (modelChange)="onCatalogChange($event)" [accordion]="true" [model]="catalogList" ql-col span="6"></ql-tree>
-    <data-table ql-col span="18" [model]="tagList" [selection]="true">
-      <ql-table-column model-key="name" label="标签名称">
-        <ng-template #slot let-scope="scope">
-          <a [routerLink]="['/customer/tag-detail', { id: scope.rowData.id }]">{{ scope.rowData.name }}</a>
-        </ng-template>
-      </ql-table-column>
-      <ql-table-column model-key="code" label="标签编码"></ql-table-column>
-      <ql-table-column model-key="catalog" label="标签分类"></ql-table-column>
-      <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
-      <ql-table-column model-key="description" label="标签说明"></ql-table-column>
-      <ql-table-column model-key="createTime" label="创建日期"></ql-table-column>
-      <ql-table-column model-key="count" label="客户数量"></ql-table-column>
-      <ql-table-column model-key="state" label="标签状态"></ql-table-column>
-    </data-table>
+  <div ql-row gutter="12">
+    <ql-card header="标签统计" ql-col span="8">
+      <div class="tag-card col">
+        <div class="row around-span middle-span row-span">
+          <div style="font-size:20px;">标签总数:</div>
+          <div style="font-size:24px;font-weight: 400;">564</div>
+        </div>
+        <div class="row between-span">
+          <div>本月新增: 24</div>
+          <div>本月热门: 127</div>
+        </div>
+      </div>
+    </ql-card>
+    <ql-card header="热门统计 TOP5" ql-col span="8">
+      <div class="tag-card">
+        <div class="row between-span text-center " *ngFor="let item of hotList; let index = index">
+          <div class="col-span-2">{{ index + 1 }}</div>
+          <div class="col-span-4">{{ item.name }}</div>
+          <div class="col-span-2">
+            <i style="color:darkcyan" class="fa fa-arrow-down" *ngIf="index === 1"></i>
+            <i style="color:darkcyan" class="fa fa-arrow-down" *ngIf="index === 3"></i>
+            <i style="color:lightcoral" class="fa fa-arrow-up" *ngIf="index !== 1 && index !== 3"></i>
+          </div>
+          <div class="col-span-4">{{ item.catalog }}</div>
+        </div>
+      </div>
+    </ql-card>
+
+    <ql-card header="活跃标签" ql-col span="8">
+      <div class="cloud-image tag-card"></div>
+    </ql-card>
   </div>
+  <ql-card>
+    <div ql-row type="flex">
+      <ql-tree
+        (modelChange)="onCatalogChange($event)"
+        [accordion]="true"
+        [model]="catalogList"
+        ql-col
+        span="6"
+      ></ql-tree>
+      <data-table ql-col span="18" [model]="tagList" [selection]="true">
+        <ql-table-column model-key="name" label="标签名称">
+          <ng-template #slot let-scope="scope">
+            <a [routerLink]="['/customer/tag-detail', { id: scope.rowData.id }]">{{ scope.rowData.name }}</a>
+          </ng-template>
+        </ql-table-column>
+        <ql-table-column model-key="code" label="标签编码"></ql-table-column>
+        <ql-table-column model-key="catalog" label="标签分类"></ql-table-column>
+        <ql-table-column model-key="frequency" label="使用频次"></ql-table-column>
+        <ql-table-column model-key="description" label="标签说明"></ql-table-column>
+        <ql-table-column model-key="createTime" label="创建日期"></ql-table-column>
+        <ql-table-column model-key="count" label="客户数量"></ql-table-column>
+        <ql-table-column model-key="state" label="标签状态"></ql-table-column>
+      </data-table>
+    </div>
+  </ql-card>
 </page-container>

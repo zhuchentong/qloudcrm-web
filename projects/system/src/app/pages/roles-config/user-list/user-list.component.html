@@ -28,7 +28,7 @@
       <ng-template #slot let-scope="scope">
         <ql-button type="text" (click)="updateUserForm(scope.rowData)">编辑</ql-button>
         <ql-button type="text" (click)="updateUserRole(scope.rowData)">角色</ql-button>
-        <ql-button type="text">删除</ql-button>
+        <ql-button type="text" (click)="deleteUser(scope.rowData)">删除</ql-button>
       </ng-template>
     </ql-table-column>
   </data-table>
@@ -65,13 +65,13 @@
       <div style="box-sizing: border-box;float: left;width: 300px;margin: 1rem 1rem 1rem 10rem;border: 1px solid #ebeef5;height: 38rem;overflow:auto;padding: 1rem;
       border-radius: 4px;   background: #fff;   vertical-align: middle;   max-height: 100%;  position: relative;">
 
-        <ql-tree (modelChange)="onCatalogChange($event)" [show-checkbox]="true" [model]="rolesAuthList" #tree></ql-tree>
+        <ql-tree (modelChange)="onCatalogChange($event)" [show-checkbox]="true" [default-expand-all]="true" [model]="rolesAuthList" #tree></ql-tree>
 
       </div>
 
       <div
         style="box-sizing: border-box;float: right;width: 300px;height: 38rem;overflow:auto;padding: 1rem;margin: 1rem 10rem 1rem 1rem;border: 1px solid #ebeef5; border-radius: 4px;   background: #fff;   vertical-align: middle;  max-height: 100%;  position: relative;">
-        <ql-tree (modelChange)="onUserChange($event)" [show-checkbox]="true" [model]="userAuthList" [default-expand-all]="true"></ql-tree>
+        <ql-tree (modelChange)="onUserChange($event)" [show-checkbox]="true" [model]="userAuthList" [default-expand-all]="true" #userTree></ql-tree>
       </div>
 
     </div>

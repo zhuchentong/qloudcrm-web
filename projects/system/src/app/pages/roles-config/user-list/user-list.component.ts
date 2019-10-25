@@ -56,7 +56,8 @@ export class UserListComponent implements OnInit,OnChanges {
 
   @ViewChild('tree', { static: false })
   public tree: any
-
+  @ViewChild('userTree', { static: false })
+  public userTree: any
   ngOnInit() {
 
     this.getUserList()
@@ -100,10 +101,11 @@ export class UserListComponent implements OnInit,OnChanges {
         }
         data.push(js);
       }
+      this.roleRawList = data
       this.rolesList = data.filter(a => a.parent);
       //this.rolesList = this.rolesList.slice(0,5);
-      this.roleRawList = data
-      this.rolesAuthList = this.changeFlattoTree(data)
+      //this.roleRawList = data
+      //this.rolesAuthList = this.changeFlattoTree(data)
     })
   }
 
@@ -113,8 +115,8 @@ export class UserListComponent implements OnInit,OnChanges {
     })
   }
 
-  changeFlattoTree(list = []) {
-    list = list.map(item => ({ ...item, label: item.name }))
+  changeFlattoTree(list = [], roleIDs = []) {
+    list = list.map(item => ({ ...item, label: item.name, checked: roleIDs.includes(String(item.id)) }))
     const root = list.filter(x => !x.parent)
 
     const depth = node => {
@@ -146,7 +148,10 @@ export class UserListComponent implements OnInit,OnChanges {
       this.userList = this.userList.filter(x => x.roleId === this.roleSelect)
     }
   }
-
+  public deleteUser(data) {
+    const { id } = data
+    this.userList = this.userList.filter(i => i.id !== id)
+  }
   private addUserForm() {
     this.clearUserData()
 
@@ -158,9 +163,9 @@ export class UserListComponent implements OnInit,OnChanges {
       })
       .subscribe(data => {
         this.message.success('创建成功')
-
+        const last = this.userList[this.userList.length - 1]
         const addData = {
-          id: this.userList.length + 1,
+          id: last.id + 1,
           name: this.userData.name,
           roleId: '',
           roleName: '',
@@ -209,7 +214,10 @@ export class UserListComponent implements OnInit,OnChanges {
   }
 
   updateUserRole(data) {
-    this.userAuthList = []
+    const roleIDs = String(data.roleId) ? String(data.roleId).split(',') : []
+    this.rolesAuthList = this.changeFlattoTree(this.roleRawList, roleIDs)
+    this.userAuthList = this.getNewTree(roleIDs, 'id')
+
     this.modal
       .open({
         title: '角色配置',
@@ -218,19 +226,9 @@ export class UserListComponent implements OnInit,OnChanges {
       })
       .subscribe(e => {
         this.message.success('编辑成功')
-        const roleIds = []
-        const roleNames = []
 
-        const loop = list => {
-          list.forEach(item => {
-            roleIds.push(item.id)
-            roleNames.push(item.name)
-            if (item.children) {
-              loop(item.children)
-            }
-          })
-        }
-        loop(this.userAuthList)
+        const findAllChecked = this.userTree.userSafeHooks().findAllChecked()
+        const { id: roleIds, name: roleNames } = this.getRoleIdsByName(findAllChecked, this.userAuthList)
 
         const { id, name, createTime, state } = data
         const editIndex = this.userList.findIndex(item => item.id === id)
@@ -274,7 +272,7 @@ export class UserListComponent implements OnInit,OnChanges {
         return prev
       } else {
         const parentNode = this.getParentNode(item.parent)
-        prev.push({ ...parentNode, label: parentNode.name, checked: true, children: [item] })
+        prev.push({ ...parentNode, label: parentNode.name, checked: false, children: [item] })
 
         return prev
       }
@@ -289,10 +287,10 @@ export class UserListComponent implements OnInit,OnChanges {
     return parentNode[0]
   }
 
-  getNewTree(selectedLi) {
+  getNewTree(selectedLi, key = 'name') {
     const lli = [...selectedLi]
     const allList = this.getList()
-    const list1 = allList.filter(i => lli.includes(i.name))
+    const list1 = allList.filter(i => lli.includes(String(i[key])))
 
     const treeData = this.getTree(list1)
     return treeData
@@ -305,8 +303,27 @@ export class UserListComponent implements OnInit,OnChanges {
 
     const selectList = this.tree.userSafeHooks().findAllChecked()
 
-    const rightSelectList = this.getNewTree(selectList)
+    const rightSelectList = this.getNewTree(selectList,'name')
 
     this.userAuthList = rightSelectList
+  }
+  getRoleIdsByName(roleNames, list, ids = []) {
+    const names = [...roleNames]
+    list.forEach(item => {
+      const index = names.findIndex(v => v === item.name)
+      if (index !== -1) {
+        if (!item.checked) {
+          names.splice(index, 1)
+        } else {
+          ids.push(item.id)
+        }
+      }
+
+      if (item.children) {
+        return this.getRoleIdsByName(names, item.children, ids)
+      }
+    })
+
+    return { id: ids, name: names }
   }
 }

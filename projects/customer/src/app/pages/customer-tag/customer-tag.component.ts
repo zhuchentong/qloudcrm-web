@@ -10,11 +10,38 @@ import { ApiService } from '../../services/api.service'
 export class CustomerTagComponent implements OnInit {
   public catalogList: any[] = []
   public tagList: any[] = []
-
+  public hotList: any[] = []
+  public newList: any[] = []
+  public tagCloudList: any[] = []
+  public wordCloudImg = require('../../../assets/images/image1.png')
   constructor(private apiService: ApiService) {}
 
   ngOnInit() {
+    require('echarts-wordcloud')
     this.getTagCatalogList()
+    this.apiService.getCustomerTagList('tag').subscribe(list => {
+      // 生成树形结构
+      this.hotList = list
+        .slice(0, 20)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 5)
+
+      this.newList = list
+        .slice(0, 20)
+        .sort(() => 0.5 - Math.random())
+        .slice(0, 5)
+
+      this.tagCloudList = list
+        .slice(0, 20)
+        .sort(() => 0.5 - Math.random())
+        .map(x => x.name)
+
+      console.log(this.tagCloudList)
+    })
+  }
+
+  public onSelectTag(...a) {
+    console.log(a)
   }
 
   private getTagCatalogList() {
