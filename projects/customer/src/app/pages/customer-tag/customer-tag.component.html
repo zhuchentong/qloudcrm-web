@@ -15,20 +15,11 @@
 <page-container>
   <div ql-row gutter="12">
     <ql-card header="标签统计" ql-col span="8">
-      <div class="tag-card col">
-        <div class="row around-span middle-span row-span">
-          <div style="font-size:20px;">标签总数:</div>
-          <div style="font-size:24px;font-weight: 400;">564</div>
-        </div>
-        <div class="row between-span">
-          <div>本月新增: 24</div>
-          <div>本月热门: 127</div>
-        </div>
-      </div>
+      <div echarts [options]="tagOptions" class="tag-card col"></div>
     </ql-card>
     <ql-card header="热门统计 TOP5" ql-col span="8">
-      <div class="tag-card">
-        <div class="row between-span text-center " *ngFor="let item of hotList; let index = index">
+      <div class="tag-card col around-span">
+        <div class="row between-span text-center" *ngFor="let item of hotList; let index = index">
           <div class="col-span-2">{{ index + 1 }}</div>
           <div class="col-span-4">{{ item.name }}</div>
           <div class="col-span-2">

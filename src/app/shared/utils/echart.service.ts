@@ -32,8 +32,7 @@ export class EchartService {
       return option
     }
 
-    const config = Object.assign(option || {}, generate(data))
-
+    const config = Object.assign(generate(data), option || {})
     return update ? update(config, data) : config
   }
 
