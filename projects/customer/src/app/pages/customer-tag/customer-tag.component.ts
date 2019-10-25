@@ -15,11 +15,11 @@ export class CustomerTagComponent implements OnInit {
   public newList: any[] = []
   public tagCloudList: any[] = []
   public tagOptions
-  public wordCloudImg = require('../../../assets/images/image1.png')
+  // public wordCloudImg = require('../../../assets/images/image1.png')
   constructor(private echartService: EchartService, private apiService: ApiService) {}
 
   ngOnInit() {
-    require('echarts-wordcloud')
+    // require('echarts-wordcloud')
     this.getTagCatalogList()
     this.apiService.getCustomerTagList('tag').subscribe(list => {
       // 生成树形结构
