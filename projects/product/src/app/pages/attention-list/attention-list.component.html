@@ -31,7 +31,7 @@
         <ql-table-column model-key="productCode" label="产品代码"></ql-table-column>
         <ql-table-column model-key="productType" label="产品类别"></ql-table-column>
         <ql-table-column model-key="riskLevel" label="风险等级"></ql-table-column>
-        <ql-table-column model-key="recommandTyep" label="推荐类别"></ql-table-column>
+        <ql-table-column model-key="recommandType" label="推荐类别"></ql-table-column>
         <ql-table-column model-key="endTime" label="停售时间"></ql-table-column>
         <ql-table-column model-key="productRate" label="产品利率"></ql-table-column>
         <ql-table-column label="操作" width="250px">
@@ -39,7 +39,7 @@
                 <ql-button type="text">移除</ql-button>
                 <ql-button type="text">置顶</ql-button>
                 <ql-button type="text">分享</ql-button>
-                <ql-button type="text" [routerLink]="['/product/product-detail']">查看详情</ql-button>
+                <ql-button type="text" [routerLink]="['/product/product-detail', { id: scope.rowData.id }]">查看详情</ql-button>
             </ng-template>
         </ql-table-column>
     </data-table>

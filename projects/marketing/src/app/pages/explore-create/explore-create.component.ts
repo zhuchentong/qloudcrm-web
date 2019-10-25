@@ -5,6 +5,7 @@ import { ApiService } from '../../services/api.service'
 import { FormGroup, FormBuilder } from '@angular/forms'
 import { SelectCustomerComponent } from '../../components/select-customer/select-customer.component'
 import { TagComponent } from './../../components/tag/tag.component';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-explore-create',
@@ -71,7 +72,7 @@ export class ExploreCreateComponent implements OnInit {
     { value: '钻石客户', label: '钻石客户' }
   ]
 
-  constructor(private fb: FormBuilder, private apiService: ApiService, private modal: ModalService, private message: QlMessageService) { }
+  constructor(private fb: FormBuilder,private router: Router, private apiService: ApiService, private modal: ModalService, private message: QlMessageService) { }
 
   ngOnInit() {
     this.apiService.getcustomerDelList().subscribe(data => {
@@ -117,4 +118,8 @@ export class ExploreCreateComponent implements OnInit {
     this.modal.close()
   }
 
+  public submitFun(){
+     this.message.success('创建成功')
+     this.router.navigate(['/marketing/explore-list'], { replaceUrl: true })
+  }
 }

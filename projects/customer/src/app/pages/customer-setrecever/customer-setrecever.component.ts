@@ -73,4 +73,8 @@ export class CustomerSetreceverComponent implements OnInit {
     })
   }
 
+  public setClose(){
+    this.modal.close()
+  }
+
 }

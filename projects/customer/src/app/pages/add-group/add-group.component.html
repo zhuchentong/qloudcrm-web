@@ -1,171 +1,171 @@
 <page-header title="创建分组" [breadcrumb]="breadcrumb" [back]="true" [action]="action">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>客户分组</ql-breadcrumb-item>
-      <ql-breadcrumb-item>增加群组</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
-  <ng-template #action>
-    <ql-button type="primary">提交</ql-button>
-  </ng-template>
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>客户管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>客户分组</ql-breadcrumb-item>
+            <ql-breadcrumb-item>增加群组</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+    <ng-template #action>
+        <ql-button type="primary" [routerLink]="['/customer/customer-group']">提交</ql-button>
+    </ng-template>
 </page-header>
 
 <ql-card>
-  <div ql-row gutter="24" class="senior">
-    <div ql-col [span]="3" class="tittle">性别</div>
-    <div ql-col [span]="21">
-      <ql-radio class="radio" [(model)]="sex" label="男">男</ql-radio>
-      <ql-radio class="radio" [(model)]="sex" label="女">女</ql-radio>
+    <div ql-row gutter="24" class="senior">
+        <div ql-col [span]="3" class="tittle">性别</div>
+        <div ql-col [span]="21">
+            <ql-radio class="radio" [(model)]="sex" label="男">男</ql-radio>
+            <ql-radio class="radio" [(model)]="sex" label="女">女</ql-radio>
+        </div>
     </div>
-  </div>
-  <div ql-row gutter="24" class="senior">
-    <div ql-col [span]="3" class="tittle">年龄</div>
-    <div ql-col [span]="21">
-      <ql-radio class="radio" [(model)]="age" label="青年">青年(18-35)</ql-radio>
-      <ql-radio class="radio" [(model)]="age" label="中年">中年(36-55)</ql-radio>
-      <ql-radio class="radio" [(model)]="age" label="老年">老年(56以上)</ql-radio>
+    <div ql-row gutter="24" class="senior">
+        <div ql-col [span]="3" class="tittle">年龄</div>
+        <div ql-col [span]="21">
+            <ql-radio class="radio" [(model)]="age" label="青年">青年(18-35)</ql-radio>
+            <ql-radio class="radio" [(model)]="age" label="中年">中年(36-55)</ql-radio>
+            <ql-radio class="radio" [(model)]="age" label="老年">老年(56以上)</ql-radio>
+        </div>
     </div>
-  </div>
-  <div ql-row gutter="24" class="senior">
-    <div ql-col [span]="3" class="tittle">学历</div>
-    <div ql-col [span]="21">
-      <ql-radio class="radio" [(model)]="school" label="专科">专科</ql-radio>
-      <ql-radio class="radio" [(model)]="school" label="本科">本科</ql-radio>
-      <ql-radio class="radio" [(model)]="school" label="硕士">硕士</ql-radio>
-      <ql-radio class="radio" [(model)]="school" label="博士">博士</ql-radio>
+    <div ql-row gutter="24" class="senior">
+        <div ql-col [span]="3" class="tittle">学历</div>
+        <div ql-col [span]="21">
+            <ql-radio class="radio" [(model)]="school" label="专科">专科</ql-radio>
+            <ql-radio class="radio" [(model)]="school" label="本科">本科</ql-radio>
+            <ql-radio class="radio" [(model)]="school" label="硕士">硕士</ql-radio>
+            <ql-radio class="radio" [(model)]="school" label="博士">博士</ql-radio>
+        </div>
     </div>
-  </div>
-  <div ql-row gutter="24" class="senior">
-    <div ql-col [span]="3" class="tittle">收入</div>
-    <div ql-col [span]="21">
-      <ql-radio class="radio" [(model)]="income" label="低收入">(小于3000)低收入</ql-radio>
-      <ql-radio class="radio" [(model)]="income" label="中低收入">(小于5000)低收入</ql-radio>
-      <ql-radio class="radio" [(model)]="income" label="中级收入">(不小于15000)中级</ql-radio>
-      <ql-radio class="radio" [(model)]="income" label="中高收入">(不小于30000)</ql-radio>
-      <ql-radio class="radio" [(model)]="income" label="高收入">(不小于50000)</ql-radio>
+    <div ql-row gutter="24" class="senior">
+        <div ql-col [span]="3" class="tittle">收入</div>
+        <div ql-col [span]="21">
+            <ql-radio class="radio" [(model)]="income" label="低收入">(小于3000)低收入</ql-radio>
+            <ql-radio class="radio" [(model)]="income" label="中低收入">(小于5000)低收入</ql-radio>
+            <ql-radio class="radio" [(model)]="income" label="中级收入">(不小于15000)中级</ql-radio>
+            <ql-radio class="radio" [(model)]="income" label="中高收入">(不小于30000)</ql-radio>
+            <ql-radio class="radio" [(model)]="income" label="高收入">(不小于50000)</ql-radio>
+        </div>
     </div>
-  </div>
-  <div ql-row gutter="24" class="senior">
-    <div ql-col [span]="3" class="tittle">渠道偏好</div>
-    <div ql-col [span]="21">
-      <ql-radio class="radio" [(model)]="channel" label="微信">微信</ql-radio>
-      <ql-radio class="radio" [(model)]="channel" label="电话">电话</ql-radio>
-      <ql-radio class="radio" [(model)]="channel" label="短信">短信</ql-radio>
-      <ql-radio class="radio" [(model)]="channel" label="网银">网银</ql-radio>
-      <ql-radio class="radio" [(model)]="channel" label="手银">手银</ql-radio>
-      <ql-radio class="radio" [(model)]="channel" label="网点">网点</ql-radio>
+    <div ql-row gutter="24" class="senior">
+        <div ql-col [span]="3" class="tittle">渠道偏好</div>
+        <div ql-col [span]="21">
+            <ql-radio class="radio" [(model)]="channel" label="微信">微信</ql-radio>
+            <ql-radio class="radio" [(model)]="channel" label="电话">电话</ql-radio>
+            <ql-radio class="radio" [(model)]="channel" label="短信">短信</ql-radio>
+            <ql-radio class="radio" [(model)]="channel" label="网银">网银</ql-radio>
+            <ql-radio class="radio" [(model)]="channel" label="手银">手银</ql-radio>
+            <ql-radio class="radio" [(model)]="channel" label="网点">网点</ql-radio>
+        </div>
     </div>
-  </div>
-  <div ql-row gutter="24" class="senior">
-    <div ql-col [span]="3" class="tittle">卡等级</div>
-    <div ql-col [span]="21">
-      <ql-radio class="radio" [(model)]="level" label="普卡">普卡</ql-radio>
-      <ql-radio class="radio" [(model)]="level" label="银卡">银卡</ql-radio>
-      <ql-radio class="radio" [(model)]="level" label="金卡">金卡</ql-radio>
-      <ql-radio class="radio" [(model)]="level" label="钻石卡">钻石卡</ql-radio>
+    <div ql-row gutter="24" class="senior">
+        <div ql-col [span]="3" class="tittle">卡等级</div>
+        <div ql-col [span]="21">
+            <ql-radio class="radio" [(model)]="level" label="普卡">普卡</ql-radio>
+            <ql-radio class="radio" [(model)]="level" label="银卡">银卡</ql-radio>
+            <ql-radio class="radio" [(model)]="level" label="金卡">金卡</ql-radio>
+            <ql-radio class="radio" [(model)]="level" label="钻石卡">钻石卡</ql-radio>
+        </div>
     </div>
-  </div>
-  <div ql-row gutter="24" class="senior">
-    <div ql-col [span]="3" class="tittle">客户状态</div>
-    <div ql-col [span]="21">
-      <ql-radio class="radio" [(model)]="state" label="睡眠">睡眠</ql-radio>
-      <ql-radio class="radio" [(model)]="state" label="游离">游离</ql-radio>
-      <ql-radio class="radio" [(model)]="state" label="低忠诚">低忠诚</ql-radio>
-      <ql-radio class="radio" [(model)]="state" label="高贡献">钻石卡</ql-radio>
+    <div ql-row gutter="24" class="senior">
+        <div ql-col [span]="3" class="tittle">客户状态</div>
+        <div ql-col [span]="21">
+            <ql-radio class="radio" [(model)]="state" label="睡眠">睡眠</ql-radio>
+            <ql-radio class="radio" [(model)]="state" label="游离">游离</ql-radio>
+            <ql-radio class="radio" [(model)]="state" label="低忠诚">低忠诚</ql-radio>
+            <ql-radio class="radio" [(model)]="state" label="高贡献">钻石卡</ql-radio>
+        </div>
     </div>
-  </div>
-  <div ql-row gutter="24" class="senior">
-    <div ql-col [span]="3" class="tittle">产品</div>
-    <div ql-col [span]="21">
-      <ql-radio class="radio" [(model)]="product" label="定期">定期</ql-radio>
-      <ql-radio class="radio" [(model)]="product" label="存款">存款</ql-radio>
-      <ql-radio class="radio" [(model)]="product" label="理财">理财</ql-radio>
-      <ql-radio class="radio" [(model)]="product" label="保险">保险</ql-radio>
+    <div ql-row gutter="24" class="senior">
+        <div ql-col [span]="3" class="tittle">产品</div>
+        <div ql-col [span]="21">
+            <ql-radio class="radio" [(model)]="product" label="定期">定期</ql-radio>
+            <ql-radio class="radio" [(model)]="product" label="存款">存款</ql-radio>
+            <ql-radio class="radio" [(model)]="product" label="理财">理财</ql-radio>
+            <ql-radio class="radio" [(model)]="product" label="保险">保险</ql-radio>
+        </div>
     </div>
-  </div>
-  <div ql-row gutter="24" class="senior">
-    <div ql-col [span]="3" class="tittle">风险</div>
-    <div ql-col [span]="21">
-      <ql-radio class="radio" [(model)]="risk" label="低风险">低风险</ql-radio>
-      <ql-radio class="radio" [(model)]="risk" label="中风险">中风险</ql-radio>
-      <ql-radio class="radio" [(model)]="risk" label="高风险">高风险</ql-radio>
+    <div ql-row gutter="24" class="senior">
+        <div ql-col [span]="3" class="tittle">风险</div>
+        <div ql-col [span]="21">
+            <ql-radio class="radio" [(model)]="risk" label="低风险">低风险</ql-radio>
+            <ql-radio class="radio" [(model)]="risk" label="中风险">中风险</ql-radio>
+            <ql-radio class="radio" [(model)]="risk" label="高风险">高风险</ql-radio>
+        </div>
     </div>
-  </div>
-  <div ql-row gutter="24" class="senior">
-    <div ql-col [span]="3" class="tittle">投资类型</div>
-    <div ql-col [span]="21">
-      <ql-radio class="radio" [(model)]="tztype" label="保守">保守</ql-radio>
-      <ql-radio class="radio" [(model)]="tztype" label="激进">激进</ql-radio>
-      <ql-radio class="radio" [(model)]="tztype" label="冒险">冒险</ql-radio>
+    <div ql-row gutter="24" class="senior">
+        <div ql-col [span]="3" class="tittle">投资类型</div>
+        <div ql-col [span]="21">
+            <ql-radio class="radio" [(model)]="tztype" label="保守">保守</ql-radio>
+            <ql-radio class="radio" [(model)]="tztype" label="激进">激进</ql-radio>
+            <ql-radio class="radio" [(model)]="tztype" label="冒险">冒险</ql-radio>
+        </div>
     </div>
-  </div>
-  <div ql-row gutter="24" class="senior">
-    <div ql-col [span]="3" class="tittle">客户积分</div>
-    <div ql-col [span]="21">
-      <ql-radio class="radio" [(model)]="integral" label="0">0</ql-radio>
-      <ql-radio class="radio" [(model)]="integral" label="0-200">0-200</ql-radio>
-      <ql-radio class="radio" [(model)]="integral" label="200-500">200-500</ql-radio>
-      <ql-radio class="radio" [(model)]="integral" label="200-500">500以上</ql-radio>
+    <div ql-row gutter="24" class="senior">
+        <div ql-col [span]="3" class="tittle">客户积分</div>
+        <div ql-col [span]="21">
+            <ql-radio class="radio" [(model)]="integral" label="0">0</ql-radio>
+            <ql-radio class="radio" [(model)]="integral" label="0-200">0-200</ql-radio>
+            <ql-radio class="radio" [(model)]="integral" label="200-500">200-500</ql-radio>
+            <ql-radio class="radio" [(model)]="integral" label="200-500">500以上</ql-radio>
+        </div>
     </div>
-  </div>
-  <!-- 筛选条件 -->
-  <div ql-row gutter="24" class="seniorselect">
-    <div ql-col [span]="3" class="tittle">筛选条件</div>
-    <div ql-col [span]="21">
-      <div class="seleccss" *ngIf="sex != null">{{ sex }}<span class="spancss" (click)="closeTag(1)">x</span></div>
-      <div class="seleccss" *ngIf="age != null">{{ age }}<span class="spancss" (click)="closeTag(2)">x</span></div>
-      <div class="seleccss" *ngIf="school != null">
-        {{ school }}<span class="spancss" (click)="closeTag(3)">x</span>
-      </div>
-      <div class="seleccss" *ngIf="income != null">
-        {{ income }}<span class="spancss" (click)="closeTag(4)">x</span>
-      </div>
-      <div class="seleccss" *ngIf="channel != null">
-        {{ channel }}<span class="spancss" (click)="closeTag(5)">x</span>
-      </div>
-      <div class="seleccss" *ngIf="level != null">{{ level }}<span class="spancss" (click)="closeTag(6)">x</span></div>
-      <div class="seleccss" *ngIf="state != null">{{ state }}<span class="spancss" (click)="closeTag(7)">x</span></div>
-      <div class="seleccss" *ngIf="product != null">
-        {{ product }}<span class="spancss" (click)="closeTag(8)">x</span>
-      </div>
-      <div class="seleccss" *ngIf="risk != null">{{ risk }}<span class="spancss" (click)="closeTag(9)">x</span></div>
-      <div class="seleccss" *ngIf="tztype != null">
-        {{ tztype }}<span class="spancss" (click)="closeTag(10)">x</span>
-      </div>
-      <div class="seleccss" *ngIf="integral != null">
-        {{ integral }}<span class="spancss" (click)="closeTag(11)">x</span>
-      </div>
+    <!-- 筛选条件 -->
+    <div ql-row gutter="24" class="seniorselect">
+        <div ql-col [span]="3" class="tittle">筛选条件</div>
+        <div ql-col [span]="21">
+            <div class="seleccss" *ngIf="sex != null">{{ sex }}<span class="spancss" (click)="closeTag(1)">x</span></div>
+            <div class="seleccss" *ngIf="age != null">{{ age }}<span class="spancss" (click)="closeTag(2)">x</span></div>
+            <div class="seleccss" *ngIf="school != null">
+                {{ school }}<span class="spancss" (click)="closeTag(3)">x</span>
+            </div>
+            <div class="seleccss" *ngIf="income != null">
+                {{ income }}<span class="spancss" (click)="closeTag(4)">x</span>
+            </div>
+            <div class="seleccss" *ngIf="channel != null">
+                {{ channel }}<span class="spancss" (click)="closeTag(5)">x</span>
+            </div>
+            <div class="seleccss" *ngIf="level != null">{{ level }}<span class="spancss" (click)="closeTag(6)">x</span></div>
+            <div class="seleccss" *ngIf="state != null">{{ state }}<span class="spancss" (click)="closeTag(7)">x</span></div>
+            <div class="seleccss" *ngIf="product != null">
+                {{ product }}<span class="spancss" (click)="closeTag(8)">x</span>
+            </div>
+            <div class="seleccss" *ngIf="risk != null">{{ risk }}<span class="spancss" (click)="closeTag(9)">x</span></div>
+            <div class="seleccss" *ngIf="tztype != null">
+                {{ tztype }}<span class="spancss" (click)="closeTag(10)">x</span>
+            </div>
+            <div class="seleccss" *ngIf="integral != null">
+                {{ integral }}<span class="spancss" (click)="closeTag(11)">x</span>
+            </div>
+        </div>
     </div>
-  </div>
-  <div ql-row gutter="24" class="ql-margin-top">
-    <div ql-col [span]="5">
-      群组名称
-      <ql-input placeholder="请输入内容"></ql-input>
+    <div ql-row gutter="24" class="ql-margin-top">
+        <div ql-col [span]="5">
+            群组名称
+            <ql-input placeholder="请输入内容"></ql-input>
+        </div>
+        <div ql-col [span]="5">
+            客群类型
+            <ql-select [clearable]="true">
+                <ql-option *ngFor="let item of grouptype" [label]="item.label" [value]="item.value"> </ql-option>
+            </ql-select>
+        </div>
+        <div ql-col [span]="5">
+            客群状态
+            <ql-select [clearable]="true">
+                <ql-option *ngFor="let item of groupstate" [label]="item.label" [value]="item.value"> </ql-option>
+            </ql-select>
+        </div>
+        <div ql-col [span]="4">
+            创建人
+            <ql-input placeholder="请输入内容"></ql-input>
+        </div>
+        <div ql-col [span]="5">
+            创建时间
+            <ql-date-picker> </ql-date-picker>
+        </div>
+        <div ql-col [span]="24" class="ql-margin-top">
+            群组描述
+            <ql-input type="textarea" [rows]="2" placeholder="请输入内容"> </ql-input>
+        </div>
     </div>
-    <div ql-col [span]="5">
-      客群类型
-      <ql-select [clearable]="true">
-        <ql-option *ngFor="let item of grouptype" [label]="item.label" [value]="item.value"> </ql-option>
-      </ql-select>
-    </div>
-    <div ql-col [span]="5">
-      客群状态
-      <ql-select [clearable]="true">
-        <ql-option *ngFor="let item of groupstate" [label]="item.label" [value]="item.value"> </ql-option>
-      </ql-select>
-    </div>
-    <div ql-col [span]="4">
-      创建人
-      <ql-input placeholder="请输入内容"></ql-input>
-    </div>
-    <div ql-col [span]="5">
-      创建时间
-      <ql-date-picker> </ql-date-picker>
-    </div>
-    <div ql-col [span]="24" class="ql-margin-top">
-      群组描述
-      <ql-input type="textarea" [rows]="2" placeholder="请输入内容"> </ql-input>
-    </div>
-  </div>
 </ql-card>

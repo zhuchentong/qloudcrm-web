@@ -36,8 +36,6 @@ export class ComboCreateComponent implements OnInit {
 
   ngOnInit() {}
 
-  onSubmit() {}
-
   public getCustomerList() {
     this.apiService.getCustomerList().subscribe(data => {
       this.customerList = data

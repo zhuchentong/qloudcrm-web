@@ -4,7 +4,7 @@ import { QlMessageService } from 'qloud-angular'
 import { ApiService } from '../../services/api.service'
 import { FormGroup, FormBuilder } from '@angular/forms'
 import { TagComponent } from './../../components/tag/tag.component';
-
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-add-template',
@@ -65,14 +65,18 @@ export class AddTemplateComponent implements OnInit {
     { value: '钻石客户', label: '钻石客户' }
   ]
 
-  constructor(private fb: FormBuilder, private apiService: ApiService, private modal: ModalService, private message: QlMessageService) { }
+  constructor(private fb: FormBuilder,private router: Router, private apiService: ApiService, private modal: ModalService, private message: QlMessageService) { }
 
   ngOnInit() {
     this.apiService.getCustomerTagList().subscribe(list => {
       // 生成树形结构
       this.tagList = list.splice(0,10)
     })
+  }
 
+  public submitFun(){
+     this.message.success('添加成功')
+     this.router.navigate(['/marketing/template-filter'], { replaceUrl: true })
   }
 
   public addTagFun(){

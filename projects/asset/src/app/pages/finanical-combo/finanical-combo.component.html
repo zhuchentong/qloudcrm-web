@@ -1,42 +1,37 @@
 <page-header title="理财套餐" [breadcrumb]="breadcrumb" [back]="true">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>理财规划</ql-breadcrumb-item>
-      <ql-breadcrumb-item>精选理财规划</ql-breadcrumb-item>
-      <ql-breadcrumb-item>理财套餐</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>理财规划</ql-breadcrumb-item>
+            <ql-breadcrumb-item>精选理财规划</ql-breadcrumb-item>
+            <ql-breadcrumb-item>理财套餐</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
 </page-header>
 
 <page-container>
-  <data-form label-width="120px" [formGroup]="formGroup" (submit)="onRefresh()" submitText="生成推荐">
-    <ql-form-item label="理财目标: ">
-      <ql-input formControlName="target"></ql-input>
-    </ql-form-item>
-    <ql-form-item label="理财期限: ">
-      <ql-input formControlName="period"></ql-input>
-    </ql-form-item>
-    <ql-form-item label="风险等级: ">
-      <ql-select placeholder="请选择" formControlName="riskLevel">
-        <ql-option
-          *ngFor="
+    <data-form label-width="120px" [formGroup]="formGroup" (submit)="onRefresh()" submitText="生成推荐">
+        <ql-form-item label="理财目标: ">
+            <ql-input formControlName="target"></ql-input>
+        </ql-form-item>
+        <ql-form-item label="理财期限: ">
+            <ql-input formControlName="period"></ql-input>
+        </ql-form-item>
+        <ql-form-item label="风险等级: ">
+            <ql-select placeholder="请选择" formControlName="riskLevel">
+                <ql-option *ngFor="
             let item of [
               { key: 'R1', value: 1 },
               { key: 'R2', value: 2 },
               { key: 'R3', value: 3 },
               { key: 'R4', value: 4 }
             ]
-          "
-          [label]="item.key"
-          [value]="item.value"
-        >
-        </ql-option>
-      </ql-select>
-    </ql-form-item>
-    <ql-form-item label="客户星级: ">
-      <ql-select formControlName="customerStars" placeholder="请选择">
-        <ql-option
-          *ngFor="
+          " [label]="item.key" [value]="item.value">
+                </ql-option>
+            </ql-select>
+        </ql-form-item>
+        <ql-form-item label="客户星级: ">
+            <ql-select formControlName="customerStars" placeholder="请选择">
+                <ql-option *ngFor="
             let item of [
               { key: '一星', value: 1 },
               { key: '二星', value: 2 },
@@ -44,37 +39,34 @@
               { key: '四星', value: 4 },
               { key: '五星', value: 5 }
             ]
-          "
-          [label]="item.key"
-          [value]="item.value"
-        >
-        </ql-option>
-      </ql-select>
-    </ql-form-item>
-    <ql-form-item label="客户AUM: ">
-      <ql-input formControlName="aum"></ql-input>
-    </ql-form-item>
-    <ql-form-item label="客户负债: ">
-      <ql-input formControlName="debt"></ql-input>
-    </ql-form-item>
-    <ql-form-item label="预期最低回报%: ">
-      <ql-input></ql-input>
-    </ql-form-item>
-    <ql-form-item label="预期最高回报%">
-      <ql-input></ql-input>
-    </ql-form-item>
-  </data-form>
-  <div ql-row>
-    <ql-card class="ql-padding-x" header="可选理财套餐">
-      <data-table [model]="productList" (selection-change)="onCheckChange($event)" [selection]="true">
-        <ql-table-column model-key="productName" label="产品名称"></ql-table-column>
-        <ql-table-column model-key="productCode" label="产品代码"></ql-table-column>
-        <ql-table-column model-key="productType" label="产品类别"></ql-table-column>
-        <ql-table-column model-key="riskLevel" label="风险等级"></ql-table-column>
-        <ql-table-column model-key="recommandType" label="推荐类别"></ql-table-column>
-        <ql-table-column model-key="endTime" label="停售时间"></ql-table-column>
-        <ql-table-column model-key="productRate" label="产品利率"></ql-table-column>
-      </data-table>
-    </ql-card>
-  </div>
+          " [label]="item.key" [value]="item.value">
+                </ql-option>
+            </ql-select>
+        </ql-form-item>
+        <ql-form-item label="客户AUM: ">
+            <ql-input formControlName="aum"></ql-input>
+        </ql-form-item>
+        <ql-form-item label="客户负债: ">
+            <ql-input formControlName="debt"></ql-input>
+        </ql-form-item>
+        <ql-form-item label="预期最低回报%: ">
+            <ql-input></ql-input>
+        </ql-form-item>
+        <ql-form-item label="预期最高回报%">
+            <ql-input></ql-input>
+        </ql-form-item>
+    </data-form>
+    <div ql-row>
+        <ql-card class="ql-padding-x" header="可选理财套餐">
+            <data-table [model]="productList" (selection-change)="onCheckChange($event)">
+                <ql-table-column model-key="productName" label="产品名称"></ql-table-column>
+                <ql-table-column model-key="productCode" label="产品代码"></ql-table-column>
+                <ql-table-column model-key="productType" label="产品类别"></ql-table-column>
+                <ql-table-column model-key="riskLevel" label="风险等级"></ql-table-column>
+                <ql-table-column model-key="recommandType" label="推荐类别"></ql-table-column>
+                <ql-table-column model-key="endTime" label="停售时间"></ql-table-column>
+                <ql-table-column model-key="productRate" label="产品利率"></ql-table-column>
+            </data-table>
+        </ql-card>
+    </div>
 </page-container>

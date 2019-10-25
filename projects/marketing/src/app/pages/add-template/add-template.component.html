@@ -1,9 +1,13 @@
-<page-header title="添加模板" [breadcrumb]="breadcrumb" [action-group]="false" [back]="true">
+<page-header title="添加模板" [breadcrumb]="breadcrumb" [action-group]="false" [action]="action" [back]="true">
     <ng-template #breadcrumb>
         <ql-breadcrumb>
             <ql-breadcrumb-item>筛选模板</ql-breadcrumb-item>
             <ql-breadcrumb-item>添加模板</ql-breadcrumb-item>
         </ql-breadcrumb>
+    </ng-template>
+    <ng-template #action>
+        <ql-button type="primary" (click)="submitFun()">保存</ql-button>
+        <ql-button type="primary">重置</ql-button>
     </ng-template>
 </page-header>
 
@@ -189,10 +193,10 @@
                 </div>
             </div>
         </ql-card>
-        <div ql-col [span]="24" class="ql-text-right ql-padding">
+        <!-- <div ql-col [span]="24" class="ql-text-right ql-padding">
             <ql-button type="primary" size="small">保存</ql-button>
             <ql-button type="primary" size="small">提交</ql-button>
-        </div>
+        </div> -->
     </ql-form>
 
     <ng-template #tagcompontent>
