@@ -66,6 +66,7 @@ export class CustomerListComponent implements OnInit {
 
   public onCheckChange(selection) {
     this.showGroup = selection.length > 0
+    this.showGroup = true
   }
 
   public onCreateGroup() {
