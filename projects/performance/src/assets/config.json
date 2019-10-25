@@ -5,15 +5,11 @@
   "pluginAbbr": "UI",
   "pluginImg": "/assets/images/svg/profile.svg",
   "pluginPath": "performance",
-  "pluginOrder": 1,
+  "pluginOrder": 6,
   "pluginTab": [
     {
       "name": "绩效指标",
       "url": "#/performance/performance-quota"
-    },
-    {
-      "name": "业绩排名",
-      "url": "#/performance/performance-rank"
     },
     {
       "name": "业绩统计",

@@ -1,11 +1,11 @@
 {
   "default": "true",
-  "pluginName": "资产管理",
+  "pluginName": "理财规划",
   "pluginIcon": "",
   "pluginAbbr": "UI",
   "pluginImg": "/assets/images/svg/profile.svg",
   "pluginPath": "asset",
-  "pluginOrder": 1,
+  "pluginOrder": 8,
   "pluginTab": [
     {
       "name": "精选理财规划",

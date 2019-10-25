@@ -1,8 +1,8 @@
 <page-header title="理财配置" [breadcrumb]="breadcrumb" [back]="true">
   <ng-template #breadcrumb>
     <ql-breadcrumb>
-      <ql-breadcrumb-item>资产管理</ql-breadcrumb-item>
       <ql-breadcrumb-item>理财规划</ql-breadcrumb-item>
+      <ql-breadcrumb-item>精选理财规划</ql-breadcrumb-item>
       <ql-breadcrumb-item>理财配置</ql-breadcrumb-item>
     </ql-breadcrumb>
   </ng-template>
@@ -10,38 +10,37 @@
 
 <page-container>
   <data-form [showReset]="false" [formGroup]="formGroup" (submit)="onRefresh()">
-    <div ql-row>
-      <ql-form-item label="客户姓名: " ql-col span="6">
-        <ql-input formControlName="customerName"></ql-input>
-      </ql-form-item>
-      <ql-form-item label="风险等级: " ql-col span="6">
-        <ql-select placeholder="请选择" formControlName="riskLevel">
-          <ql-option
-            *ngFor="
-              let item of [
-                { key: 'R1', value: 1 },
-                { key: 'R2', value: 2 },
-                { key: 'R3', value: 3 },
-                { key: 'R4', value: 4 }
-              ]
-            "
-            [label]="item.key"
-            [value]="item.value"
-          >
-          </ql-option>
-        </ql-select>
-      </ql-form-item>
-      <ql-form-item label="报酬: " formGroupName="assumption" ql-col span="12">
-        <ql-input formControlName="start" ql-col span="4"></ql-input>
-        <div ql-col span="1">%</div>
-        <div ql-col span="2" align="center">-</div>
-        <ql-input formControlName="end" ql-col span="4"></ql-input>
-        <div ql-col span="1">%</div>
-      </ql-form-item>
-    </div>
+    <ql-form-item label="客户姓名: ">
+      <ql-input formControlName="customerName"></ql-input>
+    </ql-form-item>
+    <ql-form-item label="风险等级: ">
+      <ql-select placeholder="请选择" formControlName="riskLevel">
+        <ql-option
+          *ngFor="
+            let item of [
+              { key: 'R1', value: 1 },
+              { key: 'R2', value: 2 },
+              { key: 'R3', value: 3 },
+              { key: 'R4', value: 4 }
+            ]
+          "
+          [label]="item.key"
+          [value]="item.value"
+        >
+        </ql-option>
+      </ql-select>
+    </ql-form-item>
+    <ql-form-item label="报酬: " formGroupName="assumption">
+      <div class="row">
+        <ql-input formControlName="start"></ql-input>
+        <span>%</span>
+        <div class="ql-padding-x">-</div>
+        <ql-input formControlName="end"></ql-input>
+        <span>%</span>
+      </div>
+    </ql-form-item>
   </data-form>
-  <div ql-row *ngIf="assetConfigure!=null || managerWealth!=null;else empty;">
-
+  <div ql-row *ngIf="assetConfigure != null || managerWealth != null; else empty">
     <ql-card ql-col span="12" class="ql-padding-x" header="资产分析">
       <div>
         <div echarts [options]="assetConfigure"></div>
@@ -55,5 +54,3 @@
     </div>
   </ng-template>
 </page-container>
-
-

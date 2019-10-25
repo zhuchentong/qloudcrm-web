@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser'
 import { NgModule, ModuleWithProviders, APP_INITIALIZER } from '@angular/core'
-
+import * as $ from 'jquery'
 import { CoreModule } from '@app/core/core.module'
 import { SharedModule } from '@shared/shared.module'
 import { APP_BASE_HREF } from '@angular/common'
@@ -15,32 +15,33 @@ import { DesignComponent } from './pages/design/design.component'
 import { Store } from '@ngxs/store'
 import { UpdateMenuAction } from '@app/store/action/layout.action'
 
-import {GridsterModule} from "angular-gridster2";
-import {NgxEchartsModule} from "ngx-echarts";
+import { GridsterModule } from 'angular-gridster2'
+import { NgxEchartsModule } from 'ngx-echarts'
 
-import {TaskComponent} from "./pages/public-asset/task/task.component";
-import {InvestTypeComponent} from "./pages/public-asset/invest-type/invest-type.component";
-import {RiskMoneyComponent} from "./pages/public-asset/risk-money/risk-money.component";
-import {AssetProportionComponent} from "./pages/public-asset/asset-proportion/asset-proportion.component";
-import {RiskEvaluationRateComponent} from "./pages/public-asset/risk-evaluation-rate/risk-evaluation-rate.component";
-import {CalendarComponent} from "./pages/public-asset/calendar/calendar.component";
-import {ProfitTypeComponent} from "./pages/public-asset/profit-type/profit-type.component";
-import {PublicAssetComponent} from "./pages/public-asset/public-asset.component";
-import {TaskSubmitComponent} from "./pages/public-asset/task-submit/task-submit.component";
+import { TaskComponent } from './pages/public-asset/task/task.component'
+import { InvestTypeComponent } from './pages/public-asset/invest-type/invest-type.component'
+import { RiskMoneyComponent } from './pages/public-asset/risk-money/risk-money.component'
+import { AssetProportionComponent } from './pages/public-asset/asset-proportion/asset-proportion.component'
+import { RiskEvaluationRateComponent } from './pages/public-asset/risk-evaluation-rate/risk-evaluation-rate.component'
+import { CalendarComponent } from './pages/public-asset/calendar/calendar.component'
+import { ProfitTypeComponent } from './pages/public-asset/profit-type/profit-type.component'
+import { PublicAssetComponent } from './pages/public-asset/public-asset.component'
+import { TaskSubmitComponent } from './pages/public-asset/task-submit/task-submit.component'
 
-import {LeverageRatioComponent} from "./pages/public-asset/leverage-ratio/leverage-ratio.component";
-import {IndustryConcentrateComponent} from "./pages/public-asset/industry-concentrate/industry-concentrate.component";
-import {ReserveMoneyComponent} from "./pages/public-asset/reserve-money/reserve-money.component";
-import {CompaignComponent} from "./pages/public-asset/compaign/compaign.component";
-import {CampaignActivityComponent} from "./pages/public-asset/campaign-activity/campaign-activity.component";
-import {CampaignCustomerComponent} from "./pages/public-asset/campaign-customer/campaign-customer.component";
-import {CustomerCountComponent} from "./pages/public-asset/customer-count/customer-count.component";
-import {CustomerAumComponent} from "./pages/public-asset/customer-aum/customer-aum.component";
+import { LeverageRatioComponent } from './pages/public-asset/leverage-ratio/leverage-ratio.component'
+import { IndustryConcentrateComponent } from './pages/public-asset/industry-concentrate/industry-concentrate.component'
+import { ReserveMoneyComponent } from './pages/public-asset/reserve-money/reserve-money.component'
+import { CompaignComponent } from './pages/public-asset/compaign/compaign.component'
+import { CampaignActivityComponent } from './pages/public-asset/campaign-activity/campaign-activity.component'
+import { CampaignCustomerComponent } from './pages/public-asset/campaign-customer/campaign-customer.component'
+import { CustomerCountComponent } from './pages/public-asset/customer-count/customer-count.component'
+import { CustomerAumComponent } from './pages/public-asset/customer-aum/customer-aum.component'
 
 // 页面列表
 const PAGES = [DashboardComponent, DesignComponent]
 // 组件列表
-const COMPONENTS = [AssetProportionComponent,
+const COMPONENTS = [
+  AssetProportionComponent,
   RiskMoneyComponent,
   RiskEvaluationRateComponent,
   LeverageRatioComponent,
@@ -56,7 +57,8 @@ const COMPONENTS = [AssetProportionComponent,
   CampaignActivityComponent,
   CampaignCustomerComponent,
   CustomerCountComponent,
-  CustomerAumComponent]
+  CustomerAumComponent
+]
 
 const dashboardStartUp = (store: Store) => async () => {
   // 注册菜单
@@ -74,17 +76,9 @@ const providers = [
 
 export class ConfigModule {}
 @NgModule({
-  declarations: [
-    AppComponent,
-    ...PAGES,
-    ...COMPONENTS
-  ],
+  declarations: [AppComponent, ...PAGES, ...COMPONENTS],
   entryComponents: [...COMPONENTS],
-  imports: [SharedModule,
-    CoreModule.forRoot(),
-    AppRoutingModule,
-    NgxEchartsModule,
-    GridsterModule],
+  imports: [SharedModule, CoreModule.forRoot(), AppRoutingModule, NgxEchartsModule, GridsterModule],
   providers,
   bootstrap: [AppComponent],
   exports: []
