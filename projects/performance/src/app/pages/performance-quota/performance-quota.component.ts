@@ -294,6 +294,15 @@ export class PerformanceQuotaComponent implements OnInit {
       this.options[1]['series'][1]['data']=[];
       this.options[1]['series'][1]['name']="";
       this.isdisplay = false;
+      this.custList.sort(function (a, b) {
+        if (a.rank < b.rank) {
+          return -1;
+        }
+        if (a.rank > b.rank) {
+          return 1;
+        }
+        return 0;
+      });
       if(param =='1'){
         for(let i= 0;i<this.custList.length;i++){
           this.options[1]['yAxis']['data'].push(this.custList[i]['custName']);
@@ -347,6 +356,15 @@ export class PerformanceQuotaComponent implements OnInit {
       this.options2[1]['series'][0]['name']="";
       this.options2[1]['series'][1]['name']="";
       this.isdisplay2 = false;
+      this.orgList.sort(function (a, b) {
+        if (a.rank < b.rank) {
+          return -1;
+        }
+        if (a.rank > b.rank) {
+          return 1;
+        }
+        return 0;
+      });
       if(param =='1'){
         for(let i= 0;i<this.orgList.length;i++){
           this.options2[1]['yAxis']['data'].push(this.orgList[i]['orgName']);

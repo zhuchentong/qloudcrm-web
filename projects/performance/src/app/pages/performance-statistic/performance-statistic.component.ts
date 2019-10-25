@@ -13,10 +13,10 @@ export class PerformanceStatisticComponent implements OnInit {
     tooltip: {
       trigger: 'axis'
     },
-    // legend: {
-    //   x: 'left',
-    //   data:['2018业绩','2019业绩']
-    // },
+    legend: {
+      x: 'center',
+      data:['2018业绩','2019业绩']
+    },
     grid: {
       left: '3%',
       right: '4%',
@@ -77,16 +77,20 @@ export class PerformanceStatisticComponent implements OnInit {
         type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
       }
     },
+    legend: {
+      x: 'center',
+      data:['2018业绩','2019业绩']
+    },
     // legend: {
     //   data:['2018业绩','2019业绩'],
     //   width:30,
     //   height:40
     // },
     grid: {
-      top: '40',
+      // top: '60',
       left: '3%',
       right: '4%',
-      bottom: '8%',
+      bottom: '4%',
       containLabel: true
     },
     xAxis: [
