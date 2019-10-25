@@ -1,62 +1,55 @@
 <script src="event-list.component.ts"></script>
-<page-header title="事件管理" [breadcrumb]="breadcrumb" [action]="action" >
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>事件管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>事件列表</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
-  <ng-template #action>
-    <ql-button type="primary" [routerLink]="['/event/event-create']">新增事件</ql-button>
-  </ng-template>
+<page-header title="事件管理" [breadcrumb]="breadcrumb" [action]="action">
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>事件管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>事件列表</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
+    <ng-template #action>
+        <ql-button type="primary" [routerLink]="['/event/event-create']">新增事件</ql-button>
+    </ng-template>
 </page-header>
 <page-container>
-  <data-form [showReset]="true" [formGroup]="formGroup" (submit)="onRefresh()"  >
-    <ql-form-item    label="事件类别: " label-width="150">
-      <ql-select>
-        <ql-option *ngFor="let item of eventType"
-                   [label]="item.value"
-                   [value]="item.key">
-        </ql-option>
-      </ql-select>
-    </ql-form-item>
-    <ql-form-item label="渠道选择: " label-width="150">
-      <ql-select>
-        <ql-option *ngFor="let item of channel"
-                   [label]="item.value"
-                   [value]="item.key">
-        </ql-option>
-      </ql-select>
-    </ql-form-item>
-    <ql-form-item label="客户等级: "  label-width="150">
-      <ql-select>
-        <ql-option *ngFor="let item of customerLevel"
-                   [label]="item.value"
-                   [value]="item.key">
-        </ql-option>
-      </ql-select>
-    </ql-form-item>
-    <ql-form-item label="提醒时间: " label-width="150">
-       <ql-date-picker></ql-date-picker>
-    </ql-form-item>
-  </data-form>
-  <data-table  [selection]="true" [model]="dataList">
-    <ql-table-column model-key="eventType" label="事件类别"></ql-table-column>
-    <ql-table-column model-key="eventName" label="事件名称"></ql-table-column>
-    <ql-table-column model-key="customerLevel" label="客户等级"></ql-table-column>
-    <ql-table-column model-key="channel" label="选择渠道"></ql-table-column>
-    <ql-table-column model-key="treadArea" label="交易区域"></ql-table-column>
-    <ql-table-column model-key="activation" label="发生动作"></ql-table-column>
-    <ql-table-column model-key="eventAmount" label="发生金额（万元）"></ql-table-column>
-    <ql-table-column model-key="time" label="时间(天)"></ql-table-column>
-    <ql-table-column model-key="remindType" label="提醒方式"></ql-table-column>
-    <ql-table-column label="操作" width="200" >
-      <ng-template #slot let-scope="scope">
-        <ql-button type="text" (click)="execute()" >执行</ql-button>
-        <ql-button type="text" (click)="cease()" >停用</ql-button>
-        <ql-button type="text"  (click)="showItem()" >查看</ql-button>
-      </ng-template>
-    </ql-table-column>
-  </data-table>
+    <data-form [showReset]="true" [formGroup]="formGroup" (submit)="onRefresh()">
+        <ql-form-item label="事件类别: " label-width="150">
+            <ql-select>
+                <ql-option *ngFor="let item of eventType" [label]="item.value" [value]="item.key">
+                </ql-option>
+            </ql-select>
+        </ql-form-item>
+        <ql-form-item label="渠道选择: " label-width="150">
+            <ql-select>
+                <ql-option *ngFor="let item of channel" [label]="item.value" [value]="item.key">
+                </ql-option>
+            </ql-select>
+        </ql-form-item>
+        <ql-form-item label="客户等级: " label-width="150">
+            <ql-select>
+                <ql-option *ngFor="let item of customerLevel" [label]="item.value" [value]="item.key">
+                </ql-option>
+            </ql-select>
+        </ql-form-item>
+        <ql-form-item label="提醒时间: " label-width="150">
+            <ql-date-picker></ql-date-picker>
+        </ql-form-item>
+    </data-form>
+    <data-table [selection]="true" [model]="dataList">
+        <ql-table-column model-key="eventType" label="事件类别"></ql-table-column>
+        <ql-table-column model-key="eventName" label="事件名称"></ql-table-column>
+        <ql-table-column model-key="customerLevel" label="客户等级"></ql-table-column>
+        <ql-table-column model-key="channel" label="选择渠道"></ql-table-column>
+        <ql-table-column model-key="treadArea" label="交易区域"></ql-table-column>
+        <ql-table-column model-key="activation" label="发生动作(频次)"></ql-table-column>
+        <ql-table-column model-key="eventAmount" label="发生金额（万元）"></ql-table-column>
+        <ql-table-column model-key="time" label="时间(天)"></ql-table-column>
+        <ql-table-column model-key="remindType" label="提醒方式"></ql-table-column>
+        <ql-table-column label="操作" width="200">
+            <ng-template #slot let-scope="scope">
+                <ql-button type="text" (click)="execute()">执行</ql-button>
+                <ql-button type="text" (click)="cease()">停用</ql-button>
+                <ql-button type="text" (click)="showItem()">查看</ql-button>
+            </ng-template>
+        </ql-table-column>
+    </data-table>
 </page-container>
-

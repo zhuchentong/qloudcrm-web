@@ -1,12 +1,33 @@
 <page-header title="资产结构总览" [breadcrumb]="breadcrumb">
-  <ng-template #breadcrumb>
-    <ql-breadcrumb>
-      <ql-breadcrumb-item>绩效管理</ql-breadcrumb-item>
-      <ql-breadcrumb-item>资产结构总览</ql-breadcrumb-item>
-    </ql-breadcrumb>
-  </ng-template>
+    <ng-template #breadcrumb>
+        <ql-breadcrumb>
+            <ql-breadcrumb-item>报表管理</ql-breadcrumb-item>
+            <ql-breadcrumb-item>资产结构总览</ql-breadcrumb-item>
+        </ql-breadcrumb>
+    </ng-template>
 </page-header>
 
 <page-container>
-  资产结构总览
+    <ql-card header="资产概况(人民币)">
+        <label-container column="3" [border]="true" labelWidth="160">
+            <label-item label="现金及存放我行款项">￥4,523</label-item>
+            <label-item label="存放同业款项">￥76,209</label-item>
+            <label-item label="贵金属">￥342,23</label-item>
+            <label-item label="拆除资金">￥344,567</label-item>
+            <label-item label="交易性金融资金">￥306,12</label-item>
+            <label-item label="衍生金融资产">￥1,442,890</label-item>
+            <label-item label="买入返售金融资产">￥233,312,34</label-item>
+            <label-item label="应收利息">￥7,246,223</label-item>
+            <label-item label="可供出售金额资产">￥231,342,223</label-item>
+            <label-item label="应收款项">￥989,824,976</label-item>
+            <label-item label="对子公司投资资产">￥254,332,223</label-item>
+            <label-item label="固定资产">￥876,520,334,223</label-item>
+            <label-item label="无形资产">￥23,824,976</label-item>
+            <label-item label="递延所得税资产">￥534,109,98</label-item>
+            <label-item label="其他资产">￥187,234,19</label-item>
+        </label-container>
+        <label-container column="1" [border]="true" labelWidth="160">
+            <label-item label="合计">￥987,761,119,2</label-item>
+        </label-container>
+    </ql-card>
 </page-container>

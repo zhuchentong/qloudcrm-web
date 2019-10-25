@@ -13,7 +13,7 @@
             <ql-card header="基本信息">
                 <div ql-row>
                     <div ql-col [span]="4">
-                        <img class="imgcss" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2882133088,2696092300&fm=26&gp=0.jpg" alt="" />
+                        <img class="imgcss" src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2599016565,2976694234&fm=26&gp=0.jpg" alt="" />
                         <p class="ql-text-center ql-margin-top ">四星客户</p>
                         <ql-rate class="ql-text-center" [model]="4" [max]="4" [qlDisabled]="true"> </ql-rate>
                     </div>
@@ -255,7 +255,7 @@
                             <ql-date-picker> </ql-date-picker>
                         </ql-form-item>
                     </data-form>
-                    <data-table [model]="customertabledata" [selection]="true">
+                    <data-table [model]="customertabledata">
                         <ql-table-column model-key="code" [render-html]="true" label="客户号"></ql-table-column>
                         <ql-table-column model-key="name" [render-html]="true" label="姓名" width="70"></ql-table-column>
                         <ql-table-column model-key="level" [render-html]="true" label="客户等级"></ql-table-column>
@@ -268,10 +268,10 @@
                         <ql-table-column model-key="aum" [render-html]="true" label="AUM" width="80"></ql-table-column>
                         <ql-table-column model-key="balance" [render-html]="true" label="资产余额" width="85"></ql-table-column>
                     </data-table>
-                    <div class="btncss">
+                    <!-- <div class="btncss">
                         <ql-button size="small" type="success">发送短信</ql-button>
                         <ql-button size="small" type="info">发送邮件</ql-button>
-                    </div>
+                    </div> -->
                 </div>
             </ql-card>
         </tab-item>
