@@ -1,30 +1,31 @@
 {
-    "default": "true",
-    "pluginName": "产品管理",
-    "pluginIcon": "",
-    "pluginAbbr": "UI",
-    "pluginImg": "/assets/images/svg/profile.svg",
-    "pluginPath": "product",
-    "pluginOrder": 1,
-    "pluginTab": [{
-            "name": "产品目录",
-            "url": "#/product/product-list"
-        },
-        {
-            "name": "优选仓产品",
-            "url": "#/product/excellent-list"
-        },
-        {
-            "name": "产品组合",
-            "url": "#/product/combo-list"
-        },
-        {
-            "name": "产品文档",
-            "url": "#/product/product-document"
-        },
-        {
-            "name": "关注产品",
-            "url": "#/product/attention-list"
-        }
-    ]
+  "default": "true",
+  "pluginName": "产品管理",
+  "pluginIcon": "",
+  "pluginAbbr": "UI",
+  "pluginImg": "/assets/images/svg/profile.svg",
+  "pluginPath": "product",
+  "pluginOrder": 3,
+  "pluginTab": [
+    {
+      "name": "产品目录",
+      "url": "#/product/product-list"
+    },
+    {
+      "name": "优选仓产品",
+      "url": "#/product/excellent-list"
+    },
+    {
+      "name": "产品组合",
+      "url": "#/product/combo-list"
+    },
+    {
+      "name": "产品文档",
+      "url": "#/product/product-document"
+    },
+    {
+      "name": "关注产品",
+      "url": "#/product/attention-list"
+    }
+  ]
 }

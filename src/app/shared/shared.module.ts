@@ -4,6 +4,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router'
 import { QlModule } from 'qloud-angular'
 import { BrowserModule } from '@angular/platform-browser'
+
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { BrowserAnimationsModule, NoopAnimationsModule } from '@angular/platform-browser/animations'
 import { PageHeaderComponent } from './components/page-header/page-header.component'
 import { DataFormComponent } from './components/data-form/data-form.component'
@@ -58,7 +60,8 @@ const THIRDS = []
     ReactiveFormsModule,
     QlModule.forRoot(),
     FormioModule,
-    ClipboardModule
+    ClipboardModule,
+    PdfViewerModule
   ],
   providers: [
     EchartService,
@@ -85,6 +88,7 @@ const THIRDS = []
     QlModule,
     FormioModule,
     ClipboardModule,
+    PdfViewerModule,
     ...COMPONENTS,
     ...DIRECTIVES,
     ...PIPES
